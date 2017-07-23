@@ -58,6 +58,8 @@ struct t_flashy_taskData {
     u16 holdCountXY;
     u16 holdCountAY;
     u16 holdCountAX;
+    u16 holdCountBX;
+    u16 holdCountBY;
     u16 noholdCount;
 };
 

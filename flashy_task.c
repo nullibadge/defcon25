@@ -18,6 +18,7 @@
 u16 flashy_leds_idx;
 
 u16 flashy_sparkle_rate;
+u16 flashy_scroll_rate;
 
 const char *FLASHY_TEXT = "NULL";
 const char *FLASHY_TEXT_SECRET_TEST = "\x05\x07\x07\x08--  --\x09\x07\x07\x06 \x0B ";
@@ -67,6 +68,7 @@ void flashy_Init(void *taskData) {
     flashy_option_size = sizeof(flashy_option)/sizeof(flashy_option[0]);
     
     flashy_sparkle_rate =50;
+    flashy_scroll_rate=50;
     
 }
 
@@ -77,7 +79,13 @@ void flashy_display_option(struct t_flashy_taskData *data){
         nullifyBadge_segDisplayForceUpdate(data->badge);
     }
     else {
-        marquee(flashy_option[flashy_option_idx], data->noholdCount);
+        if (data->display_state==FLASHY_STATE_DISPLAY ){
+                  //  marquee_speedy(flashy_option[flashy_option_idx], data->noholdCount, 10);
+                    marquee_speedy(flashy_option[flashy_option_idx], data->noholdCount, flashy_scroll_rate);
+        }
+        else{
+            marquee(flashy_option[flashy_option_idx], data->noholdCount);
+        }
     }
 }
 
@@ -214,6 +222,8 @@ void flashy_Main (void *taskData) {
             data->holdCountXY += 1;
             data->holdCountAY = 0;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
             data->noholdCount = 0;
             break;
          case BUTTON_A | BUTTON_Y:
@@ -231,6 +241,8 @@ void flashy_Main (void *taskData) {
             data->holdCountXY = 0;
             data->holdCountAY += 1;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;            
             data->noholdCount = 0;
             break;
         case BUTTON_A | BUTTON_X:
@@ -242,11 +254,61 @@ void flashy_Main (void *taskData) {
 
             data->holdCountA = 0;
             data->holdCountB = 0;
-            data->holdCountX = 0;
+            data->holdCountX += 1;
             data->holdCountY = 0;
             data->holdCountXY = 0;
             data->holdCountAY = 0;
             data->holdCountAX += 1;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
+            data->noholdCount = 0;
+            break;
+        case BUTTON_B | BUTTON_Y: 
+            if (data->holdCountBY == 0){
+                if (flashy_option_idx == 0){ //fade down
+                    
+                }
+                else { // slow down
+                    if (flashy_scroll_rate > 150){
+                        flashy_scroll_rate =150;
+                    }
+                    flashy_scroll_rate +=2;
+                }
+
+            }
+            data->holdCountA = 0;
+            data->holdCountB += 1;
+            data->holdCountX = 0;
+            data->holdCountY += 1;
+            data->holdCountXY = 0;
+            data->holdCountAY = 0;
+            data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY += 1;
+            data->noholdCount = 0;
+            break;
+        case BUTTON_B | BUTTON_X: 
+            if (data-> holdCountBX == 0){
+                if (flashy_option_idx == 0){ //Fade up
+
+                }
+                else { //speed up
+                    if (flashy_scroll_rate < 5){
+                        flashy_scroll_rate =5;
+                    }
+                    flashy_scroll_rate -=3;
+                }
+                
+            }
+            data->holdCountA = 0;
+            data->holdCountB += 1;
+            data->holdCountX += 1;
+            data->holdCountY = 0;
+            data->holdCountXY = 0;
+            data->holdCountAY = 0;
+            data->holdCountAX = 0;
+            data->holdCountBX += 1;
+            data->holdCountBY = 0;
             data->noholdCount = 0;
             break;
         case BUTTON_Y:
@@ -271,6 +333,8 @@ void flashy_Main (void *taskData) {
             data->holdCountXY = 0;
             data->holdCountAY = 0;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
             data->noholdCount = 0;
             break;
         case BUTTON_B:
@@ -284,7 +348,6 @@ void flashy_Main (void *taskData) {
                         flashy_option_idx += 1;
                     }
             }
-
             data->holdCountA = 0;
             data->holdCountB += 1;
             data->holdCountX = 0;
@@ -292,9 +355,10 @@ void flashy_Main (void *taskData) {
             data->holdCountXY = 0;
             data->holdCountAY = 0;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
             data->noholdCount = 0;
             break;
-
         case BUTTON_A:
             if ( data->holdCountA == 0){
                 if (data->led_state != FLASHY_STATE_SPARKLE){
@@ -312,6 +376,8 @@ void flashy_Main (void *taskData) {
             data->holdCountXY = 0;
             data->holdCountAY = 0;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
             data->noholdCount = 0;
             break;
         case NO_BUTTON:
@@ -323,6 +389,8 @@ void flashy_Main (void *taskData) {
             data->holdCountXY = 0;
             data->holdCountAY = 0;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
             data->noholdCount += 1;
             break;
         default:
@@ -333,6 +401,8 @@ void flashy_Main (void *taskData) {
             data->holdCountXY = 0;
             data->holdCountAY = 0;
             data->holdCountAX = 0;
+            data->holdCountBX = 0;
+            data->holdCountBY = 0;
             data->noholdCount = 0;
     }
     

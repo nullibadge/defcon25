@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/NullifyBadge2017_lowVoltage.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=NullifyBadge2017_lowVoltage.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=nullifybadge2017lowvoltage/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/defcon25.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=defcon25.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=defcon25/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/nullifybadge2017lowvoltage/bin
+makeDirectory ${TMPDIR}/defcon25/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/nullifybadge2017lowvoltage.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/defcon25.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/nullifybadge2017lowvoltage.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/defcon25.tar *
 checkReturnCode
 
 # Cleanup

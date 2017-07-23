@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/NullifyBadge2017_lowVoltage.production.hex">
+  <executable name="dist/default/production/defcon25.production.hex">
     <memory name="program">
       <units>words</units>
       <length>16384</length>
-      <used>8212</used>
-      <free>8172</free>
+      <used>8732</used>
+      <free>7652</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>771</used>
-      <free>1277</free>
+      <used>782</used>
+      <free>1266</free>
     </memory>
   </executable>
 </project>

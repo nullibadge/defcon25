@@ -125,6 +125,19 @@ u16 curtain_leds_inverse[] ={
     LED_7 | LED_6,
 };
 
+void marquee_speedy(char* string, u16 count, u16 multiplier) {
+    u16 string_length = strlen((const char *) string);
+    char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
+    u16 i = (count / multiplier) % string_length;
+
+    for (u16 j=0; j < 4; j++){
+        display_string[j] = string[(i + j) % string_length];
+    }
+    nullifyBadge_segDisplayPutStr(&badge_inst, display_string);
+    nullifyBadge_segDisplayForceUpdate(&badge_inst);
+}
+
+
 void marquee(char* string, u16 count) {
     u16 multiplier = 50;
     u16 string_length = strlen((const char *) string);

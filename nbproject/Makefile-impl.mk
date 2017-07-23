@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=NullifyBadge2017_lowVoltage
+PROJECTNAME=defcon25
 
 # Active Configuration
 DEFAULTCONF=default

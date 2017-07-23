@@ -50,6 +50,8 @@ enum t_tasks {
 extern u8 badge_locked;
 extern u16 currentTask;
 extern void marquee(char* string, u16 count);
+extern void marquee_speedy(char* string, u16 count, u16 multiplier);
+
 void led_roundabout(u16 counter);
 void led_curtain(u16 counter);
 void led_rand(void);

@@ -10377,6 +10377,8 @@ LOCKED_TASK,
 extern u8 badge_locked;
 extern u16 currentTask;
 extern void marquee(char* string, u16 count);
+extern void marquee_speedy(char* string, u16 count, u16 multiplier);
+
 void led_roundabout(u16 counter);
 void led_curtain(u16 counter);
 void led_rand(void);
@@ -10389,7 +10391,7 @@ SECRET_VALUE_TEST,
 };
 extern u16 secret_value;
 
-# 119
+# 121
 enum t_hw_register {
 HW_SEG_DISPLAY,
 HW_USER_LEDS,
@@ -10417,7 +10419,7 @@ LED_G14,
 LED_G15
 };
 
-# 155
+# 157
 struct t_nullifyBadge {
 struct t_nullifyDisplay_l2 display;
 u8 registeredHw;
@@ -10426,7 +10428,7 @@ u8 registeredHw;
 
 void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
 
-# 170
+# 172
 s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
 
 
@@ -10459,7 +10461,7 @@ void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
 
 void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
 
-# 208
+# 210
 s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
 
 
@@ -10483,7 +10485,7 @@ void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedDat
 
 void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
 
-# 237
+# 239
 u8 nullifyBadge_buttonsGet();
 
 
@@ -10498,10 +10500,10 @@ u8 nullifyBadge_buttonXGet();
 
 u8 nullifyBadge_buttonYGet();
 
-# 257
+# 259
 u8 nullifyBadge_irGet();
 
-# 270
+# 272
 s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
 
 
@@ -10516,7 +10518,7 @@ void nullifyBadge_irTxSet();
 
 void nullifyBadge_irTxClr();
 
-# 290
+# 292
 s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
 
 

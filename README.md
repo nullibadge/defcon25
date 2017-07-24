@@ -21,7 +21,7 @@ This is written by a series of drunk coders. If something doesn't make sense hav
 [OSX](http://ww1.microchip.com/downloads/en/DeviceDoc/xc8-v1.42-full-install-osx-installer.dmg)
 
 ### GIT
-git clone https://github.com/nullibadge/defcon2017.git
+git clone https://github.com/nullibadge/defcon25.git
 
 ### Pickit3
 Acquire one of these: https://www.amazon.com/Funny-DIY-Expert-Programmer-Development/dp/B01NBPCLSR/ref=sr_1_1?ie=UTF8&qid=1498755321&sr=8-1&keywords=pickit3

@@ -10443,6 +10443,7 @@ void led_roundabout(u16 counter);
 void led_curtain(u16 counter);
 void led_rand(void);
 void led_circle(u16 count);
+void let_alternate(u16 count);
 
 
 enum t_secret {
@@ -10451,7 +10452,7 @@ SECRET_VALUE_TEST,
 };
 extern u16 secret_value;
 
-# 121
+# 122
 enum t_hw_register {
 HW_SEG_DISPLAY,
 HW_USER_LEDS,
@@ -10479,7 +10480,7 @@ LED_G14,
 LED_G15
 };
 
-# 157
+# 158
 struct t_nullifyBadge {
 struct t_nullifyDisplay_l2 display;
 u8 registeredHw;
@@ -10488,7 +10489,7 @@ u8 registeredHw;
 
 void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
 
-# 172
+# 173
 s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
 
 
@@ -10521,7 +10522,7 @@ void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
 
 void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
 
-# 210
+# 211
 s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
 
 
@@ -10545,7 +10546,7 @@ void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedDat
 
 void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
 
-# 239
+# 240
 u8 nullifyBadge_buttonsGet();
 
 
@@ -10560,10 +10561,10 @@ u8 nullifyBadge_buttonXGet();
 
 u8 nullifyBadge_buttonYGet();
 
-# 259
+# 260
 u8 nullifyBadge_irGet();
 
-# 272
+# 273
 s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
 
 
@@ -10578,7 +10579,7 @@ void nullifyBadge_irTxSet();
 
 void nullifyBadge_irTxClr();
 
-# 292
+# 293
 s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
 
 
@@ -10634,6 +10635,7 @@ FLASHY_STATE_LED_ROUNDABOUT,
 FLASHY_STATE_LED_SHOT,
 FLASHY_STATE_SPARKLE,
 FLASHY_STATE_CIRCLE,
+FLASHY_STATE_LED_ALT,
 };
 
 enum t_flashy_display_states {
@@ -10683,6 +10685,7 @@ void flashy_Exit(void *taskData);
 
 # 18 "flashy_task.c"
 u16 flashy_leds_idx;
+u16 flashy_leds_state_track;
 
 u16 flashy_sparkle_rate;
 u16 flashy_scroll_rate;
@@ -10696,8 +10699,15 @@ char *flashy_option[] = {
 "NULL",
 "NULLIFY ",
 "DEFCON ",
-"HAX  "
+"HAX  ",
+"hack the PLANET   ",
+"will HACK for A/C   ",
+"HTTP 418 I'm a teapot      ",
+"I am a badge, and that's it      ",
+"all your base are belong to us     ",
+"Nothing to see here  move along...    "
 };
+
 u16 flashy_option_idx;
 u16 flashy_option_size;
 
@@ -10711,7 +10721,7 @@ nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_segDisplayRegister(data->badge);
 nullifyBadge_segDisplayErase(data->badge);
 
-# 51
+# 59
 data->delayTickCount = 35;
 data->displayTickCount = 0;
 
@@ -10733,6 +10743,7 @@ flashy_option_size = sizeof(flashy_option)/sizeof(flashy_option[0]);
 
 flashy_sparkle_rate =50;
 flashy_scroll_rate=50;
+flashy_leds_state_track =0;
 
 }
 
@@ -10821,6 +10832,7 @@ data->delayTickCount = flashy_sparkle_rate;
 else {
 data->delayTickCount -= 1;
 }
+break;
 case FLASHY_STATE_CIRCLE:
 if (data->delayTickCount ==0 ){
 if (flashy_leds_idx == 1024 ){
@@ -10838,6 +10850,20 @@ data->delayTickCount = flashy_sparkle_rate;
 else {
 data->delayTickCount -= 1;
 }
+break;
+case FLASHY_STATE_LED_ALT:
+if (data->delayTickCount == 0){
+let_alternate(flashy_leds_idx);
+flashy_leds_idx += 1;
+if (flashy_leds_idx > 65530){
+flashy_leds_idx=0;
+}
+data->delayTickCount = flashy_sparkle_rate;
+}
+else {
+data->delayTickCount -= 1;
+}
+break;
 }
 
 
@@ -11025,12 +11051,24 @@ data->noholdCount = 0;
 break;
 case 1:
 if ( data->holdCountA == 0){
-if (data->led_state != FLASHY_STATE_SPARKLE){
+
+
+if (flashy_leds_state_track > 3){
+flashy_leds_state_track=0;
+}
+if (flashy_leds_state_track== 0){
+data->led_state = FLASHY_STATE_LED_ALT;
+}
+if (flashy_leds_state_track ==1){
 data->led_state = FLASHY_STATE_SPARKLE;
 }
-else {
+if (flashy_leds_state_track == 2){
 data->led_state = FLASHY_STATE_CIRCLE;
 }
+if (flashy_leds_state_track == 3){
+data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
+}
+flashy_leds_state_track +=1;
 }
 
 data->holdCountA += 1;

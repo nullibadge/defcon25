@@ -5,30 +5,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 nullifyBadge_displayL2.h
 [s S958 `uc -> 4 `i `uc 1 `ui 1 `S957 1 ]
 [n S958 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
-"157 nullifyBadge.h
+"158 nullifyBadge.h
 [s S959 `S958 1 `uc 1 ]
 [n S959 t_nullifyBadge display registeredHw ]
-"39 flashy_task.c
-[c E8298 0 1 2 3 .. ]
-[n E8298 t_flashy_led_states FLASHY_STATE_LED_ROUNDABOUT FLASHY_STATE_LED_SHOT FLASHY_STATE_SPARKLE FLASHY_STATE_CIRCLE  ]
-[c E8303 0 1 2 3 4 5 .. ]
-[n E8303 t_flashy_display_states FLASHY_STATE_DISPLAY FLASHY_DEFAULT_STATE_DISPLAY FLASHY_STATE_DISPLAY_BLASTER FLASHY_STATE_DISPLAY_SHOT FLASHY_STATE_DISPLAY_OFF FLASHY_STATE_DISPLAY_SECRET_TEST  ]
-[c E8310 0 1 .. ]
-[n E8310 t_flashy_blaster_states FLASHY_BLASTER_SHOOTING_STATE FLASHY_BLASTER_IDLE_STATE  ]
-"40 flashy_task.h
-[s S962 `*S959 1 `ui 1 `E8298 1 `ui 1 `E8303 1 `ui 1 `E8310 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+"47 flashy_task.c
+[c E8300 0 1 2 3 4 .. ]
+[n E8300 t_flashy_led_states FLASHY_STATE_LED_ROUNDABOUT FLASHY_STATE_LED_SHOT FLASHY_STATE_SPARKLE FLASHY_STATE_CIRCLE FLASHY_STATE_LED_ALT  ]
+[c E8306 0 1 2 3 4 5 .. ]
+[n E8306 t_flashy_display_states FLASHY_STATE_DISPLAY FLASHY_DEFAULT_STATE_DISPLAY FLASHY_STATE_DISPLAY_BLASTER FLASHY_STATE_DISPLAY_SHOT FLASHY_STATE_DISPLAY_OFF FLASHY_STATE_DISPLAY_SECRET_TEST  ]
+[c E8313 0 1 .. ]
+[n E8313 t_flashy_blaster_states FLASHY_BLASTER_SHOOTING_STATE FLASHY_BLASTER_IDLE_STATE  ]
+"41 flashy_task.h
+[s S962 `*S959 1 `ui 1 `E8300 1 `ui 1 `E8306 1 `ui 1 `E8313 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S962 t_flashy_taskData badge delayTickCount led_state displayTickCount display_state blasterTickCount blaster_state holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY noholdCount ]
-"210 nullifyBadge.h
+"211 nullifyBadge.h
 [v _nullifyBadge_userLedsRegister `(c ~T0 @X0 0 ef1`*S959 ]
-"231
+"232
 [v _nullifyBadge_userLedsClr `(v ~T0 @X0 0 ef1`*S959 ]
-"172
+"173
 [v _nullifyBadge_segDisplayRegister `(c ~T0 @X0 0 ef1`*S959 ]
-"202
+"203
 [v _nullifyBadge_segDisplayErase `(v ~T0 @X0 0 ef1`*S959 ]
-"196
+"197
 [v _nullifyBadge_segDisplayPutStr `(v ~T0 @X0 0 ef2`*S959`*uc ]
-"193
+"194
 [v _nullifyBadge_segDisplayForceUpdate `(v ~T0 @X0 0 ef1`*S959 ]
 "53
 [v _marquee_speedy `(v ~T0 @X0 0 ef3`*uc`ui`ui ]
@@ -36,14 +36,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _marquee `(v ~T0 @X0 0 ef2`*uc`ui ]
 "51
 [v _currentTask `ui ~T0 @X0 0 e ]
-"98 flashy_task.c
+"107 flashy_task.c
 [c E8139 0 1 2 3 .. ]
 [n E8139 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK  ]
-"65 nullifyBadge.h
+"66 nullifyBadge.h
 [v _secret_value `ui ~T0 @X0 0 e ]
-"114 flashy_task.c
-[c E8161 0 1 .. ]
-[n E8161 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
+"123 flashy_task.c
+[c E8163 0 1 .. ]
+[n E8163 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
 "55 nullifyBadge.h
 [v _led_roundabout `(v ~T0 @X0 0 ef1`ui ]
 "56
@@ -52,25 +52,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _led_rand `(v ~T0 @X0 0 ef ]
 "58
 [v _led_circle `(v ~T0 @X0 0 ef1`ui ]
+"59
+[v _let_alternate `(v ~T0 @X0 0 ef1`ui ]
 "194 /Applications/microchip/xc8/v1.42/include/stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"239 nullifyBadge.h
+"240 nullifyBadge.h
 [v _nullifyBadge_buttonsGet `(uc ~T0 @X0 0 ef ]
-"225
+"226
 [v _nullifyBadge_userLedsSet `(v ~T0 @X0 0 ef2`*S959`ui ]
-"272
+"273
 [v _nullifyBadge_irTxRegister `(c ~T0 @X0 0 ef1`*S959 ]
-"281
+"282
 [v _nullifyBadge_irTxSet `(v ~T0 @X0 0 ef ]
-"284
+"285
 [v _nullifyBadge_irTxClr `(v ~T0 @X0 0 ef ]
-"275
+"276
 [v _nullifyBadge_irTxRelease `(v ~T0 @X0 0 ef1`*S959 ]
-"259
+"260
 [v _nullifyBadge_irGet `(uc ~T0 @X0 0 ef ]
-"213
+"214
 [v _nullifyBadge_userLedsRelease `(v ~T0 @X0 0 ef1`*S959 ]
-"175
+"176
 [v _nullifyBadge_segDisplayRelease `(v ~T0 @X0 0 ef1`*S959 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -8434,78 +8436,79 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge.h: 56: void led_curtain(u16 counter);
 [; ;nullifyBadge.h: 57: void led_rand(void);
 [; ;nullifyBadge.h: 58: void led_circle(u16 count);
-[; ;nullifyBadge.h: 61: enum t_secret {
-[; ;nullifyBadge.h: 62: SECRET_VALUE_INIT,
-[; ;nullifyBadge.h: 63: SECRET_VALUE_TEST,
-[; ;nullifyBadge.h: 64: };
-[; ;nullifyBadge.h: 65: extern u16 secret_value;
-[; ;nullifyBadge.h: 121: enum t_hw_register {
-[; ;nullifyBadge.h: 122: HW_SEG_DISPLAY,
-[; ;nullifyBadge.h: 123: HW_USER_LEDS,
-[; ;nullifyBadge.h: 124: HW_IR_TX,
-[; ;nullifyBadge.h: 125: HW_EEPROM
-[; ;nullifyBadge.h: 126: };
-[; ;nullifyBadge.h: 128: enum t_userLed {
-[; ;nullifyBadge.h: 129: LED_G0,
-[; ;nullifyBadge.h: 130: LED_G1,
-[; ;nullifyBadge.h: 131: LED_G2,
-[; ;nullifyBadge.h: 132: LED_G3,
-[; ;nullifyBadge.h: 133: LED_G4,
-[; ;nullifyBadge.h: 134: LED_G5,
-[; ;nullifyBadge.h: 135: LED_G6,
-[; ;nullifyBadge.h: 136: LED_G7,
-[; ;nullifyBadge.h: 137: LED_G8,
-[; ;nullifyBadge.h: 138: LED_G9,
-[; ;nullifyBadge.h: 139: LED_R0,
-[; ;nullifyBadge.h: 140: LED_G10,
-[; ;nullifyBadge.h: 141: LED_G11,
-[; ;nullifyBadge.h: 142: LED_G12,
-[; ;nullifyBadge.h: 143: LED_G13,
-[; ;nullifyBadge.h: 144: LED_G14,
-[; ;nullifyBadge.h: 145: LED_G15
-[; ;nullifyBadge.h: 146: };
-[; ;nullifyBadge.h: 157: struct t_nullifyBadge {
-[; ;nullifyBadge.h: 158: struct t_nullifyDisplay_l2 display;
-[; ;nullifyBadge.h: 159: u8 registeredHw;
-[; ;nullifyBadge.h: 160: };
-[; ;nullifyBadge.h: 163: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 172: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 175: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 178: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 181: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 184: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 187: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
-[; ;nullifyBadge.h: 190: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 193: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 196: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 199: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 202: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 210: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 213: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 216: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 219: void nullifyBadge_userLedsSetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 222: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 225: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 228: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 231: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 239: u8 nullifyBadge_buttonsGet();
-[; ;nullifyBadge.h: 242: u8 nullifyBadge_buttonAGet();
-[; ;nullifyBadge.h: 245: u8 nullifyBadge_buttonBGet();
-[; ;nullifyBadge.h: 248: u8 nullifyBadge_buttonXGet();
-[; ;nullifyBadge.h: 251: u8 nullifyBadge_buttonYGet();
-[; ;nullifyBadge.h: 259: u8 nullifyBadge_irGet();
-[; ;nullifyBadge.h: 272: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 275: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 278: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 281: void nullifyBadge_irTxSet();
-[; ;nullifyBadge.h: 284: void nullifyBadge_irTxClr();
-[; ;nullifyBadge.h: 292: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 295: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 298: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 301: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
-[; ;nullifyBadge.h: 304: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
-[; ;nullifyBadge.h: 307: u8 nullifyBadge_eepromRead8bit(u16 addr);
-[; ;nullifyBadge.h: 310: u16 nullifyBadge_eepromRead16bit(u16 addr);
+[; ;nullifyBadge.h: 59: void let_alternate(u16 count);
+[; ;nullifyBadge.h: 62: enum t_secret {
+[; ;nullifyBadge.h: 63: SECRET_VALUE_INIT,
+[; ;nullifyBadge.h: 64: SECRET_VALUE_TEST,
+[; ;nullifyBadge.h: 65: };
+[; ;nullifyBadge.h: 66: extern u16 secret_value;
+[; ;nullifyBadge.h: 122: enum t_hw_register {
+[; ;nullifyBadge.h: 123: HW_SEG_DISPLAY,
+[; ;nullifyBadge.h: 124: HW_USER_LEDS,
+[; ;nullifyBadge.h: 125: HW_IR_TX,
+[; ;nullifyBadge.h: 126: HW_EEPROM
+[; ;nullifyBadge.h: 127: };
+[; ;nullifyBadge.h: 129: enum t_userLed {
+[; ;nullifyBadge.h: 130: LED_G0,
+[; ;nullifyBadge.h: 131: LED_G1,
+[; ;nullifyBadge.h: 132: LED_G2,
+[; ;nullifyBadge.h: 133: LED_G3,
+[; ;nullifyBadge.h: 134: LED_G4,
+[; ;nullifyBadge.h: 135: LED_G5,
+[; ;nullifyBadge.h: 136: LED_G6,
+[; ;nullifyBadge.h: 137: LED_G7,
+[; ;nullifyBadge.h: 138: LED_G8,
+[; ;nullifyBadge.h: 139: LED_G9,
+[; ;nullifyBadge.h: 140: LED_R0,
+[; ;nullifyBadge.h: 141: LED_G10,
+[; ;nullifyBadge.h: 142: LED_G11,
+[; ;nullifyBadge.h: 143: LED_G12,
+[; ;nullifyBadge.h: 144: LED_G13,
+[; ;nullifyBadge.h: 145: LED_G14,
+[; ;nullifyBadge.h: 146: LED_G15
+[; ;nullifyBadge.h: 147: };
+[; ;nullifyBadge.h: 158: struct t_nullifyBadge {
+[; ;nullifyBadge.h: 159: struct t_nullifyDisplay_l2 display;
+[; ;nullifyBadge.h: 160: u8 registeredHw;
+[; ;nullifyBadge.h: 161: };
+[; ;nullifyBadge.h: 164: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 173: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 176: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 179: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 182: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 185: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 188: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
+[; ;nullifyBadge.h: 191: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 194: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 197: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 200: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 203: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 211: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 214: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 217: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 220: void nullifyBadge_userLedsSetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 223: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 226: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 229: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 232: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 240: u8 nullifyBadge_buttonsGet();
+[; ;nullifyBadge.h: 243: u8 nullifyBadge_buttonAGet();
+[; ;nullifyBadge.h: 246: u8 nullifyBadge_buttonBGet();
+[; ;nullifyBadge.h: 249: u8 nullifyBadge_buttonXGet();
+[; ;nullifyBadge.h: 252: u8 nullifyBadge_buttonYGet();
+[; ;nullifyBadge.h: 260: u8 nullifyBadge_irGet();
+[; ;nullifyBadge.h: 273: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 276: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 279: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 282: void nullifyBadge_irTxSet();
+[; ;nullifyBadge.h: 285: void nullifyBadge_irTxClr();
+[; ;nullifyBadge.h: 293: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 296: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 299: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 302: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
+[; ;nullifyBadge.h: 305: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
+[; ;nullifyBadge.h: 308: u8 nullifyBadge_eepromRead8bit(u16 addr);
+[; ;nullifyBadge.h: 311: u16 nullifyBadge_eepromRead16bit(u16 addr);
 [; ;cooperative_scheduler.h: 69: struct t_schedulerTask {
 [; ;cooperative_scheduler.h: 70: u16 systemTickLastExecuted;
 [; ;cooperative_scheduler.h: 71: void *taskData;
@@ -8529,427 +8532,421 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;flashy_task.h: 20: FLASHY_STATE_LED_SHOT,
 [; ;flashy_task.h: 21: FLASHY_STATE_SPARKLE,
 [; ;flashy_task.h: 22: FLASHY_STATE_CIRCLE,
-[; ;flashy_task.h: 23: };
-[; ;flashy_task.h: 25: enum t_flashy_display_states {
-[; ;flashy_task.h: 26: FLASHY_STATE_DISPLAY,
-[; ;flashy_task.h: 27: FLASHY_DEFAULT_STATE_DISPLAY,
-[; ;flashy_task.h: 28: FLASHY_STATE_DISPLAY_BLASTER,
-[; ;flashy_task.h: 29: FLASHY_STATE_DISPLAY_SHOT,
-[; ;flashy_task.h: 30: FLASHY_STATE_DISPLAY_OFF,
-[; ;flashy_task.h: 31: FLASHY_STATE_DISPLAY_SECRET_TEST,
-[; ;flashy_task.h: 32: };
-[; ;flashy_task.h: 34: enum t_flashy_blaster_states {
-[; ;flashy_task.h: 35: FLASHY_BLASTER_SHOOTING_STATE,
-[; ;flashy_task.h: 36: FLASHY_BLASTER_IDLE_STATE,
-[; ;flashy_task.h: 37: };
-[; ;flashy_task.h: 40: struct t_flashy_taskData {
-[; ;flashy_task.h: 42: struct t_nullifyBadge *badge;
-[; ;flashy_task.h: 45: u16 delayTickCount;
-[; ;flashy_task.h: 46: enum t_flashy_led_states led_state;
-[; ;flashy_task.h: 48: u16 displayTickCount;
-[; ;flashy_task.h: 49: enum t_flashy_display_states display_state;
-[; ;flashy_task.h: 51: u16 blasterTickCount;
-[; ;flashy_task.h: 52: enum t_flashy_blaster_states blaster_state;
-[; ;flashy_task.h: 54: u16 holdCountA;
-[; ;flashy_task.h: 55: u16 holdCountB;
-[; ;flashy_task.h: 56: u16 holdCountX;
-[; ;flashy_task.h: 57: u16 holdCountY;
-[; ;flashy_task.h: 58: u16 holdCountXY;
-[; ;flashy_task.h: 59: u16 holdCountAY;
-[; ;flashy_task.h: 60: u16 holdCountAX;
-[; ;flashy_task.h: 61: u16 holdCountBX;
-[; ;flashy_task.h: 62: u16 holdCountBY;
-[; ;flashy_task.h: 63: u16 noholdCount;
-[; ;flashy_task.h: 64: };
-[; ;flashy_task.h: 66: void flashy_Init(void *taskData);
-[; ;flashy_task.h: 67: void flashy_Main (void *taskData);
-[; ;flashy_task.h: 68: void flashy_Exit(void *taskData);
+[; ;flashy_task.h: 23: FLASHY_STATE_LED_ALT,
+[; ;flashy_task.h: 24: };
+[; ;flashy_task.h: 26: enum t_flashy_display_states {
+[; ;flashy_task.h: 27: FLASHY_STATE_DISPLAY,
+[; ;flashy_task.h: 28: FLASHY_DEFAULT_STATE_DISPLAY,
+[; ;flashy_task.h: 29: FLASHY_STATE_DISPLAY_BLASTER,
+[; ;flashy_task.h: 30: FLASHY_STATE_DISPLAY_SHOT,
+[; ;flashy_task.h: 31: FLASHY_STATE_DISPLAY_OFF,
+[; ;flashy_task.h: 32: FLASHY_STATE_DISPLAY_SECRET_TEST,
+[; ;flashy_task.h: 33: };
+[; ;flashy_task.h: 35: enum t_flashy_blaster_states {
+[; ;flashy_task.h: 36: FLASHY_BLASTER_SHOOTING_STATE,
+[; ;flashy_task.h: 37: FLASHY_BLASTER_IDLE_STATE,
+[; ;flashy_task.h: 38: };
+[; ;flashy_task.h: 41: struct t_flashy_taskData {
+[; ;flashy_task.h: 43: struct t_nullifyBadge *badge;
+[; ;flashy_task.h: 46: u16 delayTickCount;
+[; ;flashy_task.h: 47: enum t_flashy_led_states led_state;
+[; ;flashy_task.h: 49: u16 displayTickCount;
+[; ;flashy_task.h: 50: enum t_flashy_display_states display_state;
+[; ;flashy_task.h: 52: u16 blasterTickCount;
+[; ;flashy_task.h: 53: enum t_flashy_blaster_states blaster_state;
+[; ;flashy_task.h: 55: u16 holdCountA;
+[; ;flashy_task.h: 56: u16 holdCountB;
+[; ;flashy_task.h: 57: u16 holdCountX;
+[; ;flashy_task.h: 58: u16 holdCountY;
+[; ;flashy_task.h: 59: u16 holdCountXY;
+[; ;flashy_task.h: 60: u16 holdCountAY;
+[; ;flashy_task.h: 61: u16 holdCountAX;
+[; ;flashy_task.h: 62: u16 holdCountBX;
+[; ;flashy_task.h: 63: u16 holdCountBY;
+[; ;flashy_task.h: 64: u16 noholdCount;
+[; ;flashy_task.h: 65: };
+[; ;flashy_task.h: 67: void flashy_Init(void *taskData);
+[; ;flashy_task.h: 68: void flashy_Main (void *taskData);
+[; ;flashy_task.h: 69: void flashy_Exit(void *taskData);
 "18 flashy_task.c
 [v _flashy_leds_idx `ui ~T0 @X0 1 e ]
 [; ;flashy_task.c: 18: u16 flashy_leds_idx;
-"20
-[v _flashy_sparkle_rate `ui ~T0 @X0 1 e ]
-[; ;flashy_task.c: 20: u16 flashy_sparkle_rate;
+"19
+[v _flashy_leds_state_track `ui ~T0 @X0 1 e ]
+[; ;flashy_task.c: 19: u16 flashy_leds_state_track;
 "21
+[v _flashy_sparkle_rate `ui ~T0 @X0 1 e ]
+[; ;flashy_task.c: 21: u16 flashy_sparkle_rate;
+"22
 [v _flashy_scroll_rate `ui ~T0 @X0 1 e ]
-[; ;flashy_task.c: 21: u16 flashy_scroll_rate;
-"23
+[; ;flashy_task.c: 22: u16 flashy_scroll_rate;
+"24
 [v _FLASHY_TEXT `*Cuc ~T0 @X0 1 e ]
 [i _FLASHY_TEXT
 :s 1C
 ]
-[; ;flashy_task.c: 23: const char *FLASHY_TEXT = "NULL";
-"24
+[; ;flashy_task.c: 24: const char *FLASHY_TEXT = "NULL";
+"25
 [v _FLASHY_TEXT_SECRET_TEST `*Cuc ~T0 @X0 1 e ]
 [i _FLASHY_TEXT_SECRET_TEST
 :s 2C
 ]
-[; ;flashy_task.c: 24: const char *FLASHY_TEXT_SECRET_TEST = "\x05\x07\x07\x08--  --\x09\x07\x07\x06 \x0B ";
-"25
+[; ;flashy_task.c: 25: const char *FLASHY_TEXT_SECRET_TEST = "\x05\x07\x07\x08--  --\x09\x07\x07\x06 \x0B ";
+"26
 [v _deaths `ui ~T0 @X0 1 e ]
 [i _deaths
 -> -> 0 `i `ui
 ]
-[; ;flashy_task.c: 25: u16 deaths = 0;
-"28
+[; ;flashy_task.c: 26: u16 deaths = 0;
+"29
 [v _flashy_option `*uc ~T0 @X0 -> 0 `x e ]
 [i _flashy_option
 :U ..
-"29
--> :s 3C `*uc
 "30
--> :s 4C `*uc
+-> :s 3C `*uc
 "31
+-> :s 4C `*uc
+"32
 -> :s 5C `*uc
 "33
 -> :s 6C `*uc
+"34
+-> :s 7C `*uc
+"35
+-> :s 8C `*uc
+"36
+-> :s 9C `*uc
+"37
+-> :s 10C `*uc
+"38
+-> :s 11C `*uc
+"40
+-> :s 12C `*uc
 ..
 ]
-[; ;flashy_task.c: 28: char *flashy_option[] = {
-[; ;flashy_task.c: 29: "NULL",
-[; ;flashy_task.c: 30: "NULLIFY ",
-[; ;flashy_task.c: 31: "DEFCON ",
-[; ;flashy_task.c: 32: "HAX  "
-[; ;flashy_task.c: 33: };
-"34
+[; ;flashy_task.c: 29: char *flashy_option[] = {
+[; ;flashy_task.c: 30: "NULL",
+[; ;flashy_task.c: 31: "NULLIFY ",
+[; ;flashy_task.c: 32: "DEFCON ",
+[; ;flashy_task.c: 33: "HAX  ",
+[; ;flashy_task.c: 34: "hack the PLANET   ",
+[; ;flashy_task.c: 35: "will HACK for A/C   ",
+[; ;flashy_task.c: 36: "HTTP 418 I'm a teapot      ",
+[; ;flashy_task.c: 37: "I am a badge, and that's it      ",
+[; ;flashy_task.c: 38: "all your base are belong to us     ",
+[; ;flashy_task.c: 39: "Nothing to see here  move along...    "
+[; ;flashy_task.c: 40: };
+"42
 [v _flashy_option_idx `ui ~T0 @X0 1 e ]
-[; ;flashy_task.c: 34: u16 flashy_option_idx;
-"35
+[; ;flashy_task.c: 42: u16 flashy_option_idx;
+"43
 [v _flashy_option_size `ui ~T0 @X0 1 e ]
-[; ;flashy_task.c: 35: u16 flashy_option_size;
-"38
+[; ;flashy_task.c: 43: u16 flashy_option_size;
+"46
 [v _flashy_Init `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;flashy_task.c: 38: void flashy_Init(void *taskData) {
+[; ;flashy_task.c: 46: void flashy_Init(void *taskData) {
 [e :U _flashy_Init ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"39
+"47
 [v _data `*S962 ~T0 @X0 1 a ]
-[; ;flashy_task.c: 39: struct t_flashy_taskData *data = (struct t_flashy_taskData *) taskData;
+[; ;flashy_task.c: 47: struct t_flashy_taskData *data = (struct t_flashy_taskData *) taskData;
 [e = _data -> _taskData `*S962 ]
-[; ;flashy_task.c: 42: nullifyBadge_userLedsRegister(data->badge);
-"42
+[; ;flashy_task.c: 50: nullifyBadge_userLedsRegister(data->badge);
+"50
 [e ( _nullifyBadge_userLedsRegister (1 . *U _data 0 ]
-[; ;flashy_task.c: 43: nullifyBadge_userLedsClr(data->badge);
-"43
-[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;flashy_task.c: 44: nullifyBadge_segDisplayRegister(data->badge);
-"44
-[e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
-[; ;flashy_task.c: 45: nullifyBadge_segDisplayErase(data->badge);
-"45
-[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;flashy_task.c: 51: data->delayTickCount = 35;
+[; ;flashy_task.c: 51: nullifyBadge_userLedsClr(data->badge);
 "51
-[e = . *U _data 1 -> -> 35 `i `ui ]
-[; ;flashy_task.c: 52: data->displayTickCount = 0;
+[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
+[; ;flashy_task.c: 52: nullifyBadge_segDisplayRegister(data->badge);
 "52
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 55: data->holdCountA = 0;
-"55
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 56: data->holdCountB = 0;
-"56
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 57: data->holdCountX = 0;
-"57
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 58: data->holdCountY = 0;
-"58
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 59: data->holdCountXY = 0;
+[e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
+[; ;flashy_task.c: 53: nullifyBadge_segDisplayErase(data->badge);
+"53
+[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
+[; ;flashy_task.c: 59: data->delayTickCount = 35;
 "59
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 60: data->holdCountAY = 0;
+[e = . *U _data 1 -> -> 35 `i `ui ]
+[; ;flashy_task.c: 60: data->displayTickCount = 0;
 "60
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 61: data->holdCountAX = 0;
-"61
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 62: data->noholdCount = 0;
-"62
-[e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 64: flashy_leds_idx = 0;
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 63: data->holdCountA = 0;
+"63
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 64: data->holdCountB = 0;
 "64
-[e = _flashy_leds_idx -> -> 0 `i `ui ]
-[; ;flashy_task.c: 65: data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 65: data->holdCountX = 0;
 "65
-[e = . *U _data 2 . `E8298 0 ]
-[; ;flashy_task.c: 66: flashy_option_idx = 0;
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 66: data->holdCountY = 0;
 "66
-[e = _flashy_option_idx -> -> 0 `i `ui ]
-[; ;flashy_task.c: 68: flashy_option_size = sizeof(flashy_option)/sizeof(flashy_option[0]);
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 67: data->holdCountXY = 0;
+"67
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 68: data->holdCountAY = 0;
 "68
-[e = _flashy_option_size / -> # _flashy_option `ui -> # *U + &U _flashy_option * -> -> -> 0 `i `ui `ux -> -> # *U &U _flashy_option `ui `ux `ui ]
-[; ;flashy_task.c: 70: flashy_sparkle_rate =50;
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 69: data->holdCountAX = 0;
+"69
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 70: data->noholdCount = 0;
 "70
-[e = _flashy_sparkle_rate -> -> 50 `i `ui ]
-[; ;flashy_task.c: 71: flashy_scroll_rate=50;
-"71
-[e = _flashy_scroll_rate -> -> 50 `i `ui ]
-[; ;flashy_task.c: 73: }
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 72: flashy_leds_idx = 0;
+"72
+[e = _flashy_leds_idx -> -> 0 `i `ui ]
+[; ;flashy_task.c: 73: data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
 "73
+[e = . *U _data 2 . `E8300 0 ]
+[; ;flashy_task.c: 74: flashy_option_idx = 0;
+"74
+[e = _flashy_option_idx -> -> 0 `i `ui ]
+[; ;flashy_task.c: 76: flashy_option_size = sizeof(flashy_option)/sizeof(flashy_option[0]);
+"76
+[e = _flashy_option_size / -> # _flashy_option `ui -> # *U + &U _flashy_option * -> -> -> 0 `i `ui `ux -> -> # *U &U _flashy_option `ui `ux `ui ]
+[; ;flashy_task.c: 78: flashy_sparkle_rate =50;
+"78
+[e = _flashy_sparkle_rate -> -> 50 `i `ui ]
+[; ;flashy_task.c: 79: flashy_scroll_rate=50;
+"79
+[e = _flashy_scroll_rate -> -> 50 `i `ui ]
+[; ;flashy_task.c: 80: flashy_leds_state_track =0;
+"80
+[e = _flashy_leds_state_track -> -> 0 `i `ui ]
+[; ;flashy_task.c: 82: }
+"82
 [e :UE 963 ]
 }
-"76
+"85
 [v _flashy_display_option `(v ~T0 @X0 1 ef1`*S962 ]
 {
-[; ;flashy_task.c: 76: void flashy_display_option(struct t_flashy_taskData *data){
+[; ;flashy_task.c: 85: void flashy_display_option(struct t_flashy_taskData *data){
 [e :U _flashy_display_option ]
 [v _data `*S962 ~T0 @X0 1 r1 ]
 [f ]
-[; ;flashy_task.c: 77: if (flashy_option_idx == 0){
-"77
+[; ;flashy_task.c: 86: if (flashy_option_idx == 0){
+"86
 [e $ ! == _flashy_option_idx -> -> 0 `i `ui 965  ]
 {
-[; ;flashy_task.c: 78: nullifyBadge_segDisplayPutStr(data->badge, flashy_option[flashy_option_idx]);
-"78
-[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 *U + &U _flashy_option * -> _flashy_option_idx `ux -> -> # *U &U _flashy_option `ui `ux ]
-[; ;flashy_task.c: 79: nullifyBadge_segDisplayForceUpdate(data->badge);
-"79
-[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
-"80
-}
-[; ;flashy_task.c: 80: }
-[e $U 966  ]
-"81
-[e :U 965 ]
-[; ;flashy_task.c: 81: else {
-{
-[; ;flashy_task.c: 82: if (data->display_state==FLASHY_STATE_DISPLAY ){
-"82
-[e $ ! == -> . *U _data 4 `i -> . `E8303 0 `i 967  ]
-{
-[; ;flashy_task.c: 84: marquee_speedy(flashy_option[flashy_option_idx], data->noholdCount, flashy_scroll_rate);
-"84
-[e ( _marquee_speedy (3 , , *U + &U _flashy_option * -> _flashy_option_idx `ux -> -> # *U &U _flashy_option `ui `ux . *U _data 16 _flashy_scroll_rate ]
-"85
-}
-[; ;flashy_task.c: 85: }
-[e $U 968  ]
-"86
-[e :U 967 ]
-[; ;flashy_task.c: 86: else{
-{
-[; ;flashy_task.c: 87: marquee(flashy_option[flashy_option_idx], data->noholdCount);
+[; ;flashy_task.c: 87: nullifyBadge_segDisplayPutStr(data->badge, flashy_option[flashy_option_idx]);
 "87
-[e ( _marquee (2 , *U + &U _flashy_option * -> _flashy_option_idx `ux -> -> # *U &U _flashy_option `ui `ux . *U _data 16 ]
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 *U + &U _flashy_option * -> _flashy_option_idx `ux -> -> # *U &U _flashy_option `ui `ux ]
+[; ;flashy_task.c: 88: nullifyBadge_segDisplayForceUpdate(data->badge);
 "88
-}
-[e :U 968 ]
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
 "89
 }
-[e :U 966 ]
-[; ;flashy_task.c: 88: }
 [; ;flashy_task.c: 89: }
-[; ;flashy_task.c: 90: }
+[e $U 966  ]
 "90
+[e :U 965 ]
+[; ;flashy_task.c: 90: else {
+{
+[; ;flashy_task.c: 91: if (data->display_state==FLASHY_STATE_DISPLAY ){
+"91
+[e $ ! == -> . *U _data 4 `i -> . `E8306 0 `i 967  ]
+{
+[; ;flashy_task.c: 93: marquee_speedy(flashy_option[flashy_option_idx], data->noholdCount, flashy_scroll_rate);
+"93
+[e ( _marquee_speedy (3 , , *U + &U _flashy_option * -> _flashy_option_idx `ux -> -> # *U &U _flashy_option `ui `ux . *U _data 16 _flashy_scroll_rate ]
+"94
+}
+[; ;flashy_task.c: 94: }
+[e $U 968  ]
+"95
+[e :U 967 ]
+[; ;flashy_task.c: 95: else{
+{
+[; ;flashy_task.c: 96: marquee(flashy_option[flashy_option_idx], data->noholdCount);
+"96
+[e ( _marquee (2 , *U + &U _flashy_option * -> _flashy_option_idx `ux -> -> # *U &U _flashy_option `ui `ux . *U _data 16 ]
+"97
+}
+[e :U 968 ]
+"98
+}
+[e :U 966 ]
+[; ;flashy_task.c: 97: }
+[; ;flashy_task.c: 98: }
+[; ;flashy_task.c: 99: }
+"99
 [e :UE 964 ]
 }
-"93
+"102
 [v _flashy_Main `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;flashy_task.c: 93: void flashy_Main (void *taskData) {
+[; ;flashy_task.c: 102: void flashy_Main (void *taskData) {
 [e :U _flashy_Main ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"94
+"103
 [v _data `*S962 ~T0 @X0 1 a ]
-[; ;flashy_task.c: 94: struct t_flashy_taskData *data = (struct t_flashy_taskData *) taskData;
+[; ;flashy_task.c: 103: struct t_flashy_taskData *data = (struct t_flashy_taskData *) taskData;
 [e = _data -> _taskData `*S962 ]
-"95
+"104
 [v _buttonPressed `ui ~T0 @X0 1 a ]
-"96
+"105
 [v _hit_counter `uc ~T0 @X0 -> 6 `i a ]
-[; ;flashy_task.c: 95: u16 buttonPressed;
-[; ;flashy_task.c: 96: char hit_counter[6];
-[; ;flashy_task.c: 98: if ( currentTask != FLASHY_TASK ){
-"98
+[; ;flashy_task.c: 104: u16 buttonPressed;
+[; ;flashy_task.c: 105: char hit_counter[6];
+[; ;flashy_task.c: 107: if ( currentTask != FLASHY_TASK ){
+"107
 [e $ ! != _currentTask -> . `E8139 2 `ui 970  ]
 {
-[; ;flashy_task.c: 99: data->holdCountA = 1;
-"99
+[; ;flashy_task.c: 108: data->holdCountA = 1;
+"108
 [e = . *U _data 7 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 100: data->holdCountB = 1;
-"100
+[; ;flashy_task.c: 109: data->holdCountB = 1;
+"109
 [e = . *U _data 8 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 101: data->holdCountX = 1;
-"101
+[; ;flashy_task.c: 110: data->holdCountX = 1;
+"110
 [e = . *U _data 9 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 102: data->holdCountY = 1;
-"102
+[; ;flashy_task.c: 111: data->holdCountY = 1;
+"111
 [e = . *U _data 10 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 103: data->holdCountXY = 1;
-"103
+[; ;flashy_task.c: 112: data->holdCountXY = 1;
+"112
 [e = . *U _data 11 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 104: data->holdCountAY = 1;
-"104
+[; ;flashy_task.c: 113: data->holdCountAY = 1;
+"113
 [e = . *U _data 12 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 105: data->holdCountAX = 1;
-"105
+[; ;flashy_task.c: 114: data->holdCountAX = 1;
+"114
 [e = . *U _data 13 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 106: return;
-"106
+[; ;flashy_task.c: 115: return;
+"115
 [e $UE 969  ]
-"107
+"116
 }
 [e :U 970 ]
-[; ;flashy_task.c: 107: }
-[; ;flashy_task.c: 110: switch (secret_value){
-"110
+[; ;flashy_task.c: 116: }
+[; ;flashy_task.c: 119: switch (secret_value){
+"119
 [e $U 972  ]
 {
-[; ;flashy_task.c: 111: case SECRET_VALUE_INIT:
-"111
-[e :U 973 ]
-[; ;flashy_task.c: 112: break;
-"112
-[e $U 971  ]
-[; ;flashy_task.c: 113: case SECRET_VALUE_TEST:
-"113
-[e :U 974 ]
-[; ;flashy_task.c: 114: secret_value = SECRET_VALUE_INIT;
-"114
-[e = _secret_value -> . `E8161 0 `ui ]
-[; ;flashy_task.c: 115: data->displayTickCount = 0;
-"115
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 116: data->display_state = FLASHY_STATE_DISPLAY_SECRET_TEST;
-"116
-[e = . *U _data 4 . `E8303 5 ]
-[; ;flashy_task.c: 118: data->holdCountA = 1;
-"118
-[e = . *U _data 7 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 119: data->holdCountB = 1;
-"119
-[e = . *U _data 8 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 120: data->holdCountX = 1;
+[; ;flashy_task.c: 120: case SECRET_VALUE_INIT:
 "120
-[e = . *U _data 9 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 121: data->holdCountY = 1;
+[e :U 973 ]
+[; ;flashy_task.c: 121: break;
 "121
-[e = . *U _data 10 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 122: data->holdCountXY = 1;
+[e $U 971  ]
+[; ;flashy_task.c: 122: case SECRET_VALUE_TEST:
 "122
-[e = . *U _data 11 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 123: data->holdCountAY = 1;
+[e :U 974 ]
+[; ;flashy_task.c: 123: secret_value = SECRET_VALUE_INIT;
 "123
-[e = . *U _data 12 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 124: data->holdCountAX = 1;
+[e = _secret_value -> . `E8163 0 `ui ]
+[; ;flashy_task.c: 124: data->displayTickCount = 0;
 "124
-[e = . *U _data 13 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 125: data->noholdCount = 1;
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 125: data->display_state = FLASHY_STATE_DISPLAY_SECRET_TEST;
 "125
-[e = . *U _data 16 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 126: return;
-"126
-[e $UE 969  ]
-[; ;flashy_task.c: 127: break;
+[e = . *U _data 4 . `E8306 5 ]
+[; ;flashy_task.c: 127: data->holdCountA = 1;
 "127
-[e $U 971  ]
+[e = . *U _data 7 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 128: data->holdCountB = 1;
 "128
-}
-[; ;flashy_task.c: 128: }
-[e $U 971  ]
-"110
-[e :U 972 ]
-[e [\ _secret_value , $ -> . `E8161 0 `ui 973
- , $ -> . `E8161 1 `ui 974
- 971 ]
-"128
-[e :U 971 ]
-[; ;flashy_task.c: 131: switch (data->led_state){
+[e = . *U _data 8 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 129: data->holdCountX = 1;
+"129
+[e = . *U _data 9 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 130: data->holdCountY = 1;
+"130
+[e = . *U _data 10 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 131: data->holdCountXY = 1;
 "131
-[e $U 976  ]
-{
-[; ;flashy_task.c: 132: case FLASHY_STATE_LED_ROUNDABOUT:
+[e = . *U _data 11 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 132: data->holdCountAY = 1;
 "132
-[e :U 977 ]
-[; ;flashy_task.c: 133: if (data->delayTickCount == 0){
+[e = . *U _data 12 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 133: data->holdCountAX = 1;
 "133
-[e $ ! == . *U _data 1 -> -> 0 `i `ui 978  ]
-{
-[; ;flashy_task.c: 134: led_roundabout(flashy_leds_idx);
+[e = . *U _data 13 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 134: data->noholdCount = 1;
 "134
-[e ( _led_roundabout (1 _flashy_leds_idx ]
-[; ;flashy_task.c: 135: flashy_leds_idx += 1;
+[e = . *U _data 16 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 135: return;
 "135
-[e =+ _flashy_leds_idx -> -> 1 `i `ui ]
-[; ;flashy_task.c: 136: data->delayTickCount = 35;
+[e $UE 969  ]
+[; ;flashy_task.c: 136: break;
 "136
-[e = . *U _data 1 -> -> 35 `i `ui ]
+[e $U 971  ]
 "137
 }
 [; ;flashy_task.c: 137: }
-[e $U 979  ]
-"138
-[e :U 978 ]
-[; ;flashy_task.c: 138: else {
-{
-[; ;flashy_task.c: 139: data->delayTickCount -= 1;
-"139
-[e =- . *U _data 1 -> -> 1 `i `ui ]
+[e $U 971  ]
+"119
+[e :U 972 ]
+[e [\ _secret_value , $ -> . `E8163 0 `ui 973
+ , $ -> . `E8163 1 `ui 974
+ 971 ]
+"137
+[e :U 971 ]
+[; ;flashy_task.c: 140: switch (data->led_state){
 "140
+[e $U 976  ]
+{
+[; ;flashy_task.c: 141: case FLASHY_STATE_LED_ROUNDABOUT:
+"141
+[e :U 977 ]
+[; ;flashy_task.c: 142: if (data->delayTickCount == 0){
+"142
+[e $ ! == . *U _data 1 -> -> 0 `i `ui 978  ]
+{
+[; ;flashy_task.c: 143: led_roundabout(flashy_leds_idx);
+"143
+[e ( _led_roundabout (1 _flashy_leds_idx ]
+[; ;flashy_task.c: 144: flashy_leds_idx += 1;
+"144
+[e =+ _flashy_leds_idx -> -> 1 `i `ui ]
+[; ;flashy_task.c: 145: data->delayTickCount = 35;
+"145
+[e = . *U _data 1 -> -> 35 `i `ui ]
+"146
+}
+[; ;flashy_task.c: 146: }
+[e $U 979  ]
+"147
+[e :U 978 ]
+[; ;flashy_task.c: 147: else {
+{
+[; ;flashy_task.c: 148: data->delayTickCount -= 1;
+"148
+[e =- . *U _data 1 -> -> 1 `i `ui ]
+"149
 }
 [e :U 979 ]
-[; ;flashy_task.c: 140: }
-[; ;flashy_task.c: 141: break;
-"141
+[; ;flashy_task.c: 149: }
+[; ;flashy_task.c: 150: break;
+"150
 [e $U 975  ]
-[; ;flashy_task.c: 142: case FLASHY_STATE_LED_SHOT:
-"142
+[; ;flashy_task.c: 151: case FLASHY_STATE_LED_SHOT:
+"151
 [e :U 980 ]
-[; ;flashy_task.c: 143: if (data->delayTickCount == 0){
-"143
+[; ;flashy_task.c: 152: if (data->delayTickCount == 0){
+"152
 [e $ ! == . *U _data 1 -> -> 0 `i `ui 981  ]
 {
-[; ;flashy_task.c: 144: led_curtain(flashy_leds_idx);
-"144
-[e ( _led_curtain (1 _flashy_leds_idx ]
-[; ;flashy_task.c: 145: flashy_leds_idx += 1;
-"145
-[e =+ _flashy_leds_idx -> -> 1 `i `ui ]
-[; ;flashy_task.c: 146: data->delayTickCount = 5;
-"146
-[e = . *U _data 1 -> -> 5 `i `ui ]
-"147
-}
-[; ;flashy_task.c: 147: }
-[e $U 982  ]
-"148
-[e :U 981 ]
-[; ;flashy_task.c: 148: else {
-{
-[; ;flashy_task.c: 149: data->delayTickCount -= 1;
-"149
-[e =- . *U _data 1 -> -> 1 `i `ui ]
-"150
-}
-[e :U 982 ]
-[; ;flashy_task.c: 150: }
-[; ;flashy_task.c: 151: break;
-"151
-[e $U 975  ]
-[; ;flashy_task.c: 152: case FLASHY_STATE_SPARKLE:
-"152
-[e :U 983 ]
-[; ;flashy_task.c: 153: if (data->delayTickCount < 1){
+[; ;flashy_task.c: 153: led_curtain(flashy_leds_idx);
 "153
-[e $ ! < . *U _data 1 -> -> 1 `i `ui 984  ]
-{
-[; ;flashy_task.c: 154: led_rand();
+[e ( _led_curtain (1 _flashy_leds_idx ]
+[; ;flashy_task.c: 154: flashy_leds_idx += 1;
 "154
-[e ( _led_rand ..  ]
-[; ;flashy_task.c: 155: data->delayTickCount = flashy_sparkle_rate;
+[e =+ _flashy_leds_idx -> -> 1 `i `ui ]
+[; ;flashy_task.c: 155: data->delayTickCount = 5;
 "155
-[e = . *U _data 1 _flashy_sparkle_rate ]
+[e = . *U _data 1 -> -> 5 `i `ui ]
 "156
 }
 [; ;flashy_task.c: 156: }
-[e $U 985  ]
+[e $U 982  ]
 "157
-[e :U 984 ]
+[e :U 981 ]
 [; ;flashy_task.c: 157: else {
 {
 [; ;flashy_task.c: 158: data->delayTickCount -= 1;
@@ -8957,447 +8954,456 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e =- . *U _data 1 -> -> 1 `i `ui ]
 "159
 }
-[e :U 985 ]
+[e :U 982 ]
 [; ;flashy_task.c: 159: }
-[; ;flashy_task.c: 160: case FLASHY_STATE_CIRCLE:
+[; ;flashy_task.c: 160: break;
 "160
-[e :U 986 ]
-[; ;flashy_task.c: 161: if (data->delayTickCount ==0 ){
+[e $U 975  ]
+[; ;flashy_task.c: 161: case FLASHY_STATE_SPARKLE:
 "161
+[e :U 983 ]
+[; ;flashy_task.c: 162: if (data->delayTickCount < 1){
+"162
+[e $ ! < . *U _data 1 -> -> 1 `i `ui 984  ]
+{
+[; ;flashy_task.c: 163: led_rand();
+"163
+[e ( _led_rand ..  ]
+[; ;flashy_task.c: 164: data->delayTickCount = flashy_sparkle_rate;
+"164
+[e = . *U _data 1 _flashy_sparkle_rate ]
+"165
+}
+[; ;flashy_task.c: 165: }
+[e $U 985  ]
+"166
+[e :U 984 ]
+[; ;flashy_task.c: 166: else {
+{
+[; ;flashy_task.c: 167: data->delayTickCount -= 1;
+"167
+[e =- . *U _data 1 -> -> 1 `i `ui ]
+"168
+}
+[e :U 985 ]
+[; ;flashy_task.c: 168: }
+[; ;flashy_task.c: 169: break;
+"169
+[e $U 975  ]
+[; ;flashy_task.c: 170: case FLASHY_STATE_CIRCLE:
+"170
+[e :U 986 ]
+[; ;flashy_task.c: 171: if (data->delayTickCount ==0 ){
+"171
 [e $ ! == . *U _data 1 -> -> 0 `i `ui 987  ]
 {
-[; ;flashy_task.c: 162: if (flashy_leds_idx == 1024 ){
-"162
+[; ;flashy_task.c: 172: if (flashy_leds_idx == 1024 ){
+"172
 [e $ ! == _flashy_leds_idx -> -> 1024 `i `ui 988  ]
 {
-[; ;flashy_task.c: 163: flashy_leds_idx = flashy_leds_idx << 1;
-"163
+[; ;flashy_task.c: 173: flashy_leds_idx = flashy_leds_idx << 1;
+"173
 [e = _flashy_leds_idx << _flashy_leds_idx -> 1 `i ]
-"164
+"174
 }
 [e :U 988 ]
-[; ;flashy_task.c: 164: }
-[; ;flashy_task.c: 165: led_circle(flashy_leds_idx);
-"165
+[; ;flashy_task.c: 174: }
+[; ;flashy_task.c: 175: led_circle(flashy_leds_idx);
+"175
 [e ( _led_circle (1 _flashy_leds_idx ]
-[; ;flashy_task.c: 166: if (flashy_leds_idx < 1 ){
-"166
+[; ;flashy_task.c: 176: if (flashy_leds_idx < 1 ){
+"176
 [e $ ! < _flashy_leds_idx -> -> 1 `i `ui 989  ]
 {
-[; ;flashy_task.c: 167: flashy_leds_idx = 1;
-"167
+[; ;flashy_task.c: 177: flashy_leds_idx = 1;
+"177
 [e = _flashy_leds_idx -> -> 1 `i `ui ]
-[; ;flashy_task.c: 168: break;
-"168
+[; ;flashy_task.c: 178: break;
+"178
 [e $U 975  ]
-"169
+"179
 }
 [e :U 989 ]
-[; ;flashy_task.c: 169: }
-[; ;flashy_task.c: 170: flashy_leds_idx = flashy_leds_idx << 1;
-"170
+[; ;flashy_task.c: 179: }
+[; ;flashy_task.c: 180: flashy_leds_idx = flashy_leds_idx << 1;
+"180
 [e = _flashy_leds_idx << _flashy_leds_idx -> 1 `i ]
-[; ;flashy_task.c: 172: data->delayTickCount = flashy_sparkle_rate;
-"172
+[; ;flashy_task.c: 182: data->delayTickCount = flashy_sparkle_rate;
+"182
 [e = . *U _data 1 _flashy_sparkle_rate ]
-"173
+"183
 }
-[; ;flashy_task.c: 173: }
+[; ;flashy_task.c: 183: }
 [e $U 990  ]
-"174
+"184
 [e :U 987 ]
-[; ;flashy_task.c: 174: else {
+[; ;flashy_task.c: 184: else {
 {
-[; ;flashy_task.c: 175: data->delayTickCount -= 1;
-"175
+[; ;flashy_task.c: 185: data->delayTickCount -= 1;
+"185
 [e =- . *U _data 1 -> -> 1 `i `ui ]
-"176
+"186
 }
 [e :U 990 ]
-"177
-}
-[; ;flashy_task.c: 176: }
-[; ;flashy_task.c: 177: }
-[e $U 975  ]
-"131
-[e :U 976 ]
-[e [\ . *U _data 2 , $ . `E8298 0 977
- , $ . `E8298 1 980
- , $ . `E8298 2 983
- , $ . `E8298 3 986
- 975 ]
-"177
-[e :U 975 ]
-[; ;flashy_task.c: 180: switch (data->display_state){
-"180
-[e $U 992  ]
-{
-[; ;flashy_task.c: 181: case FLASHY_STATE_DISPLAY_BLASTER:
-"181
-[e :U 993 ]
-[; ;flashy_task.c: 182: nullifyBadge_segDisplayPutStr(data->badge, "PEW ");
-"182
-[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 -> :s 7C `*uc ]
-[; ;flashy_task.c: 183: nullifyBadge_segDisplayForceUpdate(data->badge);
-"183
-[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
-[; ;flashy_task.c: 184: data->displayTickCount += 1;
-"184
-[e =+ . *U _data 3 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 185: break;
-"185
-[e $U 991  ]
-[; ;flashy_task.c: 186: case FLASHY_STATE_DISPLAY_SHOT:
-"186
-[e :U 994 ]
-[; ;flashy_task.c: 187: sprintf((char *)hit_counter, "%4d", deaths);
+[; ;flashy_task.c: 186: }
+[; ;flashy_task.c: 187: break;
 "187
-[e ( _sprintf (1 , (. , &U _hit_counter :s 8C _deaths ]
-[; ;flashy_task.c: 189: nullifyBadge_segDisplayPutStr(data->badge, hit_counter);
+[e $U 975  ]
+[; ;flashy_task.c: 188: case FLASHY_STATE_LED_ALT:
+"188
+[e :U 991 ]
+[; ;flashy_task.c: 189: if (data->delayTickCount == 0){
 "189
-[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 &U _hit_counter ]
-[; ;flashy_task.c: 190: nullifyBadge_segDisplayForceUpdate(data->badge);
-"190
-[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
-[; ;flashy_task.c: 191: if (data->displayTickCount == 150){
-"191
-[e $ ! == . *U _data 3 -> -> 150 `i `ui 995  ]
+[e $ ! == . *U _data 1 -> -> 0 `i `ui 992  ]
 {
-[; ;flashy_task.c: 192: data->displayTickCount = 0;
+[; ;flashy_task.c: 190: let_alternate(flashy_leds_idx);
+"190
+[e ( _let_alternate (1 _flashy_leds_idx ]
+[; ;flashy_task.c: 191: flashy_leds_idx += 1;
+"191
+[e =+ _flashy_leds_idx -> -> 1 `i `ui ]
+[; ;flashy_task.c: 192: if (flashy_leds_idx > 65530){
 "192
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 193: data->display_state = 35;
+[e $ ! > -> _flashy_leds_idx `l -> 65530 `l 993  ]
+{
+[; ;flashy_task.c: 193: flashy_leds_idx=0;
 "193
-[e = . *U _data 4 -> -> 35 `i `E8303 ]
+[e = _flashy_leds_idx -> -> 0 `i `ui ]
 "194
 }
-[e :U 995 ]
+[e :U 993 ]
 [; ;flashy_task.c: 194: }
-[; ;flashy_task.c: 195: data->displayTickCount += 1;
+[; ;flashy_task.c: 195: data->delayTickCount = flashy_sparkle_rate;
 "195
-[e =+ . *U _data 3 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 196: break;
+[e = . *U _data 1 _flashy_sparkle_rate ]
 "196
-[e $U 991  ]
-[; ;flashy_task.c: 197: case FLASHY_STATE_DISPLAY_SECRET_TEST:
+}
+[; ;flashy_task.c: 196: }
+[e $U 994  ]
 "197
-[e :U 996 ]
-[; ;flashy_task.c: 198: marquee(FLASHY_TEXT_SECRET_TEST, data->displayTickCount);
+[e :U 992 ]
+[; ;flashy_task.c: 197: else {
+{
+[; ;flashy_task.c: 198: data->delayTickCount -= 1;
 "198
-[e ( _marquee (2 , -> _FLASHY_TEXT_SECRET_TEST `*uc . *U _data 3 ]
-[; ;flashy_task.c: 199: data->displayTickCount += 1;
+[e =- . *U _data 1 -> -> 1 `i `ui ]
 "199
-[e =+ . *U _data 3 -> -> 1 `i `ui ]
+}
+[e :U 994 ]
+[; ;flashy_task.c: 199: }
 [; ;flashy_task.c: 200: break;
 "200
-[e $U 991  ]
-[; ;flashy_task.c: 201: case FLASHY_STATE_DISPLAY:
+[e $U 975  ]
 "201
-[e :U 997 ]
-[; ;flashy_task.c: 203: default:
-"203
-[e :U 998 ]
-[; ;flashy_task.c: 204: flashy_display_option(data);
+}
+[; ;flashy_task.c: 201: }
+[e $U 975  ]
+"140
+[e :U 976 ]
+[e [\ . *U _data 2 , $ . `E8300 0 977
+ , $ . `E8300 1 980
+ , $ . `E8300 2 983
+ , $ . `E8300 3 986
+ , $ . `E8300 4 991
+ 975 ]
+"201
+[e :U 975 ]
+[; ;flashy_task.c: 204: switch (data->display_state){
 "204
-[e ( _flashy_display_option (1 _data ]
-[; ;flashy_task.c: 205: data->displayTickCount += 1;
+[e $U 996  ]
+{
+[; ;flashy_task.c: 205: case FLASHY_STATE_DISPLAY_BLASTER:
 "205
-[e =+ . *U _data 3 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 206: break;
+[e :U 997 ]
+[; ;flashy_task.c: 206: nullifyBadge_segDisplayPutStr(data->badge, "PEW ");
 "206
-[e $U 991  ]
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 -> :s 13C `*uc ]
+[; ;flashy_task.c: 207: nullifyBadge_segDisplayForceUpdate(data->badge);
 "207
-}
-[; ;flashy_task.c: 207: }
-[e $U 991  ]
-"180
-[e :U 992 ]
-[e [\ . *U _data 4 , $ . `E8303 2 993
- , $ . `E8303 3 994
- , $ . `E8303 5 996
- , $ . `E8303 0 997
- 998 ]
-"207
-[e :U 991 ]
-[; ;flashy_task.c: 210: buttonPressed = nullifyBadge_buttonsGet();
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
+[; ;flashy_task.c: 208: data->displayTickCount += 1;
+"208
+[e =+ . *U _data 3 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 209: break;
+"209
+[e $U 995  ]
+[; ;flashy_task.c: 210: case FLASHY_STATE_DISPLAY_SHOT:
 "210
-[e = _buttonPressed -> ( _nullifyBadge_buttonsGet ..  `ui ]
-[; ;flashy_task.c: 211: switch (buttonPressed) {
+[e :U 998 ]
+[; ;flashy_task.c: 211: sprintf((char *)hit_counter, "%4d", deaths);
 "211
-[e $U 1000  ]
-{
-[; ;flashy_task.c: 212: case 4 | 8:
-"212
-[e :U 1001 ]
-[; ;flashy_task.c: 213: if (data->holdCountXY == 0 ){
+[e ( _sprintf (1 , (. , &U _hit_counter :s 14C _deaths ]
+[; ;flashy_task.c: 213: nullifyBadge_segDisplayPutStr(data->badge, hit_counter);
 "213
-[e $ ! == . *U _data 11 -> -> 0 `i `ui 1002  ]
-{
-[; ;flashy_task.c: 215: data->display_state = FLASHY_STATE_DISPLAY;
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 &U _hit_counter ]
+[; ;flashy_task.c: 214: nullifyBadge_segDisplayForceUpdate(data->badge);
+"214
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
+[; ;flashy_task.c: 215: if (data->displayTickCount == 150){
 "215
-[e = . *U _data 4 . `E8303 0 ]
+[e $ ! == . *U _data 3 -> -> 150 `i `ui 999  ]
+{
+[; ;flashy_task.c: 216: data->displayTickCount = 0;
 "216
-}
-[e :U 1002 ]
-[; ;flashy_task.c: 216: }
-[; ;flashy_task.c: 218: data->holdCountA = 0;
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 217: data->display_state = 35;
+"217
+[e = . *U _data 4 -> -> 35 `i `E8306 ]
 "218
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 219: data->holdCountB = 0;
+}
+[e :U 999 ]
+[; ;flashy_task.c: 218: }
+[; ;flashy_task.c: 219: data->displayTickCount += 1;
 "219
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 220: data->holdCountX = 0;
+[e =+ . *U _data 3 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 220: break;
 "220
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 221: data->holdCountY = 0;
+[e $U 995  ]
+[; ;flashy_task.c: 221: case FLASHY_STATE_DISPLAY_SECRET_TEST:
 "221
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 222: data->holdCountXY += 1;
+[e :U 1000 ]
+[; ;flashy_task.c: 222: marquee(FLASHY_TEXT_SECRET_TEST, data->displayTickCount);
 "222
-[e =+ . *U _data 11 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 223: data->holdCountAY = 0;
+[e ( _marquee (2 , -> _FLASHY_TEXT_SECRET_TEST `*uc . *U _data 3 ]
+[; ;flashy_task.c: 223: data->displayTickCount += 1;
 "223
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 224: data->holdCountAX = 0;
+[e =+ . *U _data 3 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 224: break;
 "224
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 225: data->holdCountBX = 0;
+[e $U 995  ]
+[; ;flashy_task.c: 225: case FLASHY_STATE_DISPLAY:
 "225
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 226: data->holdCountBY = 0;
-"226
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 227: data->noholdCount = 0;
+[e :U 1001 ]
+[; ;flashy_task.c: 227: default:
 "227
-[e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 228: break;
+[e :U 1002 ]
+[; ;flashy_task.c: 228: flashy_display_option(data);
 "228
-[e $U 999  ]
-[; ;flashy_task.c: 229: case 1 | 8:
+[e ( _flashy_display_option (1 _data ]
+[; ;flashy_task.c: 229: data->displayTickCount += 1;
 "229
-[e :U 1003 ]
-[; ;flashy_task.c: 230: if ( data->holdCountAY == 0 ){
+[e =+ . *U _data 3 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 230: break;
 "230
-[e $ ! == . *U _data 12 -> -> 0 `i `ui 1004  ]
-{
-[; ;flashy_task.c: 231: if (flashy_sparkle_rate > 1000){
+[e $U 995  ]
 "231
-[e $ ! > _flashy_sparkle_rate -> -> 1000 `i `ui 1005  ]
-{
-[; ;flashy_task.c: 232: flashy_sparkle_rate = 1000;
-"232
-[e = _flashy_sparkle_rate -> -> 1000 `i `ui ]
-"233
 }
-[e :U 1005 ]
-[; ;flashy_task.c: 233: }
-[; ;flashy_task.c: 234: flashy_sparkle_rate += 5;
+[; ;flashy_task.c: 231: }
+[e $U 995  ]
+"204
+[e :U 996 ]
+[e [\ . *U _data 4 , $ . `E8306 2 997
+ , $ . `E8306 3 998
+ , $ . `E8306 5 1000
+ , $ . `E8306 0 1001
+ 1002 ]
+"231
+[e :U 995 ]
+[; ;flashy_task.c: 234: buttonPressed = nullifyBadge_buttonsGet();
 "234
-[e =+ _flashy_sparkle_rate -> -> 5 `i `ui ]
+[e = _buttonPressed -> ( _nullifyBadge_buttonsGet ..  `ui ]
+[; ;flashy_task.c: 235: switch (buttonPressed) {
 "235
-}
-[e :U 1004 ]
-[; ;flashy_task.c: 235: }
-[; ;flashy_task.c: 237: data->holdCountA = 0;
+[e $U 1004  ]
+{
+[; ;flashy_task.c: 236: case 4 | 8:
+"236
+[e :U 1005 ]
+[; ;flashy_task.c: 237: if (data->holdCountXY == 0 ){
 "237
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 238: data->holdCountB = 0;
-"238
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 239: data->holdCountX = 0;
+[e $ ! == . *U _data 11 -> -> 0 `i `ui 1006  ]
+{
+[; ;flashy_task.c: 239: data->display_state = FLASHY_STATE_DISPLAY;
 "239
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 240: data->holdCountY = 0;
+[e = . *U _data 4 . `E8306 0 ]
 "240
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 241: data->holdCountXY = 0;
-"241
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 242: data->holdCountAY += 1;
-"242
-[e =+ . *U _data 12 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 243: data->holdCountAX = 0;
-"243
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 244: data->holdCountBX = 0;
-"244
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 245: data->holdCountBY = 0;
-"245
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 246: data->noholdCount = 0;
-"246
-[e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 247: break;
-"247
-[e $U 999  ]
-[; ;flashy_task.c: 248: case 1 | 4:
-"248
+}
 [e :U 1006 ]
-[; ;flashy_task.c: 249: if ( data->holdCountAX == 0 ){
-"249
-[e $ ! == . *U _data 13 -> -> 0 `i `ui 1007  ]
-{
-[; ;flashy_task.c: 250: if (flashy_sparkle_rate < 5)
-"250
-[e $ ! < _flashy_sparkle_rate -> -> 5 `i `ui 1008  ]
-[; ;flashy_task.c: 251: flashy_sparkle_rate=5;
-"251
-[e = _flashy_sparkle_rate -> -> 5 `i `ui ]
-[e :U 1008 ]
-[; ;flashy_task.c: 252: flashy_sparkle_rate -= 5;
-"252
-[e =- _flashy_sparkle_rate -> -> 5 `i `ui ]
-"253
-}
-[e :U 1007 ]
-[; ;flashy_task.c: 253: }
-[; ;flashy_task.c: 255: data->holdCountA = 0;
-"255
+[; ;flashy_task.c: 240: }
+[; ;flashy_task.c: 242: data->holdCountA = 0;
+"242
 [e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 256: data->holdCountB = 0;
-"256
+[; ;flashy_task.c: 243: data->holdCountB = 0;
+"243
 [e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 257: data->holdCountX += 1;
-"257
-[e =+ . *U _data 9 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 258: data->holdCountY = 0;
-"258
+[; ;flashy_task.c: 244: data->holdCountX = 0;
+"244
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 245: data->holdCountY = 0;
+"245
 [e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 259: data->holdCountXY = 0;
-"259
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 260: data->holdCountAY = 0;
-"260
+[; ;flashy_task.c: 246: data->holdCountXY += 1;
+"246
+[e =+ . *U _data 11 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 247: data->holdCountAY = 0;
+"247
 [e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 261: data->holdCountAX += 1;
-"261
-[e =+ . *U _data 13 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 262: data->holdCountBX = 0;
-"262
+[; ;flashy_task.c: 248: data->holdCountAX = 0;
+"248
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 249: data->holdCountBX = 0;
+"249
 [e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 263: data->holdCountBY = 0;
-"263
+[; ;flashy_task.c: 250: data->holdCountBY = 0;
+"250
 [e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 264: data->noholdCount = 0;
-"264
+[; ;flashy_task.c: 251: data->noholdCount = 0;
+"251
 [e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 265: break;
-"265
-[e $U 999  ]
-[; ;flashy_task.c: 266: case 2 | 8:
-"266
+[; ;flashy_task.c: 252: break;
+"252
+[e $U 1003  ]
+[; ;flashy_task.c: 253: case 1 | 8:
+"253
+[e :U 1007 ]
+[; ;flashy_task.c: 254: if ( data->holdCountAY == 0 ){
+"254
+[e $ ! == . *U _data 12 -> -> 0 `i `ui 1008  ]
+{
+[; ;flashy_task.c: 255: if (flashy_sparkle_rate > 1000){
+"255
+[e $ ! > _flashy_sparkle_rate -> -> 1000 `i `ui 1009  ]
+{
+[; ;flashy_task.c: 256: flashy_sparkle_rate = 1000;
+"256
+[e = _flashy_sparkle_rate -> -> 1000 `i `ui ]
+"257
+}
 [e :U 1009 ]
-[; ;flashy_task.c: 267: if (data->holdCountBY == 0){
+[; ;flashy_task.c: 257: }
+[; ;flashy_task.c: 258: flashy_sparkle_rate += 5;
+"258
+[e =+ _flashy_sparkle_rate -> -> 5 `i `ui ]
+"259
+}
+[e :U 1008 ]
+[; ;flashy_task.c: 259: }
+[; ;flashy_task.c: 261: data->holdCountA = 0;
+"261
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 262: data->holdCountB = 0;
+"262
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 263: data->holdCountX = 0;
+"263
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 264: data->holdCountY = 0;
+"264
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 265: data->holdCountXY = 0;
+"265
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 266: data->holdCountAY += 1;
+"266
+[e =+ . *U _data 12 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 267: data->holdCountAX = 0;
 "267
-[e $ ! == . *U _data 15 -> -> 0 `i `ui 1010  ]
-{
-[; ;flashy_task.c: 268: if (flashy_option_idx == 0){
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 268: data->holdCountBX = 0;
 "268
-[e $ ! == _flashy_option_idx -> -> 0 `i `ui 1011  ]
-{
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 269: data->holdCountBY = 0;
+"269
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 270: data->noholdCount = 0;
 "270
-}
-[; ;flashy_task.c: 270: }
-[e $U 1012  ]
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 271: break;
 "271
-[e :U 1011 ]
-[; ;flashy_task.c: 271: else {
-{
-[; ;flashy_task.c: 272: if (flashy_scroll_rate > 150){
+[e $U 1003  ]
+[; ;flashy_task.c: 272: case 1 | 4:
 "272
-[e $ ! > _flashy_scroll_rate -> -> 150 `i `ui 1013  ]
-{
-[; ;flashy_task.c: 273: flashy_scroll_rate =150;
-"273
-[e = _flashy_scroll_rate -> -> 150 `i `ui ]
-"274
-}
-[e :U 1013 ]
-[; ;flashy_task.c: 274: }
-[; ;flashy_task.c: 275: flashy_scroll_rate +=2;
-"275
-[e =+ _flashy_scroll_rate -> -> 2 `i `ui ]
-"276
-}
-[e :U 1012 ]
-"278
-}
 [e :U 1010 ]
-[; ;flashy_task.c: 276: }
-[; ;flashy_task.c: 278: }
+[; ;flashy_task.c: 273: if ( data->holdCountAX == 0 ){
+"273
+[e $ ! == . *U _data 13 -> -> 0 `i `ui 1011  ]
+{
+[; ;flashy_task.c: 274: if (flashy_sparkle_rate < 5)
+"274
+[e $ ! < _flashy_sparkle_rate -> -> 5 `i `ui 1012  ]
+[; ;flashy_task.c: 275: flashy_sparkle_rate=5;
+"275
+[e = _flashy_sparkle_rate -> -> 5 `i `ui ]
+[e :U 1012 ]
+[; ;flashy_task.c: 276: flashy_sparkle_rate -= 5;
+"276
+[e =- _flashy_sparkle_rate -> -> 5 `i `ui ]
+"277
+}
+[e :U 1011 ]
+[; ;flashy_task.c: 277: }
 [; ;flashy_task.c: 279: data->holdCountA = 0;
 "279
 [e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 280: data->holdCountB += 1;
+[; ;flashy_task.c: 280: data->holdCountB = 0;
 "280
-[e =+ . *U _data 8 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 281: data->holdCountX = 0;
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 281: data->holdCountX += 1;
 "281
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 282: data->holdCountY += 1;
+[e =+ . *U _data 9 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 282: data->holdCountY = 0;
 "282
-[e =+ . *U _data 10 -> -> 1 `i `ui ]
+[e = . *U _data 10 -> -> 0 `i `ui ]
 [; ;flashy_task.c: 283: data->holdCountXY = 0;
 "283
 [e = . *U _data 11 -> -> 0 `i `ui ]
 [; ;flashy_task.c: 284: data->holdCountAY = 0;
 "284
 [e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 285: data->holdCountAX = 0;
+[; ;flashy_task.c: 285: data->holdCountAX += 1;
 "285
-[e = . *U _data 13 -> -> 0 `i `ui ]
+[e =+ . *U _data 13 -> -> 1 `i `ui ]
 [; ;flashy_task.c: 286: data->holdCountBX = 0;
 "286
 [e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 287: data->holdCountBY += 1;
+[; ;flashy_task.c: 287: data->holdCountBY = 0;
 "287
-[e =+ . *U _data 15 -> -> 1 `i `ui ]
+[e = . *U _data 15 -> -> 0 `i `ui ]
 [; ;flashy_task.c: 288: data->noholdCount = 0;
 "288
 [e = . *U _data 16 -> -> 0 `i `ui ]
 [; ;flashy_task.c: 289: break;
 "289
-[e $U 999  ]
-[; ;flashy_task.c: 290: case 2 | 4:
+[e $U 1003  ]
+[; ;flashy_task.c: 290: case 2 | 8:
 "290
-[e :U 1014 ]
-[; ;flashy_task.c: 291: if (data-> holdCountBX == 0){
+[e :U 1013 ]
+[; ;flashy_task.c: 291: if (data->holdCountBY == 0){
 "291
-[e $ ! == . *U _data 14 -> -> 0 `i `ui 1015  ]
+[e $ ! == . *U _data 15 -> -> 0 `i `ui 1014  ]
 {
 [; ;flashy_task.c: 292: if (flashy_option_idx == 0){
 "292
-[e $ ! == _flashy_option_idx -> -> 0 `i `ui 1016  ]
+[e $ ! == _flashy_option_idx -> -> 0 `i `ui 1015  ]
 {
 "294
 }
 [; ;flashy_task.c: 294: }
-[e $U 1017  ]
+[e $U 1016  ]
 "295
-[e :U 1016 ]
+[e :U 1015 ]
 [; ;flashy_task.c: 295: else {
 {
-[; ;flashy_task.c: 296: if (flashy_scroll_rate < 5){
+[; ;flashy_task.c: 296: if (flashy_scroll_rate > 150){
 "296
-[e $ ! < _flashy_scroll_rate -> -> 5 `i `ui 1018  ]
+[e $ ! > _flashy_scroll_rate -> -> 150 `i `ui 1017  ]
 {
-[; ;flashy_task.c: 297: flashy_scroll_rate =5;
+[; ;flashy_task.c: 297: flashy_scroll_rate =150;
 "297
-[e = _flashy_scroll_rate -> -> 5 `i `ui ]
+[e = _flashy_scroll_rate -> -> 150 `i `ui ]
 "298
 }
-[e :U 1018 ]
+[e :U 1017 ]
 [; ;flashy_task.c: 298: }
-[; ;flashy_task.c: 299: flashy_scroll_rate -=3;
+[; ;flashy_task.c: 299: flashy_scroll_rate +=2;
 "299
-[e =- _flashy_scroll_rate -> -> 3 `i `ui ]
+[e =+ _flashy_scroll_rate -> -> 2 `i `ui ]
 "300
 }
-[e :U 1017 ]
+[e :U 1016 ]
 "302
 }
-[e :U 1015 ]
+[e :U 1014 ]
 [; ;flashy_task.c: 300: }
 [; ;flashy_task.c: 302: }
 [; ;flashy_task.c: 303: data->holdCountA = 0;
@@ -9406,12 +9412,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;flashy_task.c: 304: data->holdCountB += 1;
 "304
 [e =+ . *U _data 8 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 305: data->holdCountX += 1;
+[; ;flashy_task.c: 305: data->holdCountX = 0;
 "305
-[e =+ . *U _data 9 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 306: data->holdCountY = 0;
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 306: data->holdCountY += 1;
 "306
-[e = . *U _data 10 -> -> 0 `i `ui ]
+[e =+ . *U _data 10 -> -> 1 `i `ui ]
 [; ;flashy_task.c: 307: data->holdCountXY = 0;
 "307
 [e = . *U _data 11 -> -> 0 `i `ui ]
@@ -9421,448 +9427,564 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;flashy_task.c: 309: data->holdCountAX = 0;
 "309
 [e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 310: data->holdCountBX += 1;
+[; ;flashy_task.c: 310: data->holdCountBX = 0;
 "310
-[e =+ . *U _data 14 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 311: data->holdCountBY = 0;
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 311: data->holdCountBY += 1;
 "311
-[e = . *U _data 15 -> -> 0 `i `ui ]
+[e =+ . *U _data 15 -> -> 1 `i `ui ]
 [; ;flashy_task.c: 312: data->noholdCount = 0;
 "312
 [e = . *U _data 16 -> -> 0 `i `ui ]
 [; ;flashy_task.c: 313: break;
 "313
-[e $U 999  ]
-[; ;flashy_task.c: 314: case 8:
+[e $U 1003  ]
+[; ;flashy_task.c: 314: case 2 | 4:
 "314
-[e :U 1019 ]
-[; ;flashy_task.c: 316: if (data->holdCountY == 0 && data->blasterTickCount == 0){
+[e :U 1018 ]
+[; ;flashy_task.c: 315: if (data-> holdCountBX == 0){
+"315
+[e $ ! == . *U _data 14 -> -> 0 `i `ui 1019  ]
+{
+[; ;flashy_task.c: 316: if (flashy_option_idx == 0){
 "316
-[e $ ! && == . *U _data 10 -> -> 0 `i `ui == . *U _data 5 -> -> 0 `i `ui 1020  ]
+[e $ ! == _flashy_option_idx -> -> 0 `i `ui 1020  ]
 {
-[; ;flashy_task.c: 318: nullifyBadge_userLedsSet(data->badge, 0x0);
 "318
-[e ( _nullifyBadge_userLedsSet (2 , . *U _data 0 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 320: data->displayTickCount = 0;
-"320
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 321: data->blasterTickCount = 100;
-"321
-[e = . *U _data 5 -> -> 100 `i `ui ]
-[; ;flashy_task.c: 322: data->delayTickCount = 5;
-"322
-[e = . *U _data 1 -> -> 5 `i `ui ]
-[; ;flashy_task.c: 324: data->led_state = FLASHY_STATE_LED_SHOT;
-"324
-[e = . *U _data 2 . `E8298 1 ]
-[; ;flashy_task.c: 325: data->display_state = FLASHY_STATE_DISPLAY_BLASTER;
-"325
-[e = . *U _data 4 . `E8303 2 ]
-[; ;flashy_task.c: 326: data->blaster_state = FLASHY_BLASTER_SHOOTING_STATE;
-"326
-[e = . *U _data 6 . `E8310 0 ]
-"327
 }
+[; ;flashy_task.c: 318: }
+[e $U 1021  ]
+"319
 [e :U 1020 ]
-[; ;flashy_task.c: 327: }
-[; ;flashy_task.c: 329: data->holdCountA = 0;
-"329
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 330: data->holdCountB = 0;
-"330
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 331: data->holdCountX = 0;
-"331
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 332: data->holdCountY += 1;
-"332
-[e =+ . *U _data 10 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 333: data->holdCountXY = 0;
-"333
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 334: data->holdCountAY = 0;
-"334
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 335: data->holdCountAX = 0;
-"335
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 336: data->holdCountBX = 0;
-"336
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 337: data->holdCountBY = 0;
-"337
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 338: data->noholdCount = 0;
-"338
-[e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 339: break;
-"339
-[e $U 999  ]
-[; ;flashy_task.c: 340: case 2:
-"340
-[e :U 1021 ]
-[; ;flashy_task.c: 342: if (data->holdCountB == 0){
-"342
-[e $ ! == . *U _data 8 -> -> 0 `i `ui 1022  ]
+[; ;flashy_task.c: 319: else {
 {
-[; ;flashy_task.c: 343: data->display_state = FLASHY_STATE_DISPLAY;
-"343
-[e = . *U _data 4 . `E8303 0 ]
-[; ;flashy_task.c: 344: if (flashy_option_idx == flashy_option_size - 1){
-"344
-[e $ ! == _flashy_option_idx - _flashy_option_size -> -> 1 `i `ui 1023  ]
+[; ;flashy_task.c: 320: if (flashy_scroll_rate < 5){
+"320
+[e $ ! < _flashy_scroll_rate -> -> 5 `i `ui 1022  ]
 {
-[; ;flashy_task.c: 345: flashy_option_idx = 0;
-"345
-[e = _flashy_option_idx -> -> 0 `i `ui ]
-"346
-}
-[; ;flashy_task.c: 346: }
-[e $U 1024  ]
-"347
-[e :U 1023 ]
-[; ;flashy_task.c: 347: else {
-{
-[; ;flashy_task.c: 348: flashy_option_idx += 1;
-"348
-[e =+ _flashy_option_idx -> -> 1 `i `ui ]
-"349
-}
-[e :U 1024 ]
-"350
+[; ;flashy_task.c: 321: flashy_scroll_rate =5;
+"321
+[e = _flashy_scroll_rate -> -> 5 `i `ui ]
+"322
 }
 [e :U 1022 ]
-[; ;flashy_task.c: 349: }
-[; ;flashy_task.c: 350: }
-[; ;flashy_task.c: 351: data->holdCountA = 0;
-"351
+[; ;flashy_task.c: 322: }
+[; ;flashy_task.c: 323: flashy_scroll_rate -=3;
+"323
+[e =- _flashy_scroll_rate -> -> 3 `i `ui ]
+"324
+}
+[e :U 1021 ]
+"326
+}
+[e :U 1019 ]
+[; ;flashy_task.c: 324: }
+[; ;flashy_task.c: 326: }
+[; ;flashy_task.c: 327: data->holdCountA = 0;
+"327
 [e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 352: data->holdCountB += 1;
-"352
+[; ;flashy_task.c: 328: data->holdCountB += 1;
+"328
 [e =+ . *U _data 8 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 353: data->holdCountX = 0;
-"353
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 354: data->holdCountY = 0;
-"354
+[; ;flashy_task.c: 329: data->holdCountX += 1;
+"329
+[e =+ . *U _data 9 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 330: data->holdCountY = 0;
+"330
 [e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 355: data->holdCountXY = 0;
-"355
+[; ;flashy_task.c: 331: data->holdCountXY = 0;
+"331
 [e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 356: data->holdCountAY = 0;
-"356
+[; ;flashy_task.c: 332: data->holdCountAY = 0;
+"332
 [e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 357: data->holdCountAX = 0;
-"357
+[; ;flashy_task.c: 333: data->holdCountAX = 0;
+"333
 [e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 358: data->holdCountBX = 0;
-"358
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 359: data->holdCountBY = 0;
-"359
+[; ;flashy_task.c: 334: data->holdCountBX += 1;
+"334
+[e =+ . *U _data 14 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 335: data->holdCountBY = 0;
+"335
 [e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 360: data->noholdCount = 0;
-"360
+[; ;flashy_task.c: 336: data->noholdCount = 0;
+"336
 [e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 361: break;
+[; ;flashy_task.c: 337: break;
+"337
+[e $U 1003  ]
+[; ;flashy_task.c: 338: case 8:
+"338
+[e :U 1023 ]
+[; ;flashy_task.c: 340: if (data->holdCountY == 0 && data->blasterTickCount == 0){
+"340
+[e $ ! && == . *U _data 10 -> -> 0 `i `ui == . *U _data 5 -> -> 0 `i `ui 1024  ]
+{
+[; ;flashy_task.c: 342: nullifyBadge_userLedsSet(data->badge, 0x0);
+"342
+[e ( _nullifyBadge_userLedsSet (2 , . *U _data 0 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 344: data->displayTickCount = 0;
+"344
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 345: data->blasterTickCount = 100;
+"345
+[e = . *U _data 5 -> -> 100 `i `ui ]
+[; ;flashy_task.c: 346: data->delayTickCount = 5;
+"346
+[e = . *U _data 1 -> -> 5 `i `ui ]
+[; ;flashy_task.c: 348: data->led_state = FLASHY_STATE_LED_SHOT;
+"348
+[e = . *U _data 2 . `E8300 1 ]
+[; ;flashy_task.c: 349: data->display_state = FLASHY_STATE_DISPLAY_BLASTER;
+"349
+[e = . *U _data 4 . `E8306 2 ]
+[; ;flashy_task.c: 350: data->blaster_state = FLASHY_BLASTER_SHOOTING_STATE;
+"350
+[e = . *U _data 6 . `E8313 0 ]
+"351
+}
+[e :U 1024 ]
+[; ;flashy_task.c: 351: }
+[; ;flashy_task.c: 353: data->holdCountA = 0;
+"353
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 354: data->holdCountB = 0;
+"354
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 355: data->holdCountX = 0;
+"355
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 356: data->holdCountY += 1;
+"356
+[e =+ . *U _data 10 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 357: data->holdCountXY = 0;
+"357
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 358: data->holdCountAY = 0;
+"358
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 359: data->holdCountAX = 0;
+"359
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 360: data->holdCountBX = 0;
+"360
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 361: data->holdCountBY = 0;
 "361
-[e $U 999  ]
-[; ;flashy_task.c: 362: case 1:
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 362: data->noholdCount = 0;
 "362
-[e :U 1025 ]
-[; ;flashy_task.c: 363: if ( data->holdCountA == 0){
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 363: break;
 "363
-[e $ ! == . *U _data 7 -> -> 0 `i `ui 1026  ]
-{
-[; ;flashy_task.c: 364: if (data->led_state != FLASHY_STATE_SPARKLE){
+[e $U 1003  ]
+[; ;flashy_task.c: 364: case 2:
 "364
-[e $ ! != -> . *U _data 2 `i -> . `E8298 2 `i 1027  ]
-{
-[; ;flashy_task.c: 365: data->led_state = FLASHY_STATE_SPARKLE;
-"365
-[e = . *U _data 2 . `E8298 2 ]
+[e :U 1025 ]
+[; ;flashy_task.c: 366: if (data->holdCountB == 0){
 "366
-}
-[; ;flashy_task.c: 366: }
-[e $U 1028  ]
-"367
-[e :U 1027 ]
-[; ;flashy_task.c: 367: else {
+[e $ ! == . *U _data 8 -> -> 0 `i `ui 1026  ]
 {
-[; ;flashy_task.c: 368: data->led_state = FLASHY_STATE_CIRCLE;
+[; ;flashy_task.c: 367: data->display_state = FLASHY_STATE_DISPLAY;
+"367
+[e = . *U _data 4 . `E8306 0 ]
+[; ;flashy_task.c: 368: if (flashy_option_idx == flashy_option_size - 1){
 "368
-[e = . *U _data 2 . `E8298 3 ]
+[e $ ! == _flashy_option_idx - _flashy_option_size -> -> 1 `i `ui 1027  ]
+{
+[; ;flashy_task.c: 369: flashy_option_idx = 0;
 "369
-}
-[e :U 1028 ]
+[e = _flashy_option_idx -> -> 0 `i `ui ]
 "370
 }
-[e :U 1026 ]
-[; ;flashy_task.c: 369: }
 [; ;flashy_task.c: 370: }
-[; ;flashy_task.c: 372: data->holdCountA += 1;
+[e $U 1028  ]
+"371
+[e :U 1027 ]
+[; ;flashy_task.c: 371: else {
+{
+[; ;flashy_task.c: 372: flashy_option_idx += 1;
 "372
-[e =+ . *U _data 7 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 373: data->holdCountB = 0;
+[e =+ _flashy_option_idx -> -> 1 `i `ui ]
 "373
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 374: data->holdCountX = 0;
-"374
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 375: data->holdCountY = 0;
-"375
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 376: data->holdCountXY = 0;
-"376
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 377: data->holdCountAY = 0;
-"377
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 378: data->holdCountAX = 0;
-"378
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 379: data->holdCountBX = 0;
-"379
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 380: data->holdCountBY = 0;
-"380
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 381: data->noholdCount = 0;
-"381
-[e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 382: break;
-"382
-[e $U 999  ]
-[; ;flashy_task.c: 383: case 0:
-"383
-[e :U 1029 ]
-[; ;flashy_task.c: 385: data->holdCountA = 0;
-"385
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 386: data->holdCountB = 0;
-"386
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 387: data->holdCountX = 0;
-"387
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 388: data->holdCountY = 0;
-"388
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 389: data->holdCountXY = 0;
-"389
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 390: data->holdCountAY = 0;
-"390
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 391: data->holdCountAX = 0;
-"391
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 392: data->holdCountBX = 0;
-"392
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 393: data->holdCountBY = 0;
-"393
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 394: data->noholdCount += 1;
-"394
-[e =+ . *U _data 16 -> -> 1 `i `ui ]
-[; ;flashy_task.c: 395: break;
-"395
-[e $U 999  ]
-[; ;flashy_task.c: 396: default:
-"396
-[e :U 1030 ]
-[; ;flashy_task.c: 397: data->holdCountA = 0;
-"397
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 398: data->holdCountB = 0;
-"398
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 399: data->holdCountX = 0;
-"399
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 400: data->holdCountY = 0;
-"400
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 401: data->holdCountXY = 0;
-"401
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 402: data->holdCountAY = 0;
-"402
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 403: data->holdCountAX = 0;
-"403
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 404: data->holdCountBX = 0;
-"404
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 405: data->holdCountBY = 0;
-"405
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 406: data->noholdCount = 0;
-"406
-[e = . *U _data 16 -> -> 0 `i `ui ]
-"407
 }
-[; ;flashy_task.c: 407: }
-[e $U 999  ]
-"211
-[e :U 1000 ]
-[e [\ _buttonPressed , $ -> | -> 4 `i -> 8 `i `ui 1001
- , $ -> | -> 1 `i -> 8 `i `ui 1003
- , $ -> | -> 1 `i -> 4 `i `ui 1006
- , $ -> | -> 2 `i -> 8 `i `ui 1009
- , $ -> | -> 2 `i -> 4 `i `ui 1014
- , $ -> -> 8 `i `ui 1019
- , $ -> -> 2 `i `ui 1021
- , $ -> -> 1 `i `ui 1025
- , $ -> -> 0 `i `ui 1029
- 1030 ]
-"407
-[e :U 999 ]
-[; ;flashy_task.c: 410: switch (data->blaster_state) {
-"410
-[e $U 1032  ]
+[e :U 1028 ]
+"374
+}
+[e :U 1026 ]
+[; ;flashy_task.c: 373: }
+[; ;flashy_task.c: 374: }
+[; ;flashy_task.c: 375: data->holdCountA = 0;
+"375
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 376: data->holdCountB += 1;
+"376
+[e =+ . *U _data 8 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 377: data->holdCountX = 0;
+"377
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 378: data->holdCountY = 0;
+"378
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 379: data->holdCountXY = 0;
+"379
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 380: data->holdCountAY = 0;
+"380
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 381: data->holdCountAX = 0;
+"381
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 382: data->holdCountBX = 0;
+"382
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 383: data->holdCountBY = 0;
+"383
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 384: data->noholdCount = 0;
+"384
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 385: break;
+"385
+[e $U 1003  ]
+[; ;flashy_task.c: 386: case 1:
+"386
+[e :U 1029 ]
+[; ;flashy_task.c: 387: if ( data->holdCountA == 0){
+"387
+[e $ ! == . *U _data 7 -> -> 0 `i `ui 1030  ]
 {
-[; ;flashy_task.c: 411: case FLASHY_BLASTER_SHOOTING_STATE:
-"411
+[; ;flashy_task.c: 390: if (flashy_leds_state_track > 3){
+"390
+[e $ ! > _flashy_leds_state_track -> -> 3 `i `ui 1031  ]
+{
+[; ;flashy_task.c: 391: flashy_leds_state_track=0;
+"391
+[e = _flashy_leds_state_track -> -> 0 `i `ui ]
+"392
+}
+[e :U 1031 ]
+[; ;flashy_task.c: 392: }
+[; ;flashy_task.c: 393: if (flashy_leds_state_track== 0){
+"393
+[e $ ! == _flashy_leds_state_track -> -> 0 `i `ui 1032  ]
+{
+[; ;flashy_task.c: 394: data->led_state = FLASHY_STATE_LED_ALT;
+"394
+[e = . *U _data 2 . `E8300 4 ]
+"395
+}
+[e :U 1032 ]
+[; ;flashy_task.c: 395: }
+[; ;flashy_task.c: 396: if (flashy_leds_state_track ==1){
+"396
+[e $ ! == _flashy_leds_state_track -> -> 1 `i `ui 1033  ]
+{
+[; ;flashy_task.c: 397: data->led_state = FLASHY_STATE_SPARKLE;
+"397
+[e = . *U _data 2 . `E8300 2 ]
+"398
+}
 [e :U 1033 ]
-[; ;flashy_task.c: 413: if (data->blasterTickCount == 100) {
-"413
-[e $ ! == . *U _data 5 -> -> 100 `i `ui 1034  ]
+[; ;flashy_task.c: 398: }
+[; ;flashy_task.c: 399: if (flashy_leds_state_track == 2){
+"399
+[e $ ! == _flashy_leds_state_track -> -> 2 `i `ui 1034  ]
 {
-[; ;flashy_task.c: 414: nullifyBadge_irTxRegister(data->badge);
-"414
-[e ( _nullifyBadge_irTxRegister (1 . *U _data 0 ]
-[; ;flashy_task.c: 415: nullifyBadge_irTxSet();
-"415
-[e ( _nullifyBadge_irTxSet ..  ]
-"416
+[; ;flashy_task.c: 400: data->led_state = FLASHY_STATE_CIRCLE;
+"400
+[e = . *U _data 2 . `E8300 3 ]
+"401
 }
 [e :U 1034 ]
-[; ;flashy_task.c: 416: }
-[; ;flashy_task.c: 417: if (data->blasterTickCount == 100 - 1 ){
-"417
-[e $ ! == . *U _data 5 -> - -> 100 `i -> 1 `i `ui 1035  ]
+[; ;flashy_task.c: 401: }
+[; ;flashy_task.c: 402: if (flashy_leds_state_track == 3){
+"402
+[e $ ! == _flashy_leds_state_track -> -> 3 `i `ui 1035  ]
 {
-[; ;flashy_task.c: 418: nullifyBadge_irTxClr();
-"418
-[e ( _nullifyBadge_irTxClr ..  ]
-[; ;flashy_task.c: 419: nullifyBadge_irTxRelease(data->badge);
-"419
-[e ( _nullifyBadge_irTxRelease (1 . *U _data 0 ]
-"420
+[; ;flashy_task.c: 403: data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
+"403
+[e = . *U _data 2 . `E8300 0 ]
+"404
 }
 [e :U 1035 ]
-[; ;flashy_task.c: 420: }
-[; ;flashy_task.c: 421: if (data->blasterTickCount == 0){
-"421
-[e $ ! == . *U _data 5 -> -> 0 `i `ui 1036  ]
-{
-[; ;flashy_task.c: 422: data->displayTickCount = 0;
-"422
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 423: data->delayTickCount = 5;
-"423
-[e = . *U _data 1 -> -> 5 `i `ui ]
-[; ;flashy_task.c: 425: data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
-"425
-[e = . *U _data 2 . `E8298 0 ]
-[; ;flashy_task.c: 426: data->display_state = FLASHY_STATE_DISPLAY;
-"426
-[e = . *U _data 4 . `E8303 0 ]
-[; ;flashy_task.c: 427: data->blaster_state = FLASHY_BLASTER_IDLE_STATE;
-"427
-[e = . *U _data 6 . `E8310 1 ]
-"428
+[; ;flashy_task.c: 404: }
+[; ;flashy_task.c: 405: flashy_leds_state_track +=1;
+"405
+[e =+ _flashy_leds_state_track -> -> 1 `i `ui ]
+"406
 }
-[; ;flashy_task.c: 428: }
-[e $U 1037  ]
-"429
-[e :U 1036 ]
-[; ;flashy_task.c: 429: else {
-{
-[; ;flashy_task.c: 430: data->blasterTickCount -= 1;
-"430
-[e =- . *U _data 5 -> -> 1 `i `ui ]
-"431
-}
-[e :U 1037 ]
-[; ;flashy_task.c: 431: }
-[; ;flashy_task.c: 432: break;
-"432
-[e $U 1031  ]
-[; ;flashy_task.c: 433: case FLASHY_BLASTER_IDLE_STATE:
-"433
-[e :U 1038 ]
-[; ;flashy_task.c: 434: break;
-"434
-[e $U 1031  ]
-"435
-}
-[; ;flashy_task.c: 435: }
-[e $U 1031  ]
+[e :U 1030 ]
+[; ;flashy_task.c: 406: }
+[; ;flashy_task.c: 408: data->holdCountA += 1;
+"408
+[e =+ . *U _data 7 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 409: data->holdCountB = 0;
+"409
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 410: data->holdCountX = 0;
 "410
-[e :U 1032 ]
-[e [\ . *U _data 6 , $ . `E8310 0 1033
- , $ . `E8310 1 1038
- 1031 ]
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 411: data->holdCountY = 0;
+"411
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 412: data->holdCountXY = 0;
+"412
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 413: data->holdCountAY = 0;
+"413
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 414: data->holdCountAX = 0;
+"414
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 415: data->holdCountBX = 0;
+"415
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 416: data->holdCountBY = 0;
+"416
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 417: data->noholdCount = 0;
+"417
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 418: break;
+"418
+[e $U 1003  ]
+[; ;flashy_task.c: 419: case 0:
+"419
+[e :U 1036 ]
+[; ;flashy_task.c: 421: data->holdCountA = 0;
+"421
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 422: data->holdCountB = 0;
+"422
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 423: data->holdCountX = 0;
+"423
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 424: data->holdCountY = 0;
+"424
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 425: data->holdCountXY = 0;
+"425
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 426: data->holdCountAY = 0;
+"426
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 427: data->holdCountAX = 0;
+"427
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 428: data->holdCountBX = 0;
+"428
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 429: data->holdCountBY = 0;
+"429
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 430: data->noholdCount += 1;
+"430
+[e =+ . *U _data 16 -> -> 1 `i `ui ]
+[; ;flashy_task.c: 431: break;
+"431
+[e $U 1003  ]
+[; ;flashy_task.c: 432: default:
+"432
+[e :U 1037 ]
+[; ;flashy_task.c: 433: data->holdCountA = 0;
+"433
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 434: data->holdCountB = 0;
+"434
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 435: data->holdCountX = 0;
 "435
-[e :U 1031 ]
-[; ;flashy_task.c: 438: if (nullifyBadge_irGet() && (data->blaster_state != FLASHY_BLASTER_SHOOTING_STATE)) {
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 436: data->holdCountY = 0;
+"436
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 437: data->holdCountXY = 0;
+"437
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 438: data->holdCountAY = 0;
 "438
-[e $ ! && != -> ( _nullifyBadge_irGet ..  `i -> -> -> 0 `i `uc `i != -> . *U _data 6 `i -> . `E8310 0 `i 1039  ]
-{
-[; ;flashy_task.c: 439: data->displayTickCount = 0;
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 439: data->holdCountAX = 0;
 "439
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;flashy_task.c: 440: deaths += 1;
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 440: data->holdCountBX = 0;
 "440
-[e =+ _deaths -> -> 1 `i `ui ]
-[; ;flashy_task.c: 441: data->display_state = FLASHY_STATE_DISPLAY_SHOT;
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 441: data->holdCountBY = 0;
 "441
-[e = . *U _data 4 . `E8303 3 ]
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 442: data->noholdCount = 0;
 "442
-}
-[e :U 1039 ]
-[; ;flashy_task.c: 442: }
-[; ;flashy_task.c: 443: }
+[e = . *U _data 16 -> -> 0 `i `ui ]
 "443
+}
+[; ;flashy_task.c: 443: }
+[e $U 1003  ]
+"235
+[e :U 1004 ]
+[e [\ _buttonPressed , $ -> | -> 4 `i -> 8 `i `ui 1005
+ , $ -> | -> 1 `i -> 8 `i `ui 1007
+ , $ -> | -> 1 `i -> 4 `i `ui 1010
+ , $ -> | -> 2 `i -> 8 `i `ui 1013
+ , $ -> | -> 2 `i -> 4 `i `ui 1018
+ , $ -> -> 8 `i `ui 1023
+ , $ -> -> 2 `i `ui 1025
+ , $ -> -> 1 `i `ui 1029
+ , $ -> -> 0 `i `ui 1036
+ 1037 ]
+"443
+[e :U 1003 ]
+[; ;flashy_task.c: 446: switch (data->blaster_state) {
+"446
+[e $U 1039  ]
+{
+[; ;flashy_task.c: 447: case FLASHY_BLASTER_SHOOTING_STATE:
+"447
+[e :U 1040 ]
+[; ;flashy_task.c: 449: if (data->blasterTickCount == 100) {
+"449
+[e $ ! == . *U _data 5 -> -> 100 `i `ui 1041  ]
+{
+[; ;flashy_task.c: 450: nullifyBadge_irTxRegister(data->badge);
+"450
+[e ( _nullifyBadge_irTxRegister (1 . *U _data 0 ]
+[; ;flashy_task.c: 451: nullifyBadge_irTxSet();
+"451
+[e ( _nullifyBadge_irTxSet ..  ]
+"452
+}
+[e :U 1041 ]
+[; ;flashy_task.c: 452: }
+[; ;flashy_task.c: 453: if (data->blasterTickCount == 100 - 1 ){
+"453
+[e $ ! == . *U _data 5 -> - -> 100 `i -> 1 `i `ui 1042  ]
+{
+[; ;flashy_task.c: 454: nullifyBadge_irTxClr();
+"454
+[e ( _nullifyBadge_irTxClr ..  ]
+[; ;flashy_task.c: 455: nullifyBadge_irTxRelease(data->badge);
+"455
+[e ( _nullifyBadge_irTxRelease (1 . *U _data 0 ]
+"456
+}
+[e :U 1042 ]
+[; ;flashy_task.c: 456: }
+[; ;flashy_task.c: 457: if (data->blasterTickCount == 0){
+"457
+[e $ ! == . *U _data 5 -> -> 0 `i `ui 1043  ]
+{
+[; ;flashy_task.c: 458: data->displayTickCount = 0;
+"458
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 459: data->delayTickCount = 5;
+"459
+[e = . *U _data 1 -> -> 5 `i `ui ]
+[; ;flashy_task.c: 461: data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
+"461
+[e = . *U _data 2 . `E8300 0 ]
+[; ;flashy_task.c: 462: data->display_state = FLASHY_STATE_DISPLAY;
+"462
+[e = . *U _data 4 . `E8306 0 ]
+[; ;flashy_task.c: 463: data->blaster_state = FLASHY_BLASTER_IDLE_STATE;
+"463
+[e = . *U _data 6 . `E8313 1 ]
+"464
+}
+[; ;flashy_task.c: 464: }
+[e $U 1044  ]
+"465
+[e :U 1043 ]
+[; ;flashy_task.c: 465: else {
+{
+[; ;flashy_task.c: 466: data->blasterTickCount -= 1;
+"466
+[e =- . *U _data 5 -> -> 1 `i `ui ]
+"467
+}
+[e :U 1044 ]
+[; ;flashy_task.c: 467: }
+[; ;flashy_task.c: 468: break;
+"468
+[e $U 1038  ]
+[; ;flashy_task.c: 469: case FLASHY_BLASTER_IDLE_STATE:
+"469
+[e :U 1045 ]
+[; ;flashy_task.c: 470: break;
+"470
+[e $U 1038  ]
+"471
+}
+[; ;flashy_task.c: 471: }
+[e $U 1038  ]
+"446
+[e :U 1039 ]
+[e [\ . *U _data 6 , $ . `E8313 0 1040
+ , $ . `E8313 1 1045
+ 1038 ]
+"471
+[e :U 1038 ]
+[; ;flashy_task.c: 474: if (nullifyBadge_irGet() && (data->blaster_state != FLASHY_BLASTER_SHOOTING_STATE)) {
+"474
+[e $ ! && != -> ( _nullifyBadge_irGet ..  `i -> -> -> 0 `i `uc `i != -> . *U _data 6 `i -> . `E8313 0 `i 1046  ]
+{
+[; ;flashy_task.c: 475: data->displayTickCount = 0;
+"475
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;flashy_task.c: 476: deaths += 1;
+"476
+[e =+ _deaths -> -> 1 `i `ui ]
+[; ;flashy_task.c: 477: data->display_state = FLASHY_STATE_DISPLAY_SHOT;
+"477
+[e = . *U _data 4 . `E8306 3 ]
+"478
+}
+[e :U 1046 ]
+[; ;flashy_task.c: 478: }
+[; ;flashy_task.c: 479: }
+"479
 [e :UE 969 ]
 }
-"445
+"481
 [v _flashy_Exit `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;flashy_task.c: 445: void flashy_Exit(void *taskData) {
+[; ;flashy_task.c: 481: void flashy_Exit(void *taskData) {
 [e :U _flashy_Exit ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"446
+"482
 [v _data `*S962 ~T0 @X0 1 a ]
-[; ;flashy_task.c: 446: struct t_flashy_taskData *data = (struct t_flashy_taskData *) taskData;
+[; ;flashy_task.c: 482: struct t_flashy_taskData *data = (struct t_flashy_taskData *) taskData;
 [e = _data -> _taskData `*S962 ]
-[; ;flashy_task.c: 447: nullifyBadge_userLedsClr(data->badge);
-"447
+[; ;flashy_task.c: 483: nullifyBadge_userLedsClr(data->badge);
+"483
 [e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;flashy_task.c: 448: nullifyBadge_userLedsRelease(data->badge);
-"448
+[; ;flashy_task.c: 484: nullifyBadge_userLedsRelease(data->badge);
+"484
 [e ( _nullifyBadge_userLedsRelease (1 . *U _data 0 ]
-[; ;flashy_task.c: 450: nullifyBadge_segDisplayErase(data->badge);
-"450
+[; ;flashy_task.c: 486: nullifyBadge_segDisplayErase(data->badge);
+"486
 [e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;flashy_task.c: 451: nullifyBadge_segDisplayRelease(data->badge);
-"451
+[; ;flashy_task.c: 487: nullifyBadge_segDisplayRelease(data->badge);
+"487
 [e ( _nullifyBadge_segDisplayRelease (1 . *U _data 0 ]
-[; ;flashy_task.c: 452: }
-"452
-[e :UE 1040 ]
+[; ;flashy_task.c: 488: }
+"488
+[e :UE 1047 ]
 }
 [p f _sprintf 8421504 ]
-[a 8C 37 52 100 0 ]
+[a 14C 37 52 100 0 ]
 [a 1C 78 85 76 76 0 ]
 [a 3C 78 85 76 76 0 ]
 [a 4C 78 85 76 76 73 70 89 32 0 ]
-[a 7C 80 69 87 32 0 ]
+[a 13C 80 69 87 32 0 ]
 [a 5C 68 69 70 67 79 78 32 0 ]
 [a 6C 72 65 88 32 32 0 ]
+[a 7C 104 97 99 107 32 116 104 101 32 80 76 65 78 69 84 32 32 32 0 ]
+[a 8C 119 105 108 108 32 72 65 67 75 32 102 111 114 32 65 47 67 32 32 32 0 ]
+[a 12C 78 111 116 104 105 110 103 32 116 111 32 115 101 101 32 104 101 114 101 32 32 109 111 118 101 32 97 108 111 110 103 46 46 46 32 32 32 32 0 ]
+[a 11C 97 108 108 32 121 111 117 114 32 98 97 115 101 32 97 114 101 32 98 101 108 111 110 103 32 116 111 32 117 115 32 32 32 32 32 0 ]
+[a 9C 72 84 84 80 32 52 49 56 32 73 39 109 32 97 32 116 101 97 112 111 116 32 32 32 32 32 32 0 ]
+[a 10C 73 32 97 109 32 97 32 98 97 100 103 101 44 32 97 110 100 32 116 104 97 116 39 115 32 105 116 32 32 32 32 32 32 0 ]
 [a 2C 5 7 7 8 45 45 32 32 45 45 9 7 7 6 32 11 32 0 ]

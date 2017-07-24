@@ -56,6 +56,7 @@ void led_roundabout(u16 counter);
 void led_curtain(u16 counter);
 void led_rand(void);
 void led_circle(u16 count);
+void let_alternate(u16 count);
 
 // global secrets
 enum t_secret {

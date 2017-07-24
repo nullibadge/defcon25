@@ -182,6 +182,16 @@ void led_circle(u16 count){
     nullifyBadge_userLedsSet(&badge_inst,count);       
     
 }
+
+void let_alternate(u16 count){
+    if(count %2 == 1){
+        nullifyBadge_userLedsSet(&badge_inst,43349);       
+    }
+    else{
+        nullifyBadge_userLedsSet(&badge_inst,21162);       
+    }
+}
+
 void main(void)
 {
     /* Initialize the platform */

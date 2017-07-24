@@ -16,6 +16,7 @@
 
 
 u16 flashy_leds_idx;
+u16 flashy_leds_state_track;
 
 u16 flashy_sparkle_rate;
 u16 flashy_scroll_rate;
@@ -29,8 +30,15 @@ char *flashy_option[] = {
     "NULL",
     "NULLIFY ",
     "DEFCON ",
-    "HAX  "
+    "HAX  ",
+    "HACK THE PLANET   ",
+    "will HACK for A/C   ",
+    "HTTP 418 I'm a teapot      ",
+    "I am a badge, and that's it      ",
+    "all your base are belong to us     ",
+    "Nothing to see here  move along...    "
 };
+
 u16 flashy_option_idx;
 u16 flashy_option_size;
 
@@ -69,6 +77,7 @@ void flashy_Init(void *taskData) {
     
     flashy_sparkle_rate =50;
     flashy_scroll_rate=50;
+    flashy_leds_state_track =0;
     
 }
 
@@ -157,6 +166,7 @@ void flashy_Main (void *taskData) {
             else {
                 data->delayTickCount -= 1;
             }
+            break;
         case FLASHY_STATE_CIRCLE:
             if (data->delayTickCount ==0 ){
                 if (flashy_leds_idx == 1024 ){
@@ -174,6 +184,20 @@ void flashy_Main (void *taskData) {
             else {
                 data->delayTickCount -= 1;
             }
+            break;
+        case FLASHY_STATE_LED_ALT:
+            if (data->delayTickCount == 0){
+                let_alternate(flashy_leds_idx);
+                flashy_leds_idx += 1;
+                if (flashy_leds_idx > 65530){
+                    flashy_leds_idx=0;
+                }
+                data->delayTickCount = flashy_sparkle_rate;
+            }
+            else {
+                data->delayTickCount -= 1;
+            }
+            break;
     }
     
     // handle display
@@ -360,13 +384,25 @@ void flashy_Main (void *taskData) {
             data->noholdCount = 0;
             break;
         case BUTTON_A:
-            if ( data->holdCountA == 0){
-                if (data->led_state != FLASHY_STATE_SPARKLE){
-                    data->led_state = FLASHY_STATE_SPARKLE;
-                }
-                else {
-                    data->led_state = FLASHY_STATE_CIRCLE;
-                }
+            if ( data->holdCountA == 0){       
+
+                //i'm doing all this because I didn't want to make another enum
+                    if (flashy_leds_state_track > 3){
+                        flashy_leds_state_track=0;
+                    }
+                    if (flashy_leds_state_track== 0){
+                        data->led_state = FLASHY_STATE_LED_ALT;
+                    }
+                    if (flashy_leds_state_track ==1){
+                        data->led_state = FLASHY_STATE_SPARKLE;
+                    }
+                    if (flashy_leds_state_track == 2){
+                        data->led_state = FLASHY_STATE_CIRCLE;
+                    }
+                    if (flashy_leds_state_track == 3){
+                        data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
+                    }
+                    flashy_leds_state_track +=1;
             }
             
             data->holdCountA += 1;

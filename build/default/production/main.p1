@@ -5,24 +5,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 nullifyBadge_displayL2.h
 [s S1917 `uc -> 4 `i `uc 1 `ui 1 `S1916 1 ]
 [n S1917 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
-"157 nullifyBadge.h
+"158 nullifyBadge.h
 [s S1918 `S1917 1 `uc 1 ]
 [n S1918 t_nullifyBadge display registeredHw ]
-[v F13865 `(v ~T0 @X0 0 tf1`*v ]
-[v F13868 `(v ~T0 @X0 0 tf1`*v ]
-[v F13871 `(v ~T0 @X0 0 tf1`*v ]
+[v F13867 `(v ~T0 @X0 0 tf1`*v ]
+[v F13870 `(v ~T0 @X0 0 tf1`*v ]
+[v F13873 `(v ~T0 @X0 0 tf1`*v ]
 "69 cooperative_scheduler.h
-[s S1919 `ui 1 `*v 1 `*F13865 1 `*F13868 1 `*F13871 1 `ui 1 `c 1 ]
+[s S1919 `ui 1 `*v 1 `*F13867 1 `*F13870 1 `*F13873 1 `ui 1 `c 1 ]
 [n S1919 t_schedulerTask systemTickLastExecuted taskData taskInitCallback taskExitCallback taskExecuteCallback taskInterval taskId ]
 "76 main.c
-[c E13890 0 1 2 3 .. ]
-[n E13890 t_flashy_led_states FLASHY_STATE_LED_ROUNDABOUT FLASHY_STATE_LED_SHOT FLASHY_STATE_SPARKLE FLASHY_STATE_CIRCLE  ]
-[c E13895 0 1 2 3 4 5 .. ]
-[n E13895 t_flashy_display_states FLASHY_STATE_DISPLAY FLASHY_DEFAULT_STATE_DISPLAY FLASHY_STATE_DISPLAY_BLASTER FLASHY_STATE_DISPLAY_SHOT FLASHY_STATE_DISPLAY_OFF FLASHY_STATE_DISPLAY_SECRET_TEST  ]
-[c E13902 0 1 .. ]
-[n E13902 t_flashy_blaster_states FLASHY_BLASTER_SHOOTING_STATE FLASHY_BLASTER_IDLE_STATE  ]
-"40 flashy_task.h
-[s S1921 `*S1918 1 `ui 1 `E13890 1 `ui 1 `E13895 1 `ui 1 `E13902 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[c E13892 0 1 2 3 4 .. ]
+[n E13892 t_flashy_led_states FLASHY_STATE_LED_ROUNDABOUT FLASHY_STATE_LED_SHOT FLASHY_STATE_SPARKLE FLASHY_STATE_CIRCLE FLASHY_STATE_LED_ALT  ]
+[c E13898 0 1 2 3 4 5 .. ]
+[n E13898 t_flashy_display_states FLASHY_STATE_DISPLAY FLASHY_DEFAULT_STATE_DISPLAY FLASHY_STATE_DISPLAY_BLASTER FLASHY_STATE_DISPLAY_SHOT FLASHY_STATE_DISPLAY_OFF FLASHY_STATE_DISPLAY_SECRET_TEST  ]
+[c E13905 0 1 .. ]
+[n E13905 t_flashy_blaster_states FLASHY_BLASTER_SHOOTING_STATE FLASHY_BLASTER_IDLE_STATE  ]
+"41 flashy_task.h
+[s S1921 `*S1918 1 `ui 1 `E13892 1 `ui 1 `E13898 1 `ui 1 `E13905 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1921 t_flashy_taskData badge delayTickCount led_state displayTickCount display_state blasterTickCount blaster_state holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY noholdCount ]
 "13 menu_task.h
 [s S1922 `*S1918 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
@@ -31,10 +31,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [s S1923 `*S1918 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1923 t_slot_taskData badge locked displayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount ]
 "79 main.c
-[c E13965 0 1 2 3 .. ]
-[n E13965 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE  ]
+[c E13968 0 1 2 3 .. ]
+[n E13968 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE  ]
 "26 locked_task.h
-[s S1924 `*S1918 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `E13965 1 ]
+[s S1924 `*S1918 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `E13968 1 ]
 [n S1924 t_locked_taskData badge delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount state ]
 "13 secret_task.h
 [s S1925 `*S1918 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
@@ -44,26 +44,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1920 t_scheduler tasks taskEntryVector ]
 "56 /Applications/microchip/xc8/v1.42/include/string.h
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"196 nullifyBadge.h
+"197 nullifyBadge.h
 [v _nullifyBadge_segDisplayPutStr `(v ~T0 @X0 0 ef2`*S1918`*uc ]
-"193
+"194
 [v _nullifyBadge_segDisplayForceUpdate `(v ~T0 @X0 0 ef1`*S1918 ]
-"225
+"226
 [v _nullifyBadge_userLedsSet `(v ~T0 @X0 0 ef2`*S1918`ui ]
 "176 main.c
 [v _rand `(i ~T0 @X0 0 ef ]
 [p mainexit ]
-"163 nullifyBadge.h
+"164 nullifyBadge.h
 [v _nullifyBadge_platformInit `(v ~T0 @X0 0 ef1`*S1918 ]
 "86 cooperative_scheduler.h
 [v _scheduler_Init `(v ~T0 @X0 0 ef1`*S1920 ]
 "85
 [v _scheduler_TaskInit `(v ~T0 @X0 0 ef1`*S1919 ]
-"66 flashy_task.h
+"67 flashy_task.h
 [v _flashy_Init `(v ~T0 @X0 0 ef1`*v ]
-"67
-[v _flashy_Main `(v ~T0 @X0 0 ef1`*v ]
 "68
+[v _flashy_Main `(v ~T0 @X0 0 ef1`*v ]
+"69
 [v _flashy_Exit `(v ~T0 @X0 0 ef1`*v ]
 "29 menu_task.h
 [v _menu_Init `(v ~T0 @X0 0 ef1`*v ]
@@ -89,10 +89,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _secret_Main `(v ~T0 @X0 0 ef1`*v ]
 "31
 [v _secret_Exit `(v ~T0 @X0 0 ef1`*v ]
-"242 main.c
-[c E13753 0 1 .. ]
-[n E13753 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
-"245
+"252 main.c
+[c E13755 0 1 .. ]
+[n E13755 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
+"255
 [c E13731 0 1 2 3 .. ]
 [n E13731 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK  ]
 "93 cooperative_scheduler.h
@@ -16076,78 +16076,79 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge.h: 56: void led_curtain(u16 counter);
 [; ;nullifyBadge.h: 57: void led_rand(void);
 [; ;nullifyBadge.h: 58: void led_circle(u16 count);
-[; ;nullifyBadge.h: 61: enum t_secret {
-[; ;nullifyBadge.h: 62: SECRET_VALUE_INIT,
-[; ;nullifyBadge.h: 63: SECRET_VALUE_TEST,
-[; ;nullifyBadge.h: 64: };
-[; ;nullifyBadge.h: 65: extern u16 secret_value;
-[; ;nullifyBadge.h: 121: enum t_hw_register {
-[; ;nullifyBadge.h: 122: HW_SEG_DISPLAY,
-[; ;nullifyBadge.h: 123: HW_USER_LEDS,
-[; ;nullifyBadge.h: 124: HW_IR_TX,
-[; ;nullifyBadge.h: 125: HW_EEPROM
-[; ;nullifyBadge.h: 126: };
-[; ;nullifyBadge.h: 128: enum t_userLed {
-[; ;nullifyBadge.h: 129: LED_G0,
-[; ;nullifyBadge.h: 130: LED_G1,
-[; ;nullifyBadge.h: 131: LED_G2,
-[; ;nullifyBadge.h: 132: LED_G3,
-[; ;nullifyBadge.h: 133: LED_G4,
-[; ;nullifyBadge.h: 134: LED_G5,
-[; ;nullifyBadge.h: 135: LED_G6,
-[; ;nullifyBadge.h: 136: LED_G7,
-[; ;nullifyBadge.h: 137: LED_G8,
-[; ;nullifyBadge.h: 138: LED_G9,
-[; ;nullifyBadge.h: 139: LED_R0,
-[; ;nullifyBadge.h: 140: LED_G10,
-[; ;nullifyBadge.h: 141: LED_G11,
-[; ;nullifyBadge.h: 142: LED_G12,
-[; ;nullifyBadge.h: 143: LED_G13,
-[; ;nullifyBadge.h: 144: LED_G14,
-[; ;nullifyBadge.h: 145: LED_G15
-[; ;nullifyBadge.h: 146: };
-[; ;nullifyBadge.h: 157: struct t_nullifyBadge {
-[; ;nullifyBadge.h: 158: struct t_nullifyDisplay_l2 display;
-[; ;nullifyBadge.h: 159: u8 registeredHw;
-[; ;nullifyBadge.h: 160: };
-[; ;nullifyBadge.h: 163: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 172: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 175: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 178: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 181: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 184: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 187: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
-[; ;nullifyBadge.h: 190: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 193: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 196: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 199: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 202: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 210: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 213: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 216: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 219: void nullifyBadge_userLedsSetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 222: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 225: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 228: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 231: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 239: u8 nullifyBadge_buttonsGet();
-[; ;nullifyBadge.h: 242: u8 nullifyBadge_buttonAGet();
-[; ;nullifyBadge.h: 245: u8 nullifyBadge_buttonBGet();
-[; ;nullifyBadge.h: 248: u8 nullifyBadge_buttonXGet();
-[; ;nullifyBadge.h: 251: u8 nullifyBadge_buttonYGet();
-[; ;nullifyBadge.h: 259: u8 nullifyBadge_irGet();
-[; ;nullifyBadge.h: 272: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 275: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 278: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 281: void nullifyBadge_irTxSet();
-[; ;nullifyBadge.h: 284: void nullifyBadge_irTxClr();
-[; ;nullifyBadge.h: 292: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 295: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 298: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 301: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
-[; ;nullifyBadge.h: 304: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
-[; ;nullifyBadge.h: 307: u8 nullifyBadge_eepromRead8bit(u16 addr);
-[; ;nullifyBadge.h: 310: u16 nullifyBadge_eepromRead16bit(u16 addr);
+[; ;nullifyBadge.h: 59: void let_alternate(u16 count);
+[; ;nullifyBadge.h: 62: enum t_secret {
+[; ;nullifyBadge.h: 63: SECRET_VALUE_INIT,
+[; ;nullifyBadge.h: 64: SECRET_VALUE_TEST,
+[; ;nullifyBadge.h: 65: };
+[; ;nullifyBadge.h: 66: extern u16 secret_value;
+[; ;nullifyBadge.h: 122: enum t_hw_register {
+[; ;nullifyBadge.h: 123: HW_SEG_DISPLAY,
+[; ;nullifyBadge.h: 124: HW_USER_LEDS,
+[; ;nullifyBadge.h: 125: HW_IR_TX,
+[; ;nullifyBadge.h: 126: HW_EEPROM
+[; ;nullifyBadge.h: 127: };
+[; ;nullifyBadge.h: 129: enum t_userLed {
+[; ;nullifyBadge.h: 130: LED_G0,
+[; ;nullifyBadge.h: 131: LED_G1,
+[; ;nullifyBadge.h: 132: LED_G2,
+[; ;nullifyBadge.h: 133: LED_G3,
+[; ;nullifyBadge.h: 134: LED_G4,
+[; ;nullifyBadge.h: 135: LED_G5,
+[; ;nullifyBadge.h: 136: LED_G6,
+[; ;nullifyBadge.h: 137: LED_G7,
+[; ;nullifyBadge.h: 138: LED_G8,
+[; ;nullifyBadge.h: 139: LED_G9,
+[; ;nullifyBadge.h: 140: LED_R0,
+[; ;nullifyBadge.h: 141: LED_G10,
+[; ;nullifyBadge.h: 142: LED_G11,
+[; ;nullifyBadge.h: 143: LED_G12,
+[; ;nullifyBadge.h: 144: LED_G13,
+[; ;nullifyBadge.h: 145: LED_G14,
+[; ;nullifyBadge.h: 146: LED_G15
+[; ;nullifyBadge.h: 147: };
+[; ;nullifyBadge.h: 158: struct t_nullifyBadge {
+[; ;nullifyBadge.h: 159: struct t_nullifyDisplay_l2 display;
+[; ;nullifyBadge.h: 160: u8 registeredHw;
+[; ;nullifyBadge.h: 161: };
+[; ;nullifyBadge.h: 164: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 173: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 176: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 179: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 182: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 185: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 188: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
+[; ;nullifyBadge.h: 191: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 194: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 197: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 200: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 203: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 211: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 214: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 217: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 220: void nullifyBadge_userLedsSetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 223: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 226: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 229: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 232: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 240: u8 nullifyBadge_buttonsGet();
+[; ;nullifyBadge.h: 243: u8 nullifyBadge_buttonAGet();
+[; ;nullifyBadge.h: 246: u8 nullifyBadge_buttonBGet();
+[; ;nullifyBadge.h: 249: u8 nullifyBadge_buttonXGet();
+[; ;nullifyBadge.h: 252: u8 nullifyBadge_buttonYGet();
+[; ;nullifyBadge.h: 260: u8 nullifyBadge_irGet();
+[; ;nullifyBadge.h: 273: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 276: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 279: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 282: void nullifyBadge_irTxSet();
+[; ;nullifyBadge.h: 285: void nullifyBadge_irTxClr();
+[; ;nullifyBadge.h: 293: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 296: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 299: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 302: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
+[; ;nullifyBadge.h: 305: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
+[; ;nullifyBadge.h: 308: u8 nullifyBadge_eepromRead8bit(u16 addr);
+[; ;nullifyBadge.h: 311: u16 nullifyBadge_eepromRead16bit(u16 addr);
 [; ;cooperative_scheduler.h: 69: struct t_schedulerTask {
 [; ;cooperative_scheduler.h: 70: u16 systemTickLastExecuted;
 [; ;cooperative_scheduler.h: 71: void *taskData;
@@ -16171,41 +16172,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;flashy_task.h: 20: FLASHY_STATE_LED_SHOT,
 [; ;flashy_task.h: 21: FLASHY_STATE_SPARKLE,
 [; ;flashy_task.h: 22: FLASHY_STATE_CIRCLE,
-[; ;flashy_task.h: 23: };
-[; ;flashy_task.h: 25: enum t_flashy_display_states {
-[; ;flashy_task.h: 26: FLASHY_STATE_DISPLAY,
-[; ;flashy_task.h: 27: FLASHY_DEFAULT_STATE_DISPLAY,
-[; ;flashy_task.h: 28: FLASHY_STATE_DISPLAY_BLASTER,
-[; ;flashy_task.h: 29: FLASHY_STATE_DISPLAY_SHOT,
-[; ;flashy_task.h: 30: FLASHY_STATE_DISPLAY_OFF,
-[; ;flashy_task.h: 31: FLASHY_STATE_DISPLAY_SECRET_TEST,
-[; ;flashy_task.h: 32: };
-[; ;flashy_task.h: 34: enum t_flashy_blaster_states {
-[; ;flashy_task.h: 35: FLASHY_BLASTER_SHOOTING_STATE,
-[; ;flashy_task.h: 36: FLASHY_BLASTER_IDLE_STATE,
-[; ;flashy_task.h: 37: };
-[; ;flashy_task.h: 40: struct t_flashy_taskData {
-[; ;flashy_task.h: 42: struct t_nullifyBadge *badge;
-[; ;flashy_task.h: 45: u16 delayTickCount;
-[; ;flashy_task.h: 46: enum t_flashy_led_states led_state;
-[; ;flashy_task.h: 48: u16 displayTickCount;
-[; ;flashy_task.h: 49: enum t_flashy_display_states display_state;
-[; ;flashy_task.h: 51: u16 blasterTickCount;
-[; ;flashy_task.h: 52: enum t_flashy_blaster_states blaster_state;
-[; ;flashy_task.h: 54: u16 holdCountA;
-[; ;flashy_task.h: 55: u16 holdCountB;
-[; ;flashy_task.h: 56: u16 holdCountX;
-[; ;flashy_task.h: 57: u16 holdCountY;
-[; ;flashy_task.h: 58: u16 holdCountXY;
-[; ;flashy_task.h: 59: u16 holdCountAY;
-[; ;flashy_task.h: 60: u16 holdCountAX;
-[; ;flashy_task.h: 61: u16 holdCountBX;
-[; ;flashy_task.h: 62: u16 holdCountBY;
-[; ;flashy_task.h: 63: u16 noholdCount;
-[; ;flashy_task.h: 64: };
-[; ;flashy_task.h: 66: void flashy_Init(void *taskData);
-[; ;flashy_task.h: 67: void flashy_Main (void *taskData);
-[; ;flashy_task.h: 68: void flashy_Exit(void *taskData);
+[; ;flashy_task.h: 23: FLASHY_STATE_LED_ALT,
+[; ;flashy_task.h: 24: };
+[; ;flashy_task.h: 26: enum t_flashy_display_states {
+[; ;flashy_task.h: 27: FLASHY_STATE_DISPLAY,
+[; ;flashy_task.h: 28: FLASHY_DEFAULT_STATE_DISPLAY,
+[; ;flashy_task.h: 29: FLASHY_STATE_DISPLAY_BLASTER,
+[; ;flashy_task.h: 30: FLASHY_STATE_DISPLAY_SHOT,
+[; ;flashy_task.h: 31: FLASHY_STATE_DISPLAY_OFF,
+[; ;flashy_task.h: 32: FLASHY_STATE_DISPLAY_SECRET_TEST,
+[; ;flashy_task.h: 33: };
+[; ;flashy_task.h: 35: enum t_flashy_blaster_states {
+[; ;flashy_task.h: 36: FLASHY_BLASTER_SHOOTING_STATE,
+[; ;flashy_task.h: 37: FLASHY_BLASTER_IDLE_STATE,
+[; ;flashy_task.h: 38: };
+[; ;flashy_task.h: 41: struct t_flashy_taskData {
+[; ;flashy_task.h: 43: struct t_nullifyBadge *badge;
+[; ;flashy_task.h: 46: u16 delayTickCount;
+[; ;flashy_task.h: 47: enum t_flashy_led_states led_state;
+[; ;flashy_task.h: 49: u16 displayTickCount;
+[; ;flashy_task.h: 50: enum t_flashy_display_states display_state;
+[; ;flashy_task.h: 52: u16 blasterTickCount;
+[; ;flashy_task.h: 53: enum t_flashy_blaster_states blaster_state;
+[; ;flashy_task.h: 55: u16 holdCountA;
+[; ;flashy_task.h: 56: u16 holdCountB;
+[; ;flashy_task.h: 57: u16 holdCountX;
+[; ;flashy_task.h: 58: u16 holdCountY;
+[; ;flashy_task.h: 59: u16 holdCountXY;
+[; ;flashy_task.h: 60: u16 holdCountAY;
+[; ;flashy_task.h: 61: u16 holdCountAX;
+[; ;flashy_task.h: 62: u16 holdCountBX;
+[; ;flashy_task.h: 63: u16 holdCountBY;
+[; ;flashy_task.h: 64: u16 noholdCount;
+[; ;flashy_task.h: 65: };
+[; ;flashy_task.h: 67: void flashy_Init(void *taskData);
+[; ;flashy_task.h: 68: void flashy_Main (void *taskData);
+[; ;flashy_task.h: 69: void flashy_Exit(void *taskData);
 [; ;menu_task.h: 13: struct t_menu_taskData {
 [; ;menu_task.h: 15: struct t_nullifyBadge *badge;
 [; ;menu_task.h: 17: u8 locked;
@@ -16469,8 +16471,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _string_length `ui ~T0 @X0 1 a ]
 [; ;main.c: 129: u16 string_length = strlen((const char *) string);
 [e = _string_length ( _strlen (1 -> _string `*Cuc ]
-[v F14026 `uc ~T0 @X0 -> 0 `x s ]
-[i F14026
+[v F14029 `uc ~T0 @X0 -> 0 `x s ]
+[i F14029
 :U ..
 "130
 -> -> 32 `ui `uc
@@ -16482,7 +16484,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _display_string `uc ~T0 @X0 5  a ]
 [; ;main.c: 130: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
-[e = _display_string F14026 ]
+[e = _display_string F14029 ]
 "131
 [v _i `ui ~T0 @X0 1 a ]
 [; ;main.c: 131: u16 i = (count / multiplier) % string_length;
@@ -16534,8 +16536,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _string_length `ui ~T0 @X0 1 a ]
 [; ;main.c: 143: u16 string_length = strlen((const char *) string);
 [e = _string_length ( _strlen (1 -> _string `*Cuc ]
-[v F14035 `uc ~T0 @X0 -> 0 `x s ]
-[i F14035
+[v F14038 `uc ~T0 @X0 -> 0 `x s ]
+[i F14038
 :U ..
 "144
 -> -> 32 `ui `uc
@@ -16547,7 +16549,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _display_string `uc ~T0 @X0 5  a ]
 [; ;main.c: 144: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
-[e = _display_string F14035 ]
+[e = _display_string F14038 ]
 "145
 [v _i `ui ~T0 @X0 1 a ]
 [; ;main.c: 145: u16 i = (count / multiplier) % string_length;
@@ -16670,165 +16672,198 @@ Version 3.2 HI-TECH Software Intermediate Code
 "184
 [e :UE 1937 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"185
-[v _main `(v ~T0 @X0 1 ef ]
 "186
+[v _let_alternate `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 185: void main(void)
-[; ;main.c: 186: {
+[; ;main.c: 186: void let_alternate(u16 count){
+[e :U _let_alternate ]
+[v _count `ui ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 187: if(count %2 == 1){
+"187
+[e $ ! == % _count -> -> 2 `i `ui -> -> 1 `i `ui 1939  ]
+{
+[; ;main.c: 188: nullifyBadge_userLedsSet(&badge_inst,43349);
+"188
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst -> -> 43349 `l `ui ]
+"189
+}
+[; ;main.c: 189: }
+[e $U 1940  ]
+"190
+[e :U 1939 ]
+[; ;main.c: 190: else{
+{
+[; ;main.c: 191: nullifyBadge_userLedsSet(&badge_inst,21162);
+"191
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst -> -> 21162 `i `ui ]
+"192
+}
+[e :U 1940 ]
+[; ;main.c: 192: }
+[; ;main.c: 193: }
+"193
+[e :UE 1938 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"195
+[v _main `(v ~T0 @X0 1 ef ]
+"196
+{
+[; ;main.c: 195: void main(void)
+[; ;main.c: 196: {
 [e :U _main ]
 [f ]
-[; ;main.c: 188: nullifyBadge_platformInit(&badge_inst);
-"188
-[e ( _nullifyBadge_platformInit (1 &U _badge_inst ]
-[; ;main.c: 191: scheduler_Init(&schedulerInst);
-"191
-[e ( _scheduler_Init (1 &U _schedulerInst ]
-[; ;main.c: 194: scheduler_TaskInit(&flashy_task);
-"194
-[e ( _scheduler_TaskInit (1 &U _flashy_task ]
-[; ;main.c: 195: scheduler_TaskInit(&menu_task);
-"195
-[e ( _scheduler_TaskInit (1 &U _menu_task ]
-[; ;main.c: 196: scheduler_TaskInit(&slot_task);
-"196
-[e ( _scheduler_TaskInit (1 &U _slot_task ]
-[; ;main.c: 197: scheduler_TaskInit(&locked_task);
-"197
-[e ( _scheduler_TaskInit (1 &U _locked_task ]
-[; ;main.c: 198: scheduler_TaskInit(&secret_task);
+[; ;main.c: 198: nullifyBadge_platformInit(&badge_inst);
 "198
-[e ( _scheduler_TaskInit (1 &U _secret_task ]
-[; ;main.c: 201: flashy_TaskData.badge = &badge_inst;
+[e ( _nullifyBadge_platformInit (1 &U _badge_inst ]
+[; ;main.c: 201: scheduler_Init(&schedulerInst);
 "201
-[e = . _flashy_TaskData 0 &U _badge_inst ]
-[; ;main.c: 202: menu_TaskData.badge = &badge_inst;
-"202
-[e = . _menu_TaskData 0 &U _badge_inst ]
-[; ;main.c: 203: slot_TaskData.badge = &badge_inst;
-"203
-[e = . _slot_TaskData 0 &U _badge_inst ]
-[; ;main.c: 204: locked_TaskData.badge = &badge_inst;
+[e ( _scheduler_Init (1 &U _schedulerInst ]
+[; ;main.c: 204: scheduler_TaskInit(&flashy_task);
 "204
-[e = . _locked_TaskData 0 &U _badge_inst ]
-[; ;main.c: 205: secret_TaskData.badge = &badge_inst;
+[e ( _scheduler_TaskInit (1 &U _flashy_task ]
+[; ;main.c: 205: scheduler_TaskInit(&menu_task);
 "205
-[e = . _secret_TaskData 0 &U _badge_inst ]
-[; ;main.c: 208: badge_locked = 1;
+[e ( _scheduler_TaskInit (1 &U _menu_task ]
+[; ;main.c: 206: scheduler_TaskInit(&slot_task);
+"206
+[e ( _scheduler_TaskInit (1 &U _slot_task ]
+[; ;main.c: 207: scheduler_TaskInit(&locked_task);
+"207
+[e ( _scheduler_TaskInit (1 &U _locked_task ]
+[; ;main.c: 208: scheduler_TaskInit(&secret_task);
 "208
-[e = _badge_locked -> -> 1 `i `uc ]
-[; ;main.c: 211: flashy_task.taskData = (void *) &flashy_TaskData;
+[e ( _scheduler_TaskInit (1 &U _secret_task ]
+[; ;main.c: 211: flashy_TaskData.badge = &badge_inst;
 "211
-[e = . _flashy_task 1 -> &U _flashy_TaskData `*v ]
-[; ;main.c: 212: flashy_task.taskInitCallback = flashy_Init;
+[e = . _flashy_TaskData 0 &U _badge_inst ]
+[; ;main.c: 212: menu_TaskData.badge = &badge_inst;
 "212
-[e = . _flashy_task 2 &U _flashy_Init ]
-[; ;main.c: 213: flashy_task.taskExecuteCallback = flashy_Main;
+[e = . _menu_TaskData 0 &U _badge_inst ]
+[; ;main.c: 213: slot_TaskData.badge = &badge_inst;
 "213
-[e = . _flashy_task 4 &U _flashy_Main ]
-[; ;main.c: 214: flashy_task.taskExitCallback = flashy_Exit;
+[e = . _slot_TaskData 0 &U _badge_inst ]
+[; ;main.c: 214: locked_TaskData.badge = &badge_inst;
 "214
-[e = . _flashy_task 3 &U _flashy_Exit ]
-[; ;main.c: 215: flashy_task.taskInterval = 10;
+[e = . _locked_TaskData 0 &U _badge_inst ]
+[; ;main.c: 215: secret_TaskData.badge = &badge_inst;
 "215
-[e = . _flashy_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 217: menu_task.taskData = (void *) &menu_TaskData;
-"217
-[e = . _menu_task 1 -> &U _menu_TaskData `*v ]
-[; ;main.c: 218: menu_task.taskInitCallback = menu_Init;
+[e = . _secret_TaskData 0 &U _badge_inst ]
+[; ;main.c: 218: badge_locked = 1;
 "218
-[e = . _menu_task 2 &U _menu_Init ]
-[; ;main.c: 219: menu_task.taskExecuteCallback = menu_Main;
-"219
-[e = . _menu_task 4 &U _menu_Main ]
-[; ;main.c: 220: menu_task.taskExitCallback = menu_Exit;
-"220
-[e = . _menu_task 3 &U _menu_Exit ]
-[; ;main.c: 221: menu_task.taskInterval = 10;
+[e = _badge_locked -> -> 1 `i `uc ]
+[; ;main.c: 221: flashy_task.taskData = (void *) &flashy_TaskData;
 "221
-[e = . _menu_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 223: slot_task.taskData = (void *) &slot_TaskData;
+[e = . _flashy_task 1 -> &U _flashy_TaskData `*v ]
+[; ;main.c: 222: flashy_task.taskInitCallback = flashy_Init;
+"222
+[e = . _flashy_task 2 &U _flashy_Init ]
+[; ;main.c: 223: flashy_task.taskExecuteCallback = flashy_Main;
 "223
-[e = . _slot_task 1 -> &U _slot_TaskData `*v ]
-[; ;main.c: 224: slot_task.taskInitCallback = slot_Init;
+[e = . _flashy_task 4 &U _flashy_Main ]
+[; ;main.c: 224: flashy_task.taskExitCallback = flashy_Exit;
 "224
-[e = . _slot_task 2 &U _slot_Init ]
-[; ;main.c: 225: slot_task.taskExecuteCallback = slot_Main;
+[e = . _flashy_task 3 &U _flashy_Exit ]
+[; ;main.c: 225: flashy_task.taskInterval = 10;
 "225
-[e = . _slot_task 4 &U _slot_Main ]
-[; ;main.c: 226: slot_task.taskExitCallback = slot_Exit;
-"226
-[e = . _slot_task 3 &U _slot_Exit ]
-[; ;main.c: 227: slot_task.taskInterval = 10;
+[e = . _flashy_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 227: menu_task.taskData = (void *) &menu_TaskData;
 "227
-[e = . _slot_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 229: locked_task.taskData = (void *) &locked_TaskData;
+[e = . _menu_task 1 -> &U _menu_TaskData `*v ]
+[; ;main.c: 228: menu_task.taskInitCallback = menu_Init;
+"228
+[e = . _menu_task 2 &U _menu_Init ]
+[; ;main.c: 229: menu_task.taskExecuteCallback = menu_Main;
 "229
-[e = . _locked_task 1 -> &U _locked_TaskData `*v ]
-[; ;main.c: 230: locked_task.taskInitCallback = locked_Init;
+[e = . _menu_task 4 &U _menu_Main ]
+[; ;main.c: 230: menu_task.taskExitCallback = menu_Exit;
 "230
-[e = . _locked_task 2 &U _locked_Init ]
-[; ;main.c: 231: locked_task.taskExecuteCallback = locked_Main;
+[e = . _menu_task 3 &U _menu_Exit ]
+[; ;main.c: 231: menu_task.taskInterval = 10;
 "231
-[e = . _locked_task 4 &U _locked_Main ]
-[; ;main.c: 232: locked_task.taskExitCallback = locked_Exit;
-"232
-[e = . _locked_task 3 &U _locked_Exit ]
-[; ;main.c: 233: locked_task.taskInterval = 10;
+[e = . _menu_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 233: slot_task.taskData = (void *) &slot_TaskData;
 "233
-[e = . _locked_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 235: secret_task.taskData = (void *) &secret_TaskData;
+[e = . _slot_task 1 -> &U _slot_TaskData `*v ]
+[; ;main.c: 234: slot_task.taskInitCallback = slot_Init;
+"234
+[e = . _slot_task 2 &U _slot_Init ]
+[; ;main.c: 235: slot_task.taskExecuteCallback = slot_Main;
 "235
-[e = . _secret_task 1 -> &U _secret_TaskData `*v ]
-[; ;main.c: 236: secret_task.taskInitCallback = secret_Init;
+[e = . _slot_task 4 &U _slot_Main ]
+[; ;main.c: 236: slot_task.taskExitCallback = slot_Exit;
 "236
-[e = . _secret_task 2 &U _secret_Init ]
-[; ;main.c: 237: secret_task.taskExecuteCallback = secret_Main;
+[e = . _slot_task 3 &U _slot_Exit ]
+[; ;main.c: 237: slot_task.taskInterval = 10;
 "237
-[e = . _secret_task 4 &U _secret_Main ]
-[; ;main.c: 238: secret_task.taskExitCallback = secret_Exit;
-"238
-[e = . _secret_task 3 &U _secret_Exit ]
-[; ;main.c: 239: secret_task.taskInterval = 10;
+[e = . _slot_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 239: locked_task.taskData = (void *) &locked_TaskData;
 "239
-[e = . _secret_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 242: secret_value = SECRET_VALUE_INIT;
+[e = . _locked_task 1 -> &U _locked_TaskData `*v ]
+[; ;main.c: 240: locked_task.taskInitCallback = locked_Init;
+"240
+[e = . _locked_task 2 &U _locked_Init ]
+[; ;main.c: 241: locked_task.taskExecuteCallback = locked_Main;
+"241
+[e = . _locked_task 4 &U _locked_Main ]
+[; ;main.c: 242: locked_task.taskExitCallback = locked_Exit;
 "242
-[e = _secret_value -> . `E13753 0 `ui ]
-[; ;main.c: 245: currentTask = FLASHY_TASK;
+[e = . _locked_task 3 &U _locked_Exit ]
+[; ;main.c: 243: locked_task.taskInterval = 10;
+"243
+[e = . _locked_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 245: secret_task.taskData = (void *) &secret_TaskData;
 "245
-[e = _currentTask -> . `E13731 2 `ui ]
-[; ;main.c: 246: scheduler_TaskAdd(&schedulerInst, &flashy_task);
+[e = . _secret_task 1 -> &U _secret_TaskData `*v ]
+[; ;main.c: 246: secret_task.taskInitCallback = secret_Init;
 "246
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _flashy_task ]
-[; ;main.c: 247: scheduler_TaskAdd(&schedulerInst, &menu_task);
+[e = . _secret_task 2 &U _secret_Init ]
+[; ;main.c: 247: secret_task.taskExecuteCallback = secret_Main;
 "247
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _menu_task ]
-[; ;main.c: 248: scheduler_TaskAdd(&schedulerInst, &slot_task);
+[e = . _secret_task 4 &U _secret_Main ]
+[; ;main.c: 248: secret_task.taskExitCallback = secret_Exit;
 "248
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _slot_task ]
-[; ;main.c: 249: scheduler_TaskAdd(&schedulerInst, &locked_task);
+[e = . _secret_task 3 &U _secret_Exit ]
+[; ;main.c: 249: secret_task.taskInterval = 10;
 "249
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _locked_task ]
-[; ;main.c: 250: scheduler_TaskAdd(&schedulerInst, &secret_task);
-"250
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _secret_task ]
-[; ;main.c: 252: while(1){
+[e = . _secret_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 252: secret_value = SECRET_VALUE_INIT;
 "252
-[e :U 1940 ]
-{
-[; ;main.c: 253: schedulerExecute(&schedulerInst);
-"253
-[e ( _schedulerExecute (1 &U _schedulerInst ]
-"254
-}
-[e :U 1939 ]
-"252
-[e $U 1940  ]
-[e :U 1941 ]
-[; ;main.c: 254: }
-[; ;main.c: 256: }
+[e = _secret_value -> . `E13755 0 `ui ]
+[; ;main.c: 255: currentTask = FLASHY_TASK;
+"255
+[e = _currentTask -> . `E13731 2 `ui ]
+[; ;main.c: 256: scheduler_TaskAdd(&schedulerInst, &flashy_task);
 "256
-[e :UE 1938 ]
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _flashy_task ]
+[; ;main.c: 257: scheduler_TaskAdd(&schedulerInst, &menu_task);
+"257
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _menu_task ]
+[; ;main.c: 258: scheduler_TaskAdd(&schedulerInst, &slot_task);
+"258
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _slot_task ]
+[; ;main.c: 259: scheduler_TaskAdd(&schedulerInst, &locked_task);
+"259
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _locked_task ]
+[; ;main.c: 260: scheduler_TaskAdd(&schedulerInst, &secret_task);
+"260
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _secret_task ]
+[; ;main.c: 262: while(1){
+"262
+[e :U 1943 ]
+{
+[; ;main.c: 263: schedulerExecute(&schedulerInst);
+"263
+[e ( _schedulerExecute (1 &U _schedulerInst ]
+"264
+}
+[e :U 1942 ]
+"262
+[e $U 1943  ]
+[e :U 1944 ]
+[; ;main.c: 264: }
+[; ;main.c: 266: }
+"266
+[e :UE 1941 ]
 }

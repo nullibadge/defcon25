@@ -1,6 +1,5 @@
 # Nullibadge
-
-Source code for a community built unofficial Defcon 25 badge.
+Source pushed to badges.
 
 [About](http://nu.llify.com)
 

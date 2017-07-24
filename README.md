@@ -24,7 +24,7 @@ This is written by a series of drunk coders. If something doesn't make sense hav
 git clone https://github.com/nullibadge/defcon25.git
 
 ### Pickit3
-Acquire one of these: https://www.amazon.com/Funny-DIY-Expert-Programmer-Development/dp/B01NBPCLSR/ref=sr_1_1?ie=UTF8&qid=1498755321&sr=8-1&keywords=pickit3
+Acquire one of these
 
 ### Step by Step
 1. Plug in your pickit3 to your computer
@@ -51,7 +51,5 @@ Here is a picture of proper placement.
 11. Select your PICKit3. You may get a prompt about the having the right device selected. Ensure you are using the L version if you use a new revision (>rev1) of the badge. Click OK and the badge will program.
 
 
-Active tasks are set inside main.c, you can change them to run the other examples
-
-```scheduler_TaskAdd(&schedulerInst, &slot_ExampleTask);```
+Good luck have fun PR's welcome
 

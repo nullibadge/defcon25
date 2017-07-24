@@ -1,5 +1,5 @@
 # Nullibadge
-##WARNING
+## WARNING
 This is written by a series of drunk coders. If something doesn't make sense have a few beers and come back :)
 
 [About](http://nu.llify.com)

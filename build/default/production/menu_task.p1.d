@@ -19,4 +19,5 @@ gamma_correction.h  \
 mcc_generated_files/tmr4.h  \
 menu_task.h  \
 xc8_types.h  \
+slot_task.h  \
 mcc_generated_files/pin_manager.h 

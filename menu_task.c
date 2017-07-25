@@ -8,6 +8,7 @@
 #include "nullifyBadge.h"
 #include "cooperative_scheduler.h"
 #include "menu_task.h"
+#include "slot_task.h"
 
 #define MENU_OPTION_SLOT 1
 #define MENU_OPTION_PASSWORD 2
@@ -62,6 +63,9 @@ void menu_Main (void *taskData) {
             case BUTTON_A | BUTTON_B | BUTTON_Y:
                 currentTask = MENU_TASK;
                 menu_clear(data);
+                
+                /* Make sure lot task data is reset */
+                slot_Setup(slot_taskData);
                 
                 // prevent holding X from escaping more than once
                 data->holdCountA = 1;

@@ -7,6 +7,7 @@
 #include "nullifyBadge.h"
 #include "cooperative_scheduler.h"
 #include "locked_task.h"
+#include "slot_task.h"
 
 
 // LEDs located at base of lock
@@ -99,6 +100,7 @@ void locked_Main (void *taskData) {
     switch (data->state){
         case LOCKED_UNLOCKING_STATE:
             badge_locked = 0;
+            slot_Setup(slot_taskData);
             marquee("UNLOCKING...", data->delayTickCount);
             // add unlocking LEDs
             if (data->delayTickCount % LOCKED_DELAY_BASE == 0){

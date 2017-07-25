@@ -2,12 +2,11 @@ Microchip MPLAB XC8 Compiler V1.42 ()
 
 Linker command line:
 
--W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.42\dat\en_msgs.txt -cs \
-  -h+dist/default/production\defcon25.production.sym \
-  --cmf=dist/default/production\defcon25.production.cmf -z -Q16F18346 \
-  -oC:\Users\ryan\AppData\Local\Temp\s494.2 \
-  -Mdist/default/production/defcon25.production.map -E1 -ver=XC8 \
-  -ASTACK=022F8h-026efh -pstack=STACK -ACODE=00h-07FFhx8 \
+-W-3 --edf=/Applications/microchip/xc8/v1.42/dat/en_msgs.txt -cs \
+  -h+dist/default/production/defcon25.production.sym \
+  --cmf=dist/default/production/defcon25.production.cmf -z -Q16LF18346 \
+  -o/tmp/xczNaJ8l9 -Mdist/default/production/defcon25.production.map -E1 \
+  -ver=XC8 -ASTACK=022F8h-026efh -pstack=STACK -ACODE=00h-07FFhx8 \
   -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 -ACONST=00h-0FFhx64 \
   -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -35,22 +34,21 @@ Linker command line:
   -ppowerup=CODE -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-0800Ah \
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
-  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\ryan\AppData\Local\Temp\s494.obj \
-  dist/default/production\defcon25.production.obj 
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcgYJwJmE.obj \
+  dist/default/production/defcon25.production.obj 
 
 Object code version is 3.11
 
-Machine type is 16F18346
+Machine type is 16LF18346
 
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ryan\AppData\Local\Temp\s494.obj
+/tmp/xcgYJwJmE.obj
                 end_init                             16       16        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        4    1000E       0
-dist/default/production\defcon25.production.obj
+dist/default/production/defcon25.production.obj
                 cinit                                18       18       BF        8       0
                 intentry                              4        4       12        8       0
                 text101                            2DDE     2DDE        1     5BBC       0
@@ -1904,7 +1902,7 @@ locked_get_lock_leds@leds                    cstackCOMMON 00077
 locked_get_lock_leds@size                    cstackCOMMON 00075
 locked_get_unlock_leds@leds                  cstackCOMMON 00073
 locked_lock_leds@size                        cstackCOMMON 00073
-marquee@F8648                                dataBANK3    001BE
+marquee@F14054                               dataBANK3    001BE
 marquee@count                                cstackBANK0  0003C
 marquee@display_string                       cstackBANK0  0003F
 marquee@i                                    cstackBANK0  00046
@@ -1912,7 +1910,7 @@ marquee@j                                    cstackBANK0  0004A
 marquee@multiplier                           cstackBANK0  00044
 marquee@string                               cstackBANK0  0003A
 marquee@string_length                        cstackBANK0  00048
-marquee_speedy@F8639                         dataBANK3    001C3
+marquee_speedy@F14045                        dataBANK3    001C3
 marquee_speedy@count                         cstackBANK0  0003C
 marquee_speedy@display_string                cstackBANK0  00041
 marquee_speedy@i                             cstackBANK0  00046
@@ -2853,7 +2851,7 @@ Total ram usage:       13 bytes
 
  *************** function ___bmul *****************
  Defined at:
-		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul8.c"
+		line 4 in file "/Applications/microchip/xc8/v1.42/sources/common/Umul8.c"
  Parameters:    Size  Location     Type
   multiplier      1    wreg     unsigned char 
   multiplicand    1    1[COMMON] unsigned char 
@@ -3336,7 +3334,7 @@ Total ram usage:        1 bytes
 
  *************** function _sprintf *****************
  Defined at:
-		line 492 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c"
+		line 492 in file "/Applications/microchip/xc8/v1.42/sources/common/doprnt.c"
  Parameters:    Size  Location     Type
   sp              2   15[BANK0 ] PTR unsigned char 
 		 -> flashy_Main@hit_counter(6), secret_TaskData(14), locked_TaskData(14), slot_TaskData(40), 
@@ -3387,7 +3385,7 @@ Total ram usage:       28 bytes
 
  *************** function _isdigit *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\isdigit.c"
+		line 8 in file "/Applications/microchip/xc8/v1.42/sources/common/isdigit.c"
  Parameters:    Size  Location     Type
   c               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -3417,7 +3415,7 @@ Total ram usage:        2 bytes
 
  *************** function ___wmul *****************
  Defined at:
-		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c"
+		line 15 in file "/Applications/microchip/xc8/v1.42/sources/common/Umul16.c"
  Parameters:    Size  Location     Type
   multiplier      2    1[COMMON] unsigned int 
   multiplicand    2    3[COMMON] unsigned int 
@@ -3732,7 +3730,7 @@ Total ram usage:       10 bytes
 
  *************** function _rand *****************
  Defined at:
-		line 12 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\rand.c"
+		line 12 in file "/Applications/microchip/xc8/v1.42/sources/common/rand.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3764,7 +3762,7 @@ Total ram usage:        7 bytes
 
  *************** function ___lmul *****************
  Defined at:
-		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c"
+		line 15 in file "/Applications/microchip/xc8/v1.42/sources/common/Umul32.c"
  Parameters:    Size  Location     Type
   multiplier      4    1[COMMON] unsigned long 
   multiplicand    4    5[COMMON] unsigned long 
@@ -3795,7 +3793,7 @@ Total ram usage:       12 bytes
 
  *************** function ___almod *****************
  Defined at:
-		line 5 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\almod.c"
+		line 5 in file "/Applications/microchip/xc8/v1.42/sources/common/almod.c"
  Parameters:    Size  Location     Type
   divisor         4   11[BANK0 ] long 
   dividend        4   15[BANK0 ] long 
@@ -4163,7 +4161,7 @@ Total ram usage:       18 bytes
 
  *************** function _strlen *****************
  Defined at:
-		line 4 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c"
+		line 4 in file "/Applications/microchip/xc8/v1.42/sources/common/strlen.c"
  Parameters:    Size  Location     Type
   s               2    1[COMMON] PTR const unsigned char 
 		 -> Slot_Wheel(55), secret_inputs.inputs(20), secret_inputs(25), STR_29(5), 
@@ -4470,7 +4468,7 @@ Total ram usage:        1 bytes
 
  *************** function ___lwmod *****************
  Defined at:
-		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c"
+		line 6 in file "/Applications/microchip/xc8/v1.42/sources/common/lwmod.c"
  Parameters:    Size  Location     Type
   divisor         2   11[BANK0 ] unsigned int 
   dividend        2   13[BANK0 ] unsigned int 
@@ -4510,7 +4508,7 @@ Total ram usage:        6 bytes
 
  *************** function ___lwdiv *****************
  Defined at:
-		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c"
+		line 6 in file "/Applications/microchip/xc8/v1.42/sources/common/lwdiv.c"
  Parameters:    Size  Location     Type
   divisor         2    1[COMMON] unsigned int 
   dividend        2    3[COMMON] unsigned int 
@@ -4690,7 +4688,7 @@ Total ram usage:        1 bytes
 
  *************** function _memset *****************
  Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\memset.c"
+		line 8 in file "/Applications/microchip/xc8/v1.42/sources/common/memset.c"
  Parameters:    Size  Location     Type
   p1              2    1[COMMON] PTR void 
 		 -> secret_TaskData(14), locked_TaskData(14), slot_TaskData(40), menu_TaskData(14), 
@@ -5582,6 +5580,11 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+/Applications/microchip/xc8/v1.42/sources/common/isdigit.c
+		_isdigit       		CODE           	2EBD	0000	15
+
+/Applications/microchip/xc8/v1.42/sources/common/isdigit.c estimated size: 15
+
 flashy_task.c
 		_flashy_display_option		CODE           	1200	0000	96
 		_flashy_Main   		CODE           	0819	0000	2024
@@ -5595,21 +5598,11 @@ mcc_generated_files/pwm6.c
 
 mcc_generated_files/pwm6.c estimated size: 36
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
-		___lwdiv       		CODE           	22E5	0000	53
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c estimated size: 53
-
 mcc_generated_files/tmr4.c
 		_TMR4_Initialize		CODE           	2E76	0000	12
 		_TMR4_StartTimer		CODE           	2DE5	0000	4
 
 mcc_generated_files/tmr4.c estimated size: 16
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
-		___lmul        		CODE           	2281	0000	51
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c estimated size: 51
 
 nullifyBadge.c
 		_nullifyBadge_segDisplayErase		CODE           	2E09	0000	7
@@ -5629,6 +5622,11 @@ nullifyBadge.c
 
 nullifyBadge.c estimated size: 253
 
+/Applications/microchip/xc8/v1.42/sources/common/Umul16.c
+		___wmul        		CODE           	200F	0000	28
+
+/Applications/microchip/xc8/v1.42/sources/common/Umul16.c estimated size: 28
+
 mcc_generated_files/tmr2.c
 		_TMR2_Initialize		CODE           	2E41	0000	11
 		_TMR2_StartTimer		CODE           	2DE2	0000	4
@@ -5645,11 +5643,6 @@ mcc_generated_files/pwm2.c
 		_PWM2_LoadDutyValue		CODE           	2F8D	0000	23
 
 mcc_generated_files/pwm2.c estimated size: 35
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul8.c
-		___bmul        		CODE           	2F1A	0000	18
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul8.c estimated size: 18
 
 mcc_generated_files/tmr0.c
 		_TMR0_SetInterruptHandler		CODE           	2DF7	0000	7
@@ -5691,6 +5684,11 @@ secret_task.c
 
 secret_task.c estimated size: 777
 
+/Applications/microchip/xc8/v1.42/sources/common/lwmod.c
+		___lwmod       		CODE           	21F4	0000	46
+
+/Applications/microchip/xc8/v1.42/sources/common/lwmod.c estimated size: 46
+
 nullifyBadge_displayL2.c
 		_displayL2_EraseSegDisplay		CODE           	2EE8	0000	17
 		_displayL2_ForceUpdate		CODE           	2DFD	0000	7
@@ -5702,20 +5700,15 @@ nullifyBadge_displayL2.c
 
 nullifyBadge_displayL2.c estimated size: 235
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\rand.c
-		_rand          		CODE           	2501	0000	68
+/Applications/microchip/xc8/v1.42/sources/common/Umul32.c
+		___lmul        		CODE           	2281	0000	51
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\rand.c estimated size: 68
+/Applications/microchip/xc8/v1.42/sources/common/Umul32.c estimated size: 51
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\isdigit.c
-		_isdigit       		CODE           	2EBD	0000	15
+/Applications/microchip/xc8/v1.42/sources/common/almod.c
+		___almod       		CODE           	1A57	0000	111
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\isdigit.c estimated size: 15
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
-		_strlen        		CODE           	20D3	0000	31
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c estimated size: 31
+/Applications/microchip/xc8/v1.42/sources/common/almod.c estimated size: 111
 
 locked_task.c
 		_locked_Main   		CODE           	142C	0000	478
@@ -5741,10 +5734,15 @@ mcc_generated_files/pwm5.c
 
 mcc_generated_files/pwm5.c estimated size: 36
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\memset.c
-		_memset        		CODE           	2FCF	0000	25
+/Applications/microchip/xc8/v1.42/sources/common/rand.c
+		_rand          		CODE           	2501	0000	68
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\memset.c estimated size: 25
+/Applications/microchip/xc8/v1.42/sources/common/rand.c estimated size: 68
+
+/Applications/microchip/xc8/v1.42/sources/common/strlen.c
+		_strlen        		CODE           	20D3	0000	31
+
+/Applications/microchip/xc8/v1.42/sources/common/strlen.c estimated size: 31
 
 mcc_generated_files/mcc.c
 		_WDT_Initialize		CODE           	2DEE	0000	5
@@ -5762,31 +5760,26 @@ cooperative_scheduler.c
 
 cooperative_scheduler.c estimated size: 376
 
+/Applications/microchip/xc8/v1.42/sources/common/memset.c
+		_memset        		CODE           	2FCF	0000	25
+
+/Applications/microchip/xc8/v1.42/sources/common/memset.c estimated size: 25
+
 mcc_generated_files/pwm1.c
 		_PWM1_Initialize		CODE           	2E60	0000	12
 		_PWM1_LoadDutyValue		CODE           	2F77	0000	23
 
 mcc_generated_files/pwm1.c estimated size: 35
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
-		___lwmod       		CODE           	21F4	0000	46
+/Applications/microchip/xc8/v1.42/sources/common/lwdiv.c
+		___lwdiv       		CODE           	22E5	0000	53
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c estimated size: 46
+/Applications/microchip/xc8/v1.42/sources/common/lwdiv.c estimated size: 53
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+/Applications/microchip/xc8/v1.42/sources/common/doprnt.c
 		_sprintf       		CODE           	125F	0000	462
 
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c estimated size: 462
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\almod.c
-		___almod       		CODE           	1A57	0000	111
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\almod.c estimated size: 111
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c
-		___wmul        		CODE           	200F	0000	28
-
-C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c estimated size: 28
+/Applications/microchip/xc8/v1.42/sources/common/doprnt.c estimated size: 462
 
 main.c
 		_marquee       		CODE           	1B38	0000	120
@@ -5800,6 +5793,11 @@ main.c
 		_led_curtain   		CODE           	243D	0000	66
 
 main.c estimated size: 794
+
+/Applications/microchip/xc8/v1.42/sources/common/Umul8.c
+		___bmul        		CODE           	2F1A	0000	18
+
+/Applications/microchip/xc8/v1.42/sources/common/Umul8.c estimated size: 18
 
 slot_task.c
 		_slot_Init     		CODE           	198E	0000	101

@@ -1,17 +1,17 @@
 [p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
 [d version 1.1 ]
 [d edition pro ]
-[d chip 16F18346 ]
+[d chip 16LF18346 ]
 [d frameptr 6 ]
-"15 C:\Users\ryan\Documents\GitHub\defcon25\fadeDisplay_ExampleTask.c
-[e E8427 t_fadeDisplay_States `uc
+"15 /Users/Austin/Documents/badge/defcon25/fadeDisplay_ExampleTask.c
+[e E8241 t_fadeDisplay_States `uc
 FADE_TASK_STATE_SET_DISPLAY_UP 0
 FADE_TASK_STATE_FADE_UP 1
 FADE_TASK_STATE_SET_DISPLAY_DOWN 2
 FADE_TASK_STATE_FADE_DOWN 3
 ]
-"76 C:\Users\ryan\Documents\GitHub\defcon25\main.c
-[e E8488 t_flashy_led_states `uc
+"76 /Users/Austin/Documents/badge/defcon25/main.c
+[e E13894 t_flashy_led_states `uc
 FLASHY_STATE_LED_ROUNDABOUT 0
 FLASHY_STATE_LED_SHOT 1
 FLASHY_STATE_SPARKLE 2
@@ -19,7 +19,7 @@ FLASHY_STATE_CIRCLE 3
 FLASHY_STATE_LED_ALT 4
 FLASHY_STATE_LED_PARODY 5
 ]
-[e E8495 t_flashy_display_states `uc
+[e E13901 t_flashy_display_states `uc
 FLASHY_STATE_DISPLAY 0
 FLASHY_DEFAULT_STATE_DISPLAY 1
 FLASHY_STATE_DISPLAY_BLASTER 2
@@ -27,45 +27,45 @@ FLASHY_STATE_DISPLAY_SHOT 3
 FLASHY_STATE_DISPLAY_OFF 4
 FLASHY_STATE_DISPLAY_SECRET_TEST 5
 ]
-[e E8502 t_flashy_blaster_states `uc
+[e E13908 t_flashy_blaster_states `uc
 FLASHY_BLASTER_SHOOTING_STATE 0
 FLASHY_BLASTER_IDLE_STATE 1
 ]
 "79
-[e E8577 t_locked_states `uc
+[e E13983 t_locked_states `uc
 LOCKED_LOCKED_STATE 0
 LOCKED_LOCKING_STATE 1
 LOCKED_UNLOCKED_STATE 2
 LOCKED_UNLOCKING_STATE 3
 ]
 "279
-[e E8351 t_secret `uc
+[e E13757 t_secret `uc
 SECRET_VALUE_INIT 0
 SECRET_VALUE_TEST 1
 ]
 "282
-[e E8325 t_tasks `uc
+[e E13731 t_tasks `uc
 MENU_TASK 0
 SLOT_TASK 1
 FLASHY_TASK 2
 LOCKED_TASK 3
 ]
-"69 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
-[e E8294 t_hw_register `uc
+"69 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
+[e E8108 t_hw_register `uc
 HW_SEG_DISPLAY 0
 HW_USER_LEDS 1
 HW_IR_TX 2
 HW_EEPROM 3
 ]
-"59 C:\Users\ryan\Documents\GitHub\defcon25\menu_task.c
-[e E8264 t_tasks `uc
+"59 /Users/Austin/Documents/badge/defcon25/menu_task.c
+[e E8078 t_tasks `uc
 MENU_TASK 0
 SLOT_TASK 1
 FLASHY_TASK 2
 LOCKED_TASK 3
 ]
-"51 C:\Users\ryan\Documents\GitHub\defcon25\flashy_task.c
-[e E8488 t_flashy_led_states `uc
+"51 /Users/Austin/Documents/badge/defcon25/flashy_task.c
+[e E8302 t_flashy_led_states `uc
 FLASHY_STATE_LED_ROUNDABOUT 0
 FLASHY_STATE_LED_SHOT 1
 FLASHY_STATE_SPARKLE 2
@@ -73,7 +73,7 @@ FLASHY_STATE_CIRCLE 3
 FLASHY_STATE_LED_ALT 4
 FLASHY_STATE_LED_PARODY 5
 ]
-[e E8495 t_flashy_display_states `uc
+[e E8309 t_flashy_display_states `uc
 FLASHY_STATE_DISPLAY 0
 FLASHY_DEFAULT_STATE_DISPLAY 1
 FLASHY_STATE_DISPLAY_BLASTER 2
@@ -81,79 +81,79 @@ FLASHY_STATE_DISPLAY_SHOT 3
 FLASHY_STATE_DISPLAY_OFF 4
 FLASHY_STATE_DISPLAY_SECRET_TEST 5
 ]
-[e E8502 t_flashy_blaster_states `uc
+[e E8316 t_flashy_blaster_states `uc
 FLASHY_BLASTER_SHOOTING_STATE 0
 FLASHY_BLASTER_IDLE_STATE 1
 ]
 "111
-[e E8325 t_tasks `uc
+[e E8139 t_tasks `uc
 MENU_TASK 0
 SLOT_TASK 1
 FLASHY_TASK 2
 LOCKED_TASK 3
 ]
 "127
-[e E8351 t_secret `uc
+[e E8165 t_secret `uc
 SECRET_VALUE_INIT 0
 SECRET_VALUE_TEST 1
 ]
-"66 C:\Users\ryan\Documents\GitHub\defcon25\locked_task.c
-[e E8427 t_locked_states `uc
+"66 /Users/Austin/Documents/badge/defcon25/locked_task.c
+[e E8241 t_locked_states `uc
 LOCKED_LOCKED_STATE 0
 LOCKED_LOCKING_STATE 1
 LOCKED_UNLOCKED_STATE 2
 LOCKED_UNLOCKING_STATE 3
 ]
 "89
-[e E8264 t_tasks `uc
+[e E8078 t_tasks `uc
 MENU_TASK 0
 SLOT_TASK 1
 FLASHY_TASK 2
 LOCKED_TASK 3
 ]
-"46 C:\Users\ryan\Documents\GitHub\defcon25\secret_task.c
-[e E8351 t_secret `uc
+"46 /Users/Austin/Documents/badge/defcon25/secret_task.c
+[e E8165 t_secret `uc
 SECRET_VALUE_INIT 0
 SECRET_VALUE_TEST 1
 ]
-"101 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.c
-[e E8444 t_tasks `uc
+"101 /Users/Austin/Documents/badge/defcon25/slot_task.c
+[e E8258 t_tasks `uc
 MENU_TASK 0
 SLOT_TASK 1
 FLASHY_TASK 2
 LOCKED_TASK 3
 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\almod.c
+"5 /Applications/microchip/xc8/v1.42/sources/common/almod.c
 [v ___almod __almod `(l  1 e 4 0 ]
-"492 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+"492 /Applications/microchip/xc8/v1.42/sources/common/doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+"62 /Applications/microchip/xc8/v1.42/sources/common/float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
+"86 /Applications/microchip/xc8/v1.42/sources/common/ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\isdigit.c
+"8 /Applications/microchip/xc8/v1.42/sources/common/isdigit.c
 [v _isdigit isdigit `(b  1 e 0 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
+"6 /Applications/microchip/xc8/v1.42/sources/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
+"6 /Applications/microchip/xc8/v1.42/sources/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\memset.c
+"8 /Applications/microchip/xc8/v1.42/sources/common/memset.c
 [v _memset memset `(*.39v  1 e 1 0 ]
-"12 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\rand.c
+"12 /Applications/microchip/xc8/v1.42/sources/common/rand.c
 [v _rand rand `(i  1 e 2 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
+"4 /Applications/microchip/xc8/v1.42/sources/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c
+"15 /Applications/microchip/xc8/v1.42/sources/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
+"15 /Applications/microchip/xc8/v1.42/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul8.c
+"4 /Applications/microchip/xc8/v1.42/sources/common/Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
-"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\pic\eeprom.c
+"6 /Applications/microchip/xc8/v1.42/sources/pic/eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"20 C:\Users\ryan\Documents\GitHub\defcon25\cooperative_scheduler.c
+"20 /Users/Austin/Documents/badge/defcon25/cooperative_scheduler.c
 [v _scheduler_TaskRun scheduler_TaskRun `(v  1 s 1 scheduler_TaskRun ]
 "27
 [v _scheduler_Init scheduler_Init `(v  1 e 1 0 ]
@@ -163,7 +163,7 @@ LOCKED_TASK 3
 [v _scheduler_TaskAdd scheduler_TaskAdd `(c  1 e 1 0 ]
 "77
 [v _schedulerExecute schedulerExecute `(v  1 e 1 0 ]
-"50 C:\Users\ryan\Documents\GitHub\defcon25\flashy_task.c
+"50 /Users/Austin/Documents/badge/defcon25/flashy_task.c
 [v _flashy_Init flashy_Init `(v  1 e 1 0 ]
 "89
 [v _flashy_display_option flashy_display_option `(v  1 e 1 0 ]
@@ -171,7 +171,7 @@ LOCKED_TASK 3
 [v _flashy_Main flashy_Main `(v  1 e 1 0 ]
 "496
 [v _flashy_Exit flashy_Exit `(v  1 e 1 0 ]
-"29 C:\Users\ryan\Documents\GitHub\defcon25\locked_task.c
+"29 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_lock_leds locked_lock_leds `(ui  1 e 2 0 ]
 "37
 [v _locked_unlock_leds locked_unlock_leds `(ui  1 e 2 0 ]
@@ -187,7 +187,7 @@ LOCKED_TASK 3
 [v _locked_clear locked_clear `(v  1 e 1 0 ]
 "201
 [v _locked_Exit locked_Exit `(v  1 e 1 0 ]
-"130 C:\Users\ryan\Documents\GitHub\defcon25\main.c
+"130 /Users/Austin/Documents/badge/defcon25/main.c
 [v _marquee_speedy marquee_speedy `(v  1 e 1 0 ]
 "143
 [v _marquee marquee `(v  1 e 1 0 ]
@@ -205,15 +205,15 @@ LOCKED_TASK 3
 [v _led_Parody led_Parody `(v  1 e 1 0 ]
 "222
 [v _main main `(v  1 e 1 0 ]
-"51 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/interrupt_manager.c
+"51 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"76 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/mcc.c
+"76 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "92
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "110
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"57 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/memory.c
+"57 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/memory.c
 [v _FLASH_ReadWord FLASH_ReadWord `(ui  1 e 2 0 ]
 "93
 [v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
@@ -223,31 +223,31 @@ LOCKED_TASK 3
 [v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
 "201
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
-"51 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pin_manager.c
+"51 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm1.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm1.c
 [v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
 "80
 [v _PWM1_LoadDutyValue PWM1_LoadDutyValue `(v  1 e 1 0 ]
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm2.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm2.c
 [v _PWM2_Initialize PWM2_Initialize `(v  1 e 1 0 ]
 "80
 [v _PWM2_LoadDutyValue PWM2_LoadDutyValue `(v  1 e 1 0 ]
-"57 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm5.c
+"57 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm5.c
 [v _PWM5_Initialize PWM5_Initialize `(v  1 e 1 0 ]
 "74
 [v _PWM5_LoadDutyValue PWM5_LoadDutyValue `(v  1 e 1 0 ]
-"57 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm6.c
+"57 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm6.c
 [v _PWM6_Initialize PWM6_Initialize `(v  1 e 1 0 ]
 "74
 [v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/spi1.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 "77
 [v _SPI1_Exchange8bit SPI1_Exchange8bit `(uc  1 e 1 0 ]
 "91
 [v _SPI1_Exchange8bitBuffer SPI1_Exchange8bitBuffer `(uc  1 e 1 0 ]
-"65 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr0.c
+"65 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "97
 [v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
@@ -261,15 +261,15 @@ LOCKED_TASK 3
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "165
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr2.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "83
 [v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr4.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 "83
 [v _TMR4_StartTimer TMR4_StartTimer `(v  1 e 1 0 ]
-"33 C:\Users\ryan\Documents\GitHub\defcon25\menu_task.c
+"33 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_Init menu_Init `(v  1 e 1 0 ]
 "55
 [v _menu_Main menu_Main `(v  1 e 1 0 ]
@@ -281,7 +281,7 @@ LOCKED_TASK 3
 [v _menu_clear menu_clear `(v  1 e 1 0 ]
 "214
 [v _menu_Exit menu_Exit `(v  1 e 1 0 ]
-"13 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"13 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_platformInit nullifyBadge_platformInit `(v  1 e 1 0 ]
 "68
 [v _nullifyBadge_segDisplayRegister nullifyBadge_segDisplayRegister `(c  1 e 1 0 ]
@@ -317,7 +317,7 @@ LOCKED_TASK 3
 [v _nullifyBadge_irTxSet nullifyBadge_irTxSet `(v  1 e 1 0 ]
 "270
 [v _nullifyBadge_irTxClr nullifyBadge_irTxClr `(v  1 e 1 0 ]
-"13 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL1.c
+"13 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c
 [v _displayL1_Initialize displayL1_Initialize `(v  1 e 1 0 ]
 "18
 [v _displayL1_SetSegChar displayL1_SetSegChar `(v  1 e 1 0 ]
@@ -327,7 +327,7 @@ LOCKED_TASK 3
 [v _displayL1_Update displayL1_Update `(v  1 e 1 0 ]
 "105
 [v _displayCharReverse displayCharReverse `(ui  1 e 2 0 ]
-"12 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"12 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_Initialize displayL2_Initialize `(v  1 e 1 0 ]
 "19
 [v _displayL2_PrintChar displayL2_PrintChar `(v  1 e 1 0 ]
@@ -345,7 +345,7 @@ LOCKED_TASK 3
 [v _displayL2_SetUserLeds displayL2_SetUserLeds `(v  1 e 1 0 ]
 "94
 [v _displayL2_ClrUserLeds displayL2_ClrUserLeds `(v  1 e 1 0 ]
-"51 C:\Users\ryan\Documents\GitHub\defcon25\secret_task.c
+"51 /Users/Austin/Documents/badge/defcon25/secret_task.c
 [v _secret_Init secret_Init `(v  1 e 1 0 ]
 "69
 [v _secret_check secret_check `(uc  1 e 1 0 ]
@@ -355,7 +355,7 @@ LOCKED_TASK 3
 [v _secret_clear secret_clear `(v  1 e 1 0 ]
 "188
 [v _secret_Exit secret_Exit `(v  1 e 1 0 ]
-"29 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.c
+"29 /Users/Austin/Documents/badge/defcon25/slot_task.c
 [v _slot_Init slot_Init `(v  1 e 1 0 ]
 "48
 [v _slot_Setup slot_Setup `(v  1 e 1 0 ]
@@ -372,7 +372,7 @@ LOCKED_TASK 3
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"362 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic16f18346.h
+"362 /Applications/microchip/xc8/v1.42/include/pic16lf18346.h
 [u S808 . 1 `S803 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES808  1 e 1 @11 ]
 [s S1772 . 1 `uc 1 RA0 1 0 :1:0 
@@ -530,17 +530,17 @@ LOCKED_TASK 3
 [v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
 "3014
 [v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
-"3942
+"3921
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
-"3992
+"3971
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
-"4031
+"4010
 [v _WPUC WPUC `VEuc  1 e 1 @526 ]
-"4093
+"4072
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
-"4347
+"4326
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
-"4855
+"4834
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 [s S49 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
@@ -551,10 +551,10 @@ LOCKED_TASK 3
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-"4877
+"4856
 [u S58 . 1 `S49 1 . 1 0 ]
 [v _SSP1STATbits SSP1STATbits `VES58  1 e 1 @532 ]
-"4977
+"4956
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
 [s S22 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
@@ -562,7 +562,7 @@ LOCKED_TASK 3
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
-"5010
+"4989
 [s S28 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
@@ -570,17 +570,17 @@ LOCKED_TASK 3
 ]
 [u S33 . 1 `S22 1 . 1 0 `S28 1 . 1 0 ]
 [v _SSP1CON1bits SSP1CON1bits `VES33  1 e 1 @533 ]
-"6199
+"6178
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
-"6244
+"6223
 [v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
-"6283
+"6262
 [v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
-"6352
+"6331
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
-"6372
+"6351
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @658 ]
-"6392
+"6371
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
 [s S177 . 1 `uc 1 CCP1MODE 1 0 :4:0 
 `uc 1 CCP1FMT 1 0 :1:4 
@@ -588,7 +588,7 @@ LOCKED_TASK 3
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP1EN 1 0 :1:7 
 ]
-"6412
+"6391
 [s S183 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
 `uc 1 CCP1MODE1 1 0 :1:1 
 `uc 1 CCP1MODE2 1 0 :1:2 
@@ -596,11 +596,11 @@ LOCKED_TASK 3
 ]
 [u S188 . 1 `S177 1 . 1 0 `S183 1 . 1 0 ]
 [v _CCP1CONbits CCP1CONbits `VES188  1 e 1 @659 ]
-"6510
+"6489
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @661 ]
-"6530
+"6509
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @662 ]
-"6550
+"6529
 [v _CCP2CON CCP2CON `VEuc  1 e 1 @663 ]
 [s S635 . 1 `uc 1 CCP2MODE 1 0 :4:0 
 `uc 1 CCP2FMT 1 0 :1:4 
@@ -608,7 +608,7 @@ LOCKED_TASK 3
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP2EN 1 0 :1:7 
 ]
-"6570
+"6549
 [s S641 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
 `uc 1 CCP2MODE1 1 0 :1:1 
 `uc 1 CCP2MODE2 1 0 :1:2 
@@ -621,7 +621,7 @@ LOCKED_TASK 3
 `uc 1 C3TSEL 1 0 :2:4 
 `uc 1 C4TSEL 1 0 :2:6 
 ]
-"6684
+"6663
 [s S150 . 1 `uc 1 C1TSEL0 1 0 :1:0 
 `uc 1 C1TSEL1 1 0 :1:1 
 `uc 1 C2TSEL0 1 0 :1:2 
@@ -633,17 +633,17 @@ LOCKED_TASK 3
 ]
 [u S159 . 1 `S145 1 . 1 0 `S150 1 . 1 0 ]
 [v _CCPTMRSbits CCPTMRSbits `VES159  1 e 1 @671 ]
-"8299
+"8252
 [v _TMR4 TMR4 `VEuc  1 e 1 @1045 ]
-"8319
+"8272
 [v _PR4 PR4 `VEuc  1 e 1 @1046 ]
-"8339
+"8292
 [v _T4CON T4CON `VEuc  1 e 1 @1047 ]
 [s S325 . 1 `uc 1 T4CKPS 1 0 :2:0 
 `uc 1 TMR4ON 1 0 :1:2 
 `uc 1 T4OUTPS 1 0 :4:3 
 ]
-"8360
+"8313
 [s S329 . 1 `uc 1 T4CKPS0 1 0 :1:0 
 `uc 1 T4CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -654,22 +654,22 @@ LOCKED_TASK 3
 ]
 [u S337 . 1 `S325 1 . 1 0 `S329 1 . 1 0 ]
 [v _T4CONbits T4CONbits `VES337  1 e 1 @1047 ]
-"9253
+"8909
 [v _PWM5DCL PWM5DCL `VEuc  1 e 1 @1559 ]
-"9289
+"8945
 [v _PWM5DCH PWM5DCH `VEuc  1 e 1 @1560 ]
-"9359
+"9015
 [v _PWM5CON PWM5CON `VEuc  1 e 1 @1561 ]
-"9425
+"9081
 [v _PWM6DCL PWM6DCL `VEuc  1 e 1 @1562 ]
-"9461
+"9117
 [v _PWM6DCH PWM6DCH `VEuc  1 e 1 @1563 ]
-"9531
+"9187
 [v _PWM6CON PWM6CON `VEuc  1 e 1 @1564 ]
 [s S99 . 1 `uc 1 P5TSEL 1 0 :2:0 
 `uc 1 P6TSEL 1 0 :2:2 
 ]
-"9614
+"9270
 [s S102 . 1 `uc 1 P5TSEL0 1 0 :1:0 
 `uc 1 P5TSEL1 1 0 :1:1 
 `uc 1 P6TSEL0 1 0 :1:2 
@@ -677,13 +677,13 @@ LOCKED_TASK 3
 ]
 [u S107 . 1 `S99 1 . 1 0 `S102 1 . 1 0 ]
 [v _PWMTMRSbits PWMTMRSbits `VES107  1 e 1 @1567 ]
-"11139
+"10795
 [v _NVMADRL NVMADRL `VEuc  1 e 1 @2193 ]
-"11391
+"11047
 [v _NVMADRH NVMADRH `VEuc  1 e 1 @2194 ]
-"11641
+"11297
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2195 ]
-"11893
+"11549
 [v _NVMDATH NVMDATH `VEuc  1 e 1 @2196 ]
 [s S818 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
@@ -693,34 +693,34 @@ LOCKED_TASK 3
 `uc 1 LWLO 1 0 :1:5 
 `uc 1 NVMREGS 1 0 :1:6 
 ]
-"12138
+"11794
 [s S826 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CFGS 1 0 :1:6 
 ]
 [u S829 . 1 `S818 1 . 1 0 `S826 1 . 1 0 ]
 [v _NVMCON1bits NVMCON1bits `VES829  1 e 1 @2197 ]
-"12298
+"11954
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2198 ]
-"12809
+"12465
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2329 ]
-"12949
+"12605
 [v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2331 ]
-"13046
+"12702
 [v _OSCEN OSCEN `VEuc  1 e 1 @2333 ]
-"13092
+"12748
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2334 ]
-"13150
+"12806
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2335 ]
-"13196
+"12852
 [v _PPSLOCK PPSLOCK `VEuc  1 e 1 @3599 ]
 [s S435 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
 ]
-"13206
+"12862
 [u S437 . 1 `S435 1 . 1 0 ]
 [v _PPSLOCKbits PPSLOCKbits `VES437  1 e 1 @3599 ]
 [s S482 . 1 `uc 1 SSP1CLKPPS 1 0 :5:0 
 ]
-"14065
+"13721
 [s S484 . 1 `uc 1 SSP1CLKPPS0 1 0 :1:0 
 `uc 1 SSP1CLKPPS1 1 0 :1:1 
 `uc 1 SSP1CLKPPS2 1 0 :1:2 
@@ -731,7 +731,7 @@ LOCKED_TASK 3
 [v _SSP1CLKPPSbits SSP1CLKPPSbits `VES490  1 e 1 @3616 ]
 [s S462 . 1 `uc 1 SSP1DATPPS 1 0 :5:0 
 ]
-"14117
+"13773
 [s S464 . 1 `uc 1 SSP1DATPPS0 1 0 :1:0 
 `uc 1 SSP1DATPPS1 1 0 :1:1 
 `uc 1 SSP1DATPPS2 1 0 :1:2 
@@ -742,7 +742,7 @@ LOCKED_TASK 3
 [v _SSP1DATPPSbits SSP1DATPPSbits `VES470  1 e 1 @3617 ]
 [s S562 . 1 `uc 1 RB6PPS 1 0 :5:0 
 ]
-"14977
+"14633
 [s S564 . 1 `uc 1 RB6PPS0 1 0 :1:0 
 `uc 1 RB6PPS1 1 0 :1:1 
 `uc 1 RB6PPS2 1 0 :1:2 
@@ -753,7 +753,7 @@ LOCKED_TASK 3
 [v _RB6PPSbits RB6PPSbits `VES570  1 e 1 @3742 ]
 [s S522 . 1 `uc 1 RC0PPS 1 0 :5:0 
 ]
-"15081
+"14737
 [s S524 . 1 `uc 1 RC0PPS0 1 0 :1:0 
 `uc 1 RC0PPS1 1 0 :1:1 
 `uc 1 RC0PPS2 1 0 :1:2 
@@ -764,7 +764,7 @@ LOCKED_TASK 3
 [v _RC0PPSbits RC0PPSbits `VES530  1 e 1 @3744 ]
 [s S442 . 1 `uc 1 RC1PPS 1 0 :5:0 
 ]
-"15133
+"14789
 [s S444 . 1 `uc 1 RC1PPS0 1 0 :1:0 
 `uc 1 RC1PPS1 1 0 :1:1 
 `uc 1 RC1PPS2 1 0 :1:2 
@@ -775,7 +775,7 @@ LOCKED_TASK 3
 [v _RC1PPSbits RC1PPSbits `VES450  1 e 1 @3745 ]
 [s S582 . 1 `uc 1 RC2PPS 1 0 :5:0 
 ]
-"15185
+"14841
 [s S584 . 1 `uc 1 RC2PPS0 1 0 :1:0 
 `uc 1 RC2PPS1 1 0 :1:1 
 `uc 1 RC2PPS2 1 0 :1:2 
@@ -786,7 +786,7 @@ LOCKED_TASK 3
 [v _RC2PPSbits RC2PPSbits `VES590  1 e 1 @3746 ]
 [s S542 . 1 `uc 1 RC3PPS 1 0 :5:0 
 ]
-"15237
+"14893
 [s S544 . 1 `uc 1 RC3PPS0 1 0 :1:0 
 `uc 1 RC3PPS1 1 0 :1:1 
 `uc 1 RC3PPS2 1 0 :1:2 
@@ -797,7 +797,7 @@ LOCKED_TASK 3
 [v _RC3PPSbits RC3PPSbits `VES550  1 e 1 @3747 ]
 [s S502 . 1 `uc 1 RC4PPS 1 0 :5:0 
 ]
-"15289
+"14945
 [s S504 . 1 `uc 1 RC4PPS0 1 0 :1:0 
 `uc 1 RC4PPS1 1 0 :1:1 
 `uc 1 RC4PPS2 1 0 :1:2 
@@ -806,15 +806,15 @@ LOCKED_TASK 3
 ]
 [u S510 . 1 `S502 1 . 1 0 `S504 1 . 1 0 ]
 [v _RC4PPSbits RC4PPSbits `VES510  1 e 1 @3748 ]
-"20727
+"20375
 [v _GIE GIE `VEb  1 e 0 @95 ]
-"21853
+"21391
 [v _PLLR PLLR `VEb  1 e 0 @18656 ]
-"354 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+"354 /Applications/microchip/xc8/v1.42/sources/common/doprnt.c
 [v _dpowers dpowers `DCC[5]ui  1 s 10 dpowers ]
-"3 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\rand.c
+"3 /Applications/microchip/xc8/v1.42/sources/common/rand.c
 [v _randx randx `l  1 s 4 randx ]
-"18 C:\Users\ryan\Documents\GitHub\defcon25\flashy_task.c
+"18 /Users/Austin/Documents/badge/defcon25/flashy_task.c
 [v _flashy_leds_idx flashy_leds_idx `ui  1 e 2 0 ]
 "19
 [v _flashy_leds_state_track flashy_leds_state_track `ui  1 e 2 0 ]
@@ -832,9 +832,9 @@ LOCKED_TASK 3
 [v _flashy_option_idx flashy_option_idx `ui  1 e 2 0 ]
 "47
 [v _flashy_option_size flashy_option_size `ui  1 e 2 0 ]
-"175 C:\Users\ryan\Documents\GitHub\defcon25\gamma_correction.h
+"175 /Users/Austin/Documents/badge/defcon25/gamma_correction.h
 [v _gamma_table_256x1k gamma_table_256x1k `DCC[256]ui  1 e 512 0 ]
-"14 C:\Users\ryan\Documents\GitHub\defcon25\locked_task.c
+"14 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_lock_base_leds locked_lock_base_leds `ui  1 e 2 0 ]
 "17
 [v _locked_locking_leds locked_locking_leds `[6]ui  1 e 12 0 ]
@@ -843,7 +843,7 @@ LOCKED_TASK 3
 "26
 [v _locked_leds locked_leds `ui  1 e 2 0 ]
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
-"64 C:\Users\ryan\Documents\GitHub\defcon25\main.c
+"64 /Users/Austin/Documents/badge/defcon25/main.c
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
 [v _badge_inst badge_inst `S1005  1 e 18 0 ]
@@ -859,7 +859,7 @@ LOCKED_TASK 3
 "72
 [v _secret_task secret_task `S902  1 s 13 secret_task ]
 "76
-[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E8488 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E8495 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E8502 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
+[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E13894 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E13901 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E13908 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
 [v _flashy_TaskData flashy_TaskData `S1118  1 e 30 0 ]
 "77
 [s S1136 t_menu_taskData 14 `*.5S1005 1 badge 1 0 `uc 1 locked 1 1 `ui 1 delayTickCount 2 2 `ui 1 holdCountA 2 4 `ui 1 holdCountB 2 6 `ui 1 holdCountX 2 8 `ui 1 holdCountY 2 10 `ui 1 noholdCount 2 12 ]
@@ -868,7 +868,7 @@ LOCKED_TASK 3
 [s S1067 t_slot_taskData 40 `*.5S1005 1 badge 1 0 `uc 1 locked 1 1 `ui 1 displayTickCount 2 2 `ui 1 delayTickCount 2 4 `[4]uc 1 slot_wheel_index 4 6 `[20]uc 1 slot_print_buf 20 10 `ui 1 holdCountA 2 30 `ui 1 holdCountB 2 32 `ui 1 holdCountX 2 34 `ui 1 holdCountY 2 36 `ui 1 noholdCount 2 38 ]
 [v _slot_TaskData slot_TaskData `S1067  1 e 40 0 ]
 "79
-[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E8577 1 state 1 13 ]
+[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13983 1 state 1 13 ]
 [v _locked_TaskData locked_TaskData `S1161  1 e 14 0 ]
 "80
 [s S1170 t_secret_taskData 14 `*.5S1005 1 badge 1 0 `uc 1 locked 1 1 `ui 1 delayTickCount 2 2 `ui 1 holdCountA 2 4 `ui 1 holdCountB 2 6 `ui 1 holdCountX 2 8 `ui 1 holdCountY 2 10 `ui 1 noholdCount 2 12 ]
@@ -893,11 +893,11 @@ LOCKED_TASK 3
 [v _curtain_leds curtain_leds `[14]ui  1 e 28 0 ]
 "112
 [v _curtain_leds_inverse curtain_leds_inverse `[14]ui  1 e 28 0 ]
-"57 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr0.c
+"57 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr0.c
 [v _timer0ReloadVal16bit timer0ReloadVal16bit `VEui  1 e 2 0 ]
 "63
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"18 C:\Users\ryan\Documents\GitHub\defcon25\menu_task.c
+"18 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_option menu_option `[4]*.25uc  1 e 8 0 ]
 "24
 [v _menu_option_idx menu_option_idx `ui  1 e 2 0 ]
@@ -905,29 +905,29 @@ LOCKED_TASK 3
 [v _menu_option_size menu_option_size `ui  1 e 2 0 ]
 "30
 [v _menu_options_leds menu_options_leds `[5]ui  1 e 10 0 ]
-"89 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL1.h
+"89 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.h
 [v _asciiCharTableLookup asciiCharTableLookup `[128]ui  1 e 256 @9968 ]
 [s S2709 secret_input 25 `[20]uc 1 inputs 20 0 `ui 1 idx 2 20 `*.4ui 1 variable 1 22 `ui 1 value 2 23 ]
-"34 C:\Users\ryan\Documents\GitHub\defcon25\secret_task.c
+"34 /Users/Austin/Documents/badge/defcon25/secret_task.c
 [v _secret_inputs secret_inputs `[1]S2709  1 e 25 0 ]
-"24 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.c
+"24 /Users/Austin/Documents/badge/defcon25/slot_task.c
 [v _Shot_Options_Long Shot_Options_Long `[9]*.25uc  1 e 18 0 ]
 "25
 [v _Shot_Index Shot_Index `uc  1 e 1 0 ]
 "26
 [v _Leds_idx Leds_idx `ui  1 e 2 0 ]
-"19 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.h
+"19 /Users/Austin/Documents/badge/defcon25/slot_task.h
 [v _Slot_Wheel Slot_Wheel `[55]uc  1 e 55 0 ]
 "22
 [v _Shot_Options Shot_Options `[9]*.25uc  1 e 18 0 ]
 "24
 [v _slot_taskData slot_taskData `*.39S1067  1 e 2 0 ]
-"222 C:\Users\ryan\Documents\GitHub\defcon25\main.c
+"222 /Users/Austin/Documents/badge/defcon25/main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "293
 } 0
-"36 C:\Users\ryan\Documents\GitHub\defcon25\cooperative_scheduler.c
+"36 /Users/Austin/Documents/badge/defcon25/cooperative_scheduler.c
 [v _scheduler_TaskInit scheduler_TaskInit `(v  1 e 1 0 ]
 {
 [s S902 t_schedulerTask 13 `ui 1 systemTickLastExecuted 2 0 `*.39v 1 taskData 2 2 `*.37(v 1 taskInitCallback 2 4 `*.37(v 1 taskExitCallback 2 6 `*.37(v 1 taskExecuteCallback 2 8 `ui 1 taskInterval 2 10 `c 1 taskId 1 12 ]
@@ -952,7 +952,7 @@ LOCKED_TASK 3
 [v scheduler_TaskAdd@scheduler scheduler `*.5S923  1 a 1 36 ]
 "64
 } 0
-"51 C:\Users\ryan\Documents\GitHub\defcon25\secret_task.c
+"51 /Users/Austin/Documents/badge/defcon25/secret_task.c
 [v _secret_Init secret_Init `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -965,20 +965,20 @@ LOCKED_TASK 3
 [v secret_Init@taskData taskData `*.39v  1 p 2 25 ]
 "67
 } 0
-"65 C:\Users\ryan\Documents\GitHub\defcon25\locked_task.c
+"65 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_Init locked_Init `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
 "66
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
-[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E8577 1 state 1 13 ]
+[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13983 1 state 1 13 ]
 [v locked_Init@data data `*.39S1161  1 a 2 27 ]
 "65
 [v locked_Init@taskData taskData `*.39v  1 p 2 25 ]
 "83
 } 0
-"33 C:\Users\ryan\Documents\GitHub\defcon25\menu_task.c
+"33 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_Init menu_Init `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -991,20 +991,20 @@ LOCKED_TASK 3
 [v menu_Init@taskData taskData `*.39v  1 p 2 25 ]
 "53
 } 0
-"50 C:\Users\ryan\Documents\GitHub\defcon25\flashy_task.c
+"50 /Users/Austin/Documents/badge/defcon25/flashy_task.c
 [v _flashy_Init flashy_Init `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
 "51
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
-[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E8488 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E8495 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E8502 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
+[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E13894 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E13901 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E13908 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
 [v flashy_Init@data data `*.39S1118  1 a 2 27 ]
 "50
 [v flashy_Init@taskData taskData `*.39v  1 p 2 25 ]
 "86
 } 0
-"29 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.c
+"29 /Users/Austin/Documents/badge/defcon25/slot_task.c
 [v _slot_Init slot_Init `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1017,7 +1017,7 @@ LOCKED_TASK 3
 [v slot_Init@taskData taskData `*.39v  1 p 2 25 ]
 "46
 } 0
-"133 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"133 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_userLedsRegister nullifyBadge_userLedsRegister `(c  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1039,7 +1039,7 @@ LOCKED_TASK 3
 [v nullifyBadge_segDisplayRegister@badge badge `*.5S1005  1 a 1 1 ]
 "76
 } 0
-"27 C:\Users\ryan\Documents\GitHub\defcon25\cooperative_scheduler.c
+"27 /Users/Austin/Documents/badge/defcon25/cooperative_scheduler.c
 [v _scheduler_Init scheduler_Init `(v  1 e 1 0 ]
 {
 [s S902 t_schedulerTask 13 `ui 1 systemTickLastExecuted 2 0 `*.39v 1 taskData 2 2 `*.37(v 1 taskInitCallback 2 4 `*.37(v 1 taskExitCallback 2 6 `*.37(v 1 taskExecuteCallback 2 8 `ui 1 taskInterval 2 10 `c 1 taskId 1 12 ]
@@ -1082,7 +1082,7 @@ LOCKED_TASK 3
 [v scheduler_TaskRun@task task `*.5S902  1 a 1 71 ]
 "23
 } 0
-"99 C:\Users\ryan\Documents\GitHub\defcon25\secret_task.c
+"99 /Users/Austin/Documents/badge/defcon25/secret_task.c
 [v _secret_Main secret_Main `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1098,14 +1098,14 @@ LOCKED_TASK 3
 [v secret_Main@taskData taskData `*.39v  1 p 2 50 ]
 "176
 } 0
-"85 C:\Users\ryan\Documents\GitHub\defcon25\locked_task.c
+"85 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_Main locked_Main `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
 "86
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
-[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E8577 1 state 1 13 ]
+[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13983 1 state 1 13 ]
 [v locked_Main@data data `*.39S1161  1 a 2 55 ]
 "87
 [v locked_Main@buttonPressed buttonPressed `uc  1 a 1 54 ]
@@ -1113,7 +1113,7 @@ LOCKED_TASK 3
 [v locked_Main@taskData taskData `*.39v  1 p 2 50 ]
 "184
 } 0
-"55 C:\Users\ryan\Documents\GitHub\defcon25\menu_task.c
+"55 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_Main menu_Main `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1128,7 +1128,7 @@ LOCKED_TASK 3
 [v menu_Main@taskData taskData `*.39v  1 p 2 50 ]
 "160
 } 0
-"106 C:\Users\ryan\Documents\GitHub\defcon25\flashy_task.c
+"106 /Users/Austin/Documents/badge/defcon25/flashy_task.c
 [v _flashy_Main flashy_Main `(v  1 e 1 0 ]
 {
 "109
@@ -1137,7 +1137,7 @@ LOCKED_TASK 3
 "107
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
-[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E8488 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E8495 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E8502 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
+[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E13894 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E13901 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E13908 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
 [v flashy_Main@data data `*.39S1118  1 a 2 62 ]
 "108
 [v flashy_Main@buttonPressed buttonPressed `ui  1 a 2 60 ]
@@ -1145,7 +1145,7 @@ LOCKED_TASK 3
 [v flashy_Main@taskData taskData `*.39v  1 p 2 50 ]
 "494
 } 0
-"96 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.c
+"96 /Users/Austin/Documents/badge/defcon25/slot_task.c
 [v _slot_Main slot_Main `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1186,7 +1186,7 @@ LOCKED_TASK 3
 [v slot_Finished_Animation@taskData taskData `*.39v  1 p 2 29 ]
 "94
 } 0
-"178 C:\Users\ryan\Documents\GitHub\defcon25\secret_task.c
+"178 /Users/Austin/Documents/badge/defcon25/secret_task.c
 [v _secret_clear secret_clear `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1216,7 +1216,7 @@ LOCKED_TASK 3
 [v secret_check@buttonPressed buttonPressed `uc  1 p 1 9 ]
 "97
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul8.c
+"4 /Applications/microchip/xc8/v1.42/sources/common/Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
 {
 [v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
@@ -1229,7 +1229,7 @@ LOCKED_TASK 3
 [v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
 "51
 } 0
-"181 C:\Users\ryan\Documents\GitHub\defcon25\menu_task.c
+"181 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_run_option menu_run_option `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1264,7 +1264,7 @@ LOCKED_TASK 3
 [v menu_display_option@data data `*.39S1136  1 p 2 44 ]
 "179
 } 0
-"48 C:\Users\ryan\Documents\GitHub\defcon25\slot_task.c
+"48 /Users/Austin/Documents/badge/defcon25/slot_task.c
 [v _slot_Setup slot_Setup `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1277,7 +1277,7 @@ LOCKED_TASK 3
 [v slot_Setup@taskData taskData `*.39v  1 p 2 15 ]
 "62
 } 0
-"37 C:\Users\ryan\Documents\GitHub\defcon25\locked_task.c
+"37 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_unlock_leds locked_unlock_leds `(ui  1 e 2 0 ]
 {
 "41
@@ -1311,11 +1311,11 @@ LOCKED_TASK 3
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
-[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E8577 1 state 1 13 ]
+[s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13983 1 state 1 13 ]
 [v locked_clear@data data `*.39S1161  1 p 2 25 ]
 "198
 } 0
-"177 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"177 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_userLedsClr nullifyBadge_userLedsClr `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1326,7 +1326,7 @@ LOCKED_TASK 3
 [v nullifyBadge_userLedsClr@badge badge `*.5S1005  1 a 1 11 ]
 "179
 } 0
-"94 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"94 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_ClrUserLeds displayL2_ClrUserLeds `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1336,7 +1336,7 @@ LOCKED_TASK 3
 [v displayL2_ClrUserLeds@display display `*.5S1000  1 a 1 11 ]
 "97
 } 0
-"123 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"123 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_segDisplayErase nullifyBadge_segDisplayErase `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1347,7 +1347,7 @@ LOCKED_TASK 3
 [v nullifyBadge_segDisplayErase@badge badge `*.5S1005  1 a 1 24 ]
 "125
 } 0
-"83 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"83 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_EraseSegDisplay displayL2_EraseSegDisplay `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1357,7 +1357,7 @@ LOCKED_TASK 3
 [v displayL2_EraseSegDisplay@display display `*.5S1000  1 a 1 23 ]
 "86
 } 0
-"492 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\doprnt.c
+"492 /Applications/microchip/xc8/v1.42/sources/common/doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 "501
@@ -1381,7 +1381,7 @@ LOCKED_TASK 3
 [v sprintf@f f `*.25DCCuc  1 p 2 17 ]
 "1541
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\isdigit.c
+"8 /Applications/microchip/xc8/v1.42/sources/common/isdigit.c
 [v _isdigit isdigit `(b  1 e 0 0 ]
 {
 [v isdigit@c c `uc  1 a 1 wreg ]
@@ -1390,7 +1390,7 @@ LOCKED_TASK 3
 [v isdigit@c c `uc  1 a 1 2 ]
 "15
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c
+"15 /Applications/microchip/xc8/v1.42/sources/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -1400,7 +1400,7 @@ LOCKED_TASK 3
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 3 ]
 "53
 } 0
-"264 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"264 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_irTxSet nullifyBadge_irTxSet `(v  1 e 1 0 ]
 {
 "267
@@ -1444,7 +1444,7 @@ LOCKED_TASK 3
 [v nullifyBadge_buttonsGet@retVal retVal `uc  1 a 1 3 ]
 "196
 } 0
-"191 C:\Users\ryan\Documents\GitHub\defcon25\main.c
+"191 /Users/Austin/Documents/badge/defcon25/main.c
 [v _let_alternate let_alternate `(v  1 e 1 0 ]
 {
 [v let_alternate@count count `ui  1 p 2 16 ]
@@ -1468,12 +1468,12 @@ LOCKED_TASK 3
 [v led_rand@spark spark `ui  1 a 2 27 ]
 "183
 } 0
-"12 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\rand.c
+"12 /Applications/microchip/xc8/v1.42/sources/common/rand.c
 [v _rand rand `(i  1 e 2 0 ]
 {
 "17
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
+"15 /Applications/microchip/xc8/v1.42/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
@@ -1483,7 +1483,7 @@ LOCKED_TASK 3
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 5 ]
 "129
 } 0
-"5 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\almod.c
+"5 /Applications/microchip/xc8/v1.42/sources/common/almod.c
 [v ___almod __almod `(l  1 e 4 0 ]
 {
 "11
@@ -1494,7 +1494,7 @@ LOCKED_TASK 3
 [v ___almod@dividend dividend `l  1 p 4 15 ]
 "35
 } 0
-"166 C:\Users\ryan\Documents\GitHub\defcon25\main.c
+"166 /Users/Austin/Documents/badge/defcon25/main.c
 [v _led_curtain led_curtain `(v  1 e 1 0 ]
 {
 "167
@@ -1522,7 +1522,7 @@ LOCKED_TASK 3
 [v led_Parody@count count `ui  1 p 2 16 ]
 "218
 } 0
-"164 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"164 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_userLedsSet nullifyBadge_userLedsSet `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1534,7 +1534,7 @@ LOCKED_TASK 3
 [v nullifyBadge_userLedsSet@badge badge `*.5S1005  1 a 1 15 ]
 "169
 } 0
-"88 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"88 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_SetUserLeds displayL2_SetUserLeds `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1545,7 +1545,7 @@ LOCKED_TASK 3
 [v displayL2_SetUserLeds@display display `*.5S1000  1 a 1 11 ]
 "92
 } 0
-"71 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL1.c
+"71 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c
 [v _displayL1_SetUserLed displayL1_SetUserLed `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1557,17 +1557,17 @@ LOCKED_TASK 3
 [v displayL1_SetUserLed@display display `*.5S998  1 a 1 4 ]
 "75
 } 0
-"89 C:\Users\ryan\Documents\GitHub\defcon25\flashy_task.c
+"89 /Users/Austin/Documents/badge/defcon25/flashy_task.c
 [v _flashy_display_option flashy_display_option `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
-[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E8488 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E8495 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E8502 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
+[s S1118 t_flashy_taskData 30 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `E13894 1 led_state 1 3 `ui 1 displayTickCount 2 4 `E13901 1 display_state 1 6 `ui 1 blasterTickCount 2 7 `E13908 1 blaster_state 1 9 `ui 1 holdCountA 2 10 `ui 1 holdCountB 2 12 `ui 1 holdCountX 2 14 `ui 1 holdCountY 2 16 `ui 1 holdCountXY 2 18 `ui 1 holdCountAY 2 20 `ui 1 holdCountAX 2 22 `ui 1 holdCountBX 2 24 `ui 1 holdCountBY 2 26 `ui 1 noholdCount 2 28 ]
 [v flashy_display_option@data data `*.39S1118  1 p 2 44 ]
 "103
 } 0
-"130 C:\Users\ryan\Documents\GitHub\defcon25\main.c
+"130 /Users/Austin/Documents/badge/defcon25/main.c
 [v _marquee_speedy marquee_speedy `(v  1 e 1 0 ]
 {
 "135
@@ -1583,7 +1583,7 @@ LOCKED_TASK 3
 [v marquee_speedy@count count `ui  1 p 2 28 ]
 [v marquee_speedy@multiplier multiplier `ui  1 p 2 30 ]
 "131
-[v marquee_speedy@F8639 F8639 `[5]uc  1 s 5 F8639 ]
+[v marquee_speedy@F14045 F14045 `[5]uc  1 s 5 F14045 ]
 "140
 } 0
 "143
@@ -1603,10 +1603,10 @@ LOCKED_TASK 3
 [v marquee@string string `*.26uc  1 p 2 26 ]
 [v marquee@count count `ui  1 p 2 28 ]
 "145
-[v marquee@F8648 F8648 `[5]uc  1 s 5 F8648 ]
+[v marquee@F14054 F14054 `[5]uc  1 s 5 F14054 ]
 "154
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
+"4 /Applications/microchip/xc8/v1.42/sources/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "6
@@ -1615,7 +1615,7 @@ LOCKED_TASK 3
 [v strlen@s s `*.26DCCuc  1 p 2 1 ]
 "13
 } 0
-"113 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"113 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_segDisplayPutStr nullifyBadge_segDisplayPutStr `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1627,7 +1627,7 @@ LOCKED_TASK 3
 [v nullifyBadge_segDisplayPutStr@badge badge `*.5S1005  1 a 1 25 ]
 "115
 } 0
-"55 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"55 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_PutStr displayL2_PutStr `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1659,7 +1659,7 @@ LOCKED_TASK 3
 [v displayL2_PutChar@display display `*.5S1000  1 a 1 15 ]
 "53
 } 0
-"18 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL1.c
+"18 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c
 [v _displayL1_SetSegChar displayL1_SetSegChar `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1690,7 +1690,7 @@ LOCKED_TASK 3
 [v displayCharReverse@cVal cVal `ui  1 p 2 1 ]
 "124
 } 0
-"108 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"108 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_segDisplayForceUpdate nullifyBadge_segDisplayForceUpdate `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1701,7 +1701,7 @@ LOCKED_TASK 3
 [v nullifyBadge_segDisplayForceUpdate@badge badge `*.5S1005  1 a 1 11 ]
 "110
 } 0
-"79 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"79 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_ForceUpdate displayL2_ForceUpdate `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1711,7 +1711,7 @@ LOCKED_TASK 3
 [v displayL2_ForceUpdate@display display `*.5S1000  1 a 1 11 ]
 "81
 } 0
-"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwmod.c
+"6 /Applications/microchip/xc8/v1.42/sources/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "11
@@ -1721,7 +1721,7 @@ LOCKED_TASK 3
 [v ___lwmod@dividend dividend `ui  1 p 2 13 ]
 "26
 } 0
-"6 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\lwdiv.c
+"6 /Applications/microchip/xc8/v1.42/sources/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
@@ -1733,7 +1733,7 @@ LOCKED_TASK 3
 [v ___lwdiv@dividend dividend `ui  1 p 2 3 ]
 "31
 } 0
-"109 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr0.c
+"109 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr0.c
 [v _TMR0_Read16bitTimer TMR0_Read16bitTimer `(ui  1 e 2 0 ]
 {
 "111
@@ -1744,7 +1744,7 @@ LOCKED_TASK 3
 [v TMR0_Read16bitTimer@readValLow readValLow `uc  1 a 1 10 ]
 "120
 } 0
-"13 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge.c
+"13 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_platformInit nullifyBadge_platformInit `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1757,7 +1757,7 @@ LOCKED_TASK 3
 [v nullifyBadge_platformInit@badge badge `*.5S1005  1 a 1 12 ]
 "59
 } 0
-"12 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL2.c
+"12 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c
 [v _displayL2_Initialize displayL2_Initialize `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1767,7 +1767,7 @@ LOCKED_TASK 3
 [v displayL2_Initialize@display display `*.5S1000  1 a 1 11 ]
 "17
 } 0
-"13 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL1.c
+"13 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c
 [v _displayL1_Initialize displayL1_Initialize `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1776,7 +1776,7 @@ LOCKED_TASK 3
 [v displayL1_Initialize@display display `*.5S998  1 a 1 11 ]
 "16
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\memset.c
+"8 /Applications/microchip/xc8/v1.42/sources/common/memset.c
 [v _memset memset `(*.39v  1 e 1 0 ]
 {
 "15
@@ -1787,7 +1787,7 @@ LOCKED_TASK 3
 [v memset@n n `ui  1 p 2 5 ]
 "22
 } 0
-"97 C:\Users\ryan\Documents\GitHub\defcon25\nullifyBadge_displayL1.c
+"97 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c
 [v _displayL1_Update displayL1_Update `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1801,7 +1801,7 @@ LOCKED_TASK 3
 [v displayL1_Update@display display `*.5S998  1 a 1 10 ]
 "103
 } 0
-"91 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/spi1.c
+"91 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/spi1.c
 [v _SPI1_Exchange8bitBuffer SPI1_Exchange8bitBuffer `(uc  1 e 1 0 ]
 {
 [v SPI1_Exchange8bitBuffer@dataIn dataIn `*.5uc  1 a 1 wreg ]
@@ -1824,7 +1824,7 @@ LOCKED_TASK 3
 [v SPI1_Exchange8bit@data data `uc  1 a 1 1 ]
 "89
 } 0
-"76 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/mcc.c
+"76 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "90
@@ -1834,7 +1834,7 @@ LOCKED_TASK 3
 {
 "114
 } 0
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr4.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 {
 "81
@@ -1844,7 +1844,7 @@ LOCKED_TASK 3
 {
 "87
 } 0
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr2.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "81
@@ -1854,7 +1854,7 @@ LOCKED_TASK 3
 {
 "87
 } 0
-"65 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr0.c
+"65 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "95
@@ -1870,73 +1870,73 @@ LOCKED_TASK 3
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37v  1 p 2 1 ]
 "163
 } 0
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/spi1.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 {
 "75
 } 0
-"57 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm6.c
+"57 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm6.c
 [v _PWM6_Initialize PWM6_Initialize `(v  1 e 1 0 ]
 {
 "72
 } 0
-"57 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm5.c
+"57 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm5.c
 [v _PWM5_Initialize PWM5_Initialize `(v  1 e 1 0 ]
 {
 "72
 } 0
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm2.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm2.c
 [v _PWM2_Initialize PWM2_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"63 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm1.c
+"63 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm1.c
 [v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
 {
 "78
 } 0
-"51 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pin_manager.c
+"51 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "93
 [v PIN_MANAGER_Initialize@state state `uc  1 a 1 1 ]
 "113
 } 0
-"92 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/mcc.c
+"92 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "108
 } 0
-"74 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm6.c
+"74 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm6.c
 [v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM6_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 1 ]
 "81
 } 0
-"74 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm5.c
+"74 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm5.c
 [v _PWM5_LoadDutyValue PWM5_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM5_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 1 ]
 "81
 } 0
-"80 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm2.c
+"80 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm2.c
 [v _PWM2_LoadDutyValue PWM2_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM2_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 1 ]
 "96
 } 0
-"80 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/pwm1.c
+"80 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm1.c
 [v _PWM1_LoadDutyValue PWM1_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v PWM1_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 1 ]
 "96
 } 0
-"51 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/interrupt_manager.c
+"51 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "62
 } 0
-"136 C:\Users\ryan\Documents\GitHub\defcon25\mcc_generated_files/tmr0.c
+"136 /Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "149

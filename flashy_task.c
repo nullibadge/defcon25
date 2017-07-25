@@ -34,13 +34,29 @@ char *flashy_option[] = {
     "HACK THE PLANET   ",
     "WILL HACK FOR A/C   ",
     "HTTP 418 I'M A TEAPOT    ",
+    "IPoAC  ",
     "I AM JUST A BADGE    ",
-    "ALL YOU BASE ARE BELONG TO US     ",
+    "I CAN BREAK THAT FOR YOU   ",
+    "ALL YOUR BASE ARE BELONG TO US     ",
     "DOES DEVAN HAS HIS PHONE?    ",
-    "YOU JUST HAVE TO BELIEVE",
+    "YOU JUST HAVE TO BELIEVE    ",
     "NOTHING TO SEE HERE...    ",
     "GUYS I HAVE A GREAT IDEA -MIKE K.      ",
-    "HTTPS://GITHUB.COM/NULLIBADGE/DEFCON25    "
+    "deny any any    ",
+    "BELIEVE THE LIE   ",
+    "nc -e /bin/bash -lp 1337    ",
+    "rm -rf /   ",
+    "HISTORY -cw   ",
+    "ITS A UNIX SYSTEM  I know this!   ",
+    "TRUST NO ONE   ",
+    "WOULD YOU LIKE TO PLAY A GAME?   ",
+    "IM AFRAID I CANT LET YOU DO THAT DAVE...  "
+    "IM HERE TO CHEW BUBBLEGUM AND KICK ASS... AND IM ALL OUT OF BUBBLEGUM        ",
+    "BUTTER EMAILS   ",
+    "I LOVE IT. ESPECIALLY LATER IN THE SUMMER     ",
+    "BABA WERK   ",
+    "HTTPS://GITHUB.COM/NULLIBADGE/DEFCON25    ",
+    "    "
 };
 
 u16 flashy_option_idx;

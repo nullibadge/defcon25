@@ -905,7 +905,7 @@ LOCKED_TASK 3
 [v _menu_option_size menu_option_size `ui  1 e 2 0 ]
 "30
 [v _menu_options_leds menu_options_leds `[5]ui  1 e 10 0 ]
-"89 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.h
+"69 /Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.h
 [v _asciiCharTableLookup asciiCharTableLookup `[128]ui  1 e 256 @9968 ]
 [s S2709 secret_input 25 `[20]uc 1 inputs 20 0 `ui 1 idx 2 20 `*.4ui 1 variable 1 22 `ui 1 value 2 23 ]
 "34 /Users/Austin/Documents/badge/defcon25/secret_task.c

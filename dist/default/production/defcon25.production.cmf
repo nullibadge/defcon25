@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcgYJwJmE.obj
+$/tmp/xchCT5cNM.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 16 16 2 2
 config CONFIG 0 8007 8007 4 2
@@ -310,168 +310,168 @@ STRING 314A-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/defcon25.production.obj
-18 cinit CODE >19903:/tmp/xcq7fJmgB
-18 cinit CODE >19906:/tmp/xcq7fJmgB
-18 cinit CODE >20181:/tmp/xcq7fJmgB
-19 cinit CODE >20182:/tmp/xcq7fJmgB
-1A cinit CODE >20183:/tmp/xcq7fJmgB
-1B cinit CODE >20184:/tmp/xcq7fJmgB
-1C cinit CODE >20185:/tmp/xcq7fJmgB
-1D cinit CODE >20186:/tmp/xcq7fJmgB
-1E cinit CODE >20187:/tmp/xcq7fJmgB
-1F cinit CODE >20188:/tmp/xcq7fJmgB
-20 cinit CODE >20189:/tmp/xcq7fJmgB
-21 cinit CODE >20190:/tmp/xcq7fJmgB
-22 cinit CODE >20191:/tmp/xcq7fJmgB
-23 cinit CODE >20192:/tmp/xcq7fJmgB
-26 cinit CODE >20196:/tmp/xcq7fJmgB
-27 cinit CODE >20197:/tmp/xcq7fJmgB
-28 cinit CODE >20198:/tmp/xcq7fJmgB
-29 cinit CODE >20199:/tmp/xcq7fJmgB
-2A cinit CODE >20200:/tmp/xcq7fJmgB
-2B cinit CODE >20201:/tmp/xcq7fJmgB
-2C cinit CODE >20202:/tmp/xcq7fJmgB
-2D cinit CODE >20203:/tmp/xcq7fJmgB
-2E cinit CODE >20204:/tmp/xcq7fJmgB
-2F cinit CODE >20205:/tmp/xcq7fJmgB
-30 cinit CODE >20206:/tmp/xcq7fJmgB
-31 cinit CODE >20207:/tmp/xcq7fJmgB
-34 cinit CODE >20211:/tmp/xcq7fJmgB
-35 cinit CODE >20212:/tmp/xcq7fJmgB
-38 cinit CODE >20213:/tmp/xcq7fJmgB
-39 cinit CODE >20214:/tmp/xcq7fJmgB
-3C cinit CODE >20215:/tmp/xcq7fJmgB
-3D cinit CODE >20219:/tmp/xcq7fJmgB
-3E cinit CODE >20220:/tmp/xcq7fJmgB
-3F cinit CODE >20221:/tmp/xcq7fJmgB
-40 cinit CODE >20222:/tmp/xcq7fJmgB
-41 cinit CODE >20223:/tmp/xcq7fJmgB
-42 cinit CODE >20224:/tmp/xcq7fJmgB
-43 cinit CODE >20225:/tmp/xcq7fJmgB
-44 cinit CODE >20226:/tmp/xcq7fJmgB
-45 cinit CODE >20227:/tmp/xcq7fJmgB
-46 cinit CODE >20228:/tmp/xcq7fJmgB
-47 cinit CODE >20229:/tmp/xcq7fJmgB
-48 cinit CODE >20230:/tmp/xcq7fJmgB
-4B cinit CODE >20234:/tmp/xcq7fJmgB
-4C cinit CODE >20235:/tmp/xcq7fJmgB
-4D cinit CODE >20236:/tmp/xcq7fJmgB
-4E cinit CODE >20237:/tmp/xcq7fJmgB
-4F cinit CODE >20238:/tmp/xcq7fJmgB
-50 cinit CODE >20239:/tmp/xcq7fJmgB
-51 cinit CODE >20240:/tmp/xcq7fJmgB
-52 cinit CODE >20241:/tmp/xcq7fJmgB
-53 cinit CODE >20242:/tmp/xcq7fJmgB
-54 cinit CODE >20243:/tmp/xcq7fJmgB
-55 cinit CODE >20244:/tmp/xcq7fJmgB
-56 cinit CODE >20245:/tmp/xcq7fJmgB
-59 cinit CODE >20249:/tmp/xcq7fJmgB
-5A cinit CODE >20250:/tmp/xcq7fJmgB
-5B cinit CODE >20251:/tmp/xcq7fJmgB
-5C cinit CODE >20252:/tmp/xcq7fJmgB
-5D cinit CODE >20253:/tmp/xcq7fJmgB
-5E cinit CODE >20254:/tmp/xcq7fJmgB
-5F cinit CODE >20255:/tmp/xcq7fJmgB
-60 cinit CODE >20256:/tmp/xcq7fJmgB
-61 cinit CODE >20257:/tmp/xcq7fJmgB
-62 cinit CODE >20258:/tmp/xcq7fJmgB
-63 cinit CODE >20259:/tmp/xcq7fJmgB
-64 cinit CODE >20260:/tmp/xcq7fJmgB
-67 cinit CODE >20264:/tmp/xcq7fJmgB
-68 cinit CODE >20265:/tmp/xcq7fJmgB
-69 cinit CODE >20266:/tmp/xcq7fJmgB
-6A cinit CODE >20267:/tmp/xcq7fJmgB
-6B cinit CODE >20268:/tmp/xcq7fJmgB
-6C cinit CODE >20269:/tmp/xcq7fJmgB
-6D cinit CODE >20270:/tmp/xcq7fJmgB
-6E cinit CODE >20271:/tmp/xcq7fJmgB
-6F cinit CODE >20272:/tmp/xcq7fJmgB
-70 cinit CODE >20273:/tmp/xcq7fJmgB
-71 cinit CODE >20274:/tmp/xcq7fJmgB
-72 cinit CODE >20275:/tmp/xcq7fJmgB
-75 cinit CODE >20279:/tmp/xcq7fJmgB
-76 cinit CODE >20280:/tmp/xcq7fJmgB
-77 cinit CODE >20281:/tmp/xcq7fJmgB
-78 cinit CODE >20282:/tmp/xcq7fJmgB
-79 cinit CODE >20283:/tmp/xcq7fJmgB
-7A cinit CODE >20284:/tmp/xcq7fJmgB
-7B cinit CODE >20285:/tmp/xcq7fJmgB
-7C cinit CODE >20286:/tmp/xcq7fJmgB
-7D cinit CODE >20287:/tmp/xcq7fJmgB
-7E cinit CODE >20288:/tmp/xcq7fJmgB
-7F cinit CODE >20289:/tmp/xcq7fJmgB
-80 cinit CODE >20290:/tmp/xcq7fJmgB
-83 cinit CODE >20294:/tmp/xcq7fJmgB
-84 cinit CODE >20295:/tmp/xcq7fJmgB
-85 cinit CODE >20296:/tmp/xcq7fJmgB
-86 cinit CODE >20297:/tmp/xcq7fJmgB
-87 cinit CODE >20298:/tmp/xcq7fJmgB
-88 cinit CODE >20299:/tmp/xcq7fJmgB
-89 cinit CODE >20300:/tmp/xcq7fJmgB
-8A cinit CODE >20301:/tmp/xcq7fJmgB
-8B cinit CODE >20302:/tmp/xcq7fJmgB
-8C cinit CODE >20303:/tmp/xcq7fJmgB
-8D cinit CODE >20304:/tmp/xcq7fJmgB
-8E cinit CODE >20305:/tmp/xcq7fJmgB
-91 cinit CODE >20328:/tmp/xcq7fJmgB
-92 cinit CODE >20332:/tmp/xcq7fJmgB
-93 cinit CODE >20333:/tmp/xcq7fJmgB
-94 cinit CODE >20334:/tmp/xcq7fJmgB
-95 cinit CODE >20335:/tmp/xcq7fJmgB
-96 cinit CODE >20336:/tmp/xcq7fJmgB
-97 cinit CODE >20337:/tmp/xcq7fJmgB
-98 cinit CODE >20338:/tmp/xcq7fJmgB
-99 cinit CODE >20339:/tmp/xcq7fJmgB
-9A cinit CODE >20340:/tmp/xcq7fJmgB
-9D cinit CODE >20344:/tmp/xcq7fJmgB
-9E cinit CODE >20345:/tmp/xcq7fJmgB
-9F cinit CODE >20346:/tmp/xcq7fJmgB
-A0 cinit CODE >20347:/tmp/xcq7fJmgB
-A1 cinit CODE >20348:/tmp/xcq7fJmgB
-A2 cinit CODE >20349:/tmp/xcq7fJmgB
-A3 cinit CODE >20350:/tmp/xcq7fJmgB
-A4 cinit CODE >20351:/tmp/xcq7fJmgB
-A5 cinit CODE >20352:/tmp/xcq7fJmgB
-A8 cinit CODE >20356:/tmp/xcq7fJmgB
-A9 cinit CODE >20357:/tmp/xcq7fJmgB
-AA cinit CODE >20358:/tmp/xcq7fJmgB
-AB cinit CODE >20359:/tmp/xcq7fJmgB
-AC cinit CODE >20360:/tmp/xcq7fJmgB
-AD cinit CODE >20361:/tmp/xcq7fJmgB
-AE cinit CODE >20362:/tmp/xcq7fJmgB
-AF cinit CODE >20363:/tmp/xcq7fJmgB
-B0 cinit CODE >20364:/tmp/xcq7fJmgB
-B3 cinit CODE >20368:/tmp/xcq7fJmgB
-B4 cinit CODE >20369:/tmp/xcq7fJmgB
-B5 cinit CODE >20370:/tmp/xcq7fJmgB
-B6 cinit CODE >20371:/tmp/xcq7fJmgB
-B7 cinit CODE >20372:/tmp/xcq7fJmgB
-B8 cinit CODE >20373:/tmp/xcq7fJmgB
-B9 cinit CODE >20374:/tmp/xcq7fJmgB
-BA cinit CODE >20375:/tmp/xcq7fJmgB
-BB cinit CODE >20376:/tmp/xcq7fJmgB
-BE cinit CODE >20380:/tmp/xcq7fJmgB
-BF cinit CODE >20381:/tmp/xcq7fJmgB
-C0 cinit CODE >20382:/tmp/xcq7fJmgB
-C1 cinit CODE >20383:/tmp/xcq7fJmgB
-C2 cinit CODE >20384:/tmp/xcq7fJmgB
-C3 cinit CODE >20385:/tmp/xcq7fJmgB
-C4 cinit CODE >20386:/tmp/xcq7fJmgB
-C5 cinit CODE >20387:/tmp/xcq7fJmgB
-C6 cinit CODE >20388:/tmp/xcq7fJmgB
-C9 cinit CODE >20392:/tmp/xcq7fJmgB
-CA cinit CODE >20393:/tmp/xcq7fJmgB
-CB cinit CODE >20394:/tmp/xcq7fJmgB
-CC cinit CODE >20395:/tmp/xcq7fJmgB
-CD cinit CODE >20396:/tmp/xcq7fJmgB
-CE cinit CODE >20397:/tmp/xcq7fJmgB
-CF cinit CODE >20398:/tmp/xcq7fJmgB
-D0 cinit CODE >20399:/tmp/xcq7fJmgB
-D1 cinit CODE >20400:/tmp/xcq7fJmgB
-D3 cinit CODE >20406:/tmp/xcq7fJmgB
-D3 cinit CODE >20408:/tmp/xcq7fJmgB
-D4 cinit CODE >20409:/tmp/xcq7fJmgB
-D5 cinit CODE >20410:/tmp/xcq7fJmgB
+18 cinit CODE >19904:/tmp/xcp1ATRoR
+18 cinit CODE >19907:/tmp/xcp1ATRoR
+18 cinit CODE >20182:/tmp/xcp1ATRoR
+19 cinit CODE >20183:/tmp/xcp1ATRoR
+1A cinit CODE >20184:/tmp/xcp1ATRoR
+1B cinit CODE >20185:/tmp/xcp1ATRoR
+1C cinit CODE >20186:/tmp/xcp1ATRoR
+1D cinit CODE >20187:/tmp/xcp1ATRoR
+1E cinit CODE >20188:/tmp/xcp1ATRoR
+1F cinit CODE >20189:/tmp/xcp1ATRoR
+20 cinit CODE >20190:/tmp/xcp1ATRoR
+21 cinit CODE >20191:/tmp/xcp1ATRoR
+22 cinit CODE >20192:/tmp/xcp1ATRoR
+23 cinit CODE >20193:/tmp/xcp1ATRoR
+26 cinit CODE >20197:/tmp/xcp1ATRoR
+27 cinit CODE >20198:/tmp/xcp1ATRoR
+28 cinit CODE >20199:/tmp/xcp1ATRoR
+29 cinit CODE >20200:/tmp/xcp1ATRoR
+2A cinit CODE >20201:/tmp/xcp1ATRoR
+2B cinit CODE >20202:/tmp/xcp1ATRoR
+2C cinit CODE >20203:/tmp/xcp1ATRoR
+2D cinit CODE >20204:/tmp/xcp1ATRoR
+2E cinit CODE >20205:/tmp/xcp1ATRoR
+2F cinit CODE >20206:/tmp/xcp1ATRoR
+30 cinit CODE >20207:/tmp/xcp1ATRoR
+31 cinit CODE >20208:/tmp/xcp1ATRoR
+34 cinit CODE >20212:/tmp/xcp1ATRoR
+35 cinit CODE >20213:/tmp/xcp1ATRoR
+38 cinit CODE >20214:/tmp/xcp1ATRoR
+39 cinit CODE >20215:/tmp/xcp1ATRoR
+3C cinit CODE >20216:/tmp/xcp1ATRoR
+3D cinit CODE >20220:/tmp/xcp1ATRoR
+3E cinit CODE >20221:/tmp/xcp1ATRoR
+3F cinit CODE >20222:/tmp/xcp1ATRoR
+40 cinit CODE >20223:/tmp/xcp1ATRoR
+41 cinit CODE >20224:/tmp/xcp1ATRoR
+42 cinit CODE >20225:/tmp/xcp1ATRoR
+43 cinit CODE >20226:/tmp/xcp1ATRoR
+44 cinit CODE >20227:/tmp/xcp1ATRoR
+45 cinit CODE >20228:/tmp/xcp1ATRoR
+46 cinit CODE >20229:/tmp/xcp1ATRoR
+47 cinit CODE >20230:/tmp/xcp1ATRoR
+48 cinit CODE >20231:/tmp/xcp1ATRoR
+4B cinit CODE >20235:/tmp/xcp1ATRoR
+4C cinit CODE >20236:/tmp/xcp1ATRoR
+4D cinit CODE >20237:/tmp/xcp1ATRoR
+4E cinit CODE >20238:/tmp/xcp1ATRoR
+4F cinit CODE >20239:/tmp/xcp1ATRoR
+50 cinit CODE >20240:/tmp/xcp1ATRoR
+51 cinit CODE >20241:/tmp/xcp1ATRoR
+52 cinit CODE >20242:/tmp/xcp1ATRoR
+53 cinit CODE >20243:/tmp/xcp1ATRoR
+54 cinit CODE >20244:/tmp/xcp1ATRoR
+55 cinit CODE >20245:/tmp/xcp1ATRoR
+56 cinit CODE >20246:/tmp/xcp1ATRoR
+59 cinit CODE >20250:/tmp/xcp1ATRoR
+5A cinit CODE >20251:/tmp/xcp1ATRoR
+5B cinit CODE >20252:/tmp/xcp1ATRoR
+5C cinit CODE >20253:/tmp/xcp1ATRoR
+5D cinit CODE >20254:/tmp/xcp1ATRoR
+5E cinit CODE >20255:/tmp/xcp1ATRoR
+5F cinit CODE >20256:/tmp/xcp1ATRoR
+60 cinit CODE >20257:/tmp/xcp1ATRoR
+61 cinit CODE >20258:/tmp/xcp1ATRoR
+62 cinit CODE >20259:/tmp/xcp1ATRoR
+63 cinit CODE >20260:/tmp/xcp1ATRoR
+64 cinit CODE >20261:/tmp/xcp1ATRoR
+67 cinit CODE >20265:/tmp/xcp1ATRoR
+68 cinit CODE >20266:/tmp/xcp1ATRoR
+69 cinit CODE >20267:/tmp/xcp1ATRoR
+6A cinit CODE >20268:/tmp/xcp1ATRoR
+6B cinit CODE >20269:/tmp/xcp1ATRoR
+6C cinit CODE >20270:/tmp/xcp1ATRoR
+6D cinit CODE >20271:/tmp/xcp1ATRoR
+6E cinit CODE >20272:/tmp/xcp1ATRoR
+6F cinit CODE >20273:/tmp/xcp1ATRoR
+70 cinit CODE >20274:/tmp/xcp1ATRoR
+71 cinit CODE >20275:/tmp/xcp1ATRoR
+72 cinit CODE >20276:/tmp/xcp1ATRoR
+75 cinit CODE >20280:/tmp/xcp1ATRoR
+76 cinit CODE >20281:/tmp/xcp1ATRoR
+77 cinit CODE >20282:/tmp/xcp1ATRoR
+78 cinit CODE >20283:/tmp/xcp1ATRoR
+79 cinit CODE >20284:/tmp/xcp1ATRoR
+7A cinit CODE >20285:/tmp/xcp1ATRoR
+7B cinit CODE >20286:/tmp/xcp1ATRoR
+7C cinit CODE >20287:/tmp/xcp1ATRoR
+7D cinit CODE >20288:/tmp/xcp1ATRoR
+7E cinit CODE >20289:/tmp/xcp1ATRoR
+7F cinit CODE >20290:/tmp/xcp1ATRoR
+80 cinit CODE >20291:/tmp/xcp1ATRoR
+83 cinit CODE >20295:/tmp/xcp1ATRoR
+84 cinit CODE >20296:/tmp/xcp1ATRoR
+85 cinit CODE >20297:/tmp/xcp1ATRoR
+86 cinit CODE >20298:/tmp/xcp1ATRoR
+87 cinit CODE >20299:/tmp/xcp1ATRoR
+88 cinit CODE >20300:/tmp/xcp1ATRoR
+89 cinit CODE >20301:/tmp/xcp1ATRoR
+8A cinit CODE >20302:/tmp/xcp1ATRoR
+8B cinit CODE >20303:/tmp/xcp1ATRoR
+8C cinit CODE >20304:/tmp/xcp1ATRoR
+8D cinit CODE >20305:/tmp/xcp1ATRoR
+8E cinit CODE >20306:/tmp/xcp1ATRoR
+91 cinit CODE >20329:/tmp/xcp1ATRoR
+92 cinit CODE >20333:/tmp/xcp1ATRoR
+93 cinit CODE >20334:/tmp/xcp1ATRoR
+94 cinit CODE >20335:/tmp/xcp1ATRoR
+95 cinit CODE >20336:/tmp/xcp1ATRoR
+96 cinit CODE >20337:/tmp/xcp1ATRoR
+97 cinit CODE >20338:/tmp/xcp1ATRoR
+98 cinit CODE >20339:/tmp/xcp1ATRoR
+99 cinit CODE >20340:/tmp/xcp1ATRoR
+9A cinit CODE >20341:/tmp/xcp1ATRoR
+9D cinit CODE >20345:/tmp/xcp1ATRoR
+9E cinit CODE >20346:/tmp/xcp1ATRoR
+9F cinit CODE >20347:/tmp/xcp1ATRoR
+A0 cinit CODE >20348:/tmp/xcp1ATRoR
+A1 cinit CODE >20349:/tmp/xcp1ATRoR
+A2 cinit CODE >20350:/tmp/xcp1ATRoR
+A3 cinit CODE >20351:/tmp/xcp1ATRoR
+A4 cinit CODE >20352:/tmp/xcp1ATRoR
+A5 cinit CODE >20353:/tmp/xcp1ATRoR
+A8 cinit CODE >20357:/tmp/xcp1ATRoR
+A9 cinit CODE >20358:/tmp/xcp1ATRoR
+AA cinit CODE >20359:/tmp/xcp1ATRoR
+AB cinit CODE >20360:/tmp/xcp1ATRoR
+AC cinit CODE >20361:/tmp/xcp1ATRoR
+AD cinit CODE >20362:/tmp/xcp1ATRoR
+AE cinit CODE >20363:/tmp/xcp1ATRoR
+AF cinit CODE >20364:/tmp/xcp1ATRoR
+B0 cinit CODE >20365:/tmp/xcp1ATRoR
+B3 cinit CODE >20369:/tmp/xcp1ATRoR
+B4 cinit CODE >20370:/tmp/xcp1ATRoR
+B5 cinit CODE >20371:/tmp/xcp1ATRoR
+B6 cinit CODE >20372:/tmp/xcp1ATRoR
+B7 cinit CODE >20373:/tmp/xcp1ATRoR
+B8 cinit CODE >20374:/tmp/xcp1ATRoR
+B9 cinit CODE >20375:/tmp/xcp1ATRoR
+BA cinit CODE >20376:/tmp/xcp1ATRoR
+BB cinit CODE >20377:/tmp/xcp1ATRoR
+BE cinit CODE >20381:/tmp/xcp1ATRoR
+BF cinit CODE >20382:/tmp/xcp1ATRoR
+C0 cinit CODE >20383:/tmp/xcp1ATRoR
+C1 cinit CODE >20384:/tmp/xcp1ATRoR
+C2 cinit CODE >20385:/tmp/xcp1ATRoR
+C3 cinit CODE >20386:/tmp/xcp1ATRoR
+C4 cinit CODE >20387:/tmp/xcp1ATRoR
+C5 cinit CODE >20388:/tmp/xcp1ATRoR
+C6 cinit CODE >20389:/tmp/xcp1ATRoR
+C9 cinit CODE >20393:/tmp/xcp1ATRoR
+CA cinit CODE >20394:/tmp/xcp1ATRoR
+CB cinit CODE >20395:/tmp/xcp1ATRoR
+CC cinit CODE >20396:/tmp/xcp1ATRoR
+CD cinit CODE >20397:/tmp/xcp1ATRoR
+CE cinit CODE >20398:/tmp/xcp1ATRoR
+CF cinit CODE >20399:/tmp/xcp1ATRoR
+D0 cinit CODE >20400:/tmp/xcp1ATRoR
+D1 cinit CODE >20401:/tmp/xcp1ATRoR
+D3 cinit CODE >20407:/tmp/xcp1ATRoR
+D3 cinit CODE >20409:/tmp/xcp1ATRoR
+D4 cinit CODE >20410:/tmp/xcp1ATRoR
+D5 cinit CODE >20411:/tmp/xcp1ATRoR
 4 intentry CODE >51:/Users/Austin/Documents/badge/defcon25/mcc_generated_files/interrupt_manager.c
 4 intentry CODE >96:/Users/Austin/Documents/badge/defcon25/mcc_generated_files/pwm1.c
 9 intentry CODE >54:/Users/Austin/Documents/badge/defcon25/mcc_generated_files/interrupt_manager.c
@@ -1812,34 +1812,34 @@ FF2 text16 CODE >492:/Users/Austin/Documents/badge/defcon25/flashy_task.c
 1E35 maintext CODE >287:/Users/Austin/Documents/badge/defcon25/main.c
 1E3E maintext CODE >290:/Users/Austin/Documents/badge/defcon25/main.c
 1E42 maintext CODE >289:/Users/Austin/Documents/badge/defcon25/main.c
-2EA4 clrtext CODE >20311:/tmp/xcq7fJmgB
-2EA4 clrtext CODE >20312:/tmp/xcq7fJmgB
-2EA5 clrtext CODE >20313:/tmp/xcq7fJmgB
-2EA5 clrtext CODE >20314:/tmp/xcq7fJmgB
-2EA6 clrtext CODE >20315:/tmp/xcq7fJmgB
-2EA7 clrtext CODE >20316:/tmp/xcq7fJmgB
-2EA8 clrtext CODE >20317:/tmp/xcq7fJmgB
-2EA9 clrtext CODE >20318:/tmp/xcq7fJmgB
-2EAA clrtext CODE >20319:/tmp/xcq7fJmgB
-2EAB clrtext CODE >20320:/tmp/xcq7fJmgB
-2EAC clrtext CODE >20321:/tmp/xcq7fJmgB
-2EAD clrtext CODE >20322:/tmp/xcq7fJmgB
-2EAE clrtext CODE >20324:/tmp/xcq7fJmgB
-2EAF clrtext CODE >20323:/tmp/xcq7fJmgB
-1800 inittext CODE >20164:/tmp/xcq7fJmgB
-1800 inittext CODE >20165:/tmp/xcq7fJmgB
-1801 inittext CODE >20166:/tmp/xcq7fJmgB
-1801 inittext CODE >20167:/tmp/xcq7fJmgB
-1802 inittext CODE >20168:/tmp/xcq7fJmgB
-1803 inittext CODE >20169:/tmp/xcq7fJmgB
-1804 inittext CODE >20170:/tmp/xcq7fJmgB
-1805 inittext CODE >20171:/tmp/xcq7fJmgB
-1806 inittext CODE >20172:/tmp/xcq7fJmgB
-1807 inittext CODE >20173:/tmp/xcq7fJmgB
-1808 inittext CODE >20174:/tmp/xcq7fJmgB
-1809 inittext CODE >20175:/tmp/xcq7fJmgB
-180A inittext CODE >20177:/tmp/xcq7fJmgB
-180B inittext CODE >20176:/tmp/xcq7fJmgB
+2EA4 clrtext CODE >20312:/tmp/xcp1ATRoR
+2EA4 clrtext CODE >20313:/tmp/xcp1ATRoR
+2EA5 clrtext CODE >20314:/tmp/xcp1ATRoR
+2EA5 clrtext CODE >20315:/tmp/xcp1ATRoR
+2EA6 clrtext CODE >20316:/tmp/xcp1ATRoR
+2EA7 clrtext CODE >20317:/tmp/xcp1ATRoR
+2EA8 clrtext CODE >20318:/tmp/xcp1ATRoR
+2EA9 clrtext CODE >20319:/tmp/xcp1ATRoR
+2EAA clrtext CODE >20320:/tmp/xcp1ATRoR
+2EAB clrtext CODE >20321:/tmp/xcp1ATRoR
+2EAC clrtext CODE >20322:/tmp/xcp1ATRoR
+2EAD clrtext CODE >20323:/tmp/xcp1ATRoR
+2EAE clrtext CODE >20325:/tmp/xcp1ATRoR
+2EAF clrtext CODE >20324:/tmp/xcp1ATRoR
+1800 inittext CODE >20165:/tmp/xcp1ATRoR
+1800 inittext CODE >20166:/tmp/xcp1ATRoR
+1801 inittext CODE >20167:/tmp/xcp1ATRoR
+1801 inittext CODE >20168:/tmp/xcp1ATRoR
+1802 inittext CODE >20169:/tmp/xcp1ATRoR
+1803 inittext CODE >20170:/tmp/xcp1ATRoR
+1804 inittext CODE >20171:/tmp/xcp1ATRoR
+1805 inittext CODE >20172:/tmp/xcp1ATRoR
+1806 inittext CODE >20173:/tmp/xcp1ATRoR
+1807 inittext CODE >20174:/tmp/xcp1ATRoR
+1808 inittext CODE >20175:/tmp/xcp1ATRoR
+1809 inittext CODE >20176:/tmp/xcp1ATRoR
+180A inittext CODE >20178:/tmp/xcp1ATRoR
+180B inittext CODE >20177:/tmp/xcp1ATRoR
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1927,12 +1927,12 @@ _TMR4 415 0 ABS 0 - dist/default/production/defcon25.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production/defcon25.production.obj
 _WPUB 20D 0 ABS 0 - dist/default/production/defcon25.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production/defcon25.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcgYJwJmE.obj
+___sp 0 0 STACK 2 stack /tmp/xchCT5cNM.obj
 _main 3AD0 0 CODE 0 maintext dist/default/production/defcon25.production.obj
 _rand 4A02 0 CODE 0 text48 dist/default/production/defcon25.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/defcon25.production.obj
 _nullifyBadge_irTxRegister 5DB2 0 CODE 0 text41 dist/default/production/defcon25.production.obj
-start 2C 0 CODE 0 init /tmp/xcgYJwJmE.obj
+start 2C 0 CODE 0 init /tmp/xchCT5cNM.obj
 _PWM6_LoadDutyValue 5F72 0 CODE 0 text94 dist/default/production/defcon25.production.obj
 locked_Init@data 3B 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 __end_of_secret_check 3AD0 0 CODE 0 text21 dist/default/production/defcon25.production.obj
@@ -2037,12 +2037,12 @@ __size_of_menu_clear 0 0 ABS 0 - dist/default/production/defcon25.production.obj
 TMR0_SetInterruptHandler@InterruptHandler 71 0 COMMON 1 cstackCOMMON dist/default/production/defcon25.production.obj
 __size_of_led_Parody 0 0 ABS 0 - dist/default/production/defcon25.production.obj
 displayL1_Update@tmpRxBuf 20 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
-intlevel0 0 0 CODE 0 functab /tmp/xcgYJwJmE.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcgYJwJmE.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcgYJwJmE.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcgYJwJmE.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcgYJwJmE.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcgYJwJmE.obj
+intlevel0 0 0 CODE 0 functab /tmp/xchCT5cNM.obj
+intlevel1 0 0 CODE 0 functab /tmp/xchCT5cNM.obj
+intlevel2 0 0 CODE 0 functab /tmp/xchCT5cNM.obj
+intlevel3 0 0 CODE 0 functab /tmp/xchCT5cNM.obj
+intlevel4 0 0 CODE 0 functab /tmp/xchCT5cNM.obj
+intlevel5 0 0 CODE 0 functab /tmp/xchCT5cNM.obj
 __ptext100 5CAA 0 CODE 0 text100 dist/default/production/defcon25.production.obj
 __ptext101 5BBC 0 CODE 0 text101 dist/default/production/defcon25.production.obj
 __size_of_nullifyBadge_segDisplayForceUpdate 0 0 ABS 0 - dist/default/production/defcon25.production.obj
@@ -2247,7 +2247,7 @@ __size_of_secret_Main 0 0 ABS 0 - dist/default/production/defcon25.production.ob
 flashy_Init@data 3B 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 marquee@display_string 3F 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 __end_of_locked_get_lock_leds 42AA 0 CODE 0 text30 dist/default/production/defcon25.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcgYJwJmE.obj
+___int_sp 0 0 STACK 2 stack /tmp/xchCT5cNM.obj
 _let_alternate 5EC6 0 CODE 0 text45 dist/default/production/defcon25.production.obj
 marquee@i 46 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 marquee@j 4A 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
@@ -2557,7 +2557,7 @@ __CFG_BORV$LOW 0 0 ABS 0 - dist/default/production/defcon25.production.obj
 displayL2_PutStr@display 35 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 __Lintentry 8 0 CODE 0 intentry -
 displayCharReverse@cVal 71 0 COMMON 1 cstackCOMMON dist/default/production/defcon25.production.obj
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcgYJwJmE.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xchCT5cNM.obj
 strlen@s 71 0 COMMON 1 cstackCOMMON dist/default/production/defcon25.production.obj
 marquee_speedy@string_length 48 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 __size_of_locked_get_unlock_leds 0 0 ABS 0 - dist/default/production/defcon25.production.obj
@@ -2765,8 +2765,8 @@ secret_Main@taskData 52 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.p
 nullifyBadge_userLedsSet@badge 2F 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
 __size_of_nullifyBadge_segDisplayRegister 0 0 ABS 0 - dist/default/production/defcon25.production.obj
 menu_display_option@led 50 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj
-stackhi 26EF 0 ABS 0 - /tmp/xcgYJwJmE.obj
-stacklo 22F8 0 ABS 0 - /tmp/xcgYJwJmE.obj
+stackhi 26EF 0 ABS 0 - /tmp/xchCT5cNM.obj
+stacklo 22F8 0 ABS 0 - /tmp/xchCT5cNM.obj
 _menu_clear 4B14 0 CODE 0 text24 dist/default/production/defcon25.production.obj
 __end_of_let_alternate 5EEE 0 CODE 0 text45 dist/default/production/defcon25.production.obj
 nullifyBadge_segDisplayErase@badge 38 0 BANK0 1 cstackBANK0 dist/default/production/defcon25.production.obj

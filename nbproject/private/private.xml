@@ -3,18 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Austin/Documents/badge/defcon25/main.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/fadeDisplay_ExampleTask.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/slot_task.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/menu_task.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge.c</file>
-            <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.h</file>
-            <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.c</file>
-            <file>file:/Users/Austin/Documents/badge/defcon25/locked_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/secret_task.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/xc8_types.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/main.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/locked_task.c</file>
         </group>
     </open-files>
 </project-private>

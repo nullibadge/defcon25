@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.42 build -159332390 
-                                                                                               Mon Jul 24 23:30:39 2017
+                                                                                               Tue Jul 25 07:17:45 2017
 
 Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130522
      1                           	processor	16LF18346
@@ -9080,24 +9080,24 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
   9066  064E  3410               	retlw	16
   9067  064F  3420               	retlw	32
   9068  0650  3400               	retlw	0
-  9069  0651  34A5               	retlw	165
-  9070  0652  3421               	retlw	33
+  9069  0651  3410               	retlw	16
+  9070  0652  3410               	retlw	16
   9071  0653  34A5               	retlw	165
-  9072  0654  3460               	retlw	96
-  9073  0655  3400               	retlw	0
-  9074  0656  3412               	retlw	18
+  9072  0654  3421               	retlw	33
+  9073  0655  34A5               	retlw	165
+  9074  0656  3460               	retlw	96
   9075  0657  3410               	retlw	16
-  9076  0658  3408               	retlw	8
-  9077  0659  3420               	retlw	32
-  9078  065A  3420               	retlw	32
-  9079  065B  34B1               	retlw	177
-  9080  065C  3430               	retlw	48
-  9081  065D  3485               	retlw	133
-  9082  065E  3445               	retlw	69
-  9083  065F  3410               	retlw	16
-  9084  0660  3430               	retlw	48
-  9085  0661  3410               	retlw	16
-  9086  0662  3410               	retlw	16
+  9076  0658  3430               	retlw	48
+  9077  0659  3400               	retlw	0
+  9078  065A  3412               	retlw	18
+  9079  065B  3410               	retlw	16
+  9080  065C  3408               	retlw	8
+  9081  065D  3420               	retlw	32
+  9082  065E  3420               	retlw	32
+  9083  065F  3485               	retlw	133
+  9084  0660  3445               	retlw	69
+  9085  0661  34B1               	retlw	177
+  9086  0662  3430               	retlw	48
   9087  0663  3410               	retlw	16
   9088  0664  3410               	retlw	16
   9089  0665  3410               	retlw	16
@@ -9200,8 +9200,8 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
   9186  06C6  3402               	retlw	2
   9187  06C7  3414               	retlw	20
   9188  06C8  34E1               	retlw	225
-  9189  06C9  3410               	retlw	16
-  9190  06CA  3410               	retlw	16
+  9189  06C9  34A5               	retlw	165
+  9190  06CA  3470               	retlw	112
   9191  06CB  3491               	retlw	145
   9192  06CC  3471               	retlw	113
   9193  06CD  34B1               	retlw	177
@@ -9258,76 +9258,76 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
   9244  0700  3421               	retlw	33
   9245  0701  3408               	retlw	8
   9246  0702  3402               	retlw	2
-  9247  0703  340A               	retlw	10
-  9248  0704  3400               	retlw	0
-  9249  0705  3420               	retlw	32
+  9247  0703  34A0               	retlw	160
+  9248  0704  3460               	retlw	96
+  9249  0705  340A               	retlw	10
   9250  0706  3400               	retlw	0
-  9251  0707  3410               	retlw	16
-  9252  0708  3410               	retlw	16
-  9253  0709  3491               	retlw	145
-  9254  070A  3471               	retlw	113
-  9255  070B  34B1               	retlw	177
-  9256  070C  3411               	retlw	17
-  9257  070D  3431               	retlw	49
-  9258  070E  3410               	retlw	16
-  9259  070F  34B1               	retlw	177
-  9260  0710  3450               	retlw	80
-  9261  0711  3421               	retlw	33
-  9262  0712  3431               	retlw	49
-  9263  0713  3401               	retlw	1
+  9251  0707  3420               	retlw	32
+  9252  0708  3400               	retlw	0
+  9253  0709  3410               	retlw	16
+  9254  070A  3410               	retlw	16
+  9255  070B  3491               	retlw	145
+  9256  070C  3471               	retlw	113
+  9257  070D  34B1               	retlw	177
+  9258  070E  3411               	retlw	17
+  9259  070F  3431               	retlw	49
+  9260  0710  3410               	retlw	16
+  9261  0711  34B1               	retlw	177
+  9262  0712  3450               	retlw	80
+  9263  0713  3421               	retlw	33
   9264  0714  3431               	retlw	49
-  9265  0715  34B1               	retlw	177
-  9266  0716  3421               	retlw	33
-  9267  0717  3491               	retlw	145
-  9268  0718  3451               	retlw	81
-  9269  0719  3424               	retlw	36
-  9270  071A  3424               	retlw	36
-  9271  071B  34A1               	retlw	161
-  9272  071C  3440               	retlw	64
-  9273  071D  3409               	retlw	9
-  9274  071E  3419               	retlw	25
-  9275  071F  3421               	retlw	33
-  9276  0720  3401               	retlw	1
-  9277  0721  3481               	retlw	129
-  9278  0722  344B               	retlw	75
-  9279  0723  3489               	retlw	137
-  9280  0724  3443               	retlw	67
-  9281  0725  34A1               	retlw	161
-  9282  0726  3461               	retlw	97
-  9283  0727  3411               	retlw	17
-  9284  0728  3471               	retlw	113
-  9285  0729  34A9               	retlw	169
-  9286  072A  3461               	retlw	97
-  9287  072B  3419               	retlw	25
-  9288  072C  3471               	retlw	113
-  9289  072D  34B0               	retlw	176
-  9290  072E  3431               	retlw	49
-  9291  072F  3404               	retlw	4
-  9292  0730  3424               	retlw	36
-  9293  0731  34A1               	retlw	161
-  9294  0732  3441               	retlw	65
-  9295  0733  3403               	retlw	3
-  9296  0734  3409               	retlw	9
-  9297  0735  348B               	retlw	139
-  9298  0736  3441               	retlw	65
-  9299  0737  340A               	retlw	10
-  9300  0738  340A               	retlw	10
-  9301  0739  3404               	retlw	4
+  9265  0715  3401               	retlw	1
+  9266  0716  3431               	retlw	49
+  9267  0717  34B1               	retlw	177
+  9268  0718  3421               	retlw	33
+  9269  0719  3491               	retlw	145
+  9270  071A  3451               	retlw	81
+  9271  071B  3424               	retlw	36
+  9272  071C  3424               	retlw	36
+  9273  071D  34A1               	retlw	161
+  9274  071E  3440               	retlw	64
+  9275  071F  3409               	retlw	9
+  9276  0720  3419               	retlw	25
+  9277  0721  3421               	retlw	33
+  9278  0722  3401               	retlw	1
+  9279  0723  3481               	retlw	129
+  9280  0724  344B               	retlw	75
+  9281  0725  3489               	retlw	137
+  9282  0726  3443               	retlw	67
+  9283  0727  34A1               	retlw	161
+  9284  0728  3461               	retlw	97
+  9285  0729  3411               	retlw	17
+  9286  072A  3471               	retlw	113
+  9287  072B  34A9               	retlw	169
+  9288  072C  3461               	retlw	97
+  9289  072D  3419               	retlw	25
+  9290  072E  3471               	retlw	113
+  9291  072F  34B0               	retlw	176
+  9292  0730  3431               	retlw	49
+  9293  0731  3404               	retlw	4
+  9294  0732  3424               	retlw	36
+  9295  0733  34A1               	retlw	161
+  9296  0734  3441               	retlw	65
+  9297  0735  3403               	retlw	3
+  9298  0736  3409               	retlw	9
+  9299  0737  348B               	retlw	139
+  9300  0738  3441               	retlw	65
+  9301  0739  340A               	retlw	10
   9302  073A  340A               	retlw	10
-  9303  073B  3422               	retlw	34
-  9304  073C  3428               	retlw	40
-  9305  073D  3408               	retlw	8
-  9306  073E  3408               	retlw	8
-  9307  073F  3404               	retlw	4
-  9308  0740  3404               	retlw	4
-  9309  0741  3402               	retlw	2
-  9310  0742  3402               	retlw	2
+  9303  073B  3404               	retlw	4
+  9304  073C  340A               	retlw	10
+  9305  073D  3422               	retlw	34
+  9306  073E  3428               	retlw	40
+  9307  073F  3410               	retlw	16
+  9308  0740  3410               	retlw	16
+  9309  0741  3404               	retlw	4
+  9310  0742  3404               	retlw	4
   9311  0743  3410               	retlw	16
   9312  0744  3410               	retlw	16
-  9313  0745  34FF               	retlw	255
-  9314  0746  34FF               	retlw	255
-  9315  0747  3400               	retlw	0
-  9316  0748  3400               	retlw	0
+  9313  0745  3410               	retlw	16
+  9314  0746  3410               	retlw	16
+  9315  0747  34FF               	retlw	255
+  9316  0748  34FF               	retlw	255
   9317                           
   9318                           	psect	stringtext1
   9319  1000                     __pstringtext1:	
@@ -31777,7 +31777,7 @@ BANK25               0      0       0      57        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.42 build -159332390 
-Symbol Table                                                                                   Mon Jul 24 23:30:39 2017
+Symbol Table                                                                                   Tue Jul 25 07:17:45 2017
 
                           _SPI1_Exchange8bit 2E25                                            pc 0002  
            __size_of_slot_Finished_Animation 0027                               ___bmul@product 0073  

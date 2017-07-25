@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"221 nullifyBadge_displayL1.h
+"201 nullifyBadge_displayL1.h
 [s S956 `uc -> 10 `i ]
 [n S956 t_nullifyDisplay_l1 displayVect ]
 "71 nullifyBadge_displayL2.h
@@ -7639,403 +7639,406 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
-"89 nullifyBadge_displayL1.h
+"69 nullifyBadge_displayL1.h
 [v _asciiCharTableLookup `ui ~T0 @X0 -> 128 `i e ]
 [i _asciiCharTableLookup
 :U ..
-"90
+"70
 -> -> 0 `i `ui
-"91
+"71
 -> -> 8192 `i `ui
+"72
+-> -> 4112 `i `ui
+"73
+-> -> 32 `i `ui
+"74
+-> -> 4112 `i `ui
+"75
+-> -> 8613 `i `ui
+"76
+-> -> 24741 `i `ui
+"77
+-> -> 12304 `i `ui
+"78
+-> -> 4608 `i `ui
+"79
+-> -> 2064 `i `ui
+"80
+-> -> 8224 `i `ui
+"81
+-> -> 17797 `i `ui
+"82
+-> -> 12465 `i `ui
+"83
+-> -> 4112 `i `ui
+"84
+-> -> 4112 `i `ui
+"85
+-> -> 4112 `i `ui
+"86
+-> -> 4112 `i `ui
+"87
+-> -> 4112 `i `ui
+"88
+-> -> 4112 `i `ui
+"89
+-> -> 4112 `i `ui
+"90
+-> -> 4112 `i `ui
+"91
+-> -> 4112 `i `ui
 "92
 -> -> 4112 `i `ui
 "93
--> -> 32 `i `ui
+-> -> 4112 `i `ui
 "94
--> -> 8613 `i `ui
+-> -> 4112 `i `ui
 "95
--> -> 24741 `i `ui
+-> -> 4112 `i `ui
 "96
--> -> 4608 `i `ui
+-> -> 4112 `i `ui
 "97
--> -> 2064 `i `ui
+-> -> 4112 `i `ui
 "98
--> -> 8224 `i `ui
+-> -> 4112 `i `ui
 "99
--> -> 12465 `i `ui
+-> -> 4112 `i `ui
 "100
--> -> 17797 `i `ui
+-> -> 4112 `i `ui
 "101
--> -> 12304 `i `ui
+-> -> 4112 `i `ui
 "102
--> -> 4112 `i `ui
+-> -> 0 `i `ui
 "103
--> -> 4112 `i `ui
+-> -> 16576 `i `ui
 "104
--> -> 4112 `i `ui
+-> -> 17408 `i `ui
 "105
 -> -> 4112 `i `ui
 "106
--> -> 4112 `i `ui
+-> -> 13748 `i `ui
 "107
 -> -> 4112 `i `ui
 "108
 -> -> 4112 `i `ui
 "109
--> -> 4112 `i `ui
+-> -> 1024 `i `ui
 "110
--> -> 4112 `i `ui
+-> -> 2056 `i `ui
 "111
--> -> 4112 `i `ui
+-> -> 514 `i `ui
 "112
--> -> 4112 `i `ui
+-> -> 7710 `i `ui
 "113
--> -> 4112 `i `ui
+-> -> 5140 `i `ui
 "114
--> -> 4112 `i `ui
+-> -> 64 `i `ui
 "115
 -> -> 4112 `i `ui
 "116
--> -> 4112 `i `ui
+-> -> 64 `i `ui
 "117
--> -> 4112 `i `ui
+-> -> 2050 `i `ui
 "118
--> -> 4112 `i `ui
+-> -> 25513 `i `ui
 "119
--> -> 4112 `i `ui
+-> -> 16512 `i `ui
 "120
--> -> 4112 `i `ui
+-> -> 28721 `i `ui
 "121
--> -> 4112 `i `ui
+-> -> 24752 `i `ui
 "122
--> -> 0 `i `ui
+-> -> 20880 `i `ui
 "123
--> -> 16576 `i `ui
+-> -> 12720 `i `ui
 "124
--> -> 17408 `i `ui
+-> -> 12721 `i `ui
 "125
--> -> 4112 `i `ui
+-> -> 24704 `i `ui
 "126
--> -> 13748 `i `ui
+-> -> 29105 `i `ui
 "127
--> -> 4112 `i `ui
+-> -> 29072 `i `ui
 "128
 -> -> 4112 `i `ui
 "129
--> -> 1024 `i `ui
+-> -> 4112 `i `ui
 "130
 -> -> 2056 `i `ui
 "131
--> -> 514 `i `ui
-"132
--> -> 7710 `i `ui
-"133
--> -> 5140 `i `ui
-"134
--> -> 64 `i `ui
-"135
--> -> 4112 `i `ui
-"136
--> -> 64 `i `ui
-"137
--> -> 2050 `i `ui
-"138
--> -> 25513 `i `ui
-"139
--> -> 16512 `i `ui
-"140
--> -> 28721 `i `ui
-"141
--> -> 24752 `i `ui
-"142
--> -> 20880 `i `ui
-"143
--> -> 12720 `i `ui
-"144
--> -> 12721 `i `ui
-"145
--> -> 24704 `i `ui
-"146
--> -> 29105 `i `ui
-"147
--> -> 29072 `i `ui
-"148
--> -> 4112 `i `ui
-"149
--> -> 4112 `i `ui
-"150
--> -> 2056 `i `ui
-"151
 -> -> 4144 `i `ui
-"152
+"132
 -> -> 514 `i `ui
-"153
+"133
 -> 57620 `ui
+"134
+-> -> 28837 `i `ui
+"135
+-> -> 29073 `i `ui
+"136
+-> -> 4529 `i `ui
+"137
+-> -> 8481 `i `ui
+"138
+-> -> 20657 `i `ui
+"139
+-> -> 12577 `i `ui
+"140
+-> -> 12545 `i `ui
+"141
+-> -> 8625 `i `ui
+"142
+-> -> 20881 `i `ui
+"143
+-> -> 9252 `i `ui
+"144
+-> -> 16545 `i `ui
+"145
+-> -> 6409 `i `ui
+"146
+-> -> 289 `i `ui
+"147
+-> -> 19329 `i `ui
+"148
+-> -> 17289 `i `ui
+"149
+-> -> 24993 `i `ui
+"150
+-> -> 28945 `i `ui
+"151
+-> -> 25001 `i `ui
+"152
+-> -> 28953 `i `ui
+"153
+-> -> 12720 `i `ui
 "154
--> -> 4112 `i `ui
+-> -> 9220 `i `ui
 "155
--> -> 29073 `i `ui
+-> -> 16801 `i `ui
 "156
--> -> 4529 `i `ui
+-> -> 2307 `i `ui
 "157
--> -> 8481 `i `ui
+-> -> 16779 `i `ui
 "158
--> -> 20657 `i `ui
+-> -> 2570 `i `ui
 "159
--> -> 12577 `i `ui
+-> -> 2564 `i `ui
 "160
--> -> 12545 `i `ui
+-> -> 10274 `i `ui
 "161
--> -> 8625 `i `ui
-"162
--> -> 20881 `i `ui
-"163
--> -> 9252 `i `ui
-"164
--> -> 16545 `i `ui
-"165
--> -> 6409 `i `ui
-"166
--> -> 289 `i `ui
-"167
--> -> 19329 `i `ui
-"168
--> -> 17289 `i `ui
-"169
--> -> 24993 `i `ui
-"170
--> -> 28945 `i `ui
-"171
--> -> 25001 `i `ui
-"172
--> -> 28953 `i `ui
-"173
--> -> 12720 `i `ui
-"174
--> -> 9220 `i `ui
-"175
--> -> 16801 `i `ui
-"176
--> -> 2307 `i `ui
-"177
--> -> 16779 `i `ui
-"178
--> -> 2570 `i `ui
-"179
--> -> 2564 `i `ui
-"180
--> -> 10274 `i `ui
-"181
 -> -> 8481 `i `ui
-"182
+"162
 -> -> 520 `i `ui
-"184
+"163
+-> -> 24736 `i `ui
+"164
 -> -> 10 `i `ui
-"185
+"165
 -> -> 32 `i `ui
-"186
+"166
 -> -> 4112 `i `ui
-"187
+"167
 -> -> 29073 `i `ui
-"188
+"168
 -> -> 4529 `i `ui
-"189
+"169
 -> -> 4145 `i `ui
-"190
+"170
 -> -> 20657 `i `ui
-"191
+"171
 -> -> 12577 `i `ui
-"192
+"172
 -> -> 12545 `i `ui
-"193
+"173
 -> -> 8625 `i `ui
-"194
+"174
 -> -> 20881 `i `ui
-"195
+"175
 -> -> 9252 `i `ui
-"196
+"176
 -> -> 16545 `i `ui
-"197
+"177
 -> -> 6409 `i `ui
-"198
+"178
 -> -> 289 `i `ui
-"199
+"179
 -> -> 19329 `i `ui
-"200
+"180
 -> -> 17289 `i `ui
-"201
+"181
 -> -> 24993 `i `ui
-"202
+"182
 -> -> 28945 `i `ui
-"203
+"183
 -> -> 25001 `i `ui
-"204
+"184
 -> -> 28953 `i `ui
-"205
+"185
 -> -> 12720 `i `ui
-"206
+"186
 -> -> 9220 `i `ui
-"207
+"187
 -> -> 16801 `i `ui
-"208
+"188
 -> -> 2307 `i `ui
-"209
+"189
 -> -> 16779 `i `ui
-"210
+"190
 -> -> 2570 `i `ui
-"211
+"191
 -> -> 2564 `i `ui
-"212
+"192
 -> -> 10274 `i `ui
-"213
--> -> 2056 `i `ui
-"214
--> -> 1028 `i `ui
-"215
--> -> 514 `i `ui
-"216
+"193
 -> -> 4112 `i `ui
-"218
+"194
+-> -> 1028 `i `ui
+"195
+-> -> 4112 `i `ui
+"196
+-> -> 4112 `i `ui
+"198
 -> 65535 `ui
 ..
 ]
-[; ;nullifyBadge_displayL1.h: 89: u16 asciiCharTableLookup[128] = {
-[; ;nullifyBadge_displayL1.h: 90: 0x0000,
-[; ;nullifyBadge_displayL1.h: 91: 0x2000,
+[; ;nullifyBadge_displayL1.h: 69: u16 asciiCharTableLookup[128] = {
+[; ;nullifyBadge_displayL1.h: 70: 0x0000,
+[; ;nullifyBadge_displayL1.h: 71: 0x2000,
+[; ;nullifyBadge_displayL1.h: 72: 0x1010,
+[; ;nullifyBadge_displayL1.h: 73: 0x0020,
+[; ;nullifyBadge_displayL1.h: 74: 0x1010,
+[; ;nullifyBadge_displayL1.h: 75: 0x21A5,
+[; ;nullifyBadge_displayL1.h: 76: 0x60A5,
+[; ;nullifyBadge_displayL1.h: 77: 0x3010,
+[; ;nullifyBadge_displayL1.h: 78: 0x1200,
+[; ;nullifyBadge_displayL1.h: 79: 0x0810,
+[; ;nullifyBadge_displayL1.h: 80: 0x2020,
+[; ;nullifyBadge_displayL1.h: 81: 0x4585,
+[; ;nullifyBadge_displayL1.h: 82: 0x30B1,
+[; ;nullifyBadge_displayL1.h: 83: 0x1010,
+[; ;nullifyBadge_displayL1.h: 84: 0x1010,
+[; ;nullifyBadge_displayL1.h: 85: 0x1010,
+[; ;nullifyBadge_displayL1.h: 86: 0x1010,
+[; ;nullifyBadge_displayL1.h: 87: 0x1010,
+[; ;nullifyBadge_displayL1.h: 88: 0x1010,
+[; ;nullifyBadge_displayL1.h: 89: 0x1010,
+[; ;nullifyBadge_displayL1.h: 90: 0x1010,
+[; ;nullifyBadge_displayL1.h: 91: 0x1010,
 [; ;nullifyBadge_displayL1.h: 92: 0x1010,
-[; ;nullifyBadge_displayL1.h: 93: 0x0020,
-[; ;nullifyBadge_displayL1.h: 94: 0x21A5,
-[; ;nullifyBadge_displayL1.h: 95: 0x60A5,
-[; ;nullifyBadge_displayL1.h: 96: 0x1200,
-[; ;nullifyBadge_displayL1.h: 97: 0x0810,
-[; ;nullifyBadge_displayL1.h: 98: 0x2020,
-[; ;nullifyBadge_displayL1.h: 99: 0x30B1,
-[; ;nullifyBadge_displayL1.h: 100: 0x4585,
-[; ;nullifyBadge_displayL1.h: 101: 0x3010,
-[; ;nullifyBadge_displayL1.h: 102: 0x1010,
-[; ;nullifyBadge_displayL1.h: 103: 0x1010,
-[; ;nullifyBadge_displayL1.h: 104: 0x1010,
+[; ;nullifyBadge_displayL1.h: 93: 0x1010,
+[; ;nullifyBadge_displayL1.h: 94: 0x1010,
+[; ;nullifyBadge_displayL1.h: 95: 0x1010,
+[; ;nullifyBadge_displayL1.h: 96: 0x1010,
+[; ;nullifyBadge_displayL1.h: 97: 0x1010,
+[; ;nullifyBadge_displayL1.h: 98: 0x1010,
+[; ;nullifyBadge_displayL1.h: 99: 0x1010,
+[; ;nullifyBadge_displayL1.h: 100: 0x1010,
+[; ;nullifyBadge_displayL1.h: 101: 0x1010,
+[; ;nullifyBadge_displayL1.h: 102: 0x0000,
+[; ;nullifyBadge_displayL1.h: 103: 0x40C0,
+[; ;nullifyBadge_displayL1.h: 104: 0x4400,
 [; ;nullifyBadge_displayL1.h: 105: 0x1010,
-[; ;nullifyBadge_displayL1.h: 106: 0x1010,
+[; ;nullifyBadge_displayL1.h: 106: 0x35B4,
 [; ;nullifyBadge_displayL1.h: 107: 0x1010,
 [; ;nullifyBadge_displayL1.h: 108: 0x1010,
-[; ;nullifyBadge_displayL1.h: 109: 0x1010,
-[; ;nullifyBadge_displayL1.h: 110: 0x1010,
-[; ;nullifyBadge_displayL1.h: 111: 0x1010,
-[; ;nullifyBadge_displayL1.h: 112: 0x1010,
-[; ;nullifyBadge_displayL1.h: 113: 0x1010,
-[; ;nullifyBadge_displayL1.h: 114: 0x1010,
+[; ;nullifyBadge_displayL1.h: 109: 0x0400,
+[; ;nullifyBadge_displayL1.h: 110: 0x0808,
+[; ;nullifyBadge_displayL1.h: 111: 0x0202,
+[; ;nullifyBadge_displayL1.h: 112: 0x1E1E,
+[; ;nullifyBadge_displayL1.h: 113: 0x1414,
+[; ;nullifyBadge_displayL1.h: 114: 0x0040,
 [; ;nullifyBadge_displayL1.h: 115: 0x1010,
-[; ;nullifyBadge_displayL1.h: 116: 0x1010,
-[; ;nullifyBadge_displayL1.h: 117: 0x1010,
-[; ;nullifyBadge_displayL1.h: 118: 0x1010,
-[; ;nullifyBadge_displayL1.h: 119: 0x1010,
-[; ;nullifyBadge_displayL1.h: 120: 0x1010,
-[; ;nullifyBadge_displayL1.h: 121: 0x1010,
-[; ;nullifyBadge_displayL1.h: 122: 0x0000,
-[; ;nullifyBadge_displayL1.h: 123: 0x40C0,
-[; ;nullifyBadge_displayL1.h: 124: 0x4400,
-[; ;nullifyBadge_displayL1.h: 125: 0x1010,
-[; ;nullifyBadge_displayL1.h: 126: 0x35B4,
-[; ;nullifyBadge_displayL1.h: 127: 0x1010,
+[; ;nullifyBadge_displayL1.h: 116: 0x0040,
+[; ;nullifyBadge_displayL1.h: 117: 0x0802,
+[; ;nullifyBadge_displayL1.h: 118: 0x63A9,
+[; ;nullifyBadge_displayL1.h: 119: 0x4080,
+[; ;nullifyBadge_displayL1.h: 120: 0x7031,
+[; ;nullifyBadge_displayL1.h: 121: 0x60B0,
+[; ;nullifyBadge_displayL1.h: 122: 0x5190,
+[; ;nullifyBadge_displayL1.h: 123: 0x31B0,
+[; ;nullifyBadge_displayL1.h: 124: 0x31B1,
+[; ;nullifyBadge_displayL1.h: 125: 0x6080,
+[; ;nullifyBadge_displayL1.h: 126: 0x71B1,
+[; ;nullifyBadge_displayL1.h: 127: 0x7190,
 [; ;nullifyBadge_displayL1.h: 128: 0x1010,
-[; ;nullifyBadge_displayL1.h: 129: 0x0400,
+[; ;nullifyBadge_displayL1.h: 129: 0x1010,
 [; ;nullifyBadge_displayL1.h: 130: 0x0808,
-[; ;nullifyBadge_displayL1.h: 131: 0x0202,
-[; ;nullifyBadge_displayL1.h: 132: 0x1E1E,
-[; ;nullifyBadge_displayL1.h: 133: 0x1414,
-[; ;nullifyBadge_displayL1.h: 134: 0x0040,
-[; ;nullifyBadge_displayL1.h: 135: 0x1010,
-[; ;nullifyBadge_displayL1.h: 136: 0x0040,
-[; ;nullifyBadge_displayL1.h: 137: 0x0802,
-[; ;nullifyBadge_displayL1.h: 138: 0x63A9,
-[; ;nullifyBadge_displayL1.h: 139: 0x4080,
-[; ;nullifyBadge_displayL1.h: 140: 0x7031,
-[; ;nullifyBadge_displayL1.h: 141: 0x60B0,
-[; ;nullifyBadge_displayL1.h: 142: 0x5190,
-[; ;nullifyBadge_displayL1.h: 143: 0x31B0,
-[; ;nullifyBadge_displayL1.h: 144: 0x31B1,
-[; ;nullifyBadge_displayL1.h: 145: 0x6080,
-[; ;nullifyBadge_displayL1.h: 146: 0x71B1,
-[; ;nullifyBadge_displayL1.h: 147: 0x7190,
-[; ;nullifyBadge_displayL1.h: 148: 0x1010,
-[; ;nullifyBadge_displayL1.h: 149: 0x1010,
-[; ;nullifyBadge_displayL1.h: 150: 0x0808,
-[; ;nullifyBadge_displayL1.h: 151: 0x1030,
-[; ;nullifyBadge_displayL1.h: 152: 0x0202,
-[; ;nullifyBadge_displayL1.h: 153: 0xE114,
-[; ;nullifyBadge_displayL1.h: 154: 0x1010,
-[; ;nullifyBadge_displayL1.h: 155: 0x7191,
-[; ;nullifyBadge_displayL1.h: 156: 0x11B1,
-[; ;nullifyBadge_displayL1.h: 157: 0x2121,
-[; ;nullifyBadge_displayL1.h: 158: 0x50B1,
-[; ;nullifyBadge_displayL1.h: 159: 0x3121,
-[; ;nullifyBadge_displayL1.h: 160: 0x3101,
-[; ;nullifyBadge_displayL1.h: 161: 0x21B1,
-[; ;nullifyBadge_displayL1.h: 162: 0x5191,
-[; ;nullifyBadge_displayL1.h: 163: 0x2424,
-[; ;nullifyBadge_displayL1.h: 164: 0x40A1,
-[; ;nullifyBadge_displayL1.h: 165: 0x1909,
-[; ;nullifyBadge_displayL1.h: 166: 0x0121,
-[; ;nullifyBadge_displayL1.h: 167: 0x4B81,
-[; ;nullifyBadge_displayL1.h: 168: 0x4389,
-[; ;nullifyBadge_displayL1.h: 169: 0x61A1,
-[; ;nullifyBadge_displayL1.h: 170: 0x7111,
-[; ;nullifyBadge_displayL1.h: 171: 0x61A9,
-[; ;nullifyBadge_displayL1.h: 172: 0x7119,
-[; ;nullifyBadge_displayL1.h: 173: 0x31B0,
-[; ;nullifyBadge_displayL1.h: 174: 0x2404,
-[; ;nullifyBadge_displayL1.h: 175: 0x41A1,
-[; ;nullifyBadge_displayL1.h: 176: 0x0903,
-[; ;nullifyBadge_displayL1.h: 177: 0x418B,
-[; ;nullifyBadge_displayL1.h: 178: 0x0A0A,
-[; ;nullifyBadge_displayL1.h: 179: 0x0A04,
-[; ;nullifyBadge_displayL1.h: 180: 0x2822,
-[; ;nullifyBadge_displayL1.h: 181: 0x2121,
-[; ;nullifyBadge_displayL1.h: 182: 0x0208,
-[; ;nullifyBadge_displayL1.h: 184: 0x000A,
-[; ;nullifyBadge_displayL1.h: 185: 0x0020,
-[; ;nullifyBadge_displayL1.h: 186: 0x1010,
-[; ;nullifyBadge_displayL1.h: 187: 0x7191,
-[; ;nullifyBadge_displayL1.h: 188: 0x11B1,
-[; ;nullifyBadge_displayL1.h: 189: 0x1031,
-[; ;nullifyBadge_displayL1.h: 190: 0x50B1,
-[; ;nullifyBadge_displayL1.h: 191: 0x3121,
-[; ;nullifyBadge_displayL1.h: 192: 0x3101,
-[; ;nullifyBadge_displayL1.h: 193: 0x21B1,
-[; ;nullifyBadge_displayL1.h: 194: 0x5191,
-[; ;nullifyBadge_displayL1.h: 195: 0x2424,
-[; ;nullifyBadge_displayL1.h: 196: 0x40A1,
-[; ;nullifyBadge_displayL1.h: 197: 0x1909,
-[; ;nullifyBadge_displayL1.h: 198: 0x0121,
-[; ;nullifyBadge_displayL1.h: 199: 0x4B81,
-[; ;nullifyBadge_displayL1.h: 200: 0x4389,
-[; ;nullifyBadge_displayL1.h: 201: 0x61A1,
-[; ;nullifyBadge_displayL1.h: 202: 0x7111,
-[; ;nullifyBadge_displayL1.h: 203: 0x61A9,
-[; ;nullifyBadge_displayL1.h: 204: 0x7119,
-[; ;nullifyBadge_displayL1.h: 205: 0x31B0,
-[; ;nullifyBadge_displayL1.h: 206: 0x2404,
-[; ;nullifyBadge_displayL1.h: 207: 0x41A1,
-[; ;nullifyBadge_displayL1.h: 208: 0x0903,
-[; ;nullifyBadge_displayL1.h: 209: 0x418B,
-[; ;nullifyBadge_displayL1.h: 210: 0x0A0A,
-[; ;nullifyBadge_displayL1.h: 211: 0x0A04,
-[; ;nullifyBadge_displayL1.h: 212: 0x2822,
-[; ;nullifyBadge_displayL1.h: 213: 0x0808,
-[; ;nullifyBadge_displayL1.h: 214: 0x0404,
-[; ;nullifyBadge_displayL1.h: 215: 0x0202,
-[; ;nullifyBadge_displayL1.h: 216: 0x1010,
-[; ;nullifyBadge_displayL1.h: 217: 0xFFFF
-[; ;nullifyBadge_displayL1.h: 218: };
-[; ;nullifyBadge_displayL1.h: 221: struct t_nullifyDisplay_l1 {
-[; ;nullifyBadge_displayL1.h: 222: u8 displayVect[10];
-[; ;nullifyBadge_displayL1.h: 223: };
-[; ;nullifyBadge_displayL1.h: 225: void displayL1_Initialize (struct t_nullifyDisplay_l1 *display);
-[; ;nullifyBadge_displayL1.h: 226: void displayL1_SetSegChar (struct t_nullifyDisplay_l1 *display, char c, u8 charPos);
-[; ;nullifyBadge_displayL1.h: 227: void displayL1_SetUserLed (struct t_nullifyDisplay_l1 *display, u16 userLedVect);
-[; ;nullifyBadge_displayL1.h: 228: void displayL1_SetDp (struct t_nullifyDisplay_l1 *display, u8 displayDpVect);
-[; ;nullifyBadge_displayL1.h: 229: void displayL1_Update (struct t_nullifyDisplay_l1 *display);
+[; ;nullifyBadge_displayL1.h: 131: 0x1030,
+[; ;nullifyBadge_displayL1.h: 132: 0x0202,
+[; ;nullifyBadge_displayL1.h: 133: 0xE114,
+[; ;nullifyBadge_displayL1.h: 134: 0x70A5,
+[; ;nullifyBadge_displayL1.h: 135: 0x7191,
+[; ;nullifyBadge_displayL1.h: 136: 0x11B1,
+[; ;nullifyBadge_displayL1.h: 137: 0x2121,
+[; ;nullifyBadge_displayL1.h: 138: 0x50B1,
+[; ;nullifyBadge_displayL1.h: 139: 0x3121,
+[; ;nullifyBadge_displayL1.h: 140: 0x3101,
+[; ;nullifyBadge_displayL1.h: 141: 0x21B1,
+[; ;nullifyBadge_displayL1.h: 142: 0x5191,
+[; ;nullifyBadge_displayL1.h: 143: 0x2424,
+[; ;nullifyBadge_displayL1.h: 144: 0x40A1,
+[; ;nullifyBadge_displayL1.h: 145: 0x1909,
+[; ;nullifyBadge_displayL1.h: 146: 0x0121,
+[; ;nullifyBadge_displayL1.h: 147: 0x4B81,
+[; ;nullifyBadge_displayL1.h: 148: 0x4389,
+[; ;nullifyBadge_displayL1.h: 149: 0x61A1,
+[; ;nullifyBadge_displayL1.h: 150: 0x7111,
+[; ;nullifyBadge_displayL1.h: 151: 0x61A9,
+[; ;nullifyBadge_displayL1.h: 152: 0x7119,
+[; ;nullifyBadge_displayL1.h: 153: 0x31B0,
+[; ;nullifyBadge_displayL1.h: 154: 0x2404,
+[; ;nullifyBadge_displayL1.h: 155: 0x41A1,
+[; ;nullifyBadge_displayL1.h: 156: 0x0903,
+[; ;nullifyBadge_displayL1.h: 157: 0x418B,
+[; ;nullifyBadge_displayL1.h: 158: 0x0A0A,
+[; ;nullifyBadge_displayL1.h: 159: 0x0A04,
+[; ;nullifyBadge_displayL1.h: 160: 0x2822,
+[; ;nullifyBadge_displayL1.h: 161: 0x2121,
+[; ;nullifyBadge_displayL1.h: 162: 0x0208,
+[; ;nullifyBadge_displayL1.h: 163: 0x60A0,
+[; ;nullifyBadge_displayL1.h: 164: 0x000A,
+[; ;nullifyBadge_displayL1.h: 165: 0x0020,
+[; ;nullifyBadge_displayL1.h: 166: 0x1010,
+[; ;nullifyBadge_displayL1.h: 167: 0x7191,
+[; ;nullifyBadge_displayL1.h: 168: 0x11B1,
+[; ;nullifyBadge_displayL1.h: 169: 0x1031,
+[; ;nullifyBadge_displayL1.h: 170: 0x50B1,
+[; ;nullifyBadge_displayL1.h: 171: 0x3121,
+[; ;nullifyBadge_displayL1.h: 172: 0x3101,
+[; ;nullifyBadge_displayL1.h: 173: 0x21B1,
+[; ;nullifyBadge_displayL1.h: 174: 0x5191,
+[; ;nullifyBadge_displayL1.h: 175: 0x2424,
+[; ;nullifyBadge_displayL1.h: 176: 0x40A1,
+[; ;nullifyBadge_displayL1.h: 177: 0x1909,
+[; ;nullifyBadge_displayL1.h: 178: 0x0121,
+[; ;nullifyBadge_displayL1.h: 179: 0x4B81,
+[; ;nullifyBadge_displayL1.h: 180: 0x4389,
+[; ;nullifyBadge_displayL1.h: 181: 0x61A1,
+[; ;nullifyBadge_displayL1.h: 182: 0x7111,
+[; ;nullifyBadge_displayL1.h: 183: 0x61A9,
+[; ;nullifyBadge_displayL1.h: 184: 0x7119,
+[; ;nullifyBadge_displayL1.h: 185: 0x31B0,
+[; ;nullifyBadge_displayL1.h: 186: 0x2404,
+[; ;nullifyBadge_displayL1.h: 187: 0x41A1,
+[; ;nullifyBadge_displayL1.h: 188: 0x0903,
+[; ;nullifyBadge_displayL1.h: 189: 0x418B,
+[; ;nullifyBadge_displayL1.h: 190: 0x0A0A,
+[; ;nullifyBadge_displayL1.h: 191: 0x0A04,
+[; ;nullifyBadge_displayL1.h: 192: 0x2822,
+[; ;nullifyBadge_displayL1.h: 193: 0x1010,
+[; ;nullifyBadge_displayL1.h: 194: 0x0404,
+[; ;nullifyBadge_displayL1.h: 195: 0x1010,
+[; ;nullifyBadge_displayL1.h: 196: 0x1010,
+[; ;nullifyBadge_displayL1.h: 197: 0xFFFF
+[; ;nullifyBadge_displayL1.h: 198: };
+[; ;nullifyBadge_displayL1.h: 201: struct t_nullifyDisplay_l1 {
+[; ;nullifyBadge_displayL1.h: 202: u8 displayVect[10];
+[; ;nullifyBadge_displayL1.h: 203: };
+[; ;nullifyBadge_displayL1.h: 205: void displayL1_Initialize (struct t_nullifyDisplay_l1 *display);
+[; ;nullifyBadge_displayL1.h: 206: void displayL1_SetSegChar (struct t_nullifyDisplay_l1 *display, char c, u8 charPos);
+[; ;nullifyBadge_displayL1.h: 207: void displayL1_SetUserLed (struct t_nullifyDisplay_l1 *display, u16 userLedVect);
+[; ;nullifyBadge_displayL1.h: 208: void displayL1_SetDp (struct t_nullifyDisplay_l1 *display, u8 displayDpVect);
+[; ;nullifyBadge_displayL1.h: 209: void displayL1_Update (struct t_nullifyDisplay_l1 *display);
 [; ;nullifyBadge_displayL2.h: 71: struct t_nullifyDisplay_l2 {
 [; ;nullifyBadge_displayL2.h: 72: char charVect[4];
 [; ;nullifyBadge_displayL2.h: 73: u8 dpVect;

@@ -215,4 +215,3 @@ void menu_Exit(void *taskData) {
     nullifyBadge_segDisplayErase(data->badge); // erase application data from display
     nullifyBadge_segDisplayRelease(data->badge); // un-register hardware
 }
-

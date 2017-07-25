@@ -32,11 +32,15 @@ char *flashy_option[] = {
     "DEFCON ",
     "HAX  ",
     "HACK THE PLANET   ",
-    "will HACK for A/C   ",
-    "HTTP 418 I'm a teapot      ",
-    "I am a badge, and that's it      ",
-    "all your base are belong to us     ",
-    "Nothing to see here  move along...    "
+    "WILL HACK FOR A/C   ",
+    "HTTP 418 I'M A TEAPOT    ",
+    "I AM JUST A BADGE    ",
+    "ALL YOU BASE ARE BELONG TO US     ",
+    "DOES DEVAN HAS HIS PHONE?    ",
+    "YOU JUST HAVE TO BELIEVE",
+    "NOTHING TO SEE HERE...    ",
+    "GUYS I HAVE A GREAT IDEA -MIKE K.      ",
+    "HTTPS://GITHUB.COM/NULLIBADGE/DEFCON25    "
 };
 
 u16 flashy_option_idx;
@@ -189,15 +193,23 @@ void flashy_Main (void *taskData) {
             if (data->delayTickCount == 0){
                 let_alternate(flashy_leds_idx);
                 flashy_leds_idx += 1;
-                if (flashy_leds_idx > 65530){
-                    flashy_leds_idx=0;
-                }
                 data->delayTickCount = flashy_sparkle_rate;
             }
             else {
                 data->delayTickCount -= 1;
             }
             break;
+        case FLASHY_STATE_LED_PARODY:
+            if (data->delayTickCount == 0){
+                led_Parody(flashy_leds_idx);
+                flashy_leds_idx += 1;
+                data->delayTickCount = flashy_sparkle_rate;
+            }
+            else {
+                data->delayTickCount -= 1;
+            }
+            break;                
+
     }
     
     // handle display
@@ -387,7 +399,7 @@ void flashy_Main (void *taskData) {
             if ( data->holdCountA == 0){       
 
                 //i'm doing all this because I didn't want to make another enum
-                    if (flashy_leds_state_track > 3){
+                    if (flashy_leds_state_track > 4){
                         flashy_leds_state_track=0;
                     }
                     if (flashy_leds_state_track== 0){
@@ -401,6 +413,9 @@ void flashy_Main (void *taskData) {
                     }
                     if (flashy_leds_state_track == 3){
                         data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
+                    }
+                    if (flashy_leds_state_track ==4 ){
+                        data->led_state = FLASHY_STATE_LED_PARODY;
                     }
                     flashy_leds_state_track +=1;
             }

@@ -3,27 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/flashy_task.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/secret_task.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/locked_task.h</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/fadeDisplay_ExampleTask.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/flashy_task.h</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/cooperative_scheduler.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/slot_ExampleTask.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/nullifyBadge_displayL2.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/led_ExampleTask.h</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/nullifyBadge_displayL1.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/nullifyBadge.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/led_ExampleTask.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/locked_task.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/menu_task.h</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/blinky_ExampleTask.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/nbproject/Makefile-default.mk</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/menu_task.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/nullifyBadge.h</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/gamma_correction.h</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/main.c</file>
-            <file>file:/Users/Austin/Documents/badge/NullifyBadge2017_lowVoltage/mcc_generated_files/pin_manager.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/main.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/fadeDisplay_ExampleTask.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/menu_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/locked_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/secret_task.c</file>
         </group>
     </open-files>
 </project-private>

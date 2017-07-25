@@ -86,6 +86,7 @@ struct t_scheduler schedulerInst;
 u16 currentTask;
 u8 badge_locked;
 u16 secret_value;
+u16 oddeven;
 
 
 // Cycle LED arrays
@@ -124,6 +125,7 @@ u16 curtain_leds_inverse[] ={
     LED_7 | LED_6 | LED_5,
     LED_7 | LED_6,
 };
+
 
 void marquee_speedy(char* string, u16 count, u16 multiplier) {
     u16 string_length = strlen((const char *) string);
@@ -173,7 +175,10 @@ void led_curtain(u16 counter) {
 
 void led_rand(void){
     //random number between 
-    u16 spark = rand() % 65536;
+    u16 spark = rand() % 65535;
+    if ( (spark | 64511) == 65535 ){
+        spark ^= 1024 ;
+    }
     nullifyBadge_userLedsSet(&badge_inst,spark);        
 }
 
@@ -191,6 +196,28 @@ void let_alternate(u16 count){
         nullifyBadge_userLedsSet(&badge_inst,21162);       
     }
 }
+
+void led_Parody(u16 count){
+    u16 size; 
+    u16 leds;
+    
+    if (count % 30 == 0){
+        oddeven ^= 1 ;
+    }
+
+    if(count %2 == oddeven){
+
+        size = sizeof(roundabout_leds) / sizeof(roundabout_leds[0]);
+        leds = roundabout_leds[count % size];
+    }
+    else{
+        size = sizeof(roundabout_leds_inverse) / sizeof(roundabout_leds_inverse[0]);
+        leds = roundabout_leds_inverse[count % size];
+    }
+    nullifyBadge_userLedsSet(&badge_inst, leds);
+}
+
+
 
 void main(void)
 {

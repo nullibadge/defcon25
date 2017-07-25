@@ -21,6 +21,7 @@ enum t_flashy_led_states {
     FLASHY_STATE_SPARKLE,
     FLASHY_STATE_CIRCLE,
     FLASHY_STATE_LED_ALT,
+    FLASHY_STATE_LED_PARODY
 };
 
 enum t_flashy_display_states {

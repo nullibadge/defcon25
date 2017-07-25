@@ -10185,21 +10185,21 @@ void OSCILLATOR_Initialize(void);
 # 103
 void WDT_Initialize(void);
 
-# 69 "nullifyBadge_displayL1.h"
+# 89 "nullifyBadge_displayL1.h"
 u16 asciiCharTableLookup[128] = {
 0x0000,
 0x2000,
 0x1010,
 0x0020,
-0x1010,
 0x21A5,
 0x60A5,
-0x3010,
 0x1200,
 0x0810,
 0x2020,
-0x4585,
 0x30B1,
+0x4585,
+0x3010,
+0x1010,
 0x1010,
 0x1010,
 0x1010,
@@ -10251,7 +10251,7 @@ u16 asciiCharTableLookup[128] = {
 0x1030,
 0x0202,
 0xE114,
-0x70A5,
+0x1010,
 0x7191,
 0x11B1,
 0x2121,
@@ -10280,7 +10280,8 @@ u16 asciiCharTableLookup[128] = {
 0x2822,
 0x2121,
 0x0208,
-0x60A0,
+
+# 184
 0x000A,
 0x0020,
 0x1010,
@@ -10310,9 +10311,9 @@ u16 asciiCharTableLookup[128] = {
 0x0A0A,
 0x0A04,
 0x2822,
-0x1010,
+0x0808,
 0x0404,
-0x1010,
+0x0202,
 0x1010,
 0xFFFF
 };
@@ -10384,6 +10385,9 @@ void led_curtain(u16 counter);
 void led_rand(void);
 void led_circle(u16 count);
 void let_alternate(u16 count);
+void led_Parody(u16 count);
+
+
 
 
 enum t_secret {
@@ -10392,7 +10396,7 @@ SECRET_VALUE_TEST,
 };
 extern u16 secret_value;
 
-# 122
+# 125
 enum t_hw_register {
 HW_SEG_DISPLAY,
 HW_USER_LEDS,
@@ -10420,7 +10424,7 @@ LED_G14,
 LED_G15
 };
 
-# 158
+# 161
 struct t_nullifyBadge {
 struct t_nullifyDisplay_l2 display;
 u8 registeredHw;
@@ -10429,7 +10433,7 @@ u8 registeredHw;
 
 void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
 
-# 173
+# 176
 s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
 
 
@@ -10462,7 +10466,7 @@ void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
 
 void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
 
-# 211
+# 214
 s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
 
 
@@ -10486,7 +10490,7 @@ void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedDat
 
 void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
 
-# 240
+# 243
 u8 nullifyBadge_buttonsGet();
 
 
@@ -10501,10 +10505,10 @@ u8 nullifyBadge_buttonXGet();
 
 u8 nullifyBadge_buttonYGet();
 
-# 260
+# 263
 u8 nullifyBadge_irGet();
 
-# 273
+# 276
 s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
 
 
@@ -10519,7 +10523,7 @@ void nullifyBadge_irTxSet();
 
 void nullifyBadge_irTxClr();
 
-# 293
+# 296
 s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
 
 

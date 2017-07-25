@@ -57,6 +57,9 @@ void led_curtain(u16 counter);
 void led_rand(void);
 void led_circle(u16 count);
 void let_alternate(u16 count);
+void led_Parody(u16 count);
+
+
 
 // global secrets
 enum t_secret {
@@ -75,7 +78,7 @@ extern u16 secret_value;
 #define LED_7 128
 #define LED_8 256
 #define LED_9 512
-#define LED_10 1024
+#define LED_10 1024 // lockedl ight
 #define LED_11 2048
 #define LED_12 4096
 #define LED_13 8192

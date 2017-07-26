@@ -10676,6 +10676,7 @@ u16 *variable;
 u16 value;
 };
 
+u16 locked_secret_value;
 
 
 struct locked_secret_input locked_secret_inputs[] = {
@@ -10687,7 +10688,7 @@ struct locked_secret_input locked_secret_inputs[] = {
 0,
 
 
-&secret_value,
+&locked_secret_value,
 
 
 SECRET_VALUE_TEST,
@@ -10730,7 +10731,7 @@ locked_locking_leds_idx -= 1;
 return locked_lock_base_leds | leds;
 }
 
-# 101
+# 102
 void locked_Init(void *taskData) {
 struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 

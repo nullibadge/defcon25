@@ -119,19 +119,19 @@ MATRIX_TASK 4
 SECRET_VALUE_INIT 0
 SECRET_VALUE_TEST 1
 ]
-"57 /Users/Austin/Documents/badge/defcon25/locked_task.c
+"58 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [e E8105 t_secret `uc
 SECRET_VALUE_INIT 0
 SECRET_VALUE_TEST 1
 ]
-"102
+"103
 [e E8242 t_locked_states `uc
 LOCKED_LOCKED_STATE 0
 LOCKED_LOCKING_STATE 1
 LOCKED_UNLOCKED_STATE 2
 LOCKED_UNLOCKING_STATE 3
 ]
-"156
+"157
 [e E8078 t_tasks `uc
 MENU_TASK 0
 SLOT_TASK 1
@@ -232,23 +232,23 @@ MATRIX_TASK 4
 [v _flashy_Main flashy_Main `(v  1 e 1 0 ]
 "512
 [v _flashy_Exit flashy_Exit `(v  1 e 1 0 ]
-"62 /Users/Austin/Documents/badge/defcon25/locked_task.c
+"63 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_lock_leds locked_lock_leds `(ui  1 e 2 0 ]
-"70
+"71
 [v _locked_unlock_leds locked_unlock_leds `(ui  1 e 2 0 ]
-"76
+"77
 [v _locked_get_lock_leds locked_get_lock_leds `(ui  1 e 2 0 ]
-"87
+"88
 [v _locked_get_unlock_leds locked_get_unlock_leds `(ui  1 e 2 0 ]
-"101
+"102
 [v _locked_Init locked_Init `(v  1 e 1 0 ]
-"121
+"122
 [v _locked_secret_check locked_secret_check `(uc  1 e 1 0 ]
-"152
+"153
 [v _locked_Main locked_Main `(v  1 e 1 0 ]
-"274
+"275
 [v _locked_clear locked_clear `(v  1 e 1 0 ]
-"289
+"290
 [v _locked_Exit locked_Exit `(v  1 e 1 0 ]
 "133 /Users/Austin/Documents/badge/defcon25/main.c
 [v _marquee_speedy marquee_speedy `(v  1 e 1 0 ]
@@ -917,8 +917,10 @@ MATRIX_TASK 4
 [v _locked_leds locked_leds `ui  1 e 2 0 ]
 "27
 [v _pw_found pw_found `uc  1 e 1 0 ]
-[s S2731 locked_secret_input 25 `[20]uc 1 inputs 20 0 `ui 1 idx 2 20 `*.4ui 1 variable 1 22 `ui 1 value 2 23 ]
-"45
+"43
+[v _locked_secret_value locked_secret_value `ui  1 e 2 0 ]
+[s S2731 locked_secret_input 25 `[20]uc 1 inputs 20 0 `ui 1 idx 2 20 `*.5ui 1 variable 1 22 `ui 1 value 2 23 ]
+"46
 [v _locked_secret_inputs locked_secret_inputs `[1]S2731  1 e 25 0 ]
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
 "65 /Users/Austin/Documents/badge/defcon25/main.c
@@ -1070,18 +1072,18 @@ MATRIX_TASK 4
 [v secret_Init@taskData taskData `*.39v  1 p 2 25 ]
 "67
 } 0
-"101 /Users/Austin/Documents/badge/defcon25/locked_task.c
+"102 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_Init locked_Init `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
-"102
+"103
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
 [s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13984 1 state 1 13 ]
 [v locked_Init@data data `*.39S1161  1 a 2 27 ]
-"101
+"102
 [v locked_Init@taskData taskData `*.39v  1 p 2 25 ]
-"119
+"120
 } 0
 "37 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_Init menu_Init `(v  1 e 1 0 ]
@@ -1220,20 +1222,20 @@ MATRIX_TASK 4
 [v secret_Main@taskData taskData `*.39v  1 p 2 50 ]
 "176
 } 0
-"152 /Users/Austin/Documents/badge/defcon25/locked_task.c
+"153 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_Main locked_Main `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
-"153
+"154
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
 [s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13984 1 state 1 13 ]
 [v locked_Main@data data `*.39S1161  1 a 2 55 ]
-"154
+"155
 [v locked_Main@buttonPressed buttonPressed `uc  1 a 1 54 ]
-"152
+"153
 [v locked_Main@taskData taskData `*.39v  1 p 2 50 ]
-"272
+"273
 } 0
 "59 /Users/Austin/Documents/badge/defcon25/menu_task.c
 [v _menu_Main menu_Main `(v  1 e 1 0 ]
@@ -1416,30 +1418,30 @@ MATRIX_TASK 4
 [v slot_Setup@taskData taskData `*.39v  1 p 2 15 ]
 "62
 } 0
-"70 /Users/Austin/Documents/badge/defcon25/locked_task.c
+"71 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_unlock_leds locked_unlock_leds `(ui  1 e 2 0 ]
 {
-"74
+"75
 } 0
-"121
+"122
 [v _locked_secret_check locked_secret_check `(uc  1 e 1 0 ]
 {
-"127
+"128
 [v locked_secret_check@i i `ui  1 a 2 8 ]
-"124
+"125
 [v locked_secret_check@currents_size currents_size `ui  1 a 2 5 ]
-"123
+"124
 [v locked_secret_check@size size `ui  1 a 2 3 ]
-"122
+"123
 [v locked_secret_check@inputs inputs `*.6uc  1 a 1 7 ]
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
-"121
+"122
 [s S1000 t_nullifyDisplay_l2 17 `[4]uc 1 charVect 4 0 `uc 1 dpVect 1 4 `ui 1 ledVect 2 5 `S998 1 display_l1 10 7 ]
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
 [s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13984 1 state 1 13 ]
 [v locked_secret_check@data data `*.39S1161  1 p 2 7 ]
 [v locked_secret_check@buttonPressed buttonPressed `uc  1 p 1 9 ]
-"149
+"150
 } 0
 "4 /Applications/microchip/xc8/v1.42/sources/common/Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
@@ -1454,30 +1456,30 @@ MATRIX_TASK 4
 [v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
 "51
 } 0
-"62 /Users/Austin/Documents/badge/defcon25/locked_task.c
+"63 /Users/Austin/Documents/badge/defcon25/locked_task.c
 [v _locked_lock_leds locked_lock_leds `(ui  1 e 2 0 ]
 {
-"63
+"64
 [v locked_lock_leds@size size `ui  1 a 2 3 ]
-"67
+"68
 } 0
-"87
+"88
 [v _locked_get_unlock_leds locked_get_unlock_leds `(ui  1 e 2 0 ]
 {
-"88
+"89
 [v locked_get_unlock_leds@leds leds `ui  1 a 2 3 ]
-"95
+"96
 } 0
-"76
+"77
 [v _locked_get_lock_leds locked_get_lock_leds `(ui  1 e 2 0 ]
 {
-"78
+"79
 [v locked_get_lock_leds@leds leds `ui  1 a 2 7 ]
-"77
+"78
 [v locked_get_lock_leds@size size `ui  1 a 2 5 ]
-"85
+"86
 } 0
-"274
+"275
 [v _locked_clear locked_clear `(v  1 e 1 0 ]
 {
 [s S998 t_nullifyDisplay_l1 10 `[10]uc 1 displayVect 10 0 ]
@@ -1485,7 +1487,7 @@ MATRIX_TASK 4
 [s S1005 t_nullifyBadge 18 `S1000 1 display 17 0 `uc 1 registeredHw 1 17 ]
 [s S1161 t_locked_taskData 14 `*.5S1005 1 badge 1 0 `ui 1 delayTickCount 2 1 `ui 1 holdCountA 2 3 `ui 1 holdCountB 2 5 `ui 1 holdCountX 2 7 `ui 1 holdCountY 2 9 `ui 1 noholdCount 2 11 `E13984 1 state 1 13 ]
 [v locked_clear@data data `*.39S1161  1 p 2 25 ]
-"286
+"287
 } 0
 "177 /Users/Austin/Documents/badge/defcon25/nullifyBadge.c
 [v _nullifyBadge_userLedsClr nullifyBadge_userLedsClr `(v  1 e 1 0 ]

@@ -40,6 +40,7 @@ struct locked_secret_input
     u16 value;
 };
 
+u16 locked_secret_value;
 
 // set secret input
 struct locked_secret_input locked_secret_inputs[] = {
@@ -51,7 +52,7 @@ struct locked_secret_input locked_secret_inputs[] = {
         0,
 
         // test secret, (extern in nullifyBadge.h && set 0 in main.c && used in flashy_task))
-        &secret_value,
+        &locked_secret_value,
 
         // which test to set
         SECRET_VALUE_TEST,

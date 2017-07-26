@@ -10709,7 +10709,6 @@ char *flashy_option[] = {
 "HACK THE PLANET   ",
 "WILL HACK FOR A/C   ",
 "HTTP 418 I'M A TEAPOT    ",
-"IPoAC  ",
 "I AM JUST A BADGE    ",
 "I CAN BREAK THAT FOR YOU   ",
 "ALL YOUR BASE ARE BELONG TO US     ",
@@ -10717,12 +10716,12 @@ char *flashy_option[] = {
 "YOU JUST HAVE TO BELIEVE    ",
 "NOTHING TO SEE HERE...    ",
 "GUYS I HAVE A GREAT IDEA -MIKE K.      ",
-"deny any any    ",
+"DENY ANY ANY    ",
 "BELIEVE THE LIE   ",
 "NC -E /BIN/BASH -LP 1337    ",
 "RM -RF /   ",
 "HISTORY -CW   ",
-"ITS A UNIX SYSTEM  I know this!   ",
+"ITS A UNIX SYSTEM  I KNOW THIS!   ",
 "TRUST NO ONE   ",
 "WOULD YOU LIKE TO PLAY A GAME?   ",
 "IM AFRAID I CANT LET YOU DO THAT DAVE...  "
@@ -10747,7 +10746,7 @@ nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_segDisplayRegister(data->badge);
 nullifyBadge_segDisplayErase(data->badge);
 
-# 79
+# 78
 data->delayTickCount = 35;
 data->displayTickCount = 0;
 

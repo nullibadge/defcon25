@@ -8632,6 +8632,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;matrix_task.c: 59: SECRET_VALUE_TEST,
 [; ;matrix_task.c: 60: },
 [; ;matrix_task.c: 61: };
+"63
+[v _matrix_found `uc ~T0 @X0 1 e ]
+[; ;matrix_task.c: 63: u8 matrix_found;
 "66
 [v _matrix_Init `(v ~T0 @X0 1 ef1`*v ]
 {
@@ -8655,239 +8658,238 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;matrix_task.c: 73: nullifyBadge_segDisplayErase(data->badge);
 "73
 [e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;matrix_task.c: 75: data->display_state = MATRIX_STATE_DISPLAY;
-"75
-[e = . *U _data 2 . `E8303 10 ]
-[; ;matrix_task.c: 76: data->martix_state = STILL_IN_MATRIX;
+[; ;matrix_task.c: 74: matrix_found =0;
+"74
+[e = _matrix_found -> -> 0 `i `uc ]
+[; ;matrix_task.c: 76: data->display_state = MATRIX_STATE_DISPLAY;
 "76
-[e = . *U _data 1 . `E8316 1 ]
-[; ;matrix_task.c: 77: matrix_leds_idx =0;
+[e = . *U _data 2 . `E8303 10 ]
+[; ;matrix_task.c: 77: data->martix_state = STILL_IN_MATRIX;
 "77
+[e = . *U _data 1 . `E8316 1 ]
+[; ;matrix_task.c: 78: matrix_leds_idx =0;
+"78
 [e = _matrix_leds_idx -> -> 0 `i `ui ]
-[; ;matrix_task.c: 80: data->holdCountA = 0 ;
-"80
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 81: data->holdCountB = 0 ;
+[; ;matrix_task.c: 81: data->holdCountA = 0 ;
 "81
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 82: data->holdCountX = 0 ;
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 82: data->holdCountB = 0 ;
 "82
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 83: data->holdCountY = 0 ;
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 83: data->holdCountX = 0 ;
 "83
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 84: data->holdCountXY = 0;
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 84: data->holdCountY = 0 ;
 "84
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 85: data->holdCountAY = 0;
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 85: data->holdCountXY = 0;
 "85
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 86: data->holdCountAX = 0;
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 86: data->holdCountAY = 0;
 "86
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 87: data->holdCountBX = 0;
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 87: data->holdCountAX = 0;
 "87
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 88: data->holdCountBY = 0;
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 88: data->holdCountBX = 0;
 "88
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 89: data->holdCountBA = 0;
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 89: data->holdCountBY = 0;
 "89
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 90: data->noholdCount = 0;
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 90: data->holdCountBA = 0;
 "90
-[e = . *U _data 16 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 91: }
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 91: data->noholdCount = 0;
 "91
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 92: }
+"92
 [e :UE 964 ]
 }
-"93
+"94
 [v _matrix_secret_check `(uc ~T0 @X0 1 ef2`*S962`uc ]
 {
-[; ;matrix_task.c: 93: u8 matrix_secret_check(struct t_matrix_taskData *data, u8 buttonPressed){
+[; ;matrix_task.c: 94: u8 matrix_secret_check(struct t_matrix_taskData *data, u8 buttonPressed){
 [e :U _matrix_secret_check ]
 [v _data `*S962 ~T0 @X0 1 r1 ]
 [v _buttonPressed `uc ~T0 @X0 1 r2 ]
 [f ]
-"94
-[v _inputs `*uc ~T0 @X0 1 a ]
 "95
-[v _size `ui ~T0 @X0 1 a ]
-[; ;matrix_task.c: 94: u8 *inputs;
-[; ;matrix_task.c: 95: u16 size = sizeof(matrix_secret_inputs) / sizeof(matrix_secret_inputs[0]);
-[e = _size / -> # _matrix_secret_inputs `ui -> # *U + &U _matrix_secret_inputs * -> -> -> 0 `i `ui `ux -> -> # *U &U _matrix_secret_inputs `ui `ux `ui ]
+[v _inputs `*uc ~T0 @X0 1 a ]
 "96
-[v _currents_size `ui ~T0 @X0 1 a ]
+[v _size `ui ~T0 @X0 1 a ]
+[; ;matrix_task.c: 95: u8 *inputs;
+[; ;matrix_task.c: 96: u16 size = sizeof(matrix_secret_inputs) / sizeof(matrix_secret_inputs[0]);
+[e = _size / -> # _matrix_secret_inputs `ui -> # *U + &U _matrix_secret_inputs * -> -> -> 0 `i `ui `ux -> -> # *U &U _matrix_secret_inputs `ui `ux `ui ]
 "97
+[v _currents_size `ui ~T0 @X0 1 a ]
+"98
 [v _hit_counter `uc ~T0 @X0 -> 6 `i a ]
-[; ;matrix_task.c: 96: u16 currents_size;
-[; ;matrix_task.c: 97: char hit_counter[6];
-[; ;matrix_task.c: 99: for (u16 i = 0; i < size; i++){
-"99
+[; ;matrix_task.c: 97: u16 currents_size;
+[; ;matrix_task.c: 98: char hit_counter[6];
+[; ;matrix_task.c: 100: for (u16 i = 0; i < size; i++){
+"100
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 969  ]
 [e :U 966 ]
 {
-[; ;matrix_task.c: 100: inputs = matrix_secret_inputs[i].inputs;
-"100
+[; ;matrix_task.c: 101: inputs = matrix_secret_inputs[i].inputs;
+"101
 [e = _inputs &U . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 0 ]
-[; ;matrix_task.c: 102: if (buttonPressed == inputs[matrix_secret_inputs[i].idx]){
-"102
+[; ;matrix_task.c: 103: if (buttonPressed == inputs[matrix_secret_inputs[i].idx]){
+"103
 [e $ ! == -> _buttonPressed `i -> *U + _inputs * -> . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 `ux -> -> # *U _inputs `ui `ux `i 970  ]
 {
-[; ;matrix_task.c: 103: currents_size = strlen((const char *)inputs);
-"103
-[e = _currents_size ( _strlen (1 -> _inputs `*Cuc ]
-[; ;matrix_task.c: 104: matrix_secret_inputs[i].idx++;
+[; ;matrix_task.c: 104: currents_size = strlen((const char *)inputs);
 "104
+[e = _currents_size ( _strlen (1 -> _inputs `*Cuc ]
+[; ;matrix_task.c: 105: matrix_secret_inputs[i].idx++;
+"105
 [e ++ . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 106: if (matrix_secret_inputs[i].idx == currents_size) {
-"106
+[; ;matrix_task.c: 107: if (matrix_secret_inputs[i].idx == currents_size) {
+"107
 [e $ ! == . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 _currents_size 971  ]
 {
-[; ;matrix_task.c: 108: matrix_secret_inputs[i].idx = 0;
-"108
+[; ;matrix_task.c: 109: matrix_secret_inputs[i].idx = 0;
+"109
 [e = . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 111: *(matrix_secret_inputs[i].variable) = (u16) matrix_secret_inputs[i].value;
-"111
+[; ;matrix_task.c: 112: *(matrix_secret_inputs[i].variable) = (u16) matrix_secret_inputs[i].value;
+"112
 [e = *U . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 2 . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 3 ]
-[; ;matrix_task.c: 113: return 1;
-"113
+[; ;matrix_task.c: 114: return 1;
+"114
 [e ) -> -> 1 `i `uc ]
 [e $UE 965  ]
-"114
-}
-[e :U 971 ]
 "115
 }
-[; ;matrix_task.c: 114: }
-[; ;matrix_task.c: 115: } else {
+[e :U 971 ]
+"116
+}
+[; ;matrix_task.c: 115: }
+[; ;matrix_task.c: 116: } else {
 [e $U 972  ]
 [e :U 970 ]
 {
-[; ;matrix_task.c: 117: matrix_secret_inputs[i].idx = 0;
-"117
-[e = . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 118: matrix_secret_inputs[i].idx = 0;
 "118
-}
-[e :U 972 ]
+[e = . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
 "119
 }
-"99
+[e :U 972 ]
+"120
+}
+"100
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 969 ]
 [e $ < _i _size 966  ]
 [e :U 967 ]
-"119
-}
-[; ;matrix_task.c: 118: }
-[; ;matrix_task.c: 119: }
-[; ;matrix_task.c: 120: return 0;
 "120
+}
+[; ;matrix_task.c: 119: }
+[; ;matrix_task.c: 120: }
+[; ;matrix_task.c: 121: return 0;
+"121
 [e ) -> -> 0 `i `uc ]
 [e $UE 965  ]
-[; ;matrix_task.c: 121: }
-"121
+[; ;matrix_task.c: 122: }
+"122
 [e :UE 965 ]
 }
-"123
+"124
 [v _matrix_display_option `(v ~T0 @X0 1 ef1`*S962 ]
 {
-[; ;matrix_task.c: 123: void matrix_display_option(struct t_matrix_taskData *data){
+[; ;matrix_task.c: 124: void matrix_display_option(struct t_matrix_taskData *data){
 [e :U _matrix_display_option ]
 [v _data `*S962 ~T0 @X0 1 r1 ]
 [f ]
-[; ;matrix_task.c: 125: if(badge_locked ==1){
-"125
+[; ;matrix_task.c: 126: if(badge_locked ==1){
+"126
 [e $ ! == -> _badge_locked `i -> 1 `i 974  ]
 {
-[; ;matrix_task.c: 126: marquee_speedy("YOU ARE IN TOO DEEP     TAKE THE RED PILL    ", data->noholdCount, 40);
-"126
-[e ( _marquee_speedy (3 , , -> :s 11C `*uc . *U _data 16 -> -> 40 `i `ui ]
-[; ;matrix_task.c: 127: data->display_state = MATRIX_STATE_DISPLAY;
+[; ;matrix_task.c: 127: marquee_speedy("YOU ARE IN TOO DEEP     TAKE THE RED PILL    ", data->noholdCount, 40);
 "127
-[e = . *U _data 2 . `E8303 10 ]
-[; ;matrix_task.c: 128: data->martix_state = STILL_IN_MATRIX;
+[e ( _marquee_speedy (3 , , -> :s 11C `*uc . *U _data 16 -> -> 40 `i `ui ]
+[; ;matrix_task.c: 128: data->display_state = MATRIX_STATE_DISPLAY;
 "128
-[e = . *U _data 1 . `E8316 1 ]
-[; ;matrix_task.c: 129: return;
+[e = . *U _data 2 . `E8303 10 ]
+[; ;matrix_task.c: 129: data->martix_state = STILL_IN_MATRIX;
 "129
-[e $UE 973  ]
+[e = . *U _data 1 . `E8316 1 ]
+[; ;matrix_task.c: 130: return;
 "130
+[e $UE 973  ]
+"131
 }
 [e :U 974 ]
-[; ;matrix_task.c: 130: }
-[; ;matrix_task.c: 132: if (data->display_state == MATRIX_DONE){
-"132
+[; ;matrix_task.c: 131: }
+[; ;matrix_task.c: 133: if (data->display_state == MATRIX_DONE){
+"133
 [e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 975  ]
 {
-[; ;matrix_task.c: 133: marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
-"133
-[e ( _marquee_speedy (3 , , -> :s 12C `*uc . *U _data 16 -> -> 15 `i `ui ]
+[; ;matrix_task.c: 134: marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
 "134
-}
-[; ;matrix_task.c: 134: }
-[e $U 976  ]
+[e ( _marquee_speedy (3 , , -> :s 12C `*uc . *U _data 16 -> -> 15 `i `ui ]
 "135
+}
+[; ;matrix_task.c: 135: }
+[e $U 976  ]
+"136
 [e :U 975 ]
-[; ;matrix_task.c: 135: else if (data->display_state != MATRIX_STATE_DISPLAY ){
+[; ;matrix_task.c: 136: else if (data->display_state != MATRIX_STATE_DISPLAY ){
 [e $ ! != -> . *U _data 2 `i -> . `E8303 10 `i 977  ]
 {
-[; ;matrix_task.c: 137: marquee_speedy(matrix_option[data->display_state], data->noholdCount, 20);
-"137
-[e ( _marquee_speedy (3 , , *U + &U _matrix_option * -> . *U _data 2 `ux -> -> # *U &U _matrix_option `ui `ux . *U _data 16 -> -> 20 `i `ui ]
+[; ;matrix_task.c: 138: marquee_speedy(matrix_option[data->display_state], data->noholdCount, 20);
 "138
-}
-[; ;matrix_task.c: 138: }
-[e $U 978  ]
+[e ( _marquee_speedy (3 , , *U + &U _matrix_option * -> . *U _data 2 `ux -> -> # *U &U _matrix_option `ui `ux . *U _data 16 -> -> 20 `i `ui ]
 "139
-[e :U 977 ]
-[; ;matrix_task.c: 139: else{
-{
-[; ;matrix_task.c: 140: marquee_speedy("THE CHOICE IS YOURS   ", data->noholdCount, 30);
+}
+[; ;matrix_task.c: 139: }
+[e $U 978  ]
 "140
-[e ( _marquee_speedy (3 , , -> :s 13C `*uc . *U _data 16 -> -> 30 `i `ui ]
+[e :U 977 ]
+[; ;matrix_task.c: 140: else{
+{
+[; ;matrix_task.c: 141: marquee_speedy("THE CHOICE IS YOURS   ", data->noholdCount, 30);
 "141
+[e ( _marquee_speedy (3 , , -> :s 13C `*uc . *U _data 16 -> -> 30 `i `ui ]
+"142
 }
 [e :U 978 ]
 [e :U 976 ]
-[; ;matrix_task.c: 141: }
-[; ;matrix_task.c: 143: if (data -> displayTickdown == 0 && data->display_state != MATRIX_DONE ){
-"143
+[; ;matrix_task.c: 142: }
+[; ;matrix_task.c: 144: if (data -> displayTickdown == 0 && data->display_state != MATRIX_DONE ){
+"144
 [e $ ! && == . *U _data 5 -> -> 0 `i `ui != -> . *U _data 2 `i -> . `E8303 11 `i 979  ]
 {
-[; ;matrix_task.c: 144: data->display_state = MATRIX_STATE_DISPLAY;
-"144
-[e = . *U _data 2 . `E8303 10 ]
+[; ;matrix_task.c: 145: data->display_state = MATRIX_STATE_DISPLAY;
 "145
+[e = . *U _data 2 . `E8303 10 ]
+"146
 }
 [e :U 979 ]
-[; ;matrix_task.c: 145: }
 [; ;matrix_task.c: 146: }
-"146
+[; ;matrix_task.c: 147: }
+"147
 [e :UE 973 ]
 }
-"148
+"149
 [v _matrix_Main `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;matrix_task.c: 148: void matrix_Main (void *taskData ){
+[; ;matrix_task.c: 149: void matrix_Main (void *taskData ){
 [e :U _matrix_Main ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"149
-[v _data `*S962 ~T0 @X0 1 a ]
-[; ;matrix_task.c: 149: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
-[e = _data -> _taskData `*S962 ]
 "150
-[v _buttonPressed `uc ~T0 @X0 1 a ]
-[; ;matrix_task.c: 150: u8 buttonPressed = 0 ;
-[e = _buttonPressed -> -> 0 `i `uc ]
+[v _data `*S962 ~T0 @X0 1 a ]
+[; ;matrix_task.c: 150: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
+[e = _data -> _taskData `*S962 ]
 "151
-[v _matrix_found `uc ~T0 @X0 1 a ]
-[; ;matrix_task.c: 151: u8 matrix_found =0;
-[e = _matrix_found -> -> 0 `i `uc ]
+[v _buttonPressed `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 151: u8 buttonPressed = 0 ;
+[e = _buttonPressed -> -> 0 `i `uc ]
 "152
 [v _holdvalue `uc ~T0 @X0 1 a ]
 [; ;matrix_task.c: 152: u8 holdvalue = 50;

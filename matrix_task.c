@@ -60,7 +60,7 @@ struct matrix_secret_input matrix_secret_inputs[] = {
     },
 };
  
-
+u8 matrix_found;
 
 
 void matrix_Init(void *taskData){
@@ -71,7 +71,8 @@ void matrix_Init(void *taskData){
     nullifyBadge_userLedsClr(data->badge);
     nullifyBadge_segDisplayRegister(data->badge);
     nullifyBadge_segDisplayErase(data->badge);
-    
+    matrix_found =0;
+
     data->display_state = MATRIX_STATE_DISPLAY;
     data->martix_state = STILL_IN_MATRIX;
     matrix_leds_idx =0;
@@ -148,7 +149,6 @@ void matrix_display_option(struct t_matrix_taskData *data){
 void matrix_Main (void *taskData ){
     struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
     u8 buttonPressed  = 0 ;
-    u8 matrix_found =0;
     u8 holdvalue = 50;
     
     if ( currentTask != MATRIX_TASK ){

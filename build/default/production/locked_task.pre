@@ -10660,6 +10660,39 @@ u16 locked_locking_leds[] = {
 };
 u16 locked_locking_leds_idx;
 u16 locked_leds;
+u8 pw_found;
+struct locked_secret_input
+{
+
+u8 inputs[20];
+
+
+u16 idx;
+
+
+u16 *variable;
+
+
+u16 value;
+};
+
+
+
+struct locked_secret_input locked_secret_inputs[] = {
+{
+
+{ 8, 2, 8, 1 },
+
+
+0,
+
+
+&secret_value,
+
+
+SECRET_VALUE_TEST,
+},
+};
 
 
 u16 locked_lock_leds(){
@@ -10697,7 +10730,7 @@ locked_locking_leds_idx -= 1;
 return locked_lock_base_leds | leds;
 }
 
-
+# 101
 void locked_Init(void *taskData) {
 struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 
@@ -10706,7 +10739,7 @@ nullifyBadge_userLedsRegister(data->badge);
 nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_segDisplayRegister(data->badge);
 nullifyBadge_segDisplayErase(data->badge);
-
+pw_found =0;
 
 locked_lock_leds();
 data->state = LOCKED_LOCKED_STATE;
@@ -10718,10 +10751,41 @@ data->holdCountY = 0;
 data->noholdCount = 0;
 }
 
+u8 locked_secret_check(struct t_locked_taskData *data, u8 buttonPressed){
+u8 *inputs;
+u16 size = sizeof(locked_secret_inputs) / sizeof(locked_secret_inputs[0]);
+u16 currents_size;
+char hit_counter[6];
+
+for (u16 i = 0; i < size; i++){
+inputs = locked_secret_inputs[i].inputs;
+
+if (buttonPressed == inputs[locked_secret_inputs[i].idx]){
+currents_size = strlen((const char *)inputs);
+locked_secret_inputs[i].idx++;
+
+if (locked_secret_inputs[i].idx == currents_size) {
+
+locked_secret_inputs[i].idx = 0;
+
+
+*(locked_secret_inputs[i].variable) = (u16) locked_secret_inputs[i].value;
+
+return 1;
+}
+} else {
+
+locked_secret_inputs[i].idx = 0;
+}
+}
+return 0;
+}
+
+
 void locked_Main (void *taskData) {
 struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 u8 buttonPressed;
-
+pw_found =0;
 if ( currentTask != LOCKED_TASK ){
 data->holdCountA = 1;
 data->holdCountB = 1;
@@ -10793,21 +10857,32 @@ break;
 case 8:
 if (data->holdCountY == 0){
 
-
-data->delayTickCount = 0;
-if (badge_locked){
-
-data->state = LOCKED_UNLOCKING_STATE;
-}
-else {
-
-data->state = LOCKED_LOCKING_STATE;
-}
+pw_found = locked_secret_check(data, 8 );
 }
 data->holdCountA = 0;
 data->holdCountB = 0;
 data->holdCountX = 0;
 data->holdCountY += 1;
+data->noholdCount = 0;
+break;
+case 2:
+if (data->holdCountB == 0){
+pw_found = locked_secret_check(data, 2 );
+}
+data->holdCountA = 0;
+data->holdCountB += 1;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->noholdCount = 0;
+break;
+case 1:
+if (data->holdCountA == 0){
+pw_found = locked_secret_check(data, 1 );
+}
+data->holdCountA += 1;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
 data->noholdCount = 0;
 break;
 default:
@@ -10816,6 +10891,16 @@ data->holdCountB = 0;
 data->holdCountX = 0;
 data->holdCountY = 0;
 data->noholdCount += 1;
+}
+if(pw_found==1){
+if (badge_locked){
+
+data->state = LOCKED_UNLOCKING_STATE;
+}
+else {
+
+data->state = LOCKED_LOCKING_STATE;
+}
 }
 }
 

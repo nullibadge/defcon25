@@ -24,6 +24,39 @@ u16 locked_locking_leds[] = {
 };
 u16 locked_locking_leds_idx;
 u16 locked_leds;
+u8 pw_found;
+struct locked_secret_input 
+{
+    // array of input values
+    u8 inputs[20];
+    
+    // current index in inputs
+    u16 idx;
+    
+    // variable to set (prefer global))
+    u16 *variable;
+    
+    // value to store in variable (prefer global))
+    u16 value;
+};
+
+
+// set secret input
+struct locked_secret_input locked_secret_inputs[] = {
+    {
+        // ^^vv<><>ba
+        { BUTTON_Y, BUTTON_B, BUTTON_Y, BUTTON_A },
+
+        // set to initial index of 0
+        0,
+
+        // test secret, (extern in nullifyBadge.h && set 0 in main.c && used in flashy_task))
+        &secret_value,
+
+        // which test to set
+        SECRET_VALUE_TEST,
+    },
+};
 
 // forces LEDs to be in locked state
 u16 locked_lock_leds(){
@@ -62,6 +95,9 @@ u16 locked_get_unlock_leds(){
 }
 
 
+
+
+
 void locked_Init(void *taskData) {
     struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
     
@@ -70,7 +106,7 @@ void locked_Init(void *taskData) {
     nullifyBadge_userLedsClr(data->badge);
     nullifyBadge_segDisplayRegister(data->badge);
     nullifyBadge_segDisplayErase(data->badge);
-    
+    pw_found =0;
     /* Initialize application data */
     locked_lock_leds();
     data->state = LOCKED_LOCKED_STATE;
@@ -82,10 +118,41 @@ void locked_Init(void *taskData) {
     data->noholdCount = 0;
 }
 
+u8 locked_secret_check(struct t_locked_taskData *data, u8 buttonPressed){
+    u8 *inputs;
+    u16 size = sizeof(locked_secret_inputs) / sizeof(locked_secret_inputs[0]);
+    u16 currents_size;
+    char hit_counter[6];
+    
+    for (u16 i = 0; i < size; i++){
+        inputs = locked_secret_inputs[i].inputs;
+
+        if (buttonPressed == inputs[locked_secret_inputs[i].idx]){
+            currents_size = strlen((const char *)inputs);
+            locked_secret_inputs[i].idx++;
+
+            if (locked_secret_inputs[i].idx == currents_size) {
+                // set index back to 0
+                locked_secret_inputs[i].idx = 0;
+                
+                // set variable
+                *(locked_secret_inputs[i].variable) = (u16) locked_secret_inputs[i].value;
+
+                return 1;
+            }
+        } else {
+            // wrong input, set index to 0
+            locked_secret_inputs[i].idx = 0;
+        }
+    }
+    return 0;
+}
+
+
 void locked_Main (void *taskData) {
     struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
     u8 buttonPressed;
-    
+    pw_found =0;
     if ( currentTask != LOCKED_TASK ){
         data->holdCountA = 1;
         data->holdCountB = 1;
@@ -157,21 +224,32 @@ void locked_Main (void *taskData) {
         case BUTTON_Y:
             if (data->holdCountY == 0){
                 //badge_locked = ~badge_locked;
-                
-                data->delayTickCount = 0;
-                if (badge_locked){
-                    // just unlocked
-                    data->state = LOCKED_UNLOCKING_STATE;
-                }
-                else {
-                    // just locked
-                    data->state = LOCKED_LOCKING_STATE;
-                }
+                pw_found = locked_secret_check(data, BUTTON_Y );
             }
             data->holdCountA = 0;
             data->holdCountB = 0;
             data->holdCountX = 0;
             data->holdCountY += 1;
+            data->noholdCount = 0;
+            break;
+        case BUTTON_B:
+            if (data->holdCountB == 0){
+                pw_found = locked_secret_check(data, BUTTON_B );
+            }
+            data->holdCountA = 0;
+            data->holdCountB += 1;
+            data->holdCountX = 0;
+            data->holdCountY = 0;
+            data->noholdCount = 0;
+            break;
+        case BUTTON_A:
+            if (data->holdCountA == 0){
+                pw_found = locked_secret_check(data, BUTTON_A );
+            }
+            data->holdCountA += 1;
+            data->holdCountB = 0;
+            data->holdCountX = 0;
+            data->holdCountY = 0;
             data->noholdCount = 0;
             break;
         default:
@@ -180,6 +258,16 @@ void locked_Main (void *taskData) {
             data->holdCountX = 0;
             data->holdCountY = 0;
             data->noholdCount += 1;
+    }
+    if(pw_found==1){
+                if (badge_locked){
+                    // just unlocked
+                    data->state = LOCKED_UNLOCKING_STATE;
+                }
+                else {
+                    // just locked
+                    data->state = LOCKED_LOCKING_STATE;
+                }
     }
 }
 

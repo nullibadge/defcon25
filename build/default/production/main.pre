@@ -20858,7 +20858,7 @@ void secret_Exit(void *taskData);
 
 void secret_clear(struct t_secret_taskData *data);
 
-# 15 "matrix_task.h"
+# 18 "matrix_task.h"
 enum t_matrix_display_states {
 MATRIX_A,
 MATRIX_Y,
@@ -20889,7 +20889,7 @@ enum t_matrix_display_states display_state;
 
 
 u16 delayTickCount;
-
+u16 matrix_blasterTickCount;
 u16 displayTickdown;
 
 u16 holdCountA;

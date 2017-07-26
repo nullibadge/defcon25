@@ -21,9 +21,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E8316 t_matrix_martix_state MATRIX_SOLVED STILL_IN_MATRIX  ]
 [c E8303 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
 [n E8303 t_matrix_display_states MATRIX_A MATRIX_Y MATRIX_B MATRIX_X MATRIX_AX MATRIX_AY MATRIX_BA MATRIX_BX MATRIX_XY MATRIX_BY MATRIX_STATE_DISPLAY MATRIX_DONE  ]
-"35 matrix_task.h
-[s S962 `*S959 1 `E8316 1 `E8303 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
-[n S962 t_matrix_taskData badge martix_state display_state delayTickCount displayTickdown holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY holdCountBA noholdCount ]
+"38 matrix_task.h
+[s S962 `*S959 1 `E8316 1 `E8303 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[n S962 t_matrix_taskData badge martix_state display_state delayTickCount matrix_blasterTickCount displayTickdown holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY holdCountBA noholdCount ]
 "215 nullifyBadge.h
 [v _nullifyBadge_userLedsRegister `(c ~T0 @X0 0 ef1`*S959 ]
 "236
@@ -34,11 +34,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _nullifyBadge_segDisplayErase `(v ~T0 @X0 0 ef1`*S959 ]
 "56 /Applications/microchip/xc8/v1.42/include/string.h
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"54 nullifyBadge.h
+"51 nullifyBadge.h
+[v _badge_locked `uc ~T0 @X0 0 e ]
+"54
 [v _marquee_speedy `(v ~T0 @X0 0 ef3`*uc`ui`ui ]
 "52
 [v _currentTask `ui ~T0 @X0 0 e ]
-"147 matrix_task.c
+"154 matrix_task.c
 [c E8139 0 1 2 3 4 .. ]
 [n E8139 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK MATRIX_TASK  ]
 "61 nullifyBadge.h
@@ -8503,46 +8505,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cooperative_scheduler.h: 93: s8 scheduler_TaskAdd(struct t_scheduler *scheduler, struct t_schedulerTask *task);
 [; ;cooperative_scheduler.h: 98: void scheduler_TaskRemove(struct t_scheduler *scheduler, struct t_schedulerTask *task);
 [; ;cooperative_scheduler.h: 101: void schedulerExecute(struct t_scheduler *scheduler);
-[; ;matrix_task.h: 15: enum t_matrix_display_states {
-[; ;matrix_task.h: 16: MATRIX_A,
-[; ;matrix_task.h: 17: MATRIX_Y,
-[; ;matrix_task.h: 18: MATRIX_B,
-[; ;matrix_task.h: 19: MATRIX_X,
-[; ;matrix_task.h: 20: MATRIX_AX,
-[; ;matrix_task.h: 21: MATRIX_AY,
-[; ;matrix_task.h: 22: MATRIX_BA,
-[; ;matrix_task.h: 23: MATRIX_BX,
-[; ;matrix_task.h: 24: MATRIX_XY,
-[; ;matrix_task.h: 25: MATRIX_BY,
-[; ;matrix_task.h: 26: MATRIX_STATE_DISPLAY,
-[; ;matrix_task.h: 27: MATRIX_DONE
-[; ;matrix_task.h: 28: };
-[; ;matrix_task.h: 30: enum t_matrix_martix_state{
-[; ;matrix_task.h: 31: MATRIX_SOLVED,
-[; ;matrix_task.h: 32: STILL_IN_MATRIX,
-[; ;matrix_task.h: 33: };
-[; ;matrix_task.h: 35: struct t_matrix_taskData {
-[; ;matrix_task.h: 37: struct t_nullifyBadge *badge;
-[; ;matrix_task.h: 39: enum t_matrix_martix_state martix_state;
-[; ;matrix_task.h: 41: enum t_matrix_display_states display_state;
-[; ;matrix_task.h: 44: u16 delayTickCount;
-[; ;matrix_task.h: 46: u16 displayTickdown;
-[; ;matrix_task.h: 48: u16 holdCountA;
-[; ;matrix_task.h: 49: u16 holdCountB;
-[; ;matrix_task.h: 50: u16 holdCountX;
-[; ;matrix_task.h: 51: u16 holdCountY;
-[; ;matrix_task.h: 52: u16 holdCountXY;
-[; ;matrix_task.h: 53: u16 holdCountAY;
-[; ;matrix_task.h: 54: u16 holdCountAX;
-[; ;matrix_task.h: 55: u16 holdCountBX;
-[; ;matrix_task.h: 56: u16 holdCountBY;
-[; ;matrix_task.h: 57: u16 holdCountBA;
-[; ;matrix_task.h: 58: u16 noholdCount;
-[; ;matrix_task.h: 60: };
-[; ;matrix_task.h: 62: void matrix_Init(void *taskData);
-[; ;matrix_task.h: 63: void matrix_Main (void *taskData);
-[; ;matrix_task.h: 64: void matrix_Exit(void *taskData);
-[; ;matrix_task.h: 65: void matrix_secret_clear(struct t_matrix_taskData *data);
+[; ;matrix_task.h: 18: enum t_matrix_display_states {
+[; ;matrix_task.h: 19: MATRIX_A,
+[; ;matrix_task.h: 20: MATRIX_Y,
+[; ;matrix_task.h: 21: MATRIX_B,
+[; ;matrix_task.h: 22: MATRIX_X,
+[; ;matrix_task.h: 23: MATRIX_AX,
+[; ;matrix_task.h: 24: MATRIX_AY,
+[; ;matrix_task.h: 25: MATRIX_BA,
+[; ;matrix_task.h: 26: MATRIX_BX,
+[; ;matrix_task.h: 27: MATRIX_XY,
+[; ;matrix_task.h: 28: MATRIX_BY,
+[; ;matrix_task.h: 29: MATRIX_STATE_DISPLAY,
+[; ;matrix_task.h: 30: MATRIX_DONE
+[; ;matrix_task.h: 31: };
+[; ;matrix_task.h: 33: enum t_matrix_martix_state{
+[; ;matrix_task.h: 34: MATRIX_SOLVED,
+[; ;matrix_task.h: 35: STILL_IN_MATRIX,
+[; ;matrix_task.h: 36: };
+[; ;matrix_task.h: 38: struct t_matrix_taskData {
+[; ;matrix_task.h: 40: struct t_nullifyBadge *badge;
+[; ;matrix_task.h: 42: enum t_matrix_martix_state martix_state;
+[; ;matrix_task.h: 44: enum t_matrix_display_states display_state;
+[; ;matrix_task.h: 47: u16 delayTickCount;
+[; ;matrix_task.h: 48: u16 matrix_blasterTickCount;
+[; ;matrix_task.h: 49: u16 displayTickdown;
+[; ;matrix_task.h: 51: u16 holdCountA;
+[; ;matrix_task.h: 52: u16 holdCountB;
+[; ;matrix_task.h: 53: u16 holdCountX;
+[; ;matrix_task.h: 54: u16 holdCountY;
+[; ;matrix_task.h: 55: u16 holdCountXY;
+[; ;matrix_task.h: 56: u16 holdCountAY;
+[; ;matrix_task.h: 57: u16 holdCountAX;
+[; ;matrix_task.h: 58: u16 holdCountBX;
+[; ;matrix_task.h: 59: u16 holdCountBY;
+[; ;matrix_task.h: 60: u16 holdCountBA;
+[; ;matrix_task.h: 61: u16 noholdCount;
+[; ;matrix_task.h: 63: };
+[; ;matrix_task.h: 65: void matrix_Init(void *taskData);
+[; ;matrix_task.h: 66: void matrix_Main (void *taskData);
+[; ;matrix_task.h: 67: void matrix_Exit(void *taskData);
+[; ;matrix_task.h: 68: void matrix_secret_clear(struct t_matrix_taskData *data);
 "12 matrix_task.c
 [v _matrix_option `*uc ~T0 @X0 -> 0 `x e ]
 [i _matrix_option
@@ -8663,37 +8666,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _matrix_leds_idx -> -> 0 `i `ui ]
 [; ;matrix_task.c: 80: data->holdCountA = 0 ;
 "80
-[e = . *U _data 5 -> -> 0 `i `ui ]
+[e = . *U _data 6 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 81: data->holdCountB = 0 ;
 "81
-[e = . *U _data 6 -> -> 0 `i `ui ]
+[e = . *U _data 7 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 82: data->holdCountX = 0 ;
 "82
-[e = . *U _data 7 -> -> 0 `i `ui ]
+[e = . *U _data 8 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 83: data->holdCountY = 0 ;
 "83
-[e = . *U _data 8 -> -> 0 `i `ui ]
+[e = . *U _data 9 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 84: data->holdCountXY = 0;
 "84
-[e = . *U _data 9 -> -> 0 `i `ui ]
+[e = . *U _data 10 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 85: data->holdCountAY = 0;
 "85
-[e = . *U _data 10 -> -> 0 `i `ui ]
+[e = . *U _data 11 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 86: data->holdCountAX = 0;
 "86
-[e = . *U _data 11 -> -> 0 `i `ui ]
+[e = . *U _data 12 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 87: data->holdCountBX = 0;
 "87
-[e = . *U _data 12 -> -> 0 `i `ui ]
+[e = . *U _data 13 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 88: data->holdCountBY = 0;
 "88
-[e = . *U _data 13 -> -> 0 `i `ui ]
+[e = . *U _data 14 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 89: data->holdCountBA = 0;
 "89
-[e = . *U _data 14 -> -> 0 `i `ui ]
+[e = . *U _data 15 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 90: data->noholdCount = 0;
 "90
-[e = . *U _data 15 -> -> 0 `i `ui ]
+[e = . *U _data 16 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 91: }
 "91
 [e :UE 964 ]
@@ -8796,833 +8799,853 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _matrix_display_option ]
 [v _data `*S962 ~T0 @X0 1 r1 ]
 [f ]
-[; ;matrix_task.c: 125: if (data->display_state == MATRIX_DONE){
+[; ;matrix_task.c: 125: if(badge_locked ==1){
 "125
-[e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 974  ]
+[e $ ! == -> _badge_locked `i -> 1 `i 974  ]
 {
-[; ;matrix_task.c: 126: marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
+[; ;matrix_task.c: 126: marquee_speedy("YOU ARE IN TOO DEEP     TAKE THE RED PILL    ", data->noholdCount, 40);
 "126
-[e ( _marquee_speedy (3 , , -> :s 11C `*uc . *U _data 15 -> -> 15 `i `ui ]
+[e ( _marquee_speedy (3 , , -> :s 11C `*uc . *U _data 16 -> -> 40 `i `ui ]
+[; ;matrix_task.c: 127: data->display_state = MATRIX_STATE_DISPLAY;
 "127
-}
-[; ;matrix_task.c: 127: }
-[e $U 975  ]
+[e = . *U _data 2 . `E8303 10 ]
+[; ;matrix_task.c: 128: data->martix_state = STILL_IN_MATRIX;
 "128
-[e :U 974 ]
-[; ;matrix_task.c: 128: else if (data->display_state != MATRIX_STATE_DISPLAY ){
-[e $ ! != -> . *U _data 2 `i -> . `E8303 10 `i 976  ]
-{
-[; ;matrix_task.c: 130: marquee_speedy(matrix_option[data->display_state], data->noholdCount, 20);
+[e = . *U _data 1 . `E8316 1 ]
+[; ;matrix_task.c: 129: return;
+"129
+[e $UE 973  ]
 "130
-[e ( _marquee_speedy (3 , , *U + &U _matrix_option * -> . *U _data 2 `ux -> -> # *U &U _matrix_option `ui `ux . *U _data 15 -> -> 20 `i `ui ]
-"131
 }
-[; ;matrix_task.c: 131: }
-[e $U 977  ]
+[e :U 974 ]
+[; ;matrix_task.c: 130: }
+[; ;matrix_task.c: 132: if (data->display_state == MATRIX_DONE){
 "132
-[e :U 976 ]
-[; ;matrix_task.c: 132: else{
+[e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 975  ]
 {
-[; ;matrix_task.c: 133: marquee_speedy("THE CHOICE IS YOURS   ", data->noholdCount, 30);
+[; ;matrix_task.c: 133: marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
 "133
-[e ( _marquee_speedy (3 , , -> :s 12C `*uc . *U _data 15 -> -> 30 `i `ui ]
+[e ( _marquee_speedy (3 , , -> :s 12C `*uc . *U _data 16 -> -> 15 `i `ui ]
 "134
 }
-[e :U 977 ]
-[e :U 975 ]
 [; ;matrix_task.c: 134: }
-[; ;matrix_task.c: 136: if (data -> displayTickdown == 0 && data->display_state != MATRIX_DONE ){
-"136
-[e $ ! && == . *U _data 4 -> -> 0 `i `ui != -> . *U _data 2 `i -> . `E8303 11 `i 978  ]
+[e $U 976  ]
+"135
+[e :U 975 ]
+[; ;matrix_task.c: 135: else if (data->display_state != MATRIX_STATE_DISPLAY ){
+[e $ ! != -> . *U _data 2 `i -> . `E8303 10 `i 977  ]
 {
-[; ;matrix_task.c: 137: data->display_state = MATRIX_STATE_DISPLAY;
+[; ;matrix_task.c: 137: marquee_speedy(matrix_option[data->display_state], data->noholdCount, 20);
 "137
-[e = . *U _data 2 . `E8303 10 ]
+[e ( _marquee_speedy (3 , , *U + &U _matrix_option * -> . *U _data 2 `ux -> -> # *U &U _matrix_option `ui `ux . *U _data 16 -> -> 20 `i `ui ]
 "138
 }
-[e :U 978 ]
 [; ;matrix_task.c: 138: }
-[; ;matrix_task.c: 139: }
+[e $U 978  ]
 "139
+[e :U 977 ]
+[; ;matrix_task.c: 139: else{
+{
+[; ;matrix_task.c: 140: marquee_speedy("THE CHOICE IS YOURS   ", data->noholdCount, 30);
+"140
+[e ( _marquee_speedy (3 , , -> :s 13C `*uc . *U _data 16 -> -> 30 `i `ui ]
+"141
+}
+[e :U 978 ]
+[e :U 976 ]
+[; ;matrix_task.c: 141: }
+[; ;matrix_task.c: 143: if (data -> displayTickdown == 0 && data->display_state != MATRIX_DONE ){
+"143
+[e $ ! && == . *U _data 5 -> -> 0 `i `ui != -> . *U _data 2 `i -> . `E8303 11 `i 979  ]
+{
+[; ;matrix_task.c: 144: data->display_state = MATRIX_STATE_DISPLAY;
+"144
+[e = . *U _data 2 . `E8303 10 ]
+"145
+}
+[e :U 979 ]
+[; ;matrix_task.c: 145: }
+[; ;matrix_task.c: 146: }
+"146
 [e :UE 973 ]
 }
-"141
+"148
 [v _matrix_Main `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;matrix_task.c: 141: void matrix_Main (void *taskData ){
+[; ;matrix_task.c: 148: void matrix_Main (void *taskData ){
 [e :U _matrix_Main ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"142
-[v _data `*S962 ~T0 @X0 1 a ]
-[; ;matrix_task.c: 142: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
-[e = _data -> _taskData `*S962 ]
-"143
-[v _buttonPressed `uc ~T0 @X0 1 a ]
-[; ;matrix_task.c: 143: u8 buttonPressed = 0 ;
-[e = _buttonPressed -> -> 0 `i `uc ]
-"144
-[v _matrix_found `uc ~T0 @X0 1 a ]
-[; ;matrix_task.c: 144: u8 matrix_found =0;
-[e = _matrix_found -> -> 0 `i `uc ]
-"145
-[v _holdvalue `uc ~T0 @X0 1 a ]
-[; ;matrix_task.c: 145: u8 holdvalue = 50;
-[e = _holdvalue -> -> 50 `i `uc ]
-[; ;matrix_task.c: 147: if ( currentTask != MATRIX_TASK ){
-"147
-[e $ ! != _currentTask -> . `E8139 4 `ui 980  ]
-{
-[; ;matrix_task.c: 148: data->holdCountA = 1;
-"148
-[e = . *U _data 5 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 149: data->holdCountB = 1;
 "149
-[e = . *U _data 6 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 150: data->holdCountX = 1;
+[v _data `*S962 ~T0 @X0 1 a ]
+[; ;matrix_task.c: 149: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
+[e = _data -> _taskData `*S962 ]
 "150
-[e = . *U _data 7 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 151: data->holdCountY = 1;
+[v _buttonPressed `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 150: u8 buttonPressed = 0 ;
+[e = _buttonPressed -> -> 0 `i `uc ]
 "151
-[e = . *U _data 8 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 152: return;
+[v _matrix_found `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 151: u8 matrix_found =0;
+[e = _matrix_found -> -> 0 `i `uc ]
 "152
-[e $UE 979  ]
-"153
-}
-[e :U 980 ]
-[; ;matrix_task.c: 153: }
-[; ;matrix_task.c: 157: if (data->martix_state == STILL_IN_MATRIX){
+[v _holdvalue `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 152: u8 holdvalue = 50;
+[e = _holdvalue -> -> 50 `i `uc ]
+[; ;matrix_task.c: 154: if ( currentTask != MATRIX_TASK ){
+"154
+[e $ ! != _currentTask -> . `E8139 4 `ui 981  ]
+{
+[; ;matrix_task.c: 155: data->holdCountA = 1;
+"155
+[e = . *U _data 6 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 156: data->holdCountB = 1;
+"156
+[e = . *U _data 7 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 157: data->holdCountX = 1;
 "157
-[e $ ! == -> . *U _data 1 `i -> . `E8316 1 `i 981  ]
-{
-[; ;matrix_task.c: 158: if(data->delayTickCount == 0){
+[e = . *U _data 8 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 158: data->holdCountY = 1;
 "158
-[e $ ! == . *U _data 3 -> -> 0 `i `ui 982  ]
-{
-[; ;matrix_task.c: 159: led_Parody(matrix_leds_idx);
+[e = . *U _data 9 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 159: return;
 "159
-[e ( _led_Parody (1 _matrix_leds_idx ]
-[; ;matrix_task.c: 160: matrix_leds_idx += 1;
+[e $UE 980  ]
 "160
-[e =+ _matrix_leds_idx -> -> 1 `i `ui ]
-[; ;matrix_task.c: 161: data->delayTickCount = 10;
-"161
-[e = . *U _data 3 -> -> 10 `i `ui ]
-"162
-}
-[; ;matrix_task.c: 162: }
-[e $U 983  ]
-"163
-[e :U 982 ]
-[; ;matrix_task.c: 163: else {
-{
-[; ;matrix_task.c: 164: data->delayTickCount -= 1;
-"164
-[e =- . *U _data 3 -> -> 1 `i `ui ]
-"165
-}
-[e :U 983 ]
-"166
 }
 [e :U 981 ]
-[; ;matrix_task.c: 165: }
-[; ;matrix_task.c: 166: }
-[; ;matrix_task.c: 170: buttonPressed = nullifyBadge_buttonsGet();
+[; ;matrix_task.c: 160: }
+[; ;matrix_task.c: 164: if (data->martix_state == STILL_IN_MATRIX){
+"164
+[e $ ! == -> . *U _data 1 `i -> . `E8316 1 `i 982  ]
+{
+[; ;matrix_task.c: 165: if(data->delayTickCount == 0){
+"165
+[e $ ! == . *U _data 3 -> -> 0 `i `ui 983  ]
+{
+[; ;matrix_task.c: 166: led_Parody(matrix_leds_idx);
+"166
+[e ( _led_Parody (1 _matrix_leds_idx ]
+[; ;matrix_task.c: 167: matrix_leds_idx += 1;
+"167
+[e =+ _matrix_leds_idx -> -> 1 `i `ui ]
+[; ;matrix_task.c: 168: data->delayTickCount = 10;
+"168
+[e = . *U _data 3 -> -> 10 `i `ui ]
+"169
+}
+[; ;matrix_task.c: 169: }
+[e $U 984  ]
 "170
-[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
-[; ;matrix_task.c: 173: switch (buttonPressed) {
-"173
-[e $U 985  ]
+[e :U 983 ]
+[; ;matrix_task.c: 170: else {
 {
-[; ;matrix_task.c: 174: case 1:
-"174
-[e :U 986 ]
-[; ;matrix_task.c: 176: if (data->holdCountA == holdvalue){
-"176
-[e $ ! == . *U _data 5 -> _holdvalue `ui 987  ]
-{
-[; ;matrix_task.c: 177: matrix_found = matrix_secret_check(data, buttonPressed);
-"177
-[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
-[; ;matrix_task.c: 178: data->display_state = MATRIX_A;
-"178
-[e = . *U _data 2 . `E8303 0 ]
-"179
+[; ;matrix_task.c: 171: data->delayTickCount -= 1;
+"171
+[e =- . *U _data 3 -> -> 1 `i `ui ]
+"172
 }
-[e :U 987 ]
-[; ;matrix_task.c: 179: }
-[; ;matrix_task.c: 180: data->holdCountA += 1;
-"180
-[e =+ . *U _data 5 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 181: data->holdCountB = 0;
-"181
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 182: data->holdCountX = 0;
-"182
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 183: data->holdCountY = 0;
-"183
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 184: data->holdCountXY = 0;
-"184
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 185: data->holdCountAY = 0;
-"185
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 186: data->holdCountAX = 0;
-"186
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 187: data->holdCountBX = 0;
-"187
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 188: data->holdCountBY = 0;
-"188
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 189: data->holdCountBA = 0;
-"189
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 190: data->noholdCount = 0;
-"190
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 191: data->displayTickdown = 300;
-"191
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 192: break;
-"192
-[e $U 984  ]
-[; ;matrix_task.c: 193: case 2:
-"193
-[e :U 988 ]
-[; ;matrix_task.c: 195: if (data->holdCountB == holdvalue){
-"195
-[e $ ! == . *U _data 6 -> _holdvalue `ui 989  ]
-{
-[; ;matrix_task.c: 196: matrix_found = matrix_secret_check(data, buttonPressed);
-"196
-[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
-[; ;matrix_task.c: 197: data->display_state = MATRIX_B;
-"197
-[e = . *U _data 2 . `E8303 2 ]
-"198
-}
-[e :U 989 ]
-[; ;matrix_task.c: 198: }
-[; ;matrix_task.c: 199: data->holdCountA = 0;
-"199
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 200: data->holdCountB += 1;
-"200
-[e =+ . *U _data 6 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 201: data->holdCountX = 0;
-"201
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 202: data->holdCountY = 0;
-"202
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 203: data->holdCountXY = 0;
-"203
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 204: data->holdCountAY = 0;
-"204
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 205: data->holdCountAX = 0;
-"205
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 206: data->holdCountBX = 0;
-"206
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 207: data->holdCountBY = 0;
-"207
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 208: data->holdCountBA = 0;
-"208
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 209: data->noholdCount = 0;
-"209
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 210: data->displayTickdown = 300;
-"210
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 211: break;
-"211
-[e $U 984  ]
-[; ;matrix_task.c: 212: case 4:
-"212
-[e :U 990 ]
-[; ;matrix_task.c: 214: if (data->holdCountX == holdvalue){
-"214
-[e $ ! == . *U _data 7 -> _holdvalue `ui 991  ]
-{
-[; ;matrix_task.c: 215: matrix_found = matrix_secret_check(data, buttonPressed);
-"215
-[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
-[; ;matrix_task.c: 216: data->display_state = MATRIX_X;
-"216
-[e = . *U _data 2 . `E8303 3 ]
-"217
-}
-[e :U 991 ]
-[; ;matrix_task.c: 217: }
-[; ;matrix_task.c: 218: data->holdCountA = 0;
-"218
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 219: data->holdCountB = 0;
-"219
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 220: data->holdCountX += 1;
-"220
-[e =+ . *U _data 7 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 221: data->holdCountY = 0;
-"221
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 222: data->holdCountXY = 0;
-"222
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 223: data->holdCountAY = 0;
-"223
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 224: data->holdCountAX = 0;
-"224
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 225: data->holdCountBX = 0;
-"225
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 226: data->holdCountBY = 0;
-"226
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 227: data->holdCountBA = 0;
-"227
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 228: data->noholdCount = 0;
-"228
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 229: data->displayTickdown = 300;
-"229
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 230: break;
-"230
-[e $U 984  ]
-[; ;matrix_task.c: 231: case 8:
-"231
-[e :U 992 ]
-[; ;matrix_task.c: 233: if (data->holdCountY == holdvalue){
-"233
-[e $ ! == . *U _data 8 -> _holdvalue `ui 993  ]
-{
-[; ;matrix_task.c: 234: matrix_found = matrix_secret_check(data, buttonPressed);
-"234
-[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
-[; ;matrix_task.c: 235: data->display_state = MATRIX_Y;
-"235
-[e = . *U _data 2 . `E8303 1 ]
-"236
-}
-[e :U 993 ]
-[; ;matrix_task.c: 236: }
-[; ;matrix_task.c: 238: data->holdCountA = 0;
-"238
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 239: data->holdCountB = 0;
-"239
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 240: data->holdCountX = 0;
-"240
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 241: data->holdCountY += 1;
-"241
-[e =+ . *U _data 8 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 242: data->holdCountXY = 0;
-"242
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 243: data->holdCountAY = 0;
-"243
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 244: data->holdCountAX = 0;
-"244
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 245: data->holdCountBX = 0;
-"245
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 246: data->holdCountBY = 0;
-"246
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 247: data->holdCountBA = 0;
-"247
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 248: data->noholdCount = 0;
-"248
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 249: data->displayTickdown = 300;
-"249
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 250: break;
-"250
-[e $U 984  ]
-[; ;matrix_task.c: 251: case 4 | 8:
-"251
-[e :U 994 ]
-[; ;matrix_task.c: 253: if (data->holdCountXY == holdvalue){
-"253
-[e $ ! == . *U _data 9 -> _holdvalue `ui 995  ]
-{
-[; ;matrix_task.c: 254: matrix_found = matrix_secret_check(data, 4 | 8);
-"254
-[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 4 `i -> 8 `i `uc ]
-[; ;matrix_task.c: 255: data->display_state = MATRIX_XY;
-"255
-[e = . *U _data 2 . `E8303 8 ]
-"256
-}
-[e :U 995 ]
-[; ;matrix_task.c: 256: }
-[; ;matrix_task.c: 257: data->holdCountA = 0;
-"257
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 258: data->holdCountB = 0;
-"258
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 259: data->holdCountX = 0;
-"259
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 260: data->holdCountY = 0;
-"260
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 261: data->holdCountXY += 1;
-"261
-[e =+ . *U _data 9 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 262: data->holdCountAY = 0;
-"262
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 263: data->holdCountAX = 0;
-"263
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 264: data->holdCountBX = 0;
-"264
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 265: data->holdCountBY = 0;
-"265
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 266: data->holdCountBA = 0;
-"266
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 267: data->noholdCount = 0;
-"267
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 268: data->displayTickdown = 300;
-"268
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 269: break;
-"269
-[e $U 984  ]
-[; ;matrix_task.c: 270: case 1 | 8:
-"270
-[e :U 996 ]
-[; ;matrix_task.c: 272: if (data->holdCountAY == holdvalue){
-"272
-[e $ ! == . *U _data 10 -> _holdvalue `ui 997  ]
-{
-[; ;matrix_task.c: 273: matrix_found = matrix_secret_check(data, 1 | 8);
-"273
-[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 1 `i -> 8 `i `uc ]
-[; ;matrix_task.c: 274: data->display_state = MATRIX_AY;
-"274
-[e = . *U _data 2 . `E8303 5 ]
-"275
-}
-[e :U 997 ]
-[; ;matrix_task.c: 275: }
-[; ;matrix_task.c: 276: data->holdCountA = 0;
-"276
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 277: data->holdCountB = 0;
-"277
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 278: data->holdCountX = 0;
-"278
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 279: data->holdCountY = 0;
-"279
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 280: data->holdCountXY = 0;
-"280
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 281: data->holdCountAY += 1;
-"281
-[e =+ . *U _data 10 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 282: data->holdCountAX = 0;
-"282
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 283: data->holdCountBX = 0;
-"283
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 284: data->holdCountBY = 0;
-"284
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 285: data->holdCountBA = 0;
-"285
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 286: data->noholdCount = 0;
-"286
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 287: data->displayTickdown = 300;
-"287
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 288: break;
-"288
-[e $U 984  ]
-[; ;matrix_task.c: 289: case 1 | 4:
-"289
-[e :U 998 ]
-[; ;matrix_task.c: 291: if (data->holdCountAX == holdvalue){
-"291
-[e $ ! == . *U _data 11 -> _holdvalue `ui 999  ]
-{
-[; ;matrix_task.c: 292: matrix_found = matrix_secret_check(data, 1 | 4);
-"292
-[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 1 `i -> 4 `i `uc ]
-[; ;matrix_task.c: 293: data->display_state = MATRIX_AX;
-"293
-[e = . *U _data 2 . `E8303 4 ]
-"294
-}
-[e :U 999 ]
-[; ;matrix_task.c: 294: }
-[; ;matrix_task.c: 295: data->holdCountA = 0;
-"295
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 296: data->holdCountB = 0;
-"296
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 297: data->holdCountX = 0;
-"297
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 298: data->holdCountY = 0;
-"298
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 299: data->holdCountXY = 0;
-"299
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 300: data->holdCountAY = 0;
-"300
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 301: data->holdCountAX += 1;
-"301
-[e =+ . *U _data 11 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 302: data->holdCountBX = 0;
-"302
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 303: data->holdCountBY = 0;
-"303
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 304: data->holdCountBA = 0;
-"304
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 305: data->noholdCount = 0;
-"305
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 306: data->displayTickdown = 300;
-"306
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 307: break;
-"307
-[e $U 984  ]
-[; ;matrix_task.c: 308: case 2 | 4:
-"308
-[e :U 1000 ]
-[; ;matrix_task.c: 310: if (data->holdCountBX == holdvalue){
-"310
-[e $ ! == . *U _data 12 -> _holdvalue `ui 1001  ]
-{
-[; ;matrix_task.c: 311: matrix_found = matrix_secret_check(data, 2 | 4);
-"311
-[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 4 `i `uc ]
-[; ;matrix_task.c: 312: data->display_state = MATRIX_BX;
-"312
-[e = . *U _data 2 . `E8303 7 ]
-"313
-}
-[e :U 1001 ]
-[; ;matrix_task.c: 313: }
-[; ;matrix_task.c: 314: data->holdCountA = 0;
-"314
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 315: data->holdCountB = 0;
-"315
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 316: data->holdCountX = 0;
-"316
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 317: data->holdCountY = 0;
-"317
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 318: data->holdCountXY = 0;
-"318
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 319: data->holdCountAY = 0;
-"319
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 320: data->holdCountAX = 0;
-"320
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 321: data->holdCountBX += 1;
-"321
-[e =+ . *U _data 12 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 322: data->holdCountBY = 0;
-"322
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 323: data->holdCountBA = 0;
-"323
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 324: data->noholdCount = 0;
-"324
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 325: data->displayTickdown = 300;
-"325
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 326: break;
-"326
-[e $U 984  ]
-[; ;matrix_task.c: 327: case 2 | 8:
-"327
-[e :U 1002 ]
-[; ;matrix_task.c: 329: if (data->holdCountBY == holdvalue){
-"329
-[e $ ! == . *U _data 13 -> _holdvalue `ui 1003  ]
-{
-[; ;matrix_task.c: 330: matrix_found = matrix_secret_check(data, 2 | 8);
-"330
-[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 8 `i `uc ]
-[; ;matrix_task.c: 331: data->display_state = MATRIX_BY;
-"331
-[e = . *U _data 2 . `E8303 9 ]
-"332
-}
-[e :U 1003 ]
-[; ;matrix_task.c: 332: }
-[; ;matrix_task.c: 333: data->holdCountA = 0;
-"333
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 334: data->holdCountB = 0;
-"334
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 335: data->holdCountX = 0;
-"335
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 336: data->holdCountY = 0;
-"336
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 337: data->holdCountXY = 0;
-"337
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 338: data->holdCountAY = 0;
-"338
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 339: data->holdCountAX = 0;
-"339
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 340: data->holdCountBX = 0;
-"340
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 341: data->holdCountBY += 1;
-"341
-[e =+ . *U _data 13 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 342: data->holdCountBA = 0;
-"342
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 343: data->noholdCount = 0;
-"343
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 344: data->displayTickdown = 300;
-"344
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 346: break;
-"346
-[e $U 984  ]
-[; ;matrix_task.c: 347: case 2 | 1:
-"347
-[e :U 1004 ]
-[; ;matrix_task.c: 349: if (data->holdCountBA == holdvalue){
-"349
-[e $ ! == . *U _data 14 -> _holdvalue `ui 1005  ]
-{
-[; ;matrix_task.c: 350: matrix_found = matrix_secret_check(data, 2 | 1);
-"350
-[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 1 `i `uc ]
-[; ;matrix_task.c: 351: data->display_state = MATRIX_BA;
-"351
-[e = . *U _data 2 . `E8303 6 ]
-"352
-}
-[e :U 1005 ]
-[; ;matrix_task.c: 352: }
-[; ;matrix_task.c: 353: data->holdCountA = 0;
-"353
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 354: data->holdCountB = 0;
-"354
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 355: data->holdCountX = 0;
-"355
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 356: data->holdCountY = 0;
-"356
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 357: data->holdCountXY = 0;
-"357
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 358: data->holdCountAY = 0;
-"358
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 359: data->holdCountAX = 0;
-"359
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 360: data->holdCountBX = 0;
-"360
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 361: data->holdCountBY = 0;
-"361
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 362: data->holdCountBA += 1;
-"362
-[e =+ . *U _data 14 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 363: data->noholdCount = 0;
-"363
-[e = . *U _data 15 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 364: data->displayTickdown = 300;
-"364
-[e = . *U _data 4 -> -> 300 `i `ui ]
-[; ;matrix_task.c: 365: break;
-"365
-[e $U 984  ]
-[; ;matrix_task.c: 366: default:
-"366
-[e :U 1006 ]
-[; ;matrix_task.c: 367: data->noholdCount += 1;
-"367
-[e =+ . *U _data 15 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 368: data->holdCountA = 0;
-"368
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 369: data->holdCountB = 0;
-"369
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 370: data->holdCountX = 0;
-"370
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 371: data->holdCountY = 0;
-"371
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 372: data->holdCountXY = 0;
-"372
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 373: data->holdCountAY = 0;
-"373
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 374: data->holdCountAX = 0;
-"374
-[e = . *U _data 11 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 375: data->holdCountBX = 0;
-"375
-[e = . *U _data 12 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 376: data->holdCountBY = 0;
-"376
-[e = . *U _data 13 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 377: data->holdCountBA = 0;
-"377
-[e = . *U _data 14 -> -> 0 `i `ui ]
-[; ;matrix_task.c: 378: if (matrix_found){
-"378
-[e $ ! != -> _matrix_found `i -> -> -> 0 `i `uc `i 1007  ]
-{
-[; ;matrix_task.c: 379: data->display_state = MATRIX_DONE;
-"379
-[e = . *U _data 2 . `E8303 11 ]
-[; ;matrix_task.c: 380: data->martix_state = MATRIX_SOLVED;
-"380
-[e = . *U _data 1 . `E8316 0 ]
-[; ;matrix_task.c: 381: break;
-"381
-[e $U 984  ]
-"382
-}
-[e :U 1007 ]
-[; ;matrix_task.c: 382: }
-[; ;matrix_task.c: 383: data->displayTickdown -= 1;
-"383
-[e =- . *U _data 4 -> -> 1 `i `ui ]
-[; ;matrix_task.c: 384: matrix_display_option(data);
-"384
-[e ( _matrix_display_option (1 _data ]
-"385
-}
-[; ;matrix_task.c: 385: }
-[e $U 984  ]
-"173
-[e :U 985 ]
-[e [\ _buttonPressed , $ -> -> 1 `i `uc 986
- , $ -> -> 2 `i `uc 988
- , $ -> -> 4 `i `uc 990
- , $ -> -> 8 `i `uc 992
- , $ -> | -> 4 `i -> 8 `i `uc 994
- , $ -> | -> 1 `i -> 8 `i `uc 996
- , $ -> | -> 1 `i -> 4 `i `uc 998
- , $ -> | -> 2 `i -> 4 `i `uc 1000
- , $ -> | -> 2 `i -> 8 `i `uc 1002
- , $ -> | -> 2 `i -> 1 `i `uc 1004
- 1006 ]
-"385
 [e :U 984 ]
-[; ;matrix_task.c: 386: if (matrix_found){
-"386
+"173
+}
+[e :U 982 ]
+[; ;matrix_task.c: 172: }
+[; ;matrix_task.c: 173: }
+[; ;matrix_task.c: 177: buttonPressed = nullifyBadge_buttonsGet();
+"177
+[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
+[; ;matrix_task.c: 180: switch (buttonPressed) {
+"180
+[e $U 986  ]
+{
+[; ;matrix_task.c: 181: case 1:
+"181
+[e :U 987 ]
+[; ;matrix_task.c: 183: if (data->holdCountA == holdvalue){
+"183
+[e $ ! == . *U _data 6 -> _holdvalue `ui 988  ]
+{
+[; ;matrix_task.c: 184: matrix_found = matrix_secret_check(data, buttonPressed);
+"184
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 185: data->display_state = MATRIX_A;
+"185
+[e = . *U _data 2 . `E8303 0 ]
+"186
+}
+[e :U 988 ]
+[; ;matrix_task.c: 186: }
+[; ;matrix_task.c: 187: data->holdCountA += 1;
+"187
+[e =+ . *U _data 6 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 188: data->holdCountB = 0;
+"188
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 189: data->holdCountX = 0;
+"189
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 190: data->holdCountY = 0;
+"190
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 191: data->holdCountXY = 0;
+"191
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 192: data->holdCountAY = 0;
+"192
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 193: data->holdCountAX = 0;
+"193
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 194: data->holdCountBX = 0;
+"194
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 195: data->holdCountBY = 0;
+"195
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 196: data->holdCountBA = 0;
+"196
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 197: data->noholdCount = 0;
+"197
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 198: data->displayTickdown = 300;
+"198
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 199: break;
+"199
+[e $U 985  ]
+[; ;matrix_task.c: 200: case 2:
+"200
+[e :U 989 ]
+[; ;matrix_task.c: 202: if (data->holdCountB == holdvalue){
+"202
+[e $ ! == . *U _data 7 -> _holdvalue `ui 990  ]
+{
+[; ;matrix_task.c: 203: matrix_found = matrix_secret_check(data, buttonPressed);
+"203
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 204: data->display_state = MATRIX_B;
+"204
+[e = . *U _data 2 . `E8303 2 ]
+"205
+}
+[e :U 990 ]
+[; ;matrix_task.c: 205: }
+[; ;matrix_task.c: 206: data->holdCountA = 0;
+"206
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 207: data->holdCountB += 1;
+"207
+[e =+ . *U _data 7 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 208: data->holdCountX = 0;
+"208
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 209: data->holdCountY = 0;
+"209
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 210: data->holdCountXY = 0;
+"210
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 211: data->holdCountAY = 0;
+"211
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 212: data->holdCountAX = 0;
+"212
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 213: data->holdCountBX = 0;
+"213
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 214: data->holdCountBY = 0;
+"214
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 215: data->holdCountBA = 0;
+"215
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 216: data->noholdCount = 0;
+"216
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 217: data->displayTickdown = 300;
+"217
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 218: break;
+"218
+[e $U 985  ]
+[; ;matrix_task.c: 219: case 4:
+"219
+[e :U 991 ]
+[; ;matrix_task.c: 221: if (data->holdCountX == holdvalue){
+"221
+[e $ ! == . *U _data 8 -> _holdvalue `ui 992  ]
+{
+[; ;matrix_task.c: 222: matrix_found = matrix_secret_check(data, buttonPressed);
+"222
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 223: data->display_state = MATRIX_X;
+"223
+[e = . *U _data 2 . `E8303 3 ]
+"224
+}
+[e :U 992 ]
+[; ;matrix_task.c: 224: }
+[; ;matrix_task.c: 225: data->holdCountA = 0;
+"225
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 226: data->holdCountB = 0;
+"226
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 227: data->holdCountX += 1;
+"227
+[e =+ . *U _data 8 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 228: data->holdCountY = 0;
+"228
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 229: data->holdCountXY = 0;
+"229
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 230: data->holdCountAY = 0;
+"230
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 231: data->holdCountAX = 0;
+"231
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 232: data->holdCountBX = 0;
+"232
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 233: data->holdCountBY = 0;
+"233
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 234: data->holdCountBA = 0;
+"234
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 235: data->noholdCount = 0;
+"235
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 236: data->displayTickdown = 300;
+"236
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 237: break;
+"237
+[e $U 985  ]
+[; ;matrix_task.c: 238: case 8:
+"238
+[e :U 993 ]
+[; ;matrix_task.c: 240: if (data->holdCountY == holdvalue){
+"240
+[e $ ! == . *U _data 9 -> _holdvalue `ui 994  ]
+{
+[; ;matrix_task.c: 241: matrix_found = matrix_secret_check(data, buttonPressed);
+"241
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 242: data->display_state = MATRIX_Y;
+"242
+[e = . *U _data 2 . `E8303 1 ]
+"243
+}
+[e :U 994 ]
+[; ;matrix_task.c: 243: }
+[; ;matrix_task.c: 245: data->holdCountA = 0;
+"245
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 246: data->holdCountB = 0;
+"246
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 247: data->holdCountX = 0;
+"247
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 248: data->holdCountY += 1;
+"248
+[e =+ . *U _data 9 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 249: data->holdCountXY = 0;
+"249
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 250: data->holdCountAY = 0;
+"250
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 251: data->holdCountAX = 0;
+"251
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 252: data->holdCountBX = 0;
+"252
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 253: data->holdCountBY = 0;
+"253
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 254: data->holdCountBA = 0;
+"254
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 255: data->noholdCount = 0;
+"255
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 256: data->displayTickdown = 300;
+"256
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 257: break;
+"257
+[e $U 985  ]
+[; ;matrix_task.c: 258: case 4 | 8:
+"258
+[e :U 995 ]
+[; ;matrix_task.c: 260: if (data->holdCountXY == holdvalue){
+"260
+[e $ ! == . *U _data 10 -> _holdvalue `ui 996  ]
+{
+[; ;matrix_task.c: 261: matrix_found = matrix_secret_check(data, 4 | 8);
+"261
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 4 `i -> 8 `i `uc ]
+[; ;matrix_task.c: 262: data->display_state = MATRIX_XY;
+"262
+[e = . *U _data 2 . `E8303 8 ]
+"263
+}
+[e :U 996 ]
+[; ;matrix_task.c: 263: }
+[; ;matrix_task.c: 264: data->holdCountA = 0;
+"264
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 265: data->holdCountB = 0;
+"265
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 266: data->holdCountX = 0;
+"266
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 267: data->holdCountY = 0;
+"267
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 268: data->holdCountXY += 1;
+"268
+[e =+ . *U _data 10 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 269: data->holdCountAY = 0;
+"269
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 270: data->holdCountAX = 0;
+"270
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 271: data->holdCountBX = 0;
+"271
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 272: data->holdCountBY = 0;
+"272
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 273: data->holdCountBA = 0;
+"273
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 274: data->noholdCount = 0;
+"274
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 275: data->displayTickdown = 300;
+"275
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 276: break;
+"276
+[e $U 985  ]
+[; ;matrix_task.c: 277: case 1 | 8:
+"277
+[e :U 997 ]
+[; ;matrix_task.c: 279: if (data->holdCountAY == holdvalue){
+"279
+[e $ ! == . *U _data 11 -> _holdvalue `ui 998  ]
+{
+[; ;matrix_task.c: 280: matrix_found = matrix_secret_check(data, 1 | 8);
+"280
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 1 `i -> 8 `i `uc ]
+[; ;matrix_task.c: 281: data->display_state = MATRIX_AY;
+"281
+[e = . *U _data 2 . `E8303 5 ]
+"282
+}
+[e :U 998 ]
+[; ;matrix_task.c: 282: }
+[; ;matrix_task.c: 283: data->holdCountA = 0;
+"283
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 284: data->holdCountB = 0;
+"284
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 285: data->holdCountX = 0;
+"285
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 286: data->holdCountY = 0;
+"286
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 287: data->holdCountXY = 0;
+"287
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 288: data->holdCountAY += 1;
+"288
+[e =+ . *U _data 11 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 289: data->holdCountAX = 0;
+"289
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 290: data->holdCountBX = 0;
+"290
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 291: data->holdCountBY = 0;
+"291
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 292: data->holdCountBA = 0;
+"292
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 293: data->noholdCount = 0;
+"293
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 294: data->displayTickdown = 300;
+"294
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 295: break;
+"295
+[e $U 985  ]
+[; ;matrix_task.c: 296: case 1 | 4:
+"296
+[e :U 999 ]
+[; ;matrix_task.c: 298: if (data->holdCountAX == holdvalue){
+"298
+[e $ ! == . *U _data 12 -> _holdvalue `ui 1000  ]
+{
+[; ;matrix_task.c: 299: matrix_found = matrix_secret_check(data, 1 | 4);
+"299
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 1 `i -> 4 `i `uc ]
+[; ;matrix_task.c: 300: data->display_state = MATRIX_AX;
+"300
+[e = . *U _data 2 . `E8303 4 ]
+"301
+}
+[e :U 1000 ]
+[; ;matrix_task.c: 301: }
+[; ;matrix_task.c: 302: data->holdCountA = 0;
+"302
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 303: data->holdCountB = 0;
+"303
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 304: data->holdCountX = 0;
+"304
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 305: data->holdCountY = 0;
+"305
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 306: data->holdCountXY = 0;
+"306
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 307: data->holdCountAY = 0;
+"307
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 308: data->holdCountAX += 1;
+"308
+[e =+ . *U _data 12 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 309: data->holdCountBX = 0;
+"309
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 310: data->holdCountBY = 0;
+"310
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 311: data->holdCountBA = 0;
+"311
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 312: data->noholdCount = 0;
+"312
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 313: data->displayTickdown = 300;
+"313
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 314: break;
+"314
+[e $U 985  ]
+[; ;matrix_task.c: 315: case 2 | 4:
+"315
+[e :U 1001 ]
+[; ;matrix_task.c: 317: if (data->holdCountBX == holdvalue){
+"317
+[e $ ! == . *U _data 13 -> _holdvalue `ui 1002  ]
+{
+[; ;matrix_task.c: 318: matrix_found = matrix_secret_check(data, 2 | 4);
+"318
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 4 `i `uc ]
+[; ;matrix_task.c: 319: data->display_state = MATRIX_BX;
+"319
+[e = . *U _data 2 . `E8303 7 ]
+"320
+}
+[e :U 1002 ]
+[; ;matrix_task.c: 320: }
+[; ;matrix_task.c: 321: data->holdCountA = 0;
+"321
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 322: data->holdCountB = 0;
+"322
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 323: data->holdCountX = 0;
+"323
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 324: data->holdCountY = 0;
+"324
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 325: data->holdCountXY = 0;
+"325
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 326: data->holdCountAY = 0;
+"326
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 327: data->holdCountAX = 0;
+"327
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 328: data->holdCountBX += 1;
+"328
+[e =+ . *U _data 13 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 329: data->holdCountBY = 0;
+"329
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 330: data->holdCountBA = 0;
+"330
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 331: data->noholdCount = 0;
+"331
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 332: data->displayTickdown = 300;
+"332
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 333: break;
+"333
+[e $U 985  ]
+[; ;matrix_task.c: 334: case 2 | 8:
+"334
+[e :U 1003 ]
+[; ;matrix_task.c: 336: if (data->holdCountBY == holdvalue){
+"336
+[e $ ! == . *U _data 14 -> _holdvalue `ui 1004  ]
+{
+[; ;matrix_task.c: 337: matrix_found = matrix_secret_check(data, 2 | 8);
+"337
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 8 `i `uc ]
+[; ;matrix_task.c: 338: data->display_state = MATRIX_BY;
+"338
+[e = . *U _data 2 . `E8303 9 ]
+"339
+}
+[e :U 1004 ]
+[; ;matrix_task.c: 339: }
+[; ;matrix_task.c: 340: data->holdCountA = 0;
+"340
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 341: data->holdCountB = 0;
+"341
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 342: data->holdCountX = 0;
+"342
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 343: data->holdCountY = 0;
+"343
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 344: data->holdCountXY = 0;
+"344
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 345: data->holdCountAY = 0;
+"345
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 346: data->holdCountAX = 0;
+"346
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 347: data->holdCountBX = 0;
+"347
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 348: data->holdCountBY += 1;
+"348
+[e =+ . *U _data 14 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 349: data->holdCountBA = 0;
+"349
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 350: data->noholdCount = 0;
+"350
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 351: data->displayTickdown = 300;
+"351
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 353: break;
+"353
+[e $U 985  ]
+[; ;matrix_task.c: 354: case 2 | 1:
+"354
+[e :U 1005 ]
+[; ;matrix_task.c: 356: if (data->holdCountBA == holdvalue){
+"356
+[e $ ! == . *U _data 15 -> _holdvalue `ui 1006  ]
+{
+[; ;matrix_task.c: 357: matrix_found = matrix_secret_check(data, 2 | 1);
+"357
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 1 `i `uc ]
+[; ;matrix_task.c: 358: data->display_state = MATRIX_BA;
+"358
+[e = . *U _data 2 . `E8303 6 ]
+"359
+}
+[e :U 1006 ]
+[; ;matrix_task.c: 359: }
+[; ;matrix_task.c: 360: data->holdCountA = 0;
+"360
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 361: data->holdCountB = 0;
+"361
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 362: data->holdCountX = 0;
+"362
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 363: data->holdCountY = 0;
+"363
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 364: data->holdCountXY = 0;
+"364
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 365: data->holdCountAY = 0;
+"365
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 366: data->holdCountAX = 0;
+"366
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 367: data->holdCountBX = 0;
+"367
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 368: data->holdCountBY = 0;
+"368
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 369: data->holdCountBA += 1;
+"369
+[e =+ . *U _data 15 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 370: data->noholdCount = 0;
+"370
+[e = . *U _data 16 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 371: data->displayTickdown = 300;
+"371
+[e = . *U _data 5 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 372: break;
+"372
+[e $U 985  ]
+[; ;matrix_task.c: 373: default:
+"373
+[e :U 1007 ]
+[; ;matrix_task.c: 374: data->noholdCount += 1;
+"374
+[e =+ . *U _data 16 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 375: data->holdCountA = 0;
+"375
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 376: data->holdCountB = 0;
+"376
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 377: data->holdCountX = 0;
+"377
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 378: data->holdCountY = 0;
+"378
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 379: data->holdCountXY = 0;
+"379
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 380: data->holdCountAY = 0;
+"380
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 381: data->holdCountAX = 0;
+"381
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 382: data->holdCountBX = 0;
+"382
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 383: data->holdCountBY = 0;
+"383
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 384: data->holdCountBA = 0;
+"384
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 385: if (matrix_found){
+"385
 [e $ ! != -> _matrix_found `i -> -> -> 0 `i `uc `i 1008  ]
 {
-[; ;matrix_task.c: 387: data->display_state = MATRIX_DONE;
-"387
+[; ;matrix_task.c: 386: data->display_state = MATRIX_DONE;
+"386
 [e = . *U _data 2 . `E8303 11 ]
-[; ;matrix_task.c: 388: data->martix_state = MATRIX_SOLVED;
-"388
+[; ;matrix_task.c: 387: data->martix_state = MATRIX_SOLVED;
+"387
 [e = . *U _data 1 . `E8316 0 ]
+[; ;matrix_task.c: 388: break;
+"388
+[e $U 985  ]
 "389
 }
 [e :U 1008 ]
 [; ;matrix_task.c: 389: }
-[; ;matrix_task.c: 391: if(data->display_state == MATRIX_DONE){
+[; ;matrix_task.c: 390: data->displayTickdown -= 1;
+"390
+[e =- . *U _data 5 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 391: matrix_display_option(data);
 "391
-[e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 1009  ]
-{
-[; ;matrix_task.c: 393: if (data->delayTickCount < 1){
+[e ( _matrix_display_option (1 _data ]
+"392
+}
+[; ;matrix_task.c: 392: }
+[e $U 985  ]
+"180
+[e :U 986 ]
+[e [\ _buttonPressed , $ -> -> 1 `i `uc 987
+ , $ -> -> 2 `i `uc 989
+ , $ -> -> 4 `i `uc 991
+ , $ -> -> 8 `i `uc 993
+ , $ -> | -> 4 `i -> 8 `i `uc 995
+ , $ -> | -> 1 `i -> 8 `i `uc 997
+ , $ -> | -> 1 `i -> 4 `i `uc 999
+ , $ -> | -> 2 `i -> 4 `i `uc 1001
+ , $ -> | -> 2 `i -> 8 `i `uc 1003
+ , $ -> | -> 2 `i -> 1 `i `uc 1005
+ 1007 ]
+"392
+[e :U 985 ]
+[; ;matrix_task.c: 393: if (matrix_found){
 "393
-[e $ ! < . *U _data 3 -> -> 1 `i `ui 1010  ]
+[e $ ! != -> _matrix_found `i -> -> -> 0 `i `uc `i 1009  ]
 {
-[; ;matrix_task.c: 394: led_curtain(data->noholdCount);
+[; ;matrix_task.c: 394: data->display_state = MATRIX_DONE;
 "394
-[e ( _led_curtain (1 . *U _data 15 ]
-[; ;matrix_task.c: 395: data->delayTickCount = 20;
+[e = . *U _data 2 . `E8303 11 ]
+[; ;matrix_task.c: 395: data->martix_state = MATRIX_SOLVED;
 "395
-[e = . *U _data 3 -> -> 20 `i `ui ]
+[e = . *U _data 1 . `E8316 0 ]
 "396
 }
+[e :U 1009 ]
 [; ;matrix_task.c: 396: }
-[e $U 1011  ]
-"397
-[e :U 1010 ]
-[; ;matrix_task.c: 397: else {
-{
-[; ;matrix_task.c: 398: data->delayTickCount -= 1;
+[; ;matrix_task.c: 398: if(data->display_state == MATRIX_DONE){
 "398
-[e =- . *U _data 3 -> -> 1 `i `ui ]
-"399
+[e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 1010  ]
+{
+[; ;matrix_task.c: 400: if (data->delayTickCount < 1){
+"400
+[e $ ! < . *U _data 3 -> -> 1 `i `ui 1011  ]
+{
+[; ;matrix_task.c: 401: led_curtain(data->noholdCount);
+"401
+[e ( _led_curtain (1 . *U _data 16 ]
+[; ;matrix_task.c: 402: data->delayTickCount = 20;
+"402
+[e = . *U _data 3 -> -> 20 `i `ui ]
+"403
 }
+[; ;matrix_task.c: 403: }
+[e $U 1012  ]
+"404
 [e :U 1011 ]
+[; ;matrix_task.c: 404: else {
+{
+[; ;matrix_task.c: 405: data->delayTickCount -= 1;
+"405
+[e =- . *U _data 3 -> -> 1 `i `ui ]
+"406
+}
+[e :U 1012 ]
 "420
 }
-[e :U 1009 ]
-[; ;matrix_task.c: 399: }
+[e :U 1010 ]
+[; ;matrix_task.c: 406: }
 [; ;matrix_task.c: 420: }
 [; ;matrix_task.c: 421: }
 "421
-[e :UE 979 ]
+[e :UE 980 ]
 }
 "423
 [v _matrix_secret_clear `(v ~T0 @X0 1 ef1`*S962 ]
@@ -9633,43 +9656,43 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;matrix_task.c: 425: data->displayTickdown = 300;
 "425
-[e = . *U _data 4 -> -> 300 `i `ui ]
+[e = . *U _data 5 -> -> 300 `i `ui ]
 [; ;matrix_task.c: 426: data->holdCountA = 0;
 "426
-[e = . *U _data 5 -> -> 0 `i `ui ]
+[e = . *U _data 6 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 427: data->holdCountB = 0;
 "427
-[e = . *U _data 6 -> -> 0 `i `ui ]
+[e = . *U _data 7 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 428: data->holdCountX = 0;
 "428
-[e = . *U _data 7 -> -> 0 `i `ui ]
+[e = . *U _data 8 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 429: data->holdCountY = 0;
 "429
-[e = . *U _data 8 -> -> 0 `i `ui ]
+[e = . *U _data 9 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 430: data->holdCountXY = 0;
 "430
-[e = . *U _data 9 -> -> 0 `i `ui ]
+[e = . *U _data 10 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 431: data->holdCountAY = 0;
 "431
-[e = . *U _data 10 -> -> 0 `i `ui ]
+[e = . *U _data 11 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 432: data->holdCountAX = 0;
 "432
-[e = . *U _data 11 -> -> 0 `i `ui ]
+[e = . *U _data 12 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 433: data->holdCountBX = 0;
 "433
-[e = . *U _data 12 -> -> 0 `i `ui ]
+[e = . *U _data 13 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 434: data->holdCountBY = 0;
 "434
-[e = . *U _data 13 -> -> 0 `i `ui ]
+[e = . *U _data 14 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 435: data->holdCountBA = 0;
 "435
-[e = . *U _data 14 -> -> 0 `i `ui ]
+[e = . *U _data 15 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 436: data->noholdCount = 0;
 "436
-[e = . *U _data 15 -> -> 0 `i `ui ]
+[e = . *U _data 16 -> -> 0 `i `ui ]
 [; ;matrix_task.c: 437: }
 "437
-[e :UE 1012 ]
+[e :UE 1013 ]
 }
 "439
 [v _matrix_Exit `(v ~T0 @X0 1 ef1`*v ]
@@ -9696,7 +9719,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _nullifyBadge_segDisplayRelease (1 . *U _data 0 ]
 [; ;matrix_task.c: 447: }
 "447
-[e :UE 1013 ]
+[e :UE 1014 ]
 }
 [a 1C 32 32 70 79 76 76 0 ]
 [a 5C 32 82 65 66 0 ]
@@ -9705,8 +9728,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 9C 32 32 69 87 32 32 0 ]
 [a 8C 80 79 84 65 84 32 32 0 ]
 [a 6C 32 32 66 73 84 32 78 32 32 0 ]
-[a 12C 84 72 69 32 67 72 79 73 67 69 32 73 83 32 89 79 85 82 83 32 32 32 0 ]
+[a 13C 84 72 69 32 67 72 79 73 67 69 32 73 83 32 89 79 85 82 83 32 32 32 0 ]
 [a 7C 69 79 32 32 32 0 ]
 [a 4C 73 84 69 32 32 32 0 ]
 [a 2C 79 87 32 32 32 32 0 ]
-[a 11C 89 79 85 32 83 84 65 89 32 73 78 32 87 79 78 68 69 82 76 65 78 68 32 32 32 32 0 ]
+[a 11C 89 79 85 32 65 82 69 32 73 78 32 84 79 79 32 68 69 69 80 32 32 32 32 32 84 65 75 69 32 84 72 69 32 82 69 68 32 80 73 76 76 32 32 32 32 0 ]
+[a 12C 89 79 85 32 83 84 65 89 32 73 78 32 87 79 78 68 69 82 76 65 78 68 32 32 32 32 0 ]

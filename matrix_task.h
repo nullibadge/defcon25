@@ -10,6 +10,9 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
+#define MATRIX_FLASHY_BLASTER_DELAY 300
+
+
 #define MATRIX_DELAY_TICK_COUNT 300
 
 enum t_matrix_display_states {
@@ -42,7 +45,7 @@ struct t_matrix_taskData {
 
     /* Internal App Data */
     u16 delayTickCount;
-   
+    u16 matrix_blasterTickCount;
     u16 displayTickdown;
     
     u16 holdCountA;

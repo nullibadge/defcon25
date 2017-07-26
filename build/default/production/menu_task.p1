@@ -8516,46 +8516,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;slot_task.h: 56: void slot_Finished_Animation(void *taskData);
 [; ;slot_task.h: 57: void slot_Main (void *taskData);
 [; ;slot_task.h: 58: void slot_Exit(void *taskData);
-[; ;matrix_task.h: 15: enum t_matrix_display_states {
-[; ;matrix_task.h: 16: MATRIX_A,
-[; ;matrix_task.h: 17: MATRIX_Y,
-[; ;matrix_task.h: 18: MATRIX_B,
-[; ;matrix_task.h: 19: MATRIX_X,
-[; ;matrix_task.h: 20: MATRIX_AX,
-[; ;matrix_task.h: 21: MATRIX_AY,
-[; ;matrix_task.h: 22: MATRIX_BA,
-[; ;matrix_task.h: 23: MATRIX_BX,
-[; ;matrix_task.h: 24: MATRIX_XY,
-[; ;matrix_task.h: 25: MATRIX_BY,
-[; ;matrix_task.h: 26: MATRIX_STATE_DISPLAY,
-[; ;matrix_task.h: 27: MATRIX_DONE
-[; ;matrix_task.h: 28: };
-[; ;matrix_task.h: 30: enum t_matrix_martix_state{
-[; ;matrix_task.h: 31: MATRIX_SOLVED,
-[; ;matrix_task.h: 32: STILL_IN_MATRIX,
-[; ;matrix_task.h: 33: };
-[; ;matrix_task.h: 35: struct t_matrix_taskData {
-[; ;matrix_task.h: 37: struct t_nullifyBadge *badge;
-[; ;matrix_task.h: 39: enum t_matrix_martix_state martix_state;
-[; ;matrix_task.h: 41: enum t_matrix_display_states display_state;
-[; ;matrix_task.h: 44: u16 delayTickCount;
-[; ;matrix_task.h: 46: u16 displayTickdown;
-[; ;matrix_task.h: 48: u16 holdCountA;
-[; ;matrix_task.h: 49: u16 holdCountB;
-[; ;matrix_task.h: 50: u16 holdCountX;
-[; ;matrix_task.h: 51: u16 holdCountY;
-[; ;matrix_task.h: 52: u16 holdCountXY;
-[; ;matrix_task.h: 53: u16 holdCountAY;
-[; ;matrix_task.h: 54: u16 holdCountAX;
-[; ;matrix_task.h: 55: u16 holdCountBX;
-[; ;matrix_task.h: 56: u16 holdCountBY;
-[; ;matrix_task.h: 57: u16 holdCountBA;
-[; ;matrix_task.h: 58: u16 noholdCount;
-[; ;matrix_task.h: 60: };
-[; ;matrix_task.h: 62: void matrix_Init(void *taskData);
-[; ;matrix_task.h: 63: void matrix_Main (void *taskData);
-[; ;matrix_task.h: 64: void matrix_Exit(void *taskData);
-[; ;matrix_task.h: 65: void matrix_secret_clear(struct t_matrix_taskData *data);
+[; ;matrix_task.h: 18: enum t_matrix_display_states {
+[; ;matrix_task.h: 19: MATRIX_A,
+[; ;matrix_task.h: 20: MATRIX_Y,
+[; ;matrix_task.h: 21: MATRIX_B,
+[; ;matrix_task.h: 22: MATRIX_X,
+[; ;matrix_task.h: 23: MATRIX_AX,
+[; ;matrix_task.h: 24: MATRIX_AY,
+[; ;matrix_task.h: 25: MATRIX_BA,
+[; ;matrix_task.h: 26: MATRIX_BX,
+[; ;matrix_task.h: 27: MATRIX_XY,
+[; ;matrix_task.h: 28: MATRIX_BY,
+[; ;matrix_task.h: 29: MATRIX_STATE_DISPLAY,
+[; ;matrix_task.h: 30: MATRIX_DONE
+[; ;matrix_task.h: 31: };
+[; ;matrix_task.h: 33: enum t_matrix_martix_state{
+[; ;matrix_task.h: 34: MATRIX_SOLVED,
+[; ;matrix_task.h: 35: STILL_IN_MATRIX,
+[; ;matrix_task.h: 36: };
+[; ;matrix_task.h: 38: struct t_matrix_taskData {
+[; ;matrix_task.h: 40: struct t_nullifyBadge *badge;
+[; ;matrix_task.h: 42: enum t_matrix_martix_state martix_state;
+[; ;matrix_task.h: 44: enum t_matrix_display_states display_state;
+[; ;matrix_task.h: 47: u16 delayTickCount;
+[; ;matrix_task.h: 48: u16 matrix_blasterTickCount;
+[; ;matrix_task.h: 49: u16 displayTickdown;
+[; ;matrix_task.h: 51: u16 holdCountA;
+[; ;matrix_task.h: 52: u16 holdCountB;
+[; ;matrix_task.h: 53: u16 holdCountX;
+[; ;matrix_task.h: 54: u16 holdCountY;
+[; ;matrix_task.h: 55: u16 holdCountXY;
+[; ;matrix_task.h: 56: u16 holdCountAY;
+[; ;matrix_task.h: 57: u16 holdCountAX;
+[; ;matrix_task.h: 58: u16 holdCountBX;
+[; ;matrix_task.h: 59: u16 holdCountBY;
+[; ;matrix_task.h: 60: u16 holdCountBA;
+[; ;matrix_task.h: 61: u16 noholdCount;
+[; ;matrix_task.h: 63: };
+[; ;matrix_task.h: 65: void matrix_Init(void *taskData);
+[; ;matrix_task.h: 66: void matrix_Main (void *taskData);
+[; ;matrix_task.h: 67: void matrix_Exit(void *taskData);
+[; ;matrix_task.h: 68: void matrix_secret_clear(struct t_matrix_taskData *data);
 "21 menu_task.c
 [v _menu_option `*uc ~T0 @X0 -> 0 `x e ]
 [i _menu_option

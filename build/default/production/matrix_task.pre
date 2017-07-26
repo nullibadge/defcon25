@@ -10634,7 +10634,7 @@ void scheduler_TaskRemove(struct t_scheduler *scheduler, struct t_schedulerTask 
 
 void schedulerExecute(struct t_scheduler *scheduler);
 
-# 15 "matrix_task.h"
+# 18 "matrix_task.h"
 enum t_matrix_display_states {
 MATRIX_A,
 MATRIX_Y,
@@ -10665,7 +10665,7 @@ enum t_matrix_display_states display_state;
 
 
 u16 delayTickCount;
-
+u16 matrix_blasterTickCount;
 u16 displayTickdown;
 
 u16 holdCountA;
@@ -10800,6 +10800,13 @@ return 0;
 }
 
 void matrix_display_option(struct t_matrix_taskData *data){
+
+if(badge_locked ==1){
+marquee_speedy("YOU ARE IN TOO DEEP     TAKE THE RED PILL    ", data->noholdCount, 40);
+data->display_state = MATRIX_STATE_DISPLAY;
+data->martix_state = STILL_IN_MATRIX;
+return;
+}
 
 if (data->display_state == MATRIX_DONE){
 marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);

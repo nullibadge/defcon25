@@ -122,6 +122,13 @@ u8 matrix_secret_check(struct t_matrix_taskData *data, u8 buttonPressed){
 
 void matrix_display_option(struct t_matrix_taskData *data){
     
+    if(badge_locked ==1){//it's locked
+        marquee_speedy("YOU ARE IN TOO DEEP     TAKE THE RED PILL    ", data->noholdCount, 40);
+        data->display_state = MATRIX_STATE_DISPLAY;
+        data->martix_state = STILL_IN_MATRIX;
+        return;
+    }
+    
     if (data->display_state == MATRIX_DONE){
         marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
     }
@@ -396,26 +403,19 @@ void matrix_Main (void *taskData ){
             }
             else {
                 data->delayTickCount -= 1;
-            } /*
+            } 
+        /*
                     // send IR once
-            if (data->blasterTickCount == FLASHY_BLASTER_DELAY) {
+            if (data->matrix_blasterTickCount == MATRIX_FLASHY_BLASTER_DELAY) {
                 nullifyBadge_irTxRegister(data->badge);
                 nullifyBadge_irTxSet();
             } 
-            if (data->blasterTickCount == FLASHY_BLASTER_DELAY - 1 ){
+            if (data->matrix_blasterTickCount == MATRIX_FLASHY_BLASTER_DELAY - 1 ){
                 nullifyBadge_irTxClr();
                 nullifyBadge_irTxRelease(data->badge);
             }
-            if (data->blasterTickCount == 0){
-                data->displayTickCount = 0;
-                data->delayTickCount = FLASHY_LED_DELAY_SHOT;
-
-                data->led_state = FLASHY_STATE_LED_ROUNDABOUT;
-                data->display_state = FLASHY_STATE_DISPLAY;
-                data->blaster_state = FLASHY_BLASTER_IDLE_STATE;
-            }
             else {
-                data->blasterTickCount -= 1;
+                data->matrix_blasterTickCount -= 1;
             } */
     }
 }

@@ -10641,7 +10641,7 @@ void slot_Finished_Animation(void *taskData);
 void slot_Main (void *taskData);
 void slot_Exit(void *taskData);
 
-# 15 "matrix_task.h"
+# 18 "matrix_task.h"
 enum t_matrix_display_states {
 MATRIX_A,
 MATRIX_Y,
@@ -10672,7 +10672,7 @@ enum t_matrix_display_states display_state;
 
 
 u16 delayTickCount;
-
+u16 matrix_blasterTickCount;
 u16 displayTickdown;
 
 u16 holdCountA;

@@ -4,6 +4,7 @@
 nullifyBadge_displayL1.h  \
 nullifyBadge_displayL2.h  \
 nullifyBadge.h  \
+matrix_task.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/pwm1.h  \
 mcc_generated_files/pwm2.h  \

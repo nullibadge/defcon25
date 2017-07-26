@@ -5,26 +5,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 nullifyBadge_displayL2.h
 [s S957 `uc -> 4 `i `uc 1 `ui 1 `S956 1 ]
 [n S957 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
-"161 nullifyBadge.h
+"162 nullifyBadge.h
 [s S958 `S957 1 `uc 1 ]
 [n S958 t_nullifyBadge display registeredHw ]
 "15 fadeDisplay_ExampleTask.c
-[c E8241 0 1 2 3 .. ]
-[n E8241 t_fadeDisplay_States FADE_TASK_STATE_SET_DISPLAY_UP FADE_TASK_STATE_FADE_UP FADE_TASK_STATE_SET_DISPLAY_DOWN FADE_TASK_STATE_FADE_DOWN  ]
+[c E8242 0 1 2 3 .. ]
+[n E8242 t_fadeDisplay_States FADE_TASK_STATE_SET_DISPLAY_UP FADE_TASK_STATE_FADE_UP FADE_TASK_STATE_SET_DISPLAY_DOWN FADE_TASK_STATE_FADE_DOWN  ]
 "80 fadeDisplay_ExampleTask.h
-[s S961 `*S958 1 `uc 1 `E8241 1 ]
+[s S961 `*S958 1 `uc 1 `E8242 1 ]
 [n S961 t_fadeDisplay_taskData badge fadeVal appState ]
-"176 nullifyBadge.h
+"177 nullifyBadge.h
 [v _nullifyBadge_segDisplayRegister `(c ~T0 @X0 0 ef1`*S958 ]
-"206
+"207
 [v _nullifyBadge_segDisplayErase `(v ~T0 @X0 0 ef1`*S958 ]
 "128 mcc_generated_files/pwm5.h
 [v _PWM5_LoadDutyValue `(v ~T0 @X0 0 ef1`ui ]
-"203 nullifyBadge.h
+"204 nullifyBadge.h
 [v _nullifyBadge_segDisplayPrintStr `(v ~T0 @X0 0 ef2`*S958`*uc ]
-"185
+"186
 [v _nullifyBadge_segDisplaySetBrightness `(v ~T0 @X0 0 ef1`uc ]
-"179
+"180
 [v _nullifyBadge_segDisplayRelease `(v ~T0 @X0 0 ef1`*S958 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7829,8 +7829,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 8481 `i `ui
 "162
 -> -> 520 `i `ui
-"163
--> -> 24736 `i `ui
 "164
 -> -> 10 `i `ui
 "165
@@ -7890,11 +7888,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "192
 -> -> 10274 `i `ui
 "193
--> -> 4112 `i `ui
+-> -> 2056 `i `ui
 "194
 -> -> 1028 `i `ui
 "195
--> -> 4112 `i `ui
+-> -> 514 `i `ui
 "196
 -> -> 4112 `i `ui
 "198
@@ -7995,7 +7993,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 160: 0x2822,
 [; ;nullifyBadge_displayL1.h: 161: 0x2121,
 [; ;nullifyBadge_displayL1.h: 162: 0x0208,
-[; ;nullifyBadge_displayL1.h: 163: 0x60A0,
 [; ;nullifyBadge_displayL1.h: 164: 0x000A,
 [; ;nullifyBadge_displayL1.h: 165: 0x0020,
 [; ;nullifyBadge_displayL1.h: 166: 0x1010,
@@ -8025,9 +8022,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 190: 0x0A0A,
 [; ;nullifyBadge_displayL1.h: 191: 0x0A04,
 [; ;nullifyBadge_displayL1.h: 192: 0x2822,
-[; ;nullifyBadge_displayL1.h: 193: 0x1010,
+[; ;nullifyBadge_displayL1.h: 193: 0x0808,
 [; ;nullifyBadge_displayL1.h: 194: 0x0404,
-[; ;nullifyBadge_displayL1.h: 195: 0x1010,
+[; ;nullifyBadge_displayL1.h: 195: 0x0202,
 [; ;nullifyBadge_displayL1.h: 196: 0x1010,
 [; ;nullifyBadge_displayL1.h: 197: 0xFFFF
 [; ;nullifyBadge_displayL1.h: 198: };
@@ -8350,89 +8347,90 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge.h: 44: SLOT_TASK,
 [; ;nullifyBadge.h: 45: FLASHY_TASK,
 [; ;nullifyBadge.h: 46: LOCKED_TASK,
-[; ;nullifyBadge.h: 47: };
-[; ;nullifyBadge.h: 50: extern u8 badge_locked;
-[; ;nullifyBadge.h: 51: extern u16 currentTask;
-[; ;nullifyBadge.h: 52: extern void marquee(char* string, u16 count);
-[; ;nullifyBadge.h: 53: extern void marquee_speedy(char* string, u16 count, u16 multiplier);
-[; ;nullifyBadge.h: 55: void led_roundabout(u16 counter);
-[; ;nullifyBadge.h: 56: void led_curtain(u16 counter);
-[; ;nullifyBadge.h: 57: void led_rand(void);
-[; ;nullifyBadge.h: 58: void led_circle(u16 count);
-[; ;nullifyBadge.h: 59: void let_alternate(u16 count);
-[; ;nullifyBadge.h: 60: void led_Parody(u16 count);
-[; ;nullifyBadge.h: 65: enum t_secret {
-[; ;nullifyBadge.h: 66: SECRET_VALUE_INIT,
-[; ;nullifyBadge.h: 67: SECRET_VALUE_TEST,
-[; ;nullifyBadge.h: 68: };
-[; ;nullifyBadge.h: 69: extern u16 secret_value;
-[; ;nullifyBadge.h: 125: enum t_hw_register {
-[; ;nullifyBadge.h: 126: HW_SEG_DISPLAY,
-[; ;nullifyBadge.h: 127: HW_USER_LEDS,
-[; ;nullifyBadge.h: 128: HW_IR_TX,
-[; ;nullifyBadge.h: 129: HW_EEPROM
-[; ;nullifyBadge.h: 130: };
-[; ;nullifyBadge.h: 132: enum t_userLed {
-[; ;nullifyBadge.h: 133: LED_G0,
-[; ;nullifyBadge.h: 134: LED_G1,
-[; ;nullifyBadge.h: 135: LED_G2,
-[; ;nullifyBadge.h: 136: LED_G3,
-[; ;nullifyBadge.h: 137: LED_G4,
-[; ;nullifyBadge.h: 138: LED_G5,
-[; ;nullifyBadge.h: 139: LED_G6,
-[; ;nullifyBadge.h: 140: LED_G7,
-[; ;nullifyBadge.h: 141: LED_G8,
-[; ;nullifyBadge.h: 142: LED_G9,
-[; ;nullifyBadge.h: 143: LED_R0,
-[; ;nullifyBadge.h: 144: LED_G10,
-[; ;nullifyBadge.h: 145: LED_G11,
-[; ;nullifyBadge.h: 146: LED_G12,
-[; ;nullifyBadge.h: 147: LED_G13,
-[; ;nullifyBadge.h: 148: LED_G14,
-[; ;nullifyBadge.h: 149: LED_G15
-[; ;nullifyBadge.h: 150: };
-[; ;nullifyBadge.h: 161: struct t_nullifyBadge {
-[; ;nullifyBadge.h: 162: struct t_nullifyDisplay_l2 display;
-[; ;nullifyBadge.h: 163: u8 registeredHw;
-[; ;nullifyBadge.h: 164: };
-[; ;nullifyBadge.h: 167: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 176: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 179: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 182: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 185: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 188: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 191: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
-[; ;nullifyBadge.h: 194: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 197: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 200: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 203: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 206: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 214: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 217: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 220: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 223: void nullifyBadge_userLedsSetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 226: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 229: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 232: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 235: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 243: u8 nullifyBadge_buttonsGet();
-[; ;nullifyBadge.h: 246: u8 nullifyBadge_buttonAGet();
-[; ;nullifyBadge.h: 249: u8 nullifyBadge_buttonBGet();
-[; ;nullifyBadge.h: 252: u8 nullifyBadge_buttonXGet();
-[; ;nullifyBadge.h: 255: u8 nullifyBadge_buttonYGet();
-[; ;nullifyBadge.h: 263: u8 nullifyBadge_irGet();
-[; ;nullifyBadge.h: 276: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 279: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 282: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 285: void nullifyBadge_irTxSet();
-[; ;nullifyBadge.h: 288: void nullifyBadge_irTxClr();
-[; ;nullifyBadge.h: 296: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 299: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 302: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 305: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
-[; ;nullifyBadge.h: 308: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
-[; ;nullifyBadge.h: 311: u8 nullifyBadge_eepromRead8bit(u16 addr);
-[; ;nullifyBadge.h: 314: u16 nullifyBadge_eepromRead16bit(u16 addr);
+[; ;nullifyBadge.h: 47: MATRIX_TASK,
+[; ;nullifyBadge.h: 48: };
+[; ;nullifyBadge.h: 51: extern u8 badge_locked;
+[; ;nullifyBadge.h: 52: extern u16 currentTask;
+[; ;nullifyBadge.h: 53: extern void marquee(char* string, u16 count);
+[; ;nullifyBadge.h: 54: extern void marquee_speedy(char* string, u16 count, u16 multiplier);
+[; ;nullifyBadge.h: 56: void led_roundabout(u16 counter);
+[; ;nullifyBadge.h: 57: void led_curtain(u16 counter);
+[; ;nullifyBadge.h: 58: void led_rand(void);
+[; ;nullifyBadge.h: 59: void led_circle(u16 count);
+[; ;nullifyBadge.h: 60: void let_alternate(u16 count);
+[; ;nullifyBadge.h: 61: void led_Parody(u16 count);
+[; ;nullifyBadge.h: 66: enum t_secret {
+[; ;nullifyBadge.h: 67: SECRET_VALUE_INIT,
+[; ;nullifyBadge.h: 68: SECRET_VALUE_TEST,
+[; ;nullifyBadge.h: 69: };
+[; ;nullifyBadge.h: 70: extern u16 secret_value;
+[; ;nullifyBadge.h: 126: enum t_hw_register {
+[; ;nullifyBadge.h: 127: HW_SEG_DISPLAY,
+[; ;nullifyBadge.h: 128: HW_USER_LEDS,
+[; ;nullifyBadge.h: 129: HW_IR_TX,
+[; ;nullifyBadge.h: 130: HW_EEPROM
+[; ;nullifyBadge.h: 131: };
+[; ;nullifyBadge.h: 133: enum t_userLed {
+[; ;nullifyBadge.h: 134: LED_G0,
+[; ;nullifyBadge.h: 135: LED_G1,
+[; ;nullifyBadge.h: 136: LED_G2,
+[; ;nullifyBadge.h: 137: LED_G3,
+[; ;nullifyBadge.h: 138: LED_G4,
+[; ;nullifyBadge.h: 139: LED_G5,
+[; ;nullifyBadge.h: 140: LED_G6,
+[; ;nullifyBadge.h: 141: LED_G7,
+[; ;nullifyBadge.h: 142: LED_G8,
+[; ;nullifyBadge.h: 143: LED_G9,
+[; ;nullifyBadge.h: 144: LED_R0,
+[; ;nullifyBadge.h: 145: LED_G10,
+[; ;nullifyBadge.h: 146: LED_G11,
+[; ;nullifyBadge.h: 147: LED_G12,
+[; ;nullifyBadge.h: 148: LED_G13,
+[; ;nullifyBadge.h: 149: LED_G14,
+[; ;nullifyBadge.h: 150: LED_G15
+[; ;nullifyBadge.h: 151: };
+[; ;nullifyBadge.h: 162: struct t_nullifyBadge {
+[; ;nullifyBadge.h: 163: struct t_nullifyDisplay_l2 display;
+[; ;nullifyBadge.h: 164: u8 registeredHw;
+[; ;nullifyBadge.h: 165: };
+[; ;nullifyBadge.h: 168: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 177: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 180: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 183: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 186: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 189: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 192: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
+[; ;nullifyBadge.h: 195: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 198: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 201: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 204: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 207: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 215: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 218: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 221: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 224: void nullifyBadge_userLedsSetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 227: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 230: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 233: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 236: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 244: u8 nullifyBadge_buttonsGet();
+[; ;nullifyBadge.h: 247: u8 nullifyBadge_buttonAGet();
+[; ;nullifyBadge.h: 250: u8 nullifyBadge_buttonBGet();
+[; ;nullifyBadge.h: 253: u8 nullifyBadge_buttonXGet();
+[; ;nullifyBadge.h: 256: u8 nullifyBadge_buttonYGet();
+[; ;nullifyBadge.h: 264: u8 nullifyBadge_irGet();
+[; ;nullifyBadge.h: 277: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 280: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 283: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 286: void nullifyBadge_irTxSet();
+[; ;nullifyBadge.h: 289: void nullifyBadge_irTxClr();
+[; ;nullifyBadge.h: 297: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 300: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 303: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 306: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
+[; ;nullifyBadge.h: 309: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
+[; ;nullifyBadge.h: 312: u8 nullifyBadge_eepromRead8bit(u16 addr);
+[; ;nullifyBadge.h: 315: u16 nullifyBadge_eepromRead16bit(u16 addr);
 [; ;cooperative_scheduler.h: 69: struct t_schedulerTask {
 [; ;cooperative_scheduler.h: 70: u16 systemTickLastExecuted;
 [; ;cooperative_scheduler.h: 71: void *taskData;
@@ -8490,7 +8488,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PWM5_LoadDutyValue (1 *U + &U _gamma_table_256x1k * -> -> -> 0 `i `ui `ux -> -> # *U &U _gamma_table_256x1k `ui `ux ]
 [; ;fadeDisplay_ExampleTask.c: 24: data->appState = FADE_TASK_STATE_SET_DISPLAY_UP;
 "24
-[e = . *U _data 2 . `E8241 0 ]
+[e = . *U _data 2 . `E8242 0 ]
 [; ;fadeDisplay_ExampleTask.c: 25: }
 "25
 [e :UE 962 ]
@@ -8515,7 +8513,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 966 ]
 [; ;fadeDisplay_ExampleTask.c: 33: data->appState = FADE_TASK_STATE_FADE_UP;
 "33
-[e = . *U _data 2 . `E8241 1 ]
+[e = . *U _data 2 . `E8242 1 ]
 [; ;fadeDisplay_ExampleTask.c: 35: nullifyBadge_segDisplayPrintStr(data->badge, "  UP");
 "35
 [e ( _nullifyBadge_segDisplayPrintStr (2 , . *U _data 0 -> :s 1C `*uc ]
@@ -8531,7 +8529,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;fadeDisplay_ExampleTask.c: 41: data->appState = FADE_TASK_STATE_SET_DISPLAY_DOWN;
 "41
-[e = . *U _data 2 . `E8241 2 ]
+[e = . *U _data 2 . `E8242 2 ]
 "42
 }
 [; ;fadeDisplay_ExampleTask.c: 42: }
@@ -8542,7 +8540,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;fadeDisplay_ExampleTask.c: 44: data->appState = FADE_TASK_STATE_FADE_UP;
 "44
-[e = . *U _data 2 . `E8241 1 ]
+[e = . *U _data 2 . `E8242 1 ]
 "45
 }
 [e :U 969 ]
@@ -8569,7 +8567,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 971 ]
 [; ;fadeDisplay_ExampleTask.c: 56: data->appState = FADE_TASK_STATE_FADE_DOWN;
 "56
-[e = . *U _data 2 . `E8241 3 ]
+[e = . *U _data 2 . `E8242 3 ]
 [; ;fadeDisplay_ExampleTask.c: 58: nullifyBadge_segDisplayPrintStr(data->badge, "DOWN");
 "58
 [e ( _nullifyBadge_segDisplayPrintStr (2 , . *U _data 0 -> :s 2C `*uc ]
@@ -8585,7 +8583,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;fadeDisplay_ExampleTask.c: 64: data->appState = FADE_TASK_STATE_SET_DISPLAY_UP;
 "64
-[e = . *U _data 2 . `E8241 0 ]
+[e = . *U _data 2 . `E8242 0 ]
 "65
 }
 [; ;fadeDisplay_ExampleTask.c: 65: }
@@ -8596,7 +8594,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;fadeDisplay_ExampleTask.c: 67: data->appState = FADE_TASK_STATE_FADE_DOWN;
 "67
-[e = . *U _data 2 . `E8241 3 ]
+[e = . *U _data 2 . `E8242 3 ]
 "68
 }
 [e :U 974 ]
@@ -8630,10 +8628,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 964  ]
 "30
 [e :U 965 ]
-[e [\ . *U _data 2 , $ . `E8241 0 966
- , $ . `E8241 1 967
- , $ . `E8241 2 971
- , $ . `E8241 3 972
+[e [\ . *U _data 2 , $ . `E8242 0 966
+ , $ . `E8242 1 967
+ , $ . `E8242 2 971
+ , $ . `E8242 3 972
  976 ]
 "81
 [e :U 964 ]

@@ -8,24 +8,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 nullifyBadge_displayL2.h
 [s S1917 `uc -> 4 `i `uc 1 `ui 1 `S1916 1 ]
 [n S1917 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
-"161 nullifyBadge.h
+"162 nullifyBadge.h
 [s S1918 `S1917 1 `uc 1 ]
 [n S1918 t_nullifyBadge display registeredHw ]
-[v F13869 `(v ~T0 @X0 0 tf1`*v ]
-[v F13872 `(v ~T0 @X0 0 tf1`*v ]
-[v F13875 `(v ~T0 @X0 0 tf1`*v ]
+[v F13870 `(v ~T0 @X0 0 tf1`*v ]
+[v F13873 `(v ~T0 @X0 0 tf1`*v ]
+[v F13876 `(v ~T0 @X0 0 tf1`*v ]
 "69 cooperative_scheduler.h
-[s S1919 `ui 1 `*v 1 `*F13869 1 `*F13872 1 `*F13875 1 `ui 1 `c 1 ]
+[s S1919 `ui 1 `*v 1 `*F13870 1 `*F13873 1 `*F13876 1 `ui 1 `c 1 ]
 [n S1919 t_schedulerTask systemTickLastExecuted taskData taskInitCallback taskExitCallback taskExecuteCallback taskInterval taskId ]
-"76 main.c
-[c E13894 0 1 2 3 4 5 .. ]
-[n E13894 t_flashy_led_states FLASHY_STATE_LED_ROUNDABOUT FLASHY_STATE_LED_SHOT FLASHY_STATE_SPARKLE FLASHY_STATE_CIRCLE FLASHY_STATE_LED_ALT FLASHY_STATE_LED_PARODY  ]
-[c E13901 0 1 2 3 4 5 .. ]
-[n E13901 t_flashy_display_states FLASHY_STATE_DISPLAY FLASHY_DEFAULT_STATE_DISPLAY FLASHY_STATE_DISPLAY_BLASTER FLASHY_STATE_DISPLAY_SHOT FLASHY_STATE_DISPLAY_OFF FLASHY_STATE_DISPLAY_SECRET_TEST  ]
-[c E13908 0 1 .. ]
-[n E13908 t_flashy_blaster_states FLASHY_BLASTER_SHOOTING_STATE FLASHY_BLASTER_IDLE_STATE  ]
+"78 main.c
+[c E13895 0 1 2 3 4 5 .. ]
+[n E13895 t_flashy_led_states FLASHY_STATE_LED_ROUNDABOUT FLASHY_STATE_LED_SHOT FLASHY_STATE_SPARKLE FLASHY_STATE_CIRCLE FLASHY_STATE_LED_ALT FLASHY_STATE_LED_PARODY  ]
+[c E13902 0 1 2 3 4 5 .. ]
+[n E13902 t_flashy_display_states FLASHY_STATE_DISPLAY FLASHY_DEFAULT_STATE_DISPLAY FLASHY_STATE_DISPLAY_BLASTER FLASHY_STATE_DISPLAY_SHOT FLASHY_STATE_DISPLAY_OFF FLASHY_STATE_DISPLAY_SECRET_TEST  ]
+[c E13909 0 1 .. ]
+[n E13909 t_flashy_blaster_states FLASHY_BLASTER_SHOOTING_STATE FLASHY_BLASTER_IDLE_STATE  ]
 "42 flashy_task.h
-[s S1921 `*S1918 1 `ui 1 `E13894 1 `ui 1 `E13901 1 `ui 1 `E13908 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[s S1921 `*S1918 1 `ui 1 `E13895 1 `ui 1 `E13902 1 `ui 1 `E13909 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1921 t_flashy_taskData badge delayTickCount led_state displayTickCount display_state blasterTickCount blaster_state holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY noholdCount ]
 "13 menu_task.h
 [s S1922 `*S1918 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
@@ -33,30 +33,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 "26 slot_task.h
 [s S1923 `*S1918 1 `uc 1 `ui 1 `ui 1 `uc -> 4 `i `uc -> 20 `i `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1923 t_slot_taskData badge locked displayTickCount delayTickCount slot_wheel_index slot_print_buf holdCountA holdCountB holdCountX holdCountY noholdCount ]
-"79 main.c
-[c E13983 0 1 2 3 .. ]
-[n E13983 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE  ]
+"81 main.c
+[c E13984 0 1 2 3 .. ]
+[n E13984 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE  ]
 "26 locked_task.h
-[s S1924 `*S1918 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `E13983 1 ]
+[s S1924 `*S1918 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `E13984 1 ]
 [n S1924 t_locked_taskData badge delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount state ]
 "13 secret_task.h
 [s S1925 `*S1918 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1925 t_secret_taskData badge locked delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount ]
+"83 main.c
+[c E14036 0 1 .. ]
+[n E14036 t_matrix_martix_state MATRIX_SOLVED STILL_IN_MATRIX  ]
+[c E14023 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
+[n E14023 t_matrix_display_states MATRIX_A MATRIX_Y MATRIX_B MATRIX_X MATRIX_AX MATRIX_AY MATRIX_BA MATRIX_BX MATRIX_XY MATRIX_BY MATRIX_STATE_DISPLAY MATRIX_DONE  ]
+"35 matrix_task.h
+[s S1926 `*S1918 1 `E14036 1 `E14023 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[n S1926 t_matrix_taskData badge martix_state display_state delayTickCount displayTickdown holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY holdCountBA noholdCount ]
 "79 cooperative_scheduler.h
 [s S1920 `*S1919 -> 16 `i `ui 1 ]
 [n S1920 t_scheduler tasks taskEntryVector ]
 "56 /Applications/microchip/xc8/v1.42/include/string.h
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"200 nullifyBadge.h
+"201 nullifyBadge.h
 [v _nullifyBadge_segDisplayPutStr `(v ~T0 @X0 0 ef2`*S1918`*uc ]
-"197
+"198
 [v _nullifyBadge_segDisplayForceUpdate `(v ~T0 @X0 0 ef1`*S1918 ]
-"229
+"230
 [v _nullifyBadge_userLedsSet `(v ~T0 @X0 0 ef2`*S1918`ui ]
-"178 main.c
+"181 main.c
 [v _rand `(i ~T0 @X0 0 ef ]
 [p mainexit ]
-"167 nullifyBadge.h
+"168 nullifyBadge.h
 [v _nullifyBadge_platformInit `(v ~T0 @X0 0 ef1`*S1918 ]
 "86 cooperative_scheduler.h
 [v _scheduler_Init `(v ~T0 @X0 0 ef1`*S1920 ]
@@ -92,12 +100,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _secret_Main `(v ~T0 @X0 0 ef1`*v ]
 "31
 [v _secret_Exit `(v ~T0 @X0 0 ef1`*v ]
-"279 main.c
-[c E13757 0 1 .. ]
-[n E13757 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
-"282
-[c E13731 0 1 2 3 .. ]
-[n E13731 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK  ]
+"62 matrix_task.h
+[v _matrix_Init `(v ~T0 @X0 0 ef1`*v ]
+"63
+[v _matrix_Main `(v ~T0 @X0 0 ef1`*v ]
+"64
+[v _matrix_Exit `(v ~T0 @X0 0 ef1`*v ]
+"291 main.c
+[c E13758 0 1 .. ]
+[n E13758 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
+"294
+[c E13731 0 1 2 3 4 .. ]
+[n E13731 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK MATRIX_TASK  ]
 "93 cooperative_scheduler.h
 [v _scheduler_TaskAdd `(c ~T0 @X0 0 ef2`*S1920`*S1919 ]
 "101
@@ -15549,8 +15563,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 8481 `i `ui
 "162
 -> -> 520 `i `ui
-"163
--> -> 24736 `i `ui
 "164
 -> -> 10 `i `ui
 "165
@@ -15610,11 +15622,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "192
 -> -> 10274 `i `ui
 "193
--> -> 4112 `i `ui
+-> -> 2056 `i `ui
 "194
 -> -> 1028 `i `ui
 "195
--> -> 4112 `i `ui
+-> -> 514 `i `ui
 "196
 -> -> 4112 `i `ui
 "198
@@ -15715,7 +15727,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 160: 0x2822,
 [; ;nullifyBadge_displayL1.h: 161: 0x2121,
 [; ;nullifyBadge_displayL1.h: 162: 0x0208,
-[; ;nullifyBadge_displayL1.h: 163: 0x60A0,
 [; ;nullifyBadge_displayL1.h: 164: 0x000A,
 [; ;nullifyBadge_displayL1.h: 165: 0x0020,
 [; ;nullifyBadge_displayL1.h: 166: 0x1010,
@@ -15745,9 +15756,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 190: 0x0A0A,
 [; ;nullifyBadge_displayL1.h: 191: 0x0A04,
 [; ;nullifyBadge_displayL1.h: 192: 0x2822,
-[; ;nullifyBadge_displayL1.h: 193: 0x1010,
+[; ;nullifyBadge_displayL1.h: 193: 0x0808,
 [; ;nullifyBadge_displayL1.h: 194: 0x0404,
-[; ;nullifyBadge_displayL1.h: 195: 0x1010,
+[; ;nullifyBadge_displayL1.h: 195: 0x0202,
 [; ;nullifyBadge_displayL1.h: 196: 0x1010,
 [; ;nullifyBadge_displayL1.h: 197: 0xFFFF
 [; ;nullifyBadge_displayL1.h: 198: };
@@ -16070,89 +16081,90 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge.h: 44: SLOT_TASK,
 [; ;nullifyBadge.h: 45: FLASHY_TASK,
 [; ;nullifyBadge.h: 46: LOCKED_TASK,
-[; ;nullifyBadge.h: 47: };
-[; ;nullifyBadge.h: 50: extern u8 badge_locked;
-[; ;nullifyBadge.h: 51: extern u16 currentTask;
-[; ;nullifyBadge.h: 52: extern void marquee(char* string, u16 count);
-[; ;nullifyBadge.h: 53: extern void marquee_speedy(char* string, u16 count, u16 multiplier);
-[; ;nullifyBadge.h: 55: void led_roundabout(u16 counter);
-[; ;nullifyBadge.h: 56: void led_curtain(u16 counter);
-[; ;nullifyBadge.h: 57: void led_rand(void);
-[; ;nullifyBadge.h: 58: void led_circle(u16 count);
-[; ;nullifyBadge.h: 59: void let_alternate(u16 count);
-[; ;nullifyBadge.h: 60: void led_Parody(u16 count);
-[; ;nullifyBadge.h: 65: enum t_secret {
-[; ;nullifyBadge.h: 66: SECRET_VALUE_INIT,
-[; ;nullifyBadge.h: 67: SECRET_VALUE_TEST,
-[; ;nullifyBadge.h: 68: };
-[; ;nullifyBadge.h: 69: extern u16 secret_value;
-[; ;nullifyBadge.h: 125: enum t_hw_register {
-[; ;nullifyBadge.h: 126: HW_SEG_DISPLAY,
-[; ;nullifyBadge.h: 127: HW_USER_LEDS,
-[; ;nullifyBadge.h: 128: HW_IR_TX,
-[; ;nullifyBadge.h: 129: HW_EEPROM
-[; ;nullifyBadge.h: 130: };
-[; ;nullifyBadge.h: 132: enum t_userLed {
-[; ;nullifyBadge.h: 133: LED_G0,
-[; ;nullifyBadge.h: 134: LED_G1,
-[; ;nullifyBadge.h: 135: LED_G2,
-[; ;nullifyBadge.h: 136: LED_G3,
-[; ;nullifyBadge.h: 137: LED_G4,
-[; ;nullifyBadge.h: 138: LED_G5,
-[; ;nullifyBadge.h: 139: LED_G6,
-[; ;nullifyBadge.h: 140: LED_G7,
-[; ;nullifyBadge.h: 141: LED_G8,
-[; ;nullifyBadge.h: 142: LED_G9,
-[; ;nullifyBadge.h: 143: LED_R0,
-[; ;nullifyBadge.h: 144: LED_G10,
-[; ;nullifyBadge.h: 145: LED_G11,
-[; ;nullifyBadge.h: 146: LED_G12,
-[; ;nullifyBadge.h: 147: LED_G13,
-[; ;nullifyBadge.h: 148: LED_G14,
-[; ;nullifyBadge.h: 149: LED_G15
-[; ;nullifyBadge.h: 150: };
-[; ;nullifyBadge.h: 161: struct t_nullifyBadge {
-[; ;nullifyBadge.h: 162: struct t_nullifyDisplay_l2 display;
-[; ;nullifyBadge.h: 163: u8 registeredHw;
-[; ;nullifyBadge.h: 164: };
-[; ;nullifyBadge.h: 167: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 176: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 179: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 182: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 185: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 188: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 191: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
-[; ;nullifyBadge.h: 194: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 197: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 200: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 203: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 206: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 214: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 217: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 220: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 223: void nullifyBadge_userLedsSetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 226: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 229: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 232: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 235: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 243: u8 nullifyBadge_buttonsGet();
-[; ;nullifyBadge.h: 246: u8 nullifyBadge_buttonAGet();
-[; ;nullifyBadge.h: 249: u8 nullifyBadge_buttonBGet();
-[; ;nullifyBadge.h: 252: u8 nullifyBadge_buttonXGet();
-[; ;nullifyBadge.h: 255: u8 nullifyBadge_buttonYGet();
-[; ;nullifyBadge.h: 263: u8 nullifyBadge_irGet();
-[; ;nullifyBadge.h: 276: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 279: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 282: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 285: void nullifyBadge_irTxSet();
-[; ;nullifyBadge.h: 288: void nullifyBadge_irTxClr();
-[; ;nullifyBadge.h: 296: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 299: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 302: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 305: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
-[; ;nullifyBadge.h: 308: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
-[; ;nullifyBadge.h: 311: u8 nullifyBadge_eepromRead8bit(u16 addr);
-[; ;nullifyBadge.h: 314: u16 nullifyBadge_eepromRead16bit(u16 addr);
+[; ;nullifyBadge.h: 47: MATRIX_TASK,
+[; ;nullifyBadge.h: 48: };
+[; ;nullifyBadge.h: 51: extern u8 badge_locked;
+[; ;nullifyBadge.h: 52: extern u16 currentTask;
+[; ;nullifyBadge.h: 53: extern void marquee(char* string, u16 count);
+[; ;nullifyBadge.h: 54: extern void marquee_speedy(char* string, u16 count, u16 multiplier);
+[; ;nullifyBadge.h: 56: void led_roundabout(u16 counter);
+[; ;nullifyBadge.h: 57: void led_curtain(u16 counter);
+[; ;nullifyBadge.h: 58: void led_rand(void);
+[; ;nullifyBadge.h: 59: void led_circle(u16 count);
+[; ;nullifyBadge.h: 60: void let_alternate(u16 count);
+[; ;nullifyBadge.h: 61: void led_Parody(u16 count);
+[; ;nullifyBadge.h: 66: enum t_secret {
+[; ;nullifyBadge.h: 67: SECRET_VALUE_INIT,
+[; ;nullifyBadge.h: 68: SECRET_VALUE_TEST,
+[; ;nullifyBadge.h: 69: };
+[; ;nullifyBadge.h: 70: extern u16 secret_value;
+[; ;nullifyBadge.h: 126: enum t_hw_register {
+[; ;nullifyBadge.h: 127: HW_SEG_DISPLAY,
+[; ;nullifyBadge.h: 128: HW_USER_LEDS,
+[; ;nullifyBadge.h: 129: HW_IR_TX,
+[; ;nullifyBadge.h: 130: HW_EEPROM
+[; ;nullifyBadge.h: 131: };
+[; ;nullifyBadge.h: 133: enum t_userLed {
+[; ;nullifyBadge.h: 134: LED_G0,
+[; ;nullifyBadge.h: 135: LED_G1,
+[; ;nullifyBadge.h: 136: LED_G2,
+[; ;nullifyBadge.h: 137: LED_G3,
+[; ;nullifyBadge.h: 138: LED_G4,
+[; ;nullifyBadge.h: 139: LED_G5,
+[; ;nullifyBadge.h: 140: LED_G6,
+[; ;nullifyBadge.h: 141: LED_G7,
+[; ;nullifyBadge.h: 142: LED_G8,
+[; ;nullifyBadge.h: 143: LED_G9,
+[; ;nullifyBadge.h: 144: LED_R0,
+[; ;nullifyBadge.h: 145: LED_G10,
+[; ;nullifyBadge.h: 146: LED_G11,
+[; ;nullifyBadge.h: 147: LED_G12,
+[; ;nullifyBadge.h: 148: LED_G13,
+[; ;nullifyBadge.h: 149: LED_G14,
+[; ;nullifyBadge.h: 150: LED_G15
+[; ;nullifyBadge.h: 151: };
+[; ;nullifyBadge.h: 162: struct t_nullifyBadge {
+[; ;nullifyBadge.h: 163: struct t_nullifyDisplay_l2 display;
+[; ;nullifyBadge.h: 164: u8 registeredHw;
+[; ;nullifyBadge.h: 165: };
+[; ;nullifyBadge.h: 168: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 177: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 180: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 183: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 186: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 189: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 192: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
+[; ;nullifyBadge.h: 195: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 198: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 201: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 204: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 207: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 215: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 218: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 221: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 224: void nullifyBadge_userLedsSetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 227: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 230: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 233: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 236: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 244: u8 nullifyBadge_buttonsGet();
+[; ;nullifyBadge.h: 247: u8 nullifyBadge_buttonAGet();
+[; ;nullifyBadge.h: 250: u8 nullifyBadge_buttonBGet();
+[; ;nullifyBadge.h: 253: u8 nullifyBadge_buttonXGet();
+[; ;nullifyBadge.h: 256: u8 nullifyBadge_buttonYGet();
+[; ;nullifyBadge.h: 264: u8 nullifyBadge_irGet();
+[; ;nullifyBadge.h: 277: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 280: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 283: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 286: void nullifyBadge_irTxSet();
+[; ;nullifyBadge.h: 289: void nullifyBadge_irTxClr();
+[; ;nullifyBadge.h: 297: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 300: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 303: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 306: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
+[; ;nullifyBadge.h: 309: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
+[; ;nullifyBadge.h: 312: u8 nullifyBadge_eepromRead8bit(u16 addr);
+[; ;nullifyBadge.h: 315: u16 nullifyBadge_eepromRead16bit(u16 addr);
 [; ;cooperative_scheduler.h: 69: struct t_schedulerTask {
 [; ;cooperative_scheduler.h: 70: u16 systemTickLastExecuted;
 [; ;cooperative_scheduler.h: 71: void *taskData;
@@ -16291,55 +16303,101 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;secret_task.h: 30: void secret_Main (void *taskData);
 [; ;secret_task.h: 31: void secret_Exit(void *taskData);
 [; ;secret_task.h: 33: void secret_clear(struct t_secret_taskData *data);
-"64 main.c
+[; ;matrix_task.h: 15: enum t_matrix_display_states {
+[; ;matrix_task.h: 16: MATRIX_A,
+[; ;matrix_task.h: 17: MATRIX_Y,
+[; ;matrix_task.h: 18: MATRIX_B,
+[; ;matrix_task.h: 19: MATRIX_X,
+[; ;matrix_task.h: 20: MATRIX_AX,
+[; ;matrix_task.h: 21: MATRIX_AY,
+[; ;matrix_task.h: 22: MATRIX_BA,
+[; ;matrix_task.h: 23: MATRIX_BX,
+[; ;matrix_task.h: 24: MATRIX_XY,
+[; ;matrix_task.h: 25: MATRIX_BY,
+[; ;matrix_task.h: 26: MATRIX_STATE_DISPLAY,
+[; ;matrix_task.h: 27: MATRIX_DONE
+[; ;matrix_task.h: 28: };
+[; ;matrix_task.h: 30: enum t_matrix_martix_state{
+[; ;matrix_task.h: 31: MATRIX_SOLVED,
+[; ;matrix_task.h: 32: STILL_IN_MATRIX,
+[; ;matrix_task.h: 33: };
+[; ;matrix_task.h: 35: struct t_matrix_taskData {
+[; ;matrix_task.h: 37: struct t_nullifyBadge *badge;
+[; ;matrix_task.h: 39: enum t_matrix_martix_state martix_state;
+[; ;matrix_task.h: 41: enum t_matrix_display_states display_state;
+[; ;matrix_task.h: 44: u16 delayTickCount;
+[; ;matrix_task.h: 46: u16 displayTickdown;
+[; ;matrix_task.h: 48: u16 holdCountA;
+[; ;matrix_task.h: 49: u16 holdCountB;
+[; ;matrix_task.h: 50: u16 holdCountX;
+[; ;matrix_task.h: 51: u16 holdCountY;
+[; ;matrix_task.h: 52: u16 holdCountXY;
+[; ;matrix_task.h: 53: u16 holdCountAY;
+[; ;matrix_task.h: 54: u16 holdCountAX;
+[; ;matrix_task.h: 55: u16 holdCountBX;
+[; ;matrix_task.h: 56: u16 holdCountBY;
+[; ;matrix_task.h: 57: u16 holdCountBA;
+[; ;matrix_task.h: 58: u16 noholdCount;
+[; ;matrix_task.h: 60: };
+[; ;matrix_task.h: 62: void matrix_Init(void *taskData);
+[; ;matrix_task.h: 63: void matrix_Main (void *taskData);
+[; ;matrix_task.h: 64: void matrix_Exit(void *taskData);
+[; ;matrix_task.h: 65: void matrix_secret_clear(struct t_matrix_taskData *data);
+"65 main.c
 [v _badge_inst `S1918 ~T0 @X0 1 e ]
-[; ;main.c: 64: struct t_nullifyBadge badge_inst;
-"68
-[v _flashy_task `S1919 ~T0 @X0 1 s ]
-[; ;main.c: 68: static struct t_schedulerTask flashy_task;
+[; ;main.c: 65: struct t_nullifyBadge badge_inst;
 "69
-[v _menu_task `S1919 ~T0 @X0 1 s ]
-[; ;main.c: 69: static struct t_schedulerTask menu_task;
+[v _flashy_task `S1919 ~T0 @X0 1 s ]
+[; ;main.c: 69: static struct t_schedulerTask flashy_task;
 "70
-[v _slot_task `S1919 ~T0 @X0 1 s ]
-[; ;main.c: 70: static struct t_schedulerTask slot_task;
+[v _menu_task `S1919 ~T0 @X0 1 s ]
+[; ;main.c: 70: static struct t_schedulerTask menu_task;
 "71
-[v _locked_task `S1919 ~T0 @X0 1 s ]
-[; ;main.c: 71: static struct t_schedulerTask locked_task;
+[v _slot_task `S1919 ~T0 @X0 1 s ]
+[; ;main.c: 71: static struct t_schedulerTask slot_task;
 "72
+[v _locked_task `S1919 ~T0 @X0 1 s ]
+[; ;main.c: 72: static struct t_schedulerTask locked_task;
+"73
 [v _secret_task `S1919 ~T0 @X0 1 s ]
-[; ;main.c: 72: static struct t_schedulerTask secret_task;
-"76
-[v _flashy_TaskData `S1921 ~T0 @X0 1 e ]
-[; ;main.c: 76: struct t_flashy_taskData flashy_TaskData;
-"77
-[v _menu_TaskData `S1922 ~T0 @X0 1 e ]
-[; ;main.c: 77: struct t_menu_taskData menu_TaskData;
+[; ;main.c: 73: static struct t_schedulerTask secret_task;
+"74
+[v _matrix_task `S1919 ~T0 @X0 1 s ]
+[; ;main.c: 74: static struct t_schedulerTask matrix_task;
 "78
-[v _slot_TaskData `S1923 ~T0 @X0 1 e ]
-[; ;main.c: 78: struct t_slot_taskData slot_TaskData;
+[v _flashy_TaskData `S1921 ~T0 @X0 1 e ]
+[; ;main.c: 78: struct t_flashy_taskData flashy_TaskData;
 "79
-[v _locked_TaskData `S1924 ~T0 @X0 1 e ]
-[; ;main.c: 79: struct t_locked_taskData locked_TaskData;
+[v _menu_TaskData `S1922 ~T0 @X0 1 e ]
+[; ;main.c: 79: struct t_menu_taskData menu_TaskData;
 "80
+[v _slot_TaskData `S1923 ~T0 @X0 1 e ]
+[; ;main.c: 80: struct t_slot_taskData slot_TaskData;
+"81
+[v _locked_TaskData `S1924 ~T0 @X0 1 e ]
+[; ;main.c: 81: struct t_locked_taskData locked_TaskData;
+"82
 [v _secret_TaskData `S1925 ~T0 @X0 1 e ]
-[; ;main.c: 80: struct t_secret_taskData secret_TaskData;
+[; ;main.c: 82: struct t_secret_taskData secret_TaskData;
 "83
-[v _schedulerInst `S1920 ~T0 @X0 1 e ]
-[; ;main.c: 83: struct t_scheduler schedulerInst;
+[v _matrix_TaskData `S1926 ~T0 @X0 1 e ]
+[; ;main.c: 83: struct t_matrix_taskData matrix_TaskData;
 "86
-[v _currentTask `ui ~T0 @X0 1 e ]
-[; ;main.c: 86: u16 currentTask;
-"87
-[v _badge_locked `uc ~T0 @X0 1 e ]
-[; ;main.c: 87: u8 badge_locked;
-"88
-[v _secret_value `ui ~T0 @X0 1 e ]
-[; ;main.c: 88: u16 secret_value;
+[v _schedulerInst `S1920 ~T0 @X0 1 e ]
+[; ;main.c: 86: struct t_scheduler schedulerInst;
 "89
+[v _currentTask `ui ~T0 @X0 1 e ]
+[; ;main.c: 89: u16 currentTask;
+"90
+[v _badge_locked `uc ~T0 @X0 1 e ]
+[; ;main.c: 90: u8 badge_locked;
+"91
+[v _secret_value `ui ~T0 @X0 1 e ]
+[; ;main.c: 91: u16 secret_value;
+"92
 [v _oddeven `ui ~T0 @X0 1 e ]
-[; ;main.c: 89: u16 oddeven;
-"93
+[; ;main.c: 92: u16 oddeven;
+"96
 [v _roundabout_leds `ui ~T0 @X0 -> 0 `x e ]
 [i _roundabout_leds
 :U ..
@@ -16359,8 +16417,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 256 `i `ui
 ..
 ]
-[; ;main.c: 93: u16 roundabout_leds[] = { 128, 256, 512, 2048, 4096, 8192, 16384, 32768, 16384, 8192, 4096, 2048, 512, 256 };
-"94
+[; ;main.c: 96: u16 roundabout_leds[] = { 128, 256, 512, 2048, 4096, 8192, 16384, 32768, 16384, 8192, 4096, 2048, 512, 256 };
+"97
 [v _roundabout_leds_inverse `ui ~T0 @X0 -> 0 `x e ]
 [i _roundabout_leds_inverse
 :U ..
@@ -16380,124 +16438,124 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 64 `i `ui
 ..
 ]
-[; ;main.c: 94: u16 roundabout_leds_inverse[] = { 128, 64, 32, 16, 8, 4, 2, 1, 2, 4, 8, 16, 32, 64 };
-"96
+[; ;main.c: 97: u16 roundabout_leds_inverse[] = { 128, 64, 32, 16, 8, 4, 2, 1, 2, 4, 8, 16, 32, 64 };
+"99
 [v _curtain_leds `ui ~T0 @X0 -> 0 `x e ]
 [i _curtain_leds
 :U ..
-"97
--> -> 128 `i `ui
-"98
--> | -> 128 `i -> 256 `i `ui
-"99
--> | | -> 128 `i -> 256 `i -> 512 `i `ui
 "100
--> | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i `ui
+-> -> 128 `i `ui
 "101
--> | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i `ui
+-> | -> 128 `i -> 256 `i `ui
 "102
--> | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i `ui
-"103
--> | | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i -> 16384 `i `ui
-"104
--> | -> | | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i -> 16384 `i `l -> 32768 `l `ui
-"105
--> | | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i -> 16384 `i `ui
-"106
--> | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i `ui
-"107
--> | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i `ui
-"108
--> | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i `ui
-"109
 -> | | -> 128 `i -> 256 `i -> 512 `i `ui
+"103
+-> | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i `ui
+"104
+-> | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i `ui
+"105
+-> | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i `ui
+"106
+-> | | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i -> 16384 `i `ui
+"107
+-> | -> | | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i -> 16384 `i `l -> 32768 `l `ui
+"108
+-> | | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i -> 16384 `i `ui
+"109
+-> | | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i -> 8192 `i `ui
 "110
+-> | | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i -> 4096 `i `ui
+"111
+-> | | | -> 128 `i -> 256 `i -> 512 `i -> 2048 `i `ui
+"112
+-> | | -> 128 `i -> 256 `i -> 512 `i `ui
+"113
 -> | -> 128 `i -> 256 `i `ui
 ..
 ]
-[; ;main.c: 96: u16 curtain_leds[] ={
-[; ;main.c: 97: 128,
-[; ;main.c: 98: 128 | 256,
-[; ;main.c: 99: 128 | 256 | 512,
-[; ;main.c: 100: 128 | 256 | 512 | 2048,
-[; ;main.c: 101: 128 | 256 | 512 | 2048 | 4096,
-[; ;main.c: 102: 128 | 256 | 512 | 2048 | 4096 | 8192,
-[; ;main.c: 103: 128 | 256 | 512 | 2048 | 4096 | 8192 | 16384,
-[; ;main.c: 104: 128 | 256 | 512 | 2048 | 4096 | 8192 | 16384 | 32768,
-[; ;main.c: 105: 128 | 256 | 512 | 2048 | 4096 | 8192 | 16384,
-[; ;main.c: 106: 128 | 256 | 512 | 2048 | 4096 | 8192,
-[; ;main.c: 107: 128 | 256 | 512 | 2048 | 4096,
-[; ;main.c: 108: 128 | 256 | 512 | 2048,
-[; ;main.c: 109: 128 | 256 | 512,
-[; ;main.c: 110: 128 | 256,
-[; ;main.c: 111: };
-"112
+[; ;main.c: 99: u16 curtain_leds[] ={
+[; ;main.c: 100: 128,
+[; ;main.c: 101: 128 | 256,
+[; ;main.c: 102: 128 | 256 | 512,
+[; ;main.c: 103: 128 | 256 | 512 | 2048,
+[; ;main.c: 104: 128 | 256 | 512 | 2048 | 4096,
+[; ;main.c: 105: 128 | 256 | 512 | 2048 | 4096 | 8192,
+[; ;main.c: 106: 128 | 256 | 512 | 2048 | 4096 | 8192 | 16384,
+[; ;main.c: 107: 128 | 256 | 512 | 2048 | 4096 | 8192 | 16384 | 32768,
+[; ;main.c: 108: 128 | 256 | 512 | 2048 | 4096 | 8192 | 16384,
+[; ;main.c: 109: 128 | 256 | 512 | 2048 | 4096 | 8192,
+[; ;main.c: 110: 128 | 256 | 512 | 2048 | 4096,
+[; ;main.c: 111: 128 | 256 | 512 | 2048,
+[; ;main.c: 112: 128 | 256 | 512,
+[; ;main.c: 113: 128 | 256,
+[; ;main.c: 114: };
+"115
 [v _curtain_leds_inverse `ui ~T0 @X0 -> 0 `x e ]
 [i _curtain_leds_inverse
 :U ..
-"113
--> -> 128 `i `ui
-"114
--> | -> 128 `i -> 64 `i `ui
-"115
--> | | -> 128 `i -> 64 `i -> 32 `i `ui
 "116
--> | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i `ui
+-> -> 128 `i `ui
 "117
--> | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i `ui
+-> | -> 128 `i -> 64 `i `ui
 "118
--> | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i `ui
-"119
--> | | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i -> 2 `i `ui
-"120
--> | | | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i -> 2 `i -> 1 `i `ui
-"121
--> | | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i -> 2 `i `ui
-"122
--> | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i `ui
-"123
--> | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i `ui
-"124
--> | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i `ui
-"125
 -> | | -> 128 `i -> 64 `i -> 32 `i `ui
+"119
+-> | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i `ui
+"120
+-> | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i `ui
+"121
+-> | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i `ui
+"122
+-> | | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i -> 2 `i `ui
+"123
+-> | | | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i -> 2 `i -> 1 `i `ui
+"124
+-> | | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i -> 2 `i `ui
+"125
+-> | | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i -> 4 `i `ui
 "126
+-> | | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i -> 8 `i `ui
+"127
+-> | | | -> 128 `i -> 64 `i -> 32 `i -> 16 `i `ui
+"128
+-> | | -> 128 `i -> 64 `i -> 32 `i `ui
+"129
 -> | -> 128 `i -> 64 `i `ui
 ..
 ]
-[; ;main.c: 112: u16 curtain_leds_inverse[] ={
-[; ;main.c: 113: 128,
-[; ;main.c: 114: 128 | 64,
-[; ;main.c: 115: 128 | 64 | 32,
-[; ;main.c: 116: 128 | 64 | 32 | 16,
-[; ;main.c: 117: 128 | 64 | 32 | 16 | 8,
-[; ;main.c: 118: 128 | 64 | 32 | 16 | 8 | 4,
-[; ;main.c: 119: 128 | 64 | 32 | 16 | 8 | 4 | 2,
-[; ;main.c: 120: 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1,
-[; ;main.c: 121: 128 | 64 | 32 | 16 | 8 | 4 | 2,
-[; ;main.c: 122: 128 | 64 | 32 | 16 | 8 | 4,
-[; ;main.c: 123: 128 | 64 | 32 | 16 | 8,
-[; ;main.c: 124: 128 | 64 | 32 | 16,
-[; ;main.c: 125: 128 | 64 | 32,
-[; ;main.c: 126: 128 | 64,
-[; ;main.c: 127: };
-"130
+[; ;main.c: 115: u16 curtain_leds_inverse[] ={
+[; ;main.c: 116: 128,
+[; ;main.c: 117: 128 | 64,
+[; ;main.c: 118: 128 | 64 | 32,
+[; ;main.c: 119: 128 | 64 | 32 | 16,
+[; ;main.c: 120: 128 | 64 | 32 | 16 | 8,
+[; ;main.c: 121: 128 | 64 | 32 | 16 | 8 | 4,
+[; ;main.c: 122: 128 | 64 | 32 | 16 | 8 | 4 | 2,
+[; ;main.c: 123: 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1,
+[; ;main.c: 124: 128 | 64 | 32 | 16 | 8 | 4 | 2,
+[; ;main.c: 125: 128 | 64 | 32 | 16 | 8 | 4,
+[; ;main.c: 126: 128 | 64 | 32 | 16 | 8,
+[; ;main.c: 127: 128 | 64 | 32 | 16,
+[; ;main.c: 128: 128 | 64 | 32,
+[; ;main.c: 129: 128 | 64,
+[; ;main.c: 130: };
+"133
 [v _marquee_speedy `(v ~T0 @X0 1 ef3`*uc`ui`ui ]
 {
-[; ;main.c: 130: void marquee_speedy(char* string, u16 count, u16 multiplier) {
+[; ;main.c: 133: void marquee_speedy(char* string, u16 count, u16 multiplier) {
 [e :U _marquee_speedy ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _count `ui ~T0 @X0 1 r2 ]
 [v _multiplier `ui ~T0 @X0 1 r3 ]
 [f ]
-"131
+"134
 [v _string_length `ui ~T0 @X0 1 a ]
-[; ;main.c: 131: u16 string_length = strlen((const char *) string);
+[; ;main.c: 134: u16 string_length = strlen((const char *) string);
 [e = _string_length ( _strlen (1 -> _string `*Cuc ]
-[v F14045 `uc ~T0 @X0 -> 0 `x s ]
-[i F14045
+[v F14089 `uc ~T0 @X0 -> 0 `x s ]
+[i F14089
 :U ..
-"132
+"135
 -> -> 32 `ui `uc
 -> -> 32 `ui `uc
 -> -> 32 `ui `uc
@@ -16506,63 +16564,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [v _display_string `uc ~T0 @X0 5  a ]
-[; ;main.c: 132: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
-[e = _display_string F14045 ]
-"133
+[; ;main.c: 135: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
+[e = _display_string F14089 ]
+"136
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 133: u16 i = (count / multiplier) % string_length;
+[; ;main.c: 136: u16 i = (count / multiplier) % string_length;
 [e = _i % / _count _multiplier _string_length ]
-[; ;main.c: 135: for (u16 j=0; j < 4; j++){
-"135
+[; ;main.c: 138: for (u16 j=0; j < 4; j++){
+"138
 {
 [v _j `ui ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `ui ]
-[e $ < _j -> -> 4 `i `ui 1927  ]
-[e $U 1928  ]
-[e :U 1927 ]
-{
-[; ;main.c: 136: display_string[j] = string[(i + j) % string_length];
-"136
-[e = *U + &U _display_string * -> _j `ux -> -> # *U &U _display_string `ui `ux *U + _string * -> % + _i _j _string_length `ux -> -> # *U _string `ui `ux ]
-"137
-}
-"135
-[e ++ _j -> -> 1 `i `ui ]
-[e $ < _j -> -> 4 `i `ui 1927  ]
+[e $ < _j -> -> 4 `i `ui 1928  ]
+[e $U 1929  ]
 [e :U 1928 ]
-"137
-}
-[; ;main.c: 137: }
-[; ;main.c: 138: nullifyBadge_segDisplayPutStr(&badge_inst, display_string);
-"138
-[e ( _nullifyBadge_segDisplayPutStr (2 , &U _badge_inst &U _display_string ]
-[; ;main.c: 139: nullifyBadge_segDisplayForceUpdate(&badge_inst);
+{
+[; ;main.c: 139: display_string[j] = string[(i + j) % string_length];
 "139
-[e ( _nullifyBadge_segDisplayForceUpdate (1 &U _badge_inst ]
-[; ;main.c: 140: }
+[e = *U + &U _display_string * -> _j `ux -> -> # *U &U _display_string `ui `ux *U + _string * -> % + _i _j _string_length `ux -> -> # *U _string `ui `ux ]
 "140
-[e :UE 1926 ]
 }
+"138
+[e ++ _j -> -> 1 `i `ui ]
+[e $ < _j -> -> 4 `i `ui 1928  ]
+[e :U 1929 ]
+"140
+}
+[; ;main.c: 140: }
+[; ;main.c: 141: nullifyBadge_segDisplayPutStr(&badge_inst, display_string);
+"141
+[e ( _nullifyBadge_segDisplayPutStr (2 , &U _badge_inst &U _display_string ]
+[; ;main.c: 142: nullifyBadge_segDisplayForceUpdate(&badge_inst);
+"142
+[e ( _nullifyBadge_segDisplayForceUpdate (1 &U _badge_inst ]
+[; ;main.c: 143: }
 "143
+[e :UE 1927 ]
+}
+"146
 [v _marquee `(v ~T0 @X0 1 ef2`*uc`ui ]
 {
-[; ;main.c: 143: void marquee(char* string, u16 count) {
+[; ;main.c: 146: void marquee(char* string, u16 count) {
 [e :U _marquee ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _count `ui ~T0 @X0 1 r2 ]
 [f ]
-"144
+"147
 [v _multiplier `ui ~T0 @X0 1 a ]
-[; ;main.c: 144: u16 multiplier = 50;
+[; ;main.c: 147: u16 multiplier = 50;
 [e = _multiplier -> -> 50 `i `ui ]
-"145
+"148
 [v _string_length `ui ~T0 @X0 1 a ]
-[; ;main.c: 145: u16 string_length = strlen((const char *) string);
+[; ;main.c: 148: u16 string_length = strlen((const char *) string);
 [e = _string_length ( _strlen (1 -> _string `*Cuc ]
-[v F14054 `uc ~T0 @X0 -> 0 `x s ]
-[i F14054
+[v F14098 `uc ~T0 @X0 -> 0 `x s ]
+[i F14098
 :U ..
-"146
+"149
 -> -> 32 `ui `uc
 -> -> 32 `ui `uc
 -> -> 32 `ui `uc
@@ -16571,392 +16629,416 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [v _display_string `uc ~T0 @X0 5  a ]
-[; ;main.c: 146: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
-[e = _display_string F14054 ]
-"147
+[; ;main.c: 149: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
+[e = _display_string F14098 ]
+"150
 [v _i `ui ~T0 @X0 1 a ]
-[; ;main.c: 147: u16 i = (count / multiplier) % string_length;
+[; ;main.c: 150: u16 i = (count / multiplier) % string_length;
 [e = _i % / _count _multiplier _string_length ]
-[; ;main.c: 149: for (u16 j=0; j < 4; j++){
-"149
+[; ;main.c: 152: for (u16 j=0; j < 4; j++){
+"152
 {
 [v _j `ui ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `ui ]
-[e $ < _j -> -> 4 `i `ui 1931  ]
-[e $U 1932  ]
-[e :U 1931 ]
-{
-[; ;main.c: 150: display_string[j] = string[(i + j) % string_length];
-"150
-[e = *U + &U _display_string * -> _j `ux -> -> # *U &U _display_string `ui `ux *U + _string * -> % + _i _j _string_length `ux -> -> # *U _string `ui `ux ]
-"151
-}
-"149
-[e ++ _j -> -> 1 `i `ui ]
-[e $ < _j -> -> 4 `i `ui 1931  ]
+[e $ < _j -> -> 4 `i `ui 1932  ]
+[e $U 1933  ]
 [e :U 1932 ]
-"151
-}
-[; ;main.c: 151: }
-[; ;main.c: 152: nullifyBadge_segDisplayPutStr(&badge_inst, display_string);
-"152
-[e ( _nullifyBadge_segDisplayPutStr (2 , &U _badge_inst &U _display_string ]
-[; ;main.c: 153: nullifyBadge_segDisplayForceUpdate(&badge_inst);
+{
+[; ;main.c: 153: display_string[j] = string[(i + j) % string_length];
 "153
-[e ( _nullifyBadge_segDisplayForceUpdate (1 &U _badge_inst ]
-[; ;main.c: 154: }
+[e = *U + &U _display_string * -> _j `ux -> -> # *U &U _display_string `ui `ux *U + _string * -> % + _i _j _string_length `ux -> -> # *U _string `ui `ux ]
 "154
-[e :UE 1930 ]
 }
+"152
+[e ++ _j -> -> 1 `i `ui ]
+[e $ < _j -> -> 4 `i `ui 1932  ]
+[e :U 1933 ]
+"154
+}
+[; ;main.c: 154: }
+[; ;main.c: 155: nullifyBadge_segDisplayPutStr(&badge_inst, display_string);
+"155
+[e ( _nullifyBadge_segDisplayPutStr (2 , &U _badge_inst &U _display_string ]
+[; ;main.c: 156: nullifyBadge_segDisplayForceUpdate(&badge_inst);
 "156
+[e ( _nullifyBadge_segDisplayForceUpdate (1 &U _badge_inst ]
+[; ;main.c: 157: }
+"157
+[e :UE 1931 ]
+}
+"159
 [v _led_roundabout `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 156: void led_roundabout(u16 counter) {
+[; ;main.c: 159: void led_roundabout(u16 counter) {
 [e :U _led_roundabout ]
 [v _counter `ui ~T0 @X0 1 r1 ]
 [f ]
-"157
-[v _size `ui ~T0 @X0 1 a ]
-[; ;main.c: 157: u16 size = sizeof(roundabout_leds) / sizeof(roundabout_leds[0]);
-[e = _size / -> # _roundabout_leds `ui -> # *U + &U _roundabout_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds `ui `ux `ui ]
-"158
-[v _leds `ui ~T0 @X0 1 a ]
-[; ;main.c: 158: u16 leds = roundabout_leds[counter % size];
-[e = _leds *U + &U _roundabout_leds * -> % _counter _size `ux -> -> # *U &U _roundabout_leds `ui `ux ]
-[; ;main.c: 160: size = sizeof(roundabout_leds_inverse) / sizeof(roundabout_leds_inverse[0]);
 "160
-[e = _size / -> # _roundabout_leds_inverse `ui -> # *U + &U _roundabout_leds_inverse * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux `ui ]
-[; ;main.c: 161: leds |= roundabout_leds_inverse[counter % size];
+[v _size `ui ~T0 @X0 1 a ]
+[; ;main.c: 160: u16 size = sizeof(roundabout_leds) / sizeof(roundabout_leds[0]);
+[e = _size / -> # _roundabout_leds `ui -> # *U + &U _roundabout_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds `ui `ux `ui ]
 "161
-[e =| _leds *U + &U _roundabout_leds_inverse * -> % _counter _size `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux ]
-[; ;main.c: 163: nullifyBadge_userLedsSet(&badge_inst, leds);
+[v _leds `ui ~T0 @X0 1 a ]
+[; ;main.c: 161: u16 leds = roundabout_leds[counter % size];
+[e = _leds *U + &U _roundabout_leds * -> % _counter _size `ux -> -> # *U &U _roundabout_leds `ui `ux ]
+[; ;main.c: 163: size = sizeof(roundabout_leds_inverse) / sizeof(roundabout_leds_inverse[0]);
 "163
-[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _leds ]
-[; ;main.c: 164: }
+[e = _size / -> # _roundabout_leds_inverse `ui -> # *U + &U _roundabout_leds_inverse * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux `ui ]
+[; ;main.c: 164: leds |= roundabout_leds_inverse[counter % size];
 "164
-[e :UE 1934 ]
-}
+[e =| _leds *U + &U _roundabout_leds_inverse * -> % _counter _size `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux ]
+[; ;main.c: 166: nullifyBadge_userLedsSet(&badge_inst, leds);
 "166
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _leds ]
+[; ;main.c: 167: }
+"167
+[e :UE 1935 ]
+}
+"169
 [v _led_curtain `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 166: void led_curtain(u16 counter) {
+[; ;main.c: 169: void led_curtain(u16 counter) {
 [e :U _led_curtain ]
 [v _counter `ui ~T0 @X0 1 r1 ]
 [f ]
-"167
-[v _size `ui ~T0 @X0 1 a ]
-[; ;main.c: 167: u16 size = sizeof(curtain_leds) / sizeof(curtain_leds[0]);
-[e = _size / -> # _curtain_leds `ui -> # *U + &U _curtain_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _curtain_leds `ui `ux `ui ]
-"168
-[v _leds `ui ~T0 @X0 1 a ]
-[; ;main.c: 168: u16 leds = curtain_leds[counter % size];
-[e = _leds *U + &U _curtain_leds * -> % _counter _size `ux -> -> # *U &U _curtain_leds `ui `ux ]
-[; ;main.c: 170: size = sizeof(curtain_leds_inverse) / sizeof(curtain_leds_inverse[0]);
 "170
-[e = _size / -> # _curtain_leds_inverse `ui -> # *U + &U _curtain_leds_inverse * -> -> -> 0 `i `ui `ux -> -> # *U &U _curtain_leds_inverse `ui `ux `ui ]
-[; ;main.c: 171: leds |= curtain_leds_inverse[counter % size];
+[v _size `ui ~T0 @X0 1 a ]
+[; ;main.c: 170: u16 size = sizeof(curtain_leds) / sizeof(curtain_leds[0]);
+[e = _size / -> # _curtain_leds `ui -> # *U + &U _curtain_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _curtain_leds `ui `ux `ui ]
 "171
-[e =| _leds *U + &U _curtain_leds_inverse * -> % _counter _size `ux -> -> # *U &U _curtain_leds_inverse `ui `ux ]
-[; ;main.c: 173: nullifyBadge_userLedsSet(&badge_inst, leds);
+[v _leds `ui ~T0 @X0 1 a ]
+[; ;main.c: 171: u16 leds = curtain_leds[counter % size];
+[e = _leds *U + &U _curtain_leds * -> % _counter _size `ux -> -> # *U &U _curtain_leds `ui `ux ]
+[; ;main.c: 173: size = sizeof(curtain_leds_inverse) / sizeof(curtain_leds_inverse[0]);
 "173
-[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _leds ]
-[; ;main.c: 174: }
+[e = _size / -> # _curtain_leds_inverse `ui -> # *U + &U _curtain_leds_inverse * -> -> -> 0 `i `ui `ux -> -> # *U &U _curtain_leds_inverse `ui `ux `ui ]
+[; ;main.c: 174: leds |= curtain_leds_inverse[counter % size];
 "174
-[e :UE 1935 ]
-}
+[e =| _leds *U + &U _curtain_leds_inverse * -> % _counter _size `ux -> -> # *U &U _curtain_leds_inverse `ui `ux ]
+[; ;main.c: 176: nullifyBadge_userLedsSet(&badge_inst, leds);
 "176
-[v _led_rand `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 176: void led_rand(void){
-[e :U _led_rand ]
-[f ]
-"178
-[v _spark `ui ~T0 @X0 1 a ]
-[; ;main.c: 178: u16 spark = rand() % 65535;
-[e = _spark -> % -> ( _rand ..  `l -> 65535 `l `ui ]
-[; ;main.c: 179: if ( (spark | 64511) == 65535 ){
-"179
-[e $ ! == | -> _spark `l -> 64511 `l -> 65535 `l 1937  ]
-{
-[; ;main.c: 180: spark ^= 1024 ;
-"180
-[e =^ _spark -> -> 1024 `i `ui ]
-"181
-}
-[e :U 1937 ]
-[; ;main.c: 181: }
-[; ;main.c: 182: nullifyBadge_userLedsSet(&badge_inst,spark);
-"182
-[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _spark ]
-[; ;main.c: 183: }
-"183
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _leds ]
+[; ;main.c: 177: }
+"177
 [e :UE 1936 ]
 }
+"179
+[v _led_rand `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 179: void led_rand(void){
+[e :U _led_rand ]
+[f ]
+"181
+[v _spark `ui ~T0 @X0 1 a ]
+[; ;main.c: 181: u16 spark = rand() % 65535;
+[e = _spark -> % -> ( _rand ..  `l -> 65535 `l `ui ]
+[; ;main.c: 182: if ( (spark | 64511) == 65535 ){
+"182
+[e $ ! == | -> _spark `l -> 64511 `l -> 65535 `l 1938  ]
+{
+[; ;main.c: 183: spark ^= 1024 ;
+"183
+[e =^ _spark -> -> 1024 `i `ui ]
+"184
+}
+[e :U 1938 ]
+[; ;main.c: 184: }
+[; ;main.c: 185: nullifyBadge_userLedsSet(&badge_inst,spark);
 "185
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _spark ]
+[; ;main.c: 186: }
+"186
+[e :UE 1937 ]
+}
+"188
 [v _led_circle `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 185: void led_circle(u16 count){
+[; ;main.c: 188: void led_circle(u16 count){
 [e :U _led_circle ]
 [v _count `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 187: nullifyBadge_userLedsSet(&badge_inst,count);
-"187
+[; ;main.c: 190: nullifyBadge_userLedsSet(&badge_inst,count);
+"190
 [e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _count ]
-[; ;main.c: 189: }
-"189
-[e :UE 1938 ]
+[; ;main.c: 192: }
+"192
+[e :UE 1939 ]
 }
-"191
+"194
 [v _let_alternate `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 191: void let_alternate(u16 count){
+[; ;main.c: 194: void let_alternate(u16 count){
 [e :U _let_alternate ]
 [v _count `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 192: if(count %2 == 1){
-"192
-[e $ ! == % _count -> -> 2 `i `ui -> -> 1 `i `ui 1940  ]
-{
-[; ;main.c: 193: nullifyBadge_userLedsSet(&badge_inst,43349);
-"193
-[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst -> -> 43349 `l `ui ]
-"194
-}
-[; ;main.c: 194: }
-[e $U 1941  ]
+[; ;main.c: 195: if(count %2 == 1){
 "195
-[e :U 1940 ]
-[; ;main.c: 195: else{
+[e $ ! == % _count -> -> 2 `i `ui -> -> 1 `i `ui 1941  ]
 {
-[; ;main.c: 196: nullifyBadge_userLedsSet(&badge_inst,21162);
+[; ;main.c: 196: nullifyBadge_userLedsSet(&badge_inst,43349);
 "196
-[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst -> -> 21162 `i `ui ]
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst -> -> 43349 `l `ui ]
 "197
 }
-[e :U 1941 ]
 [; ;main.c: 197: }
-[; ;main.c: 198: }
+[e $U 1942  ]
 "198
-[e :UE 1939 ]
-}
+[e :U 1941 ]
+[; ;main.c: 198: else{
+{
+[; ;main.c: 199: nullifyBadge_userLedsSet(&badge_inst,21162);
+"199
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst -> -> 21162 `i `ui ]
 "200
+}
+[e :U 1942 ]
+[; ;main.c: 200: }
+[; ;main.c: 201: }
+"201
+[e :UE 1940 ]
+}
+"203
 [v _led_Parody `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;main.c: 200: void led_Parody(u16 count){
+[; ;main.c: 203: void led_Parody(u16 count){
 [e :U _led_Parody ]
 [v _count `ui ~T0 @X0 1 r1 ]
 [f ]
-"201
-[v _size `ui ~T0 @X0 1 a ]
-"202
-[v _leds `ui ~T0 @X0 1 a ]
-[; ;main.c: 201: u16 size;
-[; ;main.c: 202: u16 leds;
-[; ;main.c: 204: if (count % 30 == 0){
 "204
-[e $ ! == % _count -> -> 30 `i `ui -> -> 0 `i `ui 1943  ]
-{
-[; ;main.c: 205: oddeven ^= 1 ;
+[v _size `ui ~T0 @X0 1 a ]
 "205
-[e =^ _oddeven -> -> 1 `i `ui ]
-"206
-}
-[e :U 1943 ]
-[; ;main.c: 206: }
-[; ;main.c: 208: if(count %2 == oddeven){
+[v _leds `ui ~T0 @X0 1 a ]
+[; ;main.c: 204: u16 size;
+[; ;main.c: 205: u16 leds;
+[; ;main.c: 207: if (count % 30 == 0){
+"207
+[e $ ! == % _count -> -> 30 `i `ui -> -> 0 `i `ui 1944  ]
+{
+[; ;main.c: 208: oddeven ^= 1 ;
 "208
-[e $ ! == % _count -> -> 2 `i `ui _oddeven 1944  ]
-{
-[; ;main.c: 210: size = sizeof(roundabout_leds) / sizeof(roundabout_leds[0]);
-"210
-[e = _size / -> # _roundabout_leds `ui -> # *U + &U _roundabout_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds `ui `ux `ui ]
-[; ;main.c: 211: leds = roundabout_leds[count % size];
-"211
-[e = _leds *U + &U _roundabout_leds * -> % _count _size `ux -> -> # *U &U _roundabout_leds `ui `ux ]
-"212
+[e =^ _oddeven -> -> 1 `i `ui ]
+"209
 }
-[; ;main.c: 212: }
-[e $U 1945  ]
-"213
 [e :U 1944 ]
-[; ;main.c: 213: else{
+[; ;main.c: 209: }
+[; ;main.c: 211: if(count %2 == oddeven){
+"211
+[e $ ! == % _count -> -> 2 `i `ui _oddeven 1945  ]
 {
-[; ;main.c: 214: size = sizeof(roundabout_leds_inverse) / sizeof(roundabout_leds_inverse[0]);
+[; ;main.c: 213: size = sizeof(roundabout_leds) / sizeof(roundabout_leds[0]);
+"213
+[e = _size / -> # _roundabout_leds `ui -> # *U + &U _roundabout_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds `ui `ux `ui ]
+[; ;main.c: 214: leds = roundabout_leds[count % size];
 "214
-[e = _size / -> # _roundabout_leds_inverse `ui -> # *U + &U _roundabout_leds_inverse * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux `ui ]
-[; ;main.c: 215: leds = roundabout_leds_inverse[count % size];
+[e = _leds *U + &U _roundabout_leds * -> % _count _size `ux -> -> # *U &U _roundabout_leds `ui `ux ]
 "215
-[e = _leds *U + &U _roundabout_leds_inverse * -> % _count _size `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux ]
-"216
 }
+[; ;main.c: 215: }
+[e $U 1946  ]
+"216
 [e :U 1945 ]
-[; ;main.c: 216: }
-[; ;main.c: 217: nullifyBadge_userLedsSet(&badge_inst, leds);
+[; ;main.c: 216: else{
+{
+[; ;main.c: 217: size = sizeof(roundabout_leds_inverse) / sizeof(roundabout_leds_inverse[0]);
 "217
-[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _leds ]
-[; ;main.c: 218: }
+[e = _size / -> # _roundabout_leds_inverse `ui -> # *U + &U _roundabout_leds_inverse * -> -> -> 0 `i `ui `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux `ui ]
+[; ;main.c: 218: leds = roundabout_leds_inverse[count % size];
 "218
-[e :UE 1942 ]
+[e = _leds *U + &U _roundabout_leds_inverse * -> % _count _size `ux -> -> # *U &U _roundabout_leds_inverse `ui `ux ]
+"219
+}
+[e :U 1946 ]
+[; ;main.c: 219: }
+[; ;main.c: 220: nullifyBadge_userLedsSet(&badge_inst, leds);
+"220
+[e ( _nullifyBadge_userLedsSet (2 , &U _badge_inst _leds ]
+[; ;main.c: 221: }
+"221
+[e :UE 1943 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"222
+"225
 [v _main `(v ~T0 @X0 1 ef ]
-"223
+"226
 {
-[; ;main.c: 222: void main(void)
-[; ;main.c: 223: {
+[; ;main.c: 225: void main(void)
+[; ;main.c: 226: {
 [e :U _main ]
 [f ]
-[; ;main.c: 225: nullifyBadge_platformInit(&badge_inst);
-"225
-[e ( _nullifyBadge_platformInit (1 &U _badge_inst ]
-[; ;main.c: 228: scheduler_Init(&schedulerInst);
+[; ;main.c: 228: nullifyBadge_platformInit(&badge_inst);
 "228
-[e ( _scheduler_Init (1 &U _schedulerInst ]
-[; ;main.c: 231: scheduler_TaskInit(&flashy_task);
+[e ( _nullifyBadge_platformInit (1 &U _badge_inst ]
+[; ;main.c: 231: scheduler_Init(&schedulerInst);
 "231
-[e ( _scheduler_TaskInit (1 &U _flashy_task ]
-[; ;main.c: 232: scheduler_TaskInit(&menu_task);
-"232
-[e ( _scheduler_TaskInit (1 &U _menu_task ]
-[; ;main.c: 233: scheduler_TaskInit(&slot_task);
-"233
-[e ( _scheduler_TaskInit (1 &U _slot_task ]
-[; ;main.c: 234: scheduler_TaskInit(&locked_task);
+[e ( _scheduler_Init (1 &U _schedulerInst ]
+[; ;main.c: 234: scheduler_TaskInit(&flashy_task);
 "234
-[e ( _scheduler_TaskInit (1 &U _locked_task ]
-[; ;main.c: 235: scheduler_TaskInit(&secret_task);
+[e ( _scheduler_TaskInit (1 &U _flashy_task ]
+[; ;main.c: 235: scheduler_TaskInit(&menu_task);
 "235
-[e ( _scheduler_TaskInit (1 &U _secret_task ]
-[; ;main.c: 238: flashy_TaskData.badge = &badge_inst;
+[e ( _scheduler_TaskInit (1 &U _menu_task ]
+[; ;main.c: 236: scheduler_TaskInit(&slot_task);
+"236
+[e ( _scheduler_TaskInit (1 &U _slot_task ]
+[; ;main.c: 237: scheduler_TaskInit(&locked_task);
+"237
+[e ( _scheduler_TaskInit (1 &U _locked_task ]
+[; ;main.c: 238: scheduler_TaskInit(&secret_task);
 "238
-[e = . _flashy_TaskData 0 &U _badge_inst ]
-[; ;main.c: 239: menu_TaskData.badge = &badge_inst;
+[e ( _scheduler_TaskInit (1 &U _secret_task ]
+[; ;main.c: 239: scheduler_TaskInit(&matrix_task);
 "239
-[e = . _menu_TaskData 0 &U _badge_inst ]
-[; ;main.c: 240: slot_TaskData.badge = &badge_inst;
-"240
-[e = . _slot_TaskData 0 &U _badge_inst ]
-[; ;main.c: 241: locked_TaskData.badge = &badge_inst;
-"241
-[e = . _locked_TaskData 0 &U _badge_inst ]
-[; ;main.c: 242: secret_TaskData.badge = &badge_inst;
+[e ( _scheduler_TaskInit (1 &U _matrix_task ]
+[; ;main.c: 242: flashy_TaskData.badge = &badge_inst;
 "242
-[e = . _secret_TaskData 0 &U _badge_inst ]
-[; ;main.c: 245: badge_locked = 1;
+[e = . _flashy_TaskData 0 &U _badge_inst ]
+[; ;main.c: 243: menu_TaskData.badge = &badge_inst;
+"243
+[e = . _menu_TaskData 0 &U _badge_inst ]
+[; ;main.c: 244: slot_TaskData.badge = &badge_inst;
+"244
+[e = . _slot_TaskData 0 &U _badge_inst ]
+[; ;main.c: 245: locked_TaskData.badge = &badge_inst;
 "245
-[e = _badge_locked -> -> 1 `i `uc ]
-[; ;main.c: 248: flashy_task.taskData = (void *) &flashy_TaskData;
-"248
-[e = . _flashy_task 1 -> &U _flashy_TaskData `*v ]
-[; ;main.c: 249: flashy_task.taskInitCallback = flashy_Init;
-"249
-[e = . _flashy_task 2 &U _flashy_Init ]
-[; ;main.c: 250: flashy_task.taskExecuteCallback = flashy_Main;
-"250
-[e = . _flashy_task 4 &U _flashy_Main ]
-[; ;main.c: 251: flashy_task.taskExitCallback = flashy_Exit;
+[e = . _locked_TaskData 0 &U _badge_inst ]
+[; ;main.c: 246: secret_TaskData.badge = &badge_inst;
+"246
+[e = . _secret_TaskData 0 &U _badge_inst ]
+[; ;main.c: 247: matrix_TaskData.badge = &badge_inst;
+"247
+[e = . _matrix_TaskData 0 &U _badge_inst ]
+[; ;main.c: 251: badge_locked = 1;
 "251
-[e = . _flashy_task 3 &U _flashy_Exit ]
-[; ;main.c: 252: flashy_task.taskInterval = 10;
-"252
-[e = . _flashy_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 254: menu_task.taskData = (void *) &menu_TaskData;
+[e = _badge_locked -> -> 1 `i `uc ]
+[; ;main.c: 254: flashy_task.taskData = (void *) &flashy_TaskData;
 "254
-[e = . _menu_task 1 -> &U _menu_TaskData `*v ]
-[; ;main.c: 255: menu_task.taskInitCallback = menu_Init;
+[e = . _flashy_task 1 -> &U _flashy_TaskData `*v ]
+[; ;main.c: 255: flashy_task.taskInitCallback = flashy_Init;
 "255
-[e = . _menu_task 2 &U _menu_Init ]
-[; ;main.c: 256: menu_task.taskExecuteCallback = menu_Main;
+[e = . _flashy_task 2 &U _flashy_Init ]
+[; ;main.c: 256: flashy_task.taskExecuteCallback = flashy_Main;
 "256
-[e = . _menu_task 4 &U _menu_Main ]
-[; ;main.c: 257: menu_task.taskExitCallback = menu_Exit;
+[e = . _flashy_task 4 &U _flashy_Main ]
+[; ;main.c: 257: flashy_task.taskExitCallback = flashy_Exit;
 "257
-[e = . _menu_task 3 &U _menu_Exit ]
-[; ;main.c: 258: menu_task.taskInterval = 10;
+[e = . _flashy_task 3 &U _flashy_Exit ]
+[; ;main.c: 258: flashy_task.taskInterval = 10;
 "258
-[e = . _menu_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 260: slot_task.taskData = (void *) &slot_TaskData;
+[e = . _flashy_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 260: menu_task.taskData = (void *) &menu_TaskData;
 "260
-[e = . _slot_task 1 -> &U _slot_TaskData `*v ]
-[; ;main.c: 261: slot_task.taskInitCallback = slot_Init;
+[e = . _menu_task 1 -> &U _menu_TaskData `*v ]
+[; ;main.c: 261: menu_task.taskInitCallback = menu_Init;
 "261
-[e = . _slot_task 2 &U _slot_Init ]
-[; ;main.c: 262: slot_task.taskExecuteCallback = slot_Main;
+[e = . _menu_task 2 &U _menu_Init ]
+[; ;main.c: 262: menu_task.taskExecuteCallback = menu_Main;
 "262
-[e = . _slot_task 4 &U _slot_Main ]
-[; ;main.c: 263: slot_task.taskExitCallback = slot_Exit;
+[e = . _menu_task 4 &U _menu_Main ]
+[; ;main.c: 263: menu_task.taskExitCallback = menu_Exit;
 "263
-[e = . _slot_task 3 &U _slot_Exit ]
-[; ;main.c: 264: slot_task.taskInterval = 10;
+[e = . _menu_task 3 &U _menu_Exit ]
+[; ;main.c: 264: menu_task.taskInterval = 10;
 "264
-[e = . _slot_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 266: locked_task.taskData = (void *) &locked_TaskData;
+[e = . _menu_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 266: slot_task.taskData = (void *) &slot_TaskData;
 "266
-[e = . _locked_task 1 -> &U _locked_TaskData `*v ]
-[; ;main.c: 267: locked_task.taskInitCallback = locked_Init;
+[e = . _slot_task 1 -> &U _slot_TaskData `*v ]
+[; ;main.c: 267: slot_task.taskInitCallback = slot_Init;
 "267
-[e = . _locked_task 2 &U _locked_Init ]
-[; ;main.c: 268: locked_task.taskExecuteCallback = locked_Main;
+[e = . _slot_task 2 &U _slot_Init ]
+[; ;main.c: 268: slot_task.taskExecuteCallback = slot_Main;
 "268
-[e = . _locked_task 4 &U _locked_Main ]
-[; ;main.c: 269: locked_task.taskExitCallback = locked_Exit;
+[e = . _slot_task 4 &U _slot_Main ]
+[; ;main.c: 269: slot_task.taskExitCallback = slot_Exit;
 "269
-[e = . _locked_task 3 &U _locked_Exit ]
-[; ;main.c: 270: locked_task.taskInterval = 10;
+[e = . _slot_task 3 &U _slot_Exit ]
+[; ;main.c: 270: slot_task.taskInterval = 10;
 "270
-[e = . _locked_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 272: secret_task.taskData = (void *) &secret_TaskData;
+[e = . _slot_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 272: locked_task.taskData = (void *) &locked_TaskData;
 "272
-[e = . _secret_task 1 -> &U _secret_TaskData `*v ]
-[; ;main.c: 273: secret_task.taskInitCallback = secret_Init;
+[e = . _locked_task 1 -> &U _locked_TaskData `*v ]
+[; ;main.c: 273: locked_task.taskInitCallback = locked_Init;
 "273
-[e = . _secret_task 2 &U _secret_Init ]
-[; ;main.c: 274: secret_task.taskExecuteCallback = secret_Main;
+[e = . _locked_task 2 &U _locked_Init ]
+[; ;main.c: 274: locked_task.taskExecuteCallback = locked_Main;
 "274
-[e = . _secret_task 4 &U _secret_Main ]
-[; ;main.c: 275: secret_task.taskExitCallback = secret_Exit;
+[e = . _locked_task 4 &U _locked_Main ]
+[; ;main.c: 275: locked_task.taskExitCallback = locked_Exit;
 "275
-[e = . _secret_task 3 &U _secret_Exit ]
-[; ;main.c: 276: secret_task.taskInterval = 10;
+[e = . _locked_task 3 &U _locked_Exit ]
+[; ;main.c: 276: locked_task.taskInterval = 10;
 "276
-[e = . _secret_task 5 -> -> 10 `i `ui ]
-[; ;main.c: 279: secret_value = SECRET_VALUE_INIT;
+[e = . _locked_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 278: secret_task.taskData = (void *) &secret_TaskData;
+"278
+[e = . _secret_task 1 -> &U _secret_TaskData `*v ]
+[; ;main.c: 279: secret_task.taskInitCallback = secret_Init;
 "279
-[e = _secret_value -> . `E13757 0 `ui ]
-[; ;main.c: 282: currentTask = FLASHY_TASK;
+[e = . _secret_task 2 &U _secret_Init ]
+[; ;main.c: 280: secret_task.taskExecuteCallback = secret_Main;
+"280
+[e = . _secret_task 4 &U _secret_Main ]
+[; ;main.c: 281: secret_task.taskExitCallback = secret_Exit;
+"281
+[e = . _secret_task 3 &U _secret_Exit ]
+[; ;main.c: 282: secret_task.taskInterval = 10;
 "282
-[e = _currentTask -> . `E13731 2 `ui ]
-[; ;main.c: 283: scheduler_TaskAdd(&schedulerInst, &flashy_task);
-"283
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _flashy_task ]
-[; ;main.c: 284: scheduler_TaskAdd(&schedulerInst, &menu_task);
+[e = . _secret_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 284: matrix_task.taskData = (void *) &matrix_TaskData;
 "284
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _menu_task ]
-[; ;main.c: 285: scheduler_TaskAdd(&schedulerInst, &slot_task);
+[e = . _matrix_task 1 -> &U _matrix_TaskData `*v ]
+[; ;main.c: 285: matrix_task.taskInitCallback = matrix_Init;
 "285
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _slot_task ]
-[; ;main.c: 286: scheduler_TaskAdd(&schedulerInst, &locked_task);
+[e = . _matrix_task 2 &U _matrix_Init ]
+[; ;main.c: 286: matrix_task.taskExecuteCallback = matrix_Main;
 "286
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _locked_task ]
-[; ;main.c: 287: scheduler_TaskAdd(&schedulerInst, &secret_task);
+[e = . _matrix_task 4 &U _matrix_Main ]
+[; ;main.c: 287: matrix_task.taskExitCallback = matrix_Exit;
 "287
-[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _secret_task ]
-[; ;main.c: 289: while(1){
-"289
-[e :U 1948 ]
-{
-[; ;main.c: 290: schedulerExecute(&schedulerInst);
-"290
-[e ( _schedulerExecute (1 &U _schedulerInst ]
+[e = . _matrix_task 3 &U _matrix_Exit ]
+[; ;main.c: 288: matrix_task.taskInterval = 10;
+"288
+[e = . _matrix_task 5 -> -> 10 `i `ui ]
+[; ;main.c: 291: secret_value = SECRET_VALUE_INIT;
 "291
-}
-[e :U 1947 ]
-"289
-[e $U 1948  ]
+[e = _secret_value -> . `E13758 0 `ui ]
+[; ;main.c: 294: currentTask = FLASHY_TASK;
+"294
+[e = _currentTask -> . `E13731 2 `ui ]
+[; ;main.c: 296: scheduler_TaskAdd(&schedulerInst, &flashy_task);
+"296
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _flashy_task ]
+[; ;main.c: 297: scheduler_TaskAdd(&schedulerInst, &menu_task);
+"297
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _menu_task ]
+[; ;main.c: 298: scheduler_TaskAdd(&schedulerInst, &slot_task);
+"298
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _slot_task ]
+[; ;main.c: 299: scheduler_TaskAdd(&schedulerInst, &locked_task);
+"299
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _locked_task ]
+[; ;main.c: 300: scheduler_TaskAdd(&schedulerInst, &secret_task);
+"300
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _secret_task ]
+[; ;main.c: 301: scheduler_TaskAdd(&schedulerInst, &matrix_task);
+"301
+[e ( _scheduler_TaskAdd (2 , &U _schedulerInst &U _matrix_task ]
+[; ;main.c: 304: while(1){
+"304
 [e :U 1949 ]
-[; ;main.c: 291: }
-[; ;main.c: 293: }
-"293
-[e :UE 1946 ]
+{
+[; ;main.c: 305: schedulerExecute(&schedulerInst);
+"305
+[e ( _schedulerExecute (1 &U _schedulerInst ]
+"306
+}
+[e :U 1948 ]
+"304
+[e $U 1949  ]
+[e :U 1950 ]
+[; ;main.c: 306: }
+[; ;main.c: 308: }
+"308
+[e :UE 1947 ]
 }

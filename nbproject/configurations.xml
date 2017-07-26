@@ -32,6 +32,7 @@
       <itemPath>locked_task.h</itemPath>
       <itemPath>secret_task.h</itemPath>
       <itemPath>slot_task.h</itemPath>
+      <itemPath>matrix_task.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -67,6 +68,7 @@
       <itemPath>locked_task.c</itemPath>
       <itemPath>secret_task.c</itemPath>
       <itemPath>slot_task.c</itemPath>
+      <itemPath>matrix_task.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -1,58 +1,56 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"24 slot_task.h
-[s S966 ]
-[n S966 t_slot_taskData ]
+"29 matrix_task.c
+[s S963 `uc -> 20 `i `ui 1 `*ui 1 `ui 1 ]
+[n S963 matrix_secret_input inputs idx variable value ]
+"70 nullifyBadge.h
+[v _secret_value `ui ~T0 @X0 0 e ]
+"59 matrix_task.c
+[c E8166 0 1 .. ]
+[n E8166 t_secret SECRET_VALUE_INIT SECRET_VALUE_TEST  ]
 "201 nullifyBadge_displayL1.h
-[s S961 `uc -> 10 `i ]
-[n S961 t_nullifyDisplay_l1 displayVect ]
+[s S957 `uc -> 10 `i ]
+[n S957 t_nullifyDisplay_l1 displayVect ]
 "71 nullifyBadge_displayL2.h
-[s S962 `uc -> 4 `i `uc 1 `ui 1 `S961 1 ]
-[n S962 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
+[s S958 `uc -> 4 `i `uc 1 `ui 1 `S957 1 ]
+[n S958 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
 "162 nullifyBadge.h
-[s S963 `S962 1 `uc 1 ]
-[n S963 t_nullifyBadge display registeredHw ]
-"26 slot_task.h
-[s S966 `*S963 1 `uc 1 `ui 1 `ui 1 `uc -> 4 `i `uc -> 20 `i `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
-[n S966 t_slot_taskData badge locked displayTickCount delayTickCount slot_wheel_index slot_print_buf holdCountA holdCountB holdCountX holdCountY noholdCount ]
+[s S959 `S958 1 `uc 1 ]
+[n S959 t_nullifyBadge display registeredHw ]
+"67 matrix_task.c
+[c E8316 0 1 .. ]
+[n E8316 t_matrix_martix_state MATRIX_SOLVED STILL_IN_MATRIX  ]
+[c E8303 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
+[n E8303 t_matrix_display_states MATRIX_A MATRIX_Y MATRIX_B MATRIX_X MATRIX_AX MATRIX_AY MATRIX_BA MATRIX_BX MATRIX_XY MATRIX_BY MATRIX_STATE_DISPLAY MATRIX_DONE  ]
+"35 matrix_task.h
+[s S962 `*S959 1 `E8316 1 `E8303 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[n S962 t_matrix_taskData badge martix_state display_state delayTickCount displayTickdown holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY holdCountBA noholdCount ]
 "215 nullifyBadge.h
-[v _nullifyBadge_userLedsRegister `(c ~T0 @X0 0 ef1`*S963 ]
+[v _nullifyBadge_userLedsRegister `(c ~T0 @X0 0 ef1`*S959 ]
 "236
-[v _nullifyBadge_userLedsClr `(v ~T0 @X0 0 ef1`*S963 ]
+[v _nullifyBadge_userLedsClr `(v ~T0 @X0 0 ef1`*S959 ]
 "177
-[v _nullifyBadge_segDisplayRegister `(c ~T0 @X0 0 ef1`*S963 ]
+[v _nullifyBadge_segDisplayRegister `(c ~T0 @X0 0 ef1`*S959 ]
 "207
-[v _nullifyBadge_segDisplayErase `(v ~T0 @X0 0 ef1`*S963 ]
-"54 slot_task.h
-[v _slot_Setup `(v ~T0 @X0 0 ef1`*v ]
-"16 /Applications/microchip/xc8/v1.42/include/string.h
-[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
-"51 nullifyBadge.h
-[v _badge_locked `uc ~T0 @X0 0 e ]
-"60 /Applications/microchip/xc8/v1.42/include/stdlib.h
-[v _rand `(i ~T0 @X0 0 ef ]
-"59 nullifyBadge.h
-[v _led_circle `(v ~T0 @X0 0 ef1`ui ]
-"58
-[v _led_rand `(v ~T0 @X0 0 ef ]
-"52
-[v _currentTask `ui ~T0 @X0 0 e ]
-"101 slot_task.c
-[c E8258 0 1 2 3 4 .. ]
-[n E8258 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK MATRIX_TASK  ]
-"244 nullifyBadge.h
-[v _nullifyBadge_buttonsGet `(uc ~T0 @X0 0 ef ]
+[v _nullifyBadge_segDisplayErase `(v ~T0 @X0 0 ef1`*S959 ]
 "56 /Applications/microchip/xc8/v1.42/include/string.h
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"194 /Applications/microchip/xc8/v1.42/include/stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"53 nullifyBadge.h
-[v _marquee `(v ~T0 @X0 0 ef2`*uc`ui ]
-"54
+"54 nullifyBadge.h
 [v _marquee_speedy `(v ~T0 @X0 0 ef3`*uc`ui`ui ]
+"52
+[v _currentTask `ui ~T0 @X0 0 e ]
+"147 matrix_task.c
+[c E8139 0 1 2 3 4 .. ]
+[n E8139 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK MATRIX_TASK  ]
+"61 nullifyBadge.h
+[v _led_Parody `(v ~T0 @X0 0 ef1`ui ]
+"244
+[v _nullifyBadge_buttonsGet `(uc ~T0 @X0 0 ef ]
+"57
+[v _led_curtain `(v ~T0 @X0 0 ef1`ui ]
 "218
-[v _nullifyBadge_userLedsRelease `(v ~T0 @X0 0 ef1`*S963 ]
+[v _nullifyBadge_userLedsRelease `(v ~T0 @X0 0 ef1`*S959 ]
 "180
-[v _nullifyBadge_segDisplayRelease `(v ~T0 @X0 0 ef1`*S963 ]
+[v _nullifyBadge_segDisplayRelease `(v ~T0 @X0 0 ef1`*S959 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7553,87 +7551,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
-[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
-[; ;string.h: 16: extern void * memset(void *, int, size_t);
-[; ;string.h: 21: extern void * __builtin_memcpy(void *, const void *, size_t);
-[; ;string.h: 36: extern char * strcat(char *, const char *);
-[; ;string.h: 37: extern char * strcpy(char *, const char *);
-[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
-[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
-[; ;string.h: 40: extern char * strdup(const char *);
-[; ;string.h: 41: extern char * strtok(char *, const char *);
-[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
-[; ;string.h: 45: extern int strcmp(const char *, const char *);
-[; ;string.h: 46: extern int stricmp(const char *, const char *);
-[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
-[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
-[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
-[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
-[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
-[; ;string.h: 52: extern size_t strspn(const char *, const char *);
-[; ;string.h: 53: extern char * strstr(const char *, const char *);
-[; ;string.h: 54: extern char * stristr(const char *, const char *);
-[; ;string.h: 55: extern char * strerror(int);
-[; ;string.h: 56: extern size_t strlen(const char *);
-[; ;string.h: 57: extern char * strchr(const char *, int);
-[; ;string.h: 58: extern char * strichr(const char *, int);
-[; ;string.h: 59: extern char * strrchr(const char *, int);
-[; ;string.h: 60: extern char * strrichr(const char *, int);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdio.h: 43: struct __prbuf
 [; ;stdio.h: 44: {
 [; ;stdio.h: 45: char * ptr;
@@ -7745,6 +7666,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 77: void SYSTEM_Initialize(void);
 [; ;mcc.h: 90: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 103: void WDT_Initialize(void);
+[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
+[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
+[; ;string.h: 16: extern void * memset(void *, int, size_t);
+[; ;string.h: 21: extern void * __builtin_memcpy(void *, const void *, size_t);
+[; ;string.h: 36: extern char * strcat(char *, const char *);
+[; ;string.h: 37: extern char * strcpy(char *, const char *);
+[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
+[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
+[; ;string.h: 40: extern char * strdup(const char *);
+[; ;string.h: 41: extern char * strtok(char *, const char *);
+[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
+[; ;string.h: 45: extern int strcmp(const char *, const char *);
+[; ;string.h: 46: extern int stricmp(const char *, const char *);
+[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
+[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
+[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
+[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
+[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
+[; ;string.h: 52: extern size_t strspn(const char *, const char *);
+[; ;string.h: 53: extern char * strstr(const char *, const char *);
+[; ;string.h: 54: extern char * stristr(const char *, const char *);
+[; ;string.h: 55: extern char * strerror(int);
+[; ;string.h: 56: extern size_t strlen(const char *);
+[; ;string.h: 57: extern char * strchr(const char *, int);
+[; ;string.h: 58: extern char * strichr(const char *, int);
+[; ;string.h: 59: extern char * strrchr(const char *, int);
+[; ;string.h: 60: extern char * strrichr(const char *, int);
 "69 nullifyBadge_displayL1.h
 [v _asciiCharTableLookup `ui ~T0 @X0 -> 128 `i e ]
 [i _asciiCharTableLookup
@@ -8555,697 +8503,1210 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cooperative_scheduler.h: 93: s8 scheduler_TaskAdd(struct t_scheduler *scheduler, struct t_schedulerTask *task);
 [; ;cooperative_scheduler.h: 98: void scheduler_TaskRemove(struct t_scheduler *scheduler, struct t_schedulerTask *task);
 [; ;cooperative_scheduler.h: 101: void schedulerExecute(struct t_scheduler *scheduler);
-"19 slot_task.h
-[v _Slot_Wheel `uc ~T0 @X0 -> 0 `x e ]
-[; ;slot_task.h: 19: u8 Slot_Wheel[];
-"22
-[v _Shot_Options `*uc ~T0 @X0 -> 0 `x e ]
-[; ;slot_task.h: 22: u8 *Shot_Options[];
-"24
-[v _slot_taskData `*S966 ~T0 @X0 1 e ]
-[; ;slot_task.h: 24: struct t_slot_taskData* slot_taskData;
-[; ;slot_task.h: 26: struct t_slot_taskData {
-[; ;slot_task.h: 28: struct t_nullifyBadge *badge;
-[; ;slot_task.h: 30: u8 locked;
-[; ;slot_task.h: 33: u16 displayTickCount;
-[; ;slot_task.h: 35: u16 delayTickCount;
-[; ;slot_task.h: 38: u8 slot_wheel_index[4];
-[; ;slot_task.h: 41: u8 slot_print_buf[20];
-[; ;slot_task.h: 44: u16 holdCountA;
-[; ;slot_task.h: 45: u16 holdCountB;
-[; ;slot_task.h: 46: u16 holdCountX;
-[; ;slot_task.h: 47: u16 holdCountY;
-[; ;slot_task.h: 48: u16 noholdCount;
-[; ;slot_task.h: 49: };
-[; ;slot_task.h: 53: void slot_Init(void *taskData);
-[; ;slot_task.h: 54: void slot_Setup(void *taskData);
-[; ;slot_task.h: 55: void slot_Running_Animation(void *taskData);
-[; ;slot_task.h: 56: void slot_Finished_Animation(void *taskData);
-[; ;slot_task.h: 57: void slot_Main (void *taskData);
-[; ;slot_task.h: 58: void slot_Exit(void *taskData);
-"19
-[i _Slot_Wheel
+[; ;matrix_task.h: 15: enum t_matrix_display_states {
+[; ;matrix_task.h: 16: MATRIX_A,
+[; ;matrix_task.h: 17: MATRIX_Y,
+[; ;matrix_task.h: 18: MATRIX_B,
+[; ;matrix_task.h: 19: MATRIX_X,
+[; ;matrix_task.h: 20: MATRIX_AX,
+[; ;matrix_task.h: 21: MATRIX_AY,
+[; ;matrix_task.h: 22: MATRIX_BA,
+[; ;matrix_task.h: 23: MATRIX_BX,
+[; ;matrix_task.h: 24: MATRIX_XY,
+[; ;matrix_task.h: 25: MATRIX_BY,
+[; ;matrix_task.h: 26: MATRIX_STATE_DISPLAY,
+[; ;matrix_task.h: 27: MATRIX_DONE
+[; ;matrix_task.h: 28: };
+[; ;matrix_task.h: 30: enum t_matrix_martix_state{
+[; ;matrix_task.h: 31: MATRIX_SOLVED,
+[; ;matrix_task.h: 32: STILL_IN_MATRIX,
+[; ;matrix_task.h: 33: };
+[; ;matrix_task.h: 35: struct t_matrix_taskData {
+[; ;matrix_task.h: 37: struct t_nullifyBadge *badge;
+[; ;matrix_task.h: 39: enum t_matrix_martix_state martix_state;
+[; ;matrix_task.h: 41: enum t_matrix_display_states display_state;
+[; ;matrix_task.h: 44: u16 delayTickCount;
+[; ;matrix_task.h: 46: u16 displayTickdown;
+[; ;matrix_task.h: 48: u16 holdCountA;
+[; ;matrix_task.h: 49: u16 holdCountB;
+[; ;matrix_task.h: 50: u16 holdCountX;
+[; ;matrix_task.h: 51: u16 holdCountY;
+[; ;matrix_task.h: 52: u16 holdCountXY;
+[; ;matrix_task.h: 53: u16 holdCountAY;
+[; ;matrix_task.h: 54: u16 holdCountAX;
+[; ;matrix_task.h: 55: u16 holdCountBX;
+[; ;matrix_task.h: 56: u16 holdCountBY;
+[; ;matrix_task.h: 57: u16 holdCountBA;
+[; ;matrix_task.h: 58: u16 noholdCount;
+[; ;matrix_task.h: 60: };
+[; ;matrix_task.h: 62: void matrix_Init(void *taskData);
+[; ;matrix_task.h: 63: void matrix_Main (void *taskData);
+[; ;matrix_task.h: 64: void matrix_Exit(void *taskData);
+[; ;matrix_task.h: 65: void matrix_secret_clear(struct t_matrix_taskData *data);
+"12 matrix_task.c
+[v _matrix_option `*uc ~T0 @X0 -> 0 `x e ]
+[i _matrix_option
 :U ..
-"19 slot_task.c
--> -> 65 `ui `uc
--> -> 66 `ui `uc
--> -> 67 `ui `uc
--> -> 68 `ui `uc
--> -> 69 `ui `uc
--> -> 70 `ui `uc
--> -> 71 `ui `uc
--> -> 72 `ui `uc
--> -> 73 `ui `uc
--> -> 74 `ui `uc
--> -> 75 `ui `uc
--> -> 76 `ui `uc
--> -> 77 `ui `uc
--> -> 78 `ui `uc
--> -> 79 `ui `uc
--> -> 80 `ui `uc
--> -> 81 `ui `uc
--> -> 82 `ui `uc
--> -> 83 `ui `uc
--> -> 84 `ui `uc
--> -> 85 `ui `uc
--> -> 86 `ui `uc
--> -> 87 `ui `uc
--> -> 88 `ui `uc
--> -> 89 `ui `uc
--> -> 90 `ui `uc
--> -> 48 `ui `uc
--> -> 49 `ui `uc
--> -> 50 `ui `uc
--> -> 51 `ui `uc
--> -> 52 `ui `uc
--> -> 53 `ui `uc
--> -> 54 `ui `uc
--> -> 55 `ui `uc
--> -> 56 `ui `uc
--> -> 57 `ui `uc
--> -> 60 `ui `uc
--> -> 62 `ui `uc
--> -> 33 `ui `uc
--> -> 36 `ui `uc
--> -> 37 `ui `uc
--> -> 38 `ui `uc
--> -> 45 `ui `uc
--> -> 35 `ui `uc
--> -> 42 `ui `uc
--> -> 43 `ui `uc
--> -> 45 `ui `uc
--> -> 46 `ui `uc
--> -> 64 `ui `uc
--> -> 59 `ui `uc
--> -> 58 `ui `uc
--> -> 39 `ui `uc
--> -> 34 `ui `uc
--> -> 47 `ui `uc
--> -> 92 `ui `uc
-..
-]
-[; ;slot_task.c: 19: u8 Slot_Wheel[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2','3', '4', '5', '6', '7', '8', '9', '<', '>', '!', '$', '%', '&', '-', '#', '*', '+', '-
-"22 slot_task.h
-[i _Shot_Options
-:U ..
-"23 slot_task.c
+"13
 -> :s 1C `*uc
+"14
 -> :s 2C `*uc
+"15
 -> :s 3C `*uc
+"16
 -> :s 4C `*uc
+"17
 -> :s 5C `*uc
+"18
 -> :s 6C `*uc
+"19
 -> :s 7C `*uc
+"20
 -> :s 8C `*uc
+"21
 -> :s 9C `*uc
-..
-]
-[; ;slot_task.c: 23: u8 *Shot_Options[] = {"SHOT", "BEER", "VDKA", "WSKY", "TQLA", "CHUG", "REBL", "FIRE", "WATR"};
-"24
-[v _Shot_Options_Long `*uc ~T0 @X0 -> 0 `x e ]
-[i _Shot_Options_Long
-:U ..
+"23
 -> :s 10C `*uc
--> :s 11C `*uc
--> :s 12C `*uc
--> :s 13C `*uc
--> :s 14C `*uc
--> :s 15C `*uc
--> :s 16C `*uc
--> :s 17C `*uc
--> :s 18C `*uc
 ..
 ]
-[; ;slot_task.c: 24: u8 *Shot_Options_Long[] = {"SHOT   ", "BEER   ", "VODKA   ", "WHISKEY   ", "TEQUILA   ", "CHUG   ", "RED BULL   ", "FIRE BALL   ", "WATER   "};
+[; ;matrix_task.c: 12: char *matrix_option[] = {
+[; ;matrix_task.c: 13: "  FOLL",
+[; ;matrix_task.c: 14: "OW    ",
+[; ;matrix_task.c: 15: " THE WH ",
+[; ;matrix_task.c: 16: "ITE   ",
+[; ;matrix_task.c: 17: " RAB",
+[; ;matrix_task.c: 18: "  BIT N  ",
+[; ;matrix_task.c: 19: "EO   ",
+[; ;matrix_task.c: 20: "POTAT  ",
+[; ;matrix_task.c: 21: "  EW  ",
+[; ;matrix_task.c: 22: "  TEY  "
+[; ;matrix_task.c: 23: };
+"24
+[v _matrix_option_idx `ui ~T0 @X0 1 e ]
+[; ;matrix_task.c: 24: u16 matrix_option_idx;
 "25
-[v _Shot_Index `uc ~T0 @X0 1 e ]
-[i _Shot_Index
--> -> 0 `i `uc
-]
-[; ;slot_task.c: 25: u8 Shot_Index = 0;
+[v _matrix_option_size `ui ~T0 @X0 1 e ]
+[; ;matrix_task.c: 25: u16 matrix_option_size;
 "26
-[v _Leds_idx `ui ~T0 @X0 1 e ]
-[i _Leds_idx
--> -> 1 `i `ui
-]
-[; ;slot_task.c: 26: u16 Leds_idx = 1;
-[; ;slot_task.c: 27: extern struct t_slot_taskData* slot_taskData;
-"29
-[v _slot_Init `(v ~T0 @X0 1 ef1`*v ]
-{
-[; ;slot_task.c: 29: void slot_Init(void *taskData) {
-[e :U _slot_Init ]
-[v _taskData `*v ~T0 @X0 1 r1 ]
-[f ]
-"30
-[v _data `*S966 ~T0 @X0 1 a ]
-[; ;slot_task.c: 30: struct t_slot_taskData *data = (struct t_slot_taskData *) taskData;
-[e = _data -> _taskData `*S966 ]
-[; ;slot_task.c: 33: nullifyBadge_userLedsRegister(data->badge);
-"33
-[e ( _nullifyBadge_userLedsRegister (1 . *U _data 0 ]
-[; ;slot_task.c: 34: nullifyBadge_userLedsClr(data->badge);
-"34
-[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;slot_task.c: 35: nullifyBadge_segDisplayRegister(data->badge);
-"35
-[e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
-[; ;slot_task.c: 36: nullifyBadge_segDisplayErase(data->badge);
-"36
-[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;slot_task.c: 39: data->displayTickCount = 0;
-"39
-[e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;slot_task.c: 40: data->holdCountA = 0;
-"40
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;slot_task.c: 41: data->holdCountB = 0;
-"41
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;slot_task.c: 42: data->holdCountX = 0;
-"42
-[e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;slot_task.c: 43: data->holdCountY = 0;
-"43
-[e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;slot_task.c: 44: data->noholdCount = 0;
-"44
-[e = . *U _data 10 -> -> 0 `i `ui ]
-[; ;slot_task.c: 45: slot_Setup(data);
-"45
-[e ( _slot_Setup (1 -> _data `*v ]
-[; ;slot_task.c: 46: }
-"46
-[e :UE 967 ]
-}
-"48
-[v _slot_Setup `(v ~T0 @X0 1 ef1`*v ]
-{
-[; ;slot_task.c: 48: void slot_Setup(void *taskData) {
-[e :U _slot_Setup ]
-[v _taskData `*v ~T0 @X0 1 r1 ]
-[f ]
-"49
-[v _data `*S966 ~T0 @X0 1 a ]
-[; ;slot_task.c: 49: struct t_slot_taskData *data = (struct t_slot_taskData *) taskData;
-[e = _data -> _taskData `*S966 ]
-[; ;slot_task.c: 50: slot_taskData = data;
+[v _matrix_leds_idx `ui ~T0 @X0 1 e ]
+[; ;matrix_task.c: 26: u16 matrix_leds_idx;
+[; ;matrix_task.c: 29: struct matrix_secret_input
+[; ;matrix_task.c: 30: {
+[; ;matrix_task.c: 32: u8 inputs[20];
+[; ;matrix_task.c: 35: u16 idx;
+[; ;matrix_task.c: 38: u16 *variable;
+[; ;matrix_task.c: 41: u16 value;
+[; ;matrix_task.c: 42: };
+"47
+[v _matrix_secret_inputs `S963 ~T0 @X0 -> 0 `x e ]
+[i _matrix_secret_inputs
+:U ..
+:U ..
+:U ..
 "50
-[e = _slot_taskData _data ]
-[; ;slot_task.c: 51: data->displayTickCount = 0;
-"51
-[e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;slot_task.c: 52: data->delayTickCount = 0;
-"52
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;slot_task.c: 53: memset(data->slot_print_buf, 0x00, 20);
+-> -> 1 `i `uc
+-> -> 8 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> | -> 1 `i -> 4 `i `uc
+-> | -> 1 `i -> 8 `i `uc
+-> | -> 2 `i -> 1 `i `uc
+..
 "53
-[e ( _memset (3 , , -> &U . *U _data 5 `*v -> 0 `i -> -> 20 `i `ui ]
-[; ;slot_task.c: 54: if (!badge_locked) {
-"54
-[e $ ! ! != -> _badge_locked `i -> -> -> 0 `i `uc `i 969  ]
-{
-[; ;slot_task.c: 55: Shot_Index = (u8)rand() % (sizeof(Shot_Options)/sizeof(Shot_Options[0]));
-"55
-[e = _Shot_Index -> % -> -> ( _rand ..  `uc `ui / -> # _Shot_Options `ui -> # *U + &U _Shot_Options * -> -> -> 0 `i `ui `ux -> -> # *U &U _Shot_Options `ui `ux `ui `uc ]
+-> -> 0 `i `ui
 "56
-}
-[; ;slot_task.c: 56: }
-[e $U 970  ]
-"57
-[e :U 969 ]
-[; ;slot_task.c: 57: else {
-{
-[; ;slot_task.c: 58: Shot_Index = ((sizeof(Shot_Options)/sizeof(Shot_Options[0]))-1);
-"58
-[e = _Shot_Index -> - / -> # _Shot_Options `ui -> # *U + &U _Shot_Options * -> -> -> 0 `i `ui `ux -> -> # *U &U _Shot_Options `ui `ux `ui -> -> 1 `i `ui `uc ]
+&U _secret_value
 "59
-}
-[e :U 970 ]
-[; ;slot_task.c: 59: }
-[; ;slot_task.c: 61: Leds_idx = 1;
-"61
-[e = _Leds_idx -> -> 1 `i `ui ]
-[; ;slot_task.c: 62: }
-"62
-[e :UE 968 ]
-}
-"64
-[v _slot_Running_Animation `(v ~T0 @X0 1 ef1`*v ]
-{
-[; ;slot_task.c: 64: void slot_Running_Animation(void *taskData) {
-[e :U _slot_Running_Animation ]
-[v _taskData `*v ~T0 @X0 1 r1 ]
-[f ]
-"65
-[v _data `*S966 ~T0 @X0 1 a ]
-[; ;slot_task.c: 65: struct t_slot_taskData *data = (struct t_slot_taskData *) taskData;
-[e = _data -> _taskData `*S966 ]
-[; ;slot_task.c: 66: if (data->delayTickCount ==0 ){
+-> . `E8166 1 `ui
+..
+..
+]
+[; ;matrix_task.c: 47: struct matrix_secret_input matrix_secret_inputs[] = {
+[; ;matrix_task.c: 48: {
+[; ;matrix_task.c: 50: { 1, 8, 2, 4, 1| 4, 1 | 8, 2 | 1 },
+[; ;matrix_task.c: 53: 0,
+[; ;matrix_task.c: 56: &secret_value,
+[; ;matrix_task.c: 59: SECRET_VALUE_TEST,
+[; ;matrix_task.c: 60: },
+[; ;matrix_task.c: 61: };
 "66
-[e $ ! == . *U _data 3 -> -> 0 `i `ui 972  ]
+[v _matrix_Init `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;slot_task.c: 67: if (Leds_idx == 1024 ){
-"67
-[e $ ! == _Leds_idx -> -> 1024 `i `ui 973  ]
-{
-[; ;slot_task.c: 68: Leds_idx = Leds_idx << 1;
-"68
-[e = _Leds_idx << _Leds_idx -> 1 `i ]
-"69
-}
-[e :U 973 ]
-[; ;slot_task.c: 69: }
-[; ;slot_task.c: 70: led_circle(Leds_idx);
-"70
-[e ( _led_circle (1 _Leds_idx ]
-[; ;slot_task.c: 71: if (Leds_idx < 1 ){
-"71
-[e $ ! < _Leds_idx -> -> 1 `i `ui 974  ]
-{
-[; ;slot_task.c: 72: Leds_idx = 1;
-"72
-[e = _Leds_idx -> -> 1 `i `ui ]
-"73
-}
-[e :U 974 ]
-[; ;slot_task.c: 73: }
-[; ;slot_task.c: 74: Leds_idx = Leds_idx << 1;
-"74
-[e = _Leds_idx << _Leds_idx -> 1 `i ]
-[; ;slot_task.c: 76: data->delayTickCount = 10;
-"76
-[e = . *U _data 3 -> -> 10 `i `ui ]
-"77
-}
-[; ;slot_task.c: 77: }
-[e $U 975  ]
-"78
-[e :U 972 ]
-[; ;slot_task.c: 78: else {
-{
-[; ;slot_task.c: 79: data->delayTickCount -= 1;
-"79
-[e =- . *U _data 3 -> -> 1 `i `ui ]
-"80
-}
-[e :U 975 ]
-[; ;slot_task.c: 80: }
-[; ;slot_task.c: 82: }
-"82
-[e :UE 971 ]
-}
-"84
-[v _slot_Finished_Animation `(v ~T0 @X0 1 ef1`*v ]
-{
-[; ;slot_task.c: 84: void slot_Finished_Animation(void *taskData) {
-[e :U _slot_Finished_Animation ]
+[; ;matrix_task.c: 66: void matrix_Init(void *taskData){
+[e :U _matrix_Init ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
+"67
+[v _data `*S962 ~T0 @X0 1 a ]
+[; ;matrix_task.c: 67: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData;
+[e = _data -> _taskData `*S962 ]
+[; ;matrix_task.c: 70: nullifyBadge_userLedsRegister(data->badge);
+"70
+[e ( _nullifyBadge_userLedsRegister (1 . *U _data 0 ]
+[; ;matrix_task.c: 71: nullifyBadge_userLedsClr(data->badge);
+"71
+[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
+[; ;matrix_task.c: 72: nullifyBadge_segDisplayRegister(data->badge);
+"72
+[e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
+[; ;matrix_task.c: 73: nullifyBadge_segDisplayErase(data->badge);
+"73
+[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
+[; ;matrix_task.c: 75: data->display_state = MATRIX_STATE_DISPLAY;
+"75
+[e = . *U _data 2 . `E8303 10 ]
+[; ;matrix_task.c: 76: data->martix_state = STILL_IN_MATRIX;
+"76
+[e = . *U _data 1 . `E8316 1 ]
+[; ;matrix_task.c: 77: matrix_leds_idx =0;
+"77
+[e = _matrix_leds_idx -> -> 0 `i `ui ]
+[; ;matrix_task.c: 80: data->holdCountA = 0 ;
+"80
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 81: data->holdCountB = 0 ;
+"81
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 82: data->holdCountX = 0 ;
+"82
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 83: data->holdCountY = 0 ;
+"83
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 84: data->holdCountXY = 0;
+"84
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 85: data->holdCountAY = 0;
 "85
-[v _data `*S966 ~T0 @X0 1 a ]
-[; ;slot_task.c: 85: struct t_slot_taskData *data = (struct t_slot_taskData *) taskData;
-[e = _data -> _taskData `*S966 ]
-[; ;slot_task.c: 86: if (data->delayTickCount < 1){
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 86: data->holdCountAX = 0;
 "86
-[e $ ! < . *U _data 3 -> -> 1 `i `ui 977  ]
-{
-[; ;slot_task.c: 87: led_rand();
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 87: data->holdCountBX = 0;
 "87
-[e ( _led_rand ..  ]
-[; ;slot_task.c: 88: data->delayTickCount = 10;
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 88: data->holdCountBY = 0;
 "88
-[e = . *U _data 3 -> -> 10 `i `ui ]
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 89: data->holdCountBA = 0;
 "89
-}
-[; ;slot_task.c: 89: }
-[e $U 978  ]
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 90: data->noholdCount = 0;
 "90
-[e :U 977 ]
-[; ;slot_task.c: 90: else {
-{
-[; ;slot_task.c: 91: data->delayTickCount -= 1;
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 91: }
 "91
-[e =- . *U _data 3 -> -> 1 `i `ui ]
-"92
+[e :UE 964 ]
+}
+"93
+[v _matrix_secret_check `(uc ~T0 @X0 1 ef2`*S962`uc ]
+{
+[; ;matrix_task.c: 93: u8 matrix_secret_check(struct t_matrix_taskData *data, u8 buttonPressed){
+[e :U _matrix_secret_check ]
+[v _data `*S962 ~T0 @X0 1 r1 ]
+[v _buttonPressed `uc ~T0 @X0 1 r2 ]
+[f ]
+"94
+[v _inputs `*uc ~T0 @X0 1 a ]
+"95
+[v _size `ui ~T0 @X0 1 a ]
+[; ;matrix_task.c: 94: u8 *inputs;
+[; ;matrix_task.c: 95: u16 size = sizeof(matrix_secret_inputs) / sizeof(matrix_secret_inputs[0]);
+[e = _size / -> # _matrix_secret_inputs `ui -> # *U + &U _matrix_secret_inputs * -> -> -> 0 `i `ui `ux -> -> # *U &U _matrix_secret_inputs `ui `ux `ui ]
+"96
+[v _currents_size `ui ~T0 @X0 1 a ]
+"97
+[v _hit_counter `uc ~T0 @X0 -> 6 `i a ]
+[; ;matrix_task.c: 96: u16 currents_size;
+[; ;matrix_task.c: 97: char hit_counter[6];
+[; ;matrix_task.c: 99: for (u16 i = 0; i < size; i++){
+"99
+{
+[v _i `ui ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `ui ]
+[e $U 969  ]
+[e :U 966 ]
+{
+[; ;matrix_task.c: 100: inputs = matrix_secret_inputs[i].inputs;
+"100
+[e = _inputs &U . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 0 ]
+[; ;matrix_task.c: 102: if (buttonPressed == inputs[matrix_secret_inputs[i].idx]){
+"102
+[e $ ! == -> _buttonPressed `i -> *U + _inputs * -> . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 `ux -> -> # *U _inputs `ui `ux `i 970  ]
+{
+[; ;matrix_task.c: 103: currents_size = strlen((const char *)inputs);
+"103
+[e = _currents_size ( _strlen (1 -> _inputs `*Cuc ]
+[; ;matrix_task.c: 104: matrix_secret_inputs[i].idx++;
+"104
+[e ++ . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 106: if (matrix_secret_inputs[i].idx == currents_size) {
+"106
+[e $ ! == . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 _currents_size 971  ]
+{
+[; ;matrix_task.c: 108: matrix_secret_inputs[i].idx = 0;
+"108
+[e = . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 111: *(matrix_secret_inputs[i].variable) = (u16) matrix_secret_inputs[i].value;
+"111
+[e = *U . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 2 . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 3 ]
+[; ;matrix_task.c: 113: return 1;
+"113
+[e ) -> -> 1 `i `uc ]
+[e $UE 965  ]
+"114
+}
+[e :U 971 ]
+"115
+}
+[; ;matrix_task.c: 114: }
+[; ;matrix_task.c: 115: } else {
+[e $U 972  ]
+[e :U 970 ]
+{
+[; ;matrix_task.c: 117: matrix_secret_inputs[i].idx = 0;
+"117
+[e = . *U + &U _matrix_secret_inputs * -> _i `ux -> -> # *U &U _matrix_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
+"118
+}
+[e :U 972 ]
+"119
+}
+"99
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 969 ]
+[e $ < _i _size 966  ]
+[e :U 967 ]
+"119
+}
+[; ;matrix_task.c: 118: }
+[; ;matrix_task.c: 119: }
+[; ;matrix_task.c: 120: return 0;
+"120
+[e ) -> -> 0 `i `uc ]
+[e $UE 965  ]
+[; ;matrix_task.c: 121: }
+"121
+[e :UE 965 ]
+}
+"123
+[v _matrix_display_option `(v ~T0 @X0 1 ef1`*S962 ]
+{
+[; ;matrix_task.c: 123: void matrix_display_option(struct t_matrix_taskData *data){
+[e :U _matrix_display_option ]
+[v _data `*S962 ~T0 @X0 1 r1 ]
+[f ]
+[; ;matrix_task.c: 125: if (data->display_state == MATRIX_DONE){
+"125
+[e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 974  ]
+{
+[; ;matrix_task.c: 126: marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
+"126
+[e ( _marquee_speedy (3 , , -> :s 11C `*uc . *U _data 15 -> -> 15 `i `ui ]
+"127
+}
+[; ;matrix_task.c: 127: }
+[e $U 975  ]
+"128
+[e :U 974 ]
+[; ;matrix_task.c: 128: else if (data->display_state != MATRIX_STATE_DISPLAY ){
+[e $ ! != -> . *U _data 2 `i -> . `E8303 10 `i 976  ]
+{
+[; ;matrix_task.c: 130: marquee_speedy(matrix_option[data->display_state], data->noholdCount, 20);
+"130
+[e ( _marquee_speedy (3 , , *U + &U _matrix_option * -> . *U _data 2 `ux -> -> # *U &U _matrix_option `ui `ux . *U _data 15 -> -> 20 `i `ui ]
+"131
+}
+[; ;matrix_task.c: 131: }
+[e $U 977  ]
+"132
+[e :U 976 ]
+[; ;matrix_task.c: 132: else{
+{
+[; ;matrix_task.c: 133: marquee_speedy("THE CHOICE IS YOURS   ", data->noholdCount, 30);
+"133
+[e ( _marquee_speedy (3 , , -> :s 12C `*uc . *U _data 15 -> -> 30 `i `ui ]
+"134
+}
+[e :U 977 ]
+[e :U 975 ]
+[; ;matrix_task.c: 134: }
+[; ;matrix_task.c: 136: if (data -> displayTickdown == 0 && data->display_state != MATRIX_DONE ){
+"136
+[e $ ! && == . *U _data 4 -> -> 0 `i `ui != -> . *U _data 2 `i -> . `E8303 11 `i 978  ]
+{
+[; ;matrix_task.c: 137: data->display_state = MATRIX_STATE_DISPLAY;
+"137
+[e = . *U _data 2 . `E8303 10 ]
+"138
 }
 [e :U 978 ]
-[; ;slot_task.c: 92: }
-[; ;slot_task.c: 94: }
-"94
-[e :UE 976 ]
+[; ;matrix_task.c: 138: }
+[; ;matrix_task.c: 139: }
+"139
+[e :UE 973 ]
 }
-"96
-[v _slot_Main `(v ~T0 @X0 1 ef1`*v ]
+"141
+[v _matrix_Main `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;slot_task.c: 96: void slot_Main (void *taskData) {
-[e :U _slot_Main ]
+[; ;matrix_task.c: 141: void matrix_Main (void *taskData ){
+[e :U _matrix_Main ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"97
-[v _data `*S966 ~T0 @X0 1 a ]
-[; ;slot_task.c: 97: struct t_slot_taskData *data = (struct t_slot_taskData *) taskData;
-[e = _data -> _taskData `*S966 ]
-"98
-[v _buttonPressed `uc ~T0 @X0 1 a ]
-[; ;slot_task.c: 98: u8 buttonPressed;
-[; ;slot_task.c: 101: if ( currentTask != SLOT_TASK ){
-"101
-[e $ ! != _currentTask -> . `E8258 1 `ui 980  ]
-{
-[; ;slot_task.c: 102: buttonPressed = nullifyBadge_buttonsGet();
-"102
-[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
-[; ;slot_task.c: 103: switch (buttonPressed) {
-"103
-[e $U 982  ]
-{
-[; ;slot_task.c: 104: default:
-"104
-[e :U 983 ]
-[; ;slot_task.c: 106: data->holdCountA = 1;
-"106
-[e = . *U _data 6 -> -> 1 `i `ui ]
-[; ;slot_task.c: 107: data->holdCountB = 1;
-"107
-[e = . *U _data 7 -> -> 1 `i `ui ]
-[; ;slot_task.c: 108: data->holdCountX = 1;
-"108
-[e = . *U _data 8 -> -> 1 `i `ui ]
-[; ;slot_task.c: 109: data->holdCountY = 1;
-"109
-[e = . *U _data 9 -> -> 1 `i `ui ]
-[; ;slot_task.c: 110: break;
-"110
-[e $U 981  ]
-"111
-}
-[; ;slot_task.c: 111: }
-[e $U 981  ]
-"103
-[e :U 982 ]
-[e [\ _buttonPressed 983 ]
-"111
-[e :U 981 ]
-[; ;slot_task.c: 112: return;
-"112
-[e $UE 979  ]
-"113
-}
-[e :U 980 ]
-[; ;slot_task.c: 113: }
-[; ;slot_task.c: 115: buttonPressed = nullifyBadge_buttonsGet();
-"115
-[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
-[; ;slot_task.c: 116: switch (buttonPressed) {
-"116
-[e $U 985  ]
-{
-[; ;slot_task.c: 117: default:
-"117
-[e :U 986 ]
-[; ;slot_task.c: 119: memset(data->slot_print_buf, 0x00, 20);
-"119
-[e ( _memset (3 , , -> &U . *U _data 5 `*v -> 0 `i -> -> 20 `i `ui ]
-[; ;slot_task.c: 122: if (data->displayTickCount < 100) {
-"122
-[e $ ! < . *U _data 2 -> -> 100 `i `ui 987  ]
-{
-[; ;slot_task.c: 123: slot_Running_Animation(data);
-"123
-[e ( _slot_Running_Animation (1 -> _data `*v ]
-[; ;slot_task.c: 124: data->slot_wheel_index[0] = (u8)rand() % strlen(Slot_Wheel);
-"124
-[e = *U + &U . *U _data 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 125: data->slot_wheel_index[1] = (u8)rand() % strlen(Slot_Wheel);
-"125
-[e = *U + &U . *U _data 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 126: data->slot_wheel_index[2] = (u8)rand() % strlen(Slot_Wheel);
-"126
-[e = *U + &U . *U _data 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 127: data->slot_wheel_index[3] = (u8)rand() % strlen(Slot_Wheel);
-"127
-[e = *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 128: sprintf(data->slot_print_buf, "%c%c%c%c", Slot_Wheel[data->slot_wheel_index[0]], Slot_Wheel[data->slot_wheel_index[1]], Slot_Wheel[data->slot_wheel_index[2]], Slot_Wheel[data->slot_wheel_index[3]]);
-"128
-[e ( _sprintf (1 , , , , (. , &U . *U _data 5 :s 19C -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i ]
-[; ;slot_task.c: 129: marquee(data->slot_print_buf, 1);}
-"129
-[e ( _marquee (2 , &U . *U _data 5 -> -> 1 `i `ui ]
-}
-[e $U 988  ]
-"130
-[e :U 987 ]
-[; ;slot_task.c: 130: else if (data->displayTickCount < 200) {
-[e $ ! < . *U _data 2 -> -> 200 `i `ui 989  ]
-{
-[; ;slot_task.c: 131: slot_Running_Animation(data);
-"131
-[e ( _slot_Running_Animation (1 -> _data `*v ]
-[; ;slot_task.c: 132: data->slot_wheel_index[1] = (u8)rand() % strlen(Slot_Wheel);
-"132
-[e = *U + &U . *U _data 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 133: data->slot_wheel_index[2] = (u8)rand() % strlen(Slot_Wheel);
-"133
-[e = *U + &U . *U _data 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 134: data->slot_wheel_index[3] = (u8)rand() % strlen(Slot_Wheel);
-"134
-[e = *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 135: sprintf(data->slot_print_buf, "%c%c%c%c", Shot_Options[Shot_Index][0], Slot_Wheel[data->slot_wheel_index[1]], Slot_Wheel[data->slot_wheel_index[2]], Slot_Wheel[data->slot_wheel_index[3]]);
-"135
-[e ( _sprintf (1 , , , , (. , &U . *U _data 5 :s 20C -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 0 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i ]
-[; ;slot_task.c: 136: marquee(data->slot_print_buf, 1);}
-"136
-[e ( _marquee (2 , &U . *U _data 5 -> -> 1 `i `ui ]
-}
-[e $U 990  ]
-"137
-[e :U 989 ]
-[; ;slot_task.c: 137: else if (data->displayTickCount < 300) {
-[e $ ! < . *U _data 2 -> -> 300 `i `ui 991  ]
-{
-[; ;slot_task.c: 138: slot_Running_Animation(data);
-"138
-[e ( _slot_Running_Animation (1 -> _data `*v ]
-[; ;slot_task.c: 139: data->slot_wheel_index[2] = (u8)rand() % strlen(Slot_Wheel);
-"139
-[e = *U + &U . *U _data 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 140: data->slot_wheel_index[3] = (u8)rand() % strlen(Slot_Wheel);
-"140
-[e = *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 141: sprintf(data->slot_print_buf, "%c%c%c%c", Shot_Options[Shot_Index][0], Shot_Options[Shot_Index][1], Slot_Wheel[data->slot_wheel_index[2]], Slot_Wheel[data->slot_wheel_index[3]]);
-"141
-[e ( _sprintf (1 , , , , (. , &U . *U _data 5 :s 21C -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 0 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 1 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i ]
-[; ;slot_task.c: 142: marquee(data->slot_print_buf, 1);}
 "142
-[e ( _marquee (2 , &U . *U _data 5 -> -> 1 `i `ui ]
-}
-[e $U 992  ]
+[v _data `*S962 ~T0 @X0 1 a ]
+[; ;matrix_task.c: 142: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
+[e = _data -> _taskData `*S962 ]
 "143
-[e :U 991 ]
-[; ;slot_task.c: 143: else if (data->displayTickCount < 400) {
-[e $ ! < . *U _data 2 -> -> 400 `i `ui 993  ]
-{
-[; ;slot_task.c: 144: slot_Running_Animation(data);
+[v _buttonPressed `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 143: u8 buttonPressed = 0 ;
+[e = _buttonPressed -> -> 0 `i `uc ]
 "144
-[e ( _slot_Running_Animation (1 -> _data `*v ]
-[; ;slot_task.c: 145: data->slot_wheel_index[3] = (u8)rand() % strlen(Slot_Wheel);
+[v _matrix_found `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 144: u8 matrix_found =0;
+[e = _matrix_found -> -> 0 `i `uc ]
 "145
-[e = *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux -> % -> -> ( _rand ..  `uc `ui ( _strlen (1 -> &U _Slot_Wheel `*Cuc `uc ]
-[; ;slot_task.c: 146: sprintf(data->slot_print_buf, "%c%c%c%c", Shot_Options[Shot_Index][0], Shot_Options[Shot_Index][1], Shot_Options[Shot_Index][2], Slot_Wheel[data->slot_wheel_index[3]]);
-"146
-[e ( _sprintf (1 , , , , (. , &U . *U _data 5 :s 22C -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 0 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 1 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 2 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + &U _Slot_Wheel * -> *U + &U . *U _data 4 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _data 4 `ui `ux `ux -> -> # *U &U _Slot_Wheel `ui `ux `i ]
-[; ;slot_task.c: 148: marquee(data->slot_print_buf, 1);}
+[v _holdvalue `uc ~T0 @X0 1 a ]
+[; ;matrix_task.c: 145: u8 holdvalue = 50;
+[e = _holdvalue -> -> 50 `i `uc ]
+[; ;matrix_task.c: 147: if ( currentTask != MATRIX_TASK ){
+"147
+[e $ ! != _currentTask -> . `E8139 4 `ui 980  ]
+{
+[; ;matrix_task.c: 148: data->holdCountA = 1;
 "148
-[e ( _marquee (2 , &U . *U _data 5 -> -> 1 `i `ui ]
-}
-[e $U 994  ]
+[e = . *U _data 5 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 149: data->holdCountB = 1;
 "149
-[e :U 993 ]
-[; ;slot_task.c: 149: else if (data->displayTickCount < 500) {
-[e $ ! < . *U _data 2 -> -> 500 `i `ui 995  ]
-{
-[; ;slot_task.c: 150: slot_Finished_Animation(data);
+[e = . *U _data 6 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 150: data->holdCountX = 1;
 "150
-[e ( _slot_Finished_Animation (1 -> _data `*v ]
-[; ;slot_task.c: 151: if ( data->displayTickCount % 50 <= 25 ) {
+[e = . *U _data 7 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 151: data->holdCountY = 1;
 "151
-[e $ ! <= % . *U _data 2 -> -> 50 `i `ui -> -> 25 `i `ui 996  ]
-{
-[; ;slot_task.c: 152: memset(data->slot_print_buf, 0x20, 4);
+[e = . *U _data 8 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 152: return;
 "152
-[e ( _memset (3 , , -> &U . *U _data 5 `*v -> 32 `i -> -> 4 `i `ui ]
+[e $UE 979  ]
 "153
 }
-[; ;slot_task.c: 153: }
-[e $U 997  ]
-"154
-[e :U 996 ]
-[; ;slot_task.c: 154: else {
-{
-[; ;slot_task.c: 155: sprintf(data->slot_print_buf, "%c%c%c%c", Shot_Options[Shot_Index][0], Shot_Options[Shot_Index][1], Shot_Options[Shot_Index][2], Shot_Options[Shot_Index][3]);
-"155
-[e ( _sprintf (1 , , , , (. , &U . *U _data 5 :s 23C -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 0 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 1 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 2 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i -> *U + *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux * -> -> 3 `i `x -> -> # *U *U + &U _Shot_Options * -> _Shot_Index `ux -> -> # *U &U _Shot_Options `ui `ux `i `x `i ]
-"156
-}
-[e :U 997 ]
-[; ;slot_task.c: 156: }
-[; ;slot_task.c: 157: marquee(data->slot_print_buf, 1);
+[e :U 980 ]
+[; ;matrix_task.c: 153: }
+[; ;matrix_task.c: 157: if (data->martix_state == STILL_IN_MATRIX){
 "157
-[e ( _marquee (2 , &U . *U _data 5 -> -> 1 `i `ui ]
+[e $ ! == -> . *U _data 1 `i -> . `E8316 1 `i 981  ]
+{
+[; ;matrix_task.c: 158: if(data->delayTickCount == 0){
 "158
-}
-[; ;slot_task.c: 158: }
-[e $U 998  ]
+[e $ ! == . *U _data 3 -> -> 0 `i `ui 982  ]
+{
+[; ;matrix_task.c: 159: led_Parody(matrix_leds_idx);
 "159
-[e :U 995 ]
-[; ;slot_task.c: 159: else {
-{
-[; ;slot_task.c: 160: slot_Finished_Animation(data);
+[e ( _led_Parody (1 _matrix_leds_idx ]
+[; ;matrix_task.c: 160: matrix_leds_idx += 1;
 "160
-[e ( _slot_Finished_Animation (1 -> _data `*v ]
-[; ;slot_task.c: 161: if ( data->displayTickCount % 50 <= 25 ) {
+[e =+ _matrix_leds_idx -> -> 1 `i `ui ]
+[; ;matrix_task.c: 161: data->delayTickCount = 10;
 "161
-[e $ ! <= % . *U _data 2 -> -> 50 `i `ui -> -> 25 `i `ui 999  ]
-{
-[; ;slot_task.c: 162: memset(data->slot_print_buf, 0x20, 4);
+[e = . *U _data 3 -> -> 10 `i `ui ]
 "162
-[e ( _memset (3 , , -> &U . *U _data 5 `*v -> 32 `i -> -> 4 `i `ui ]
-"163
 }
-[; ;slot_task.c: 163: }
-[e $U 1000  ]
-"164
-[e :U 999 ]
-[; ;slot_task.c: 164: else {
+[; ;matrix_task.c: 162: }
+[e $U 983  ]
+"163
+[e :U 982 ]
+[; ;matrix_task.c: 163: else {
 {
-[; ;slot_task.c: 165: sprintf(data->slot_print_buf, "%s", Shot_Options_Long[Shot_Index]);
+[; ;matrix_task.c: 164: data->delayTickCount -= 1;
+"164
+[e =- . *U _data 3 -> -> 1 `i `ui ]
 "165
-[e ( _sprintf (1 , (. , &U . *U _data 5 :s 24C -> *U + &U _Shot_Options_Long * -> _Shot_Index `ux -> -> # *U &U _Shot_Options_Long `ui `ux `*Cuc ]
+}
+[e :U 983 ]
 "166
 }
-[e :U 1000 ]
-[; ;slot_task.c: 166: }
-[; ;slot_task.c: 168: marquee_speedy(data->slot_print_buf, data->displayTickCount, 20);
-"168
-[e ( _marquee_speedy (3 , , &U . *U _data 5 . *U _data 2 -> -> 20 `i `ui ]
-[; ;slot_task.c: 169: if (data->displayTickCount == 500 + (50 * 10)) {
-"169
-[e $ ! == . *U _data 2 -> + -> 500 `i * -> 50 `i -> 10 `i `ui 1001  ]
-{
-[; ;slot_task.c: 170: currentTask = MENU_TASK;
+[e :U 981 ]
+[; ;matrix_task.c: 165: }
+[; ;matrix_task.c: 166: }
+[; ;matrix_task.c: 170: buttonPressed = nullifyBadge_buttonsGet();
 "170
-[e = _currentTask -> . `E8258 0 `ui ]
-[; ;slot_task.c: 173: slot_Setup(slot_taskData);
+[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
+[; ;matrix_task.c: 173: switch (buttonPressed) {
 "173
-[e ( _slot_Setup (1 -> _slot_taskData `*v ]
-[; ;slot_task.c: 176: data->holdCountA = 1;
+[e $U 985  ]
+{
+[; ;matrix_task.c: 174: case 1:
+"174
+[e :U 986 ]
+[; ;matrix_task.c: 176: if (data->holdCountA == holdvalue){
 "176
-[e = . *U _data 6 -> -> 1 `i `ui ]
-[; ;slot_task.c: 177: data->holdCountB = 1;
+[e $ ! == . *U _data 5 -> _holdvalue `ui 987  ]
+{
+[; ;matrix_task.c: 177: matrix_found = matrix_secret_check(data, buttonPressed);
 "177
-[e = . *U _data 7 -> -> 1 `i `ui ]
-[; ;slot_task.c: 178: data->holdCountX = 1;
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 178: data->display_state = MATRIX_A;
 "178
-[e = . *U _data 8 -> -> 1 `i `ui ]
-[; ;slot_task.c: 179: data->holdCountY = 1;
+[e = . *U _data 2 . `E8303 0 ]
 "179
-[e = . *U _data 9 -> -> 1 `i `ui ]
-[; ;slot_task.c: 180: break;
+}
+[e :U 987 ]
+[; ;matrix_task.c: 179: }
+[; ;matrix_task.c: 180: data->holdCountA += 1;
 "180
-[e $U 984  ]
+[e =+ . *U _data 5 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 181: data->holdCountB = 0;
 "181
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 182: data->holdCountX = 0;
+"182
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 183: data->holdCountY = 0;
+"183
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 184: data->holdCountXY = 0;
+"184
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 185: data->holdCountAY = 0;
+"185
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 186: data->holdCountAX = 0;
+"186
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 187: data->holdCountBX = 0;
+"187
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 188: data->holdCountBY = 0;
+"188
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 189: data->holdCountBA = 0;
+"189
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 190: data->noholdCount = 0;
+"190
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 191: data->displayTickdown = 300;
+"191
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 192: break;
+"192
+[e $U 984  ]
+[; ;matrix_task.c: 193: case 2:
+"193
+[e :U 988 ]
+[; ;matrix_task.c: 195: if (data->holdCountB == holdvalue){
+"195
+[e $ ! == . *U _data 6 -> _holdvalue `ui 989  ]
+{
+[; ;matrix_task.c: 196: matrix_found = matrix_secret_check(data, buttonPressed);
+"196
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 197: data->display_state = MATRIX_B;
+"197
+[e = . *U _data 2 . `E8303 2 ]
+"198
+}
+[e :U 989 ]
+[; ;matrix_task.c: 198: }
+[; ;matrix_task.c: 199: data->holdCountA = 0;
+"199
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 200: data->holdCountB += 1;
+"200
+[e =+ . *U _data 6 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 201: data->holdCountX = 0;
+"201
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 202: data->holdCountY = 0;
+"202
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 203: data->holdCountXY = 0;
+"203
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 204: data->holdCountAY = 0;
+"204
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 205: data->holdCountAX = 0;
+"205
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 206: data->holdCountBX = 0;
+"206
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 207: data->holdCountBY = 0;
+"207
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 208: data->holdCountBA = 0;
+"208
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 209: data->noholdCount = 0;
+"209
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 210: data->displayTickdown = 300;
+"210
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 211: break;
+"211
+[e $U 984  ]
+[; ;matrix_task.c: 212: case 4:
+"212
+[e :U 990 ]
+[; ;matrix_task.c: 214: if (data->holdCountX == holdvalue){
+"214
+[e $ ! == . *U _data 7 -> _holdvalue `ui 991  ]
+{
+[; ;matrix_task.c: 215: matrix_found = matrix_secret_check(data, buttonPressed);
+"215
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 216: data->display_state = MATRIX_X;
+"216
+[e = . *U _data 2 . `E8303 3 ]
+"217
+}
+[e :U 991 ]
+[; ;matrix_task.c: 217: }
+[; ;matrix_task.c: 218: data->holdCountA = 0;
+"218
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 219: data->holdCountB = 0;
+"219
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 220: data->holdCountX += 1;
+"220
+[e =+ . *U _data 7 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 221: data->holdCountY = 0;
+"221
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 222: data->holdCountXY = 0;
+"222
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 223: data->holdCountAY = 0;
+"223
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 224: data->holdCountAX = 0;
+"224
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 225: data->holdCountBX = 0;
+"225
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 226: data->holdCountBY = 0;
+"226
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 227: data->holdCountBA = 0;
+"227
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 228: data->noholdCount = 0;
+"228
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 229: data->displayTickdown = 300;
+"229
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 230: break;
+"230
+[e $U 984  ]
+[; ;matrix_task.c: 231: case 8:
+"231
+[e :U 992 ]
+[; ;matrix_task.c: 233: if (data->holdCountY == holdvalue){
+"233
+[e $ ! == . *U _data 8 -> _holdvalue `ui 993  ]
+{
+[; ;matrix_task.c: 234: matrix_found = matrix_secret_check(data, buttonPressed);
+"234
+[e = _matrix_found ( _matrix_secret_check (2 , _data _buttonPressed ]
+[; ;matrix_task.c: 235: data->display_state = MATRIX_Y;
+"235
+[e = . *U _data 2 . `E8303 1 ]
+"236
+}
+[e :U 993 ]
+[; ;matrix_task.c: 236: }
+[; ;matrix_task.c: 238: data->holdCountA = 0;
+"238
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 239: data->holdCountB = 0;
+"239
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 240: data->holdCountX = 0;
+"240
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 241: data->holdCountY += 1;
+"241
+[e =+ . *U _data 8 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 242: data->holdCountXY = 0;
+"242
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 243: data->holdCountAY = 0;
+"243
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 244: data->holdCountAX = 0;
+"244
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 245: data->holdCountBX = 0;
+"245
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 246: data->holdCountBY = 0;
+"246
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 247: data->holdCountBA = 0;
+"247
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 248: data->noholdCount = 0;
+"248
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 249: data->displayTickdown = 300;
+"249
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 250: break;
+"250
+[e $U 984  ]
+[; ;matrix_task.c: 251: case 4 | 8:
+"251
+[e :U 994 ]
+[; ;matrix_task.c: 253: if (data->holdCountXY == holdvalue){
+"253
+[e $ ! == . *U _data 9 -> _holdvalue `ui 995  ]
+{
+[; ;matrix_task.c: 254: matrix_found = matrix_secret_check(data, 4 | 8);
+"254
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 4 `i -> 8 `i `uc ]
+[; ;matrix_task.c: 255: data->display_state = MATRIX_XY;
+"255
+[e = . *U _data 2 . `E8303 8 ]
+"256
+}
+[e :U 995 ]
+[; ;matrix_task.c: 256: }
+[; ;matrix_task.c: 257: data->holdCountA = 0;
+"257
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 258: data->holdCountB = 0;
+"258
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 259: data->holdCountX = 0;
+"259
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 260: data->holdCountY = 0;
+"260
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 261: data->holdCountXY += 1;
+"261
+[e =+ . *U _data 9 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 262: data->holdCountAY = 0;
+"262
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 263: data->holdCountAX = 0;
+"263
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 264: data->holdCountBX = 0;
+"264
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 265: data->holdCountBY = 0;
+"265
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 266: data->holdCountBA = 0;
+"266
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 267: data->noholdCount = 0;
+"267
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 268: data->displayTickdown = 300;
+"268
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 269: break;
+"269
+[e $U 984  ]
+[; ;matrix_task.c: 270: case 1 | 8:
+"270
+[e :U 996 ]
+[; ;matrix_task.c: 272: if (data->holdCountAY == holdvalue){
+"272
+[e $ ! == . *U _data 10 -> _holdvalue `ui 997  ]
+{
+[; ;matrix_task.c: 273: matrix_found = matrix_secret_check(data, 1 | 8);
+"273
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 1 `i -> 8 `i `uc ]
+[; ;matrix_task.c: 274: data->display_state = MATRIX_AY;
+"274
+[e = . *U _data 2 . `E8303 5 ]
+"275
+}
+[e :U 997 ]
+[; ;matrix_task.c: 275: }
+[; ;matrix_task.c: 276: data->holdCountA = 0;
+"276
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 277: data->holdCountB = 0;
+"277
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 278: data->holdCountX = 0;
+"278
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 279: data->holdCountY = 0;
+"279
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 280: data->holdCountXY = 0;
+"280
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 281: data->holdCountAY += 1;
+"281
+[e =+ . *U _data 10 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 282: data->holdCountAX = 0;
+"282
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 283: data->holdCountBX = 0;
+"283
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 284: data->holdCountBY = 0;
+"284
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 285: data->holdCountBA = 0;
+"285
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 286: data->noholdCount = 0;
+"286
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 287: data->displayTickdown = 300;
+"287
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 288: break;
+"288
+[e $U 984  ]
+[; ;matrix_task.c: 289: case 1 | 4:
+"289
+[e :U 998 ]
+[; ;matrix_task.c: 291: if (data->holdCountAX == holdvalue){
+"291
+[e $ ! == . *U _data 11 -> _holdvalue `ui 999  ]
+{
+[; ;matrix_task.c: 292: matrix_found = matrix_secret_check(data, 1 | 4);
+"292
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 1 `i -> 4 `i `uc ]
+[; ;matrix_task.c: 293: data->display_state = MATRIX_AX;
+"293
+[e = . *U _data 2 . `E8303 4 ]
+"294
+}
+[e :U 999 ]
+[; ;matrix_task.c: 294: }
+[; ;matrix_task.c: 295: data->holdCountA = 0;
+"295
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 296: data->holdCountB = 0;
+"296
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 297: data->holdCountX = 0;
+"297
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 298: data->holdCountY = 0;
+"298
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 299: data->holdCountXY = 0;
+"299
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 300: data->holdCountAY = 0;
+"300
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 301: data->holdCountAX += 1;
+"301
+[e =+ . *U _data 11 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 302: data->holdCountBX = 0;
+"302
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 303: data->holdCountBY = 0;
+"303
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 304: data->holdCountBA = 0;
+"304
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 305: data->noholdCount = 0;
+"305
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 306: data->displayTickdown = 300;
+"306
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 307: break;
+"307
+[e $U 984  ]
+[; ;matrix_task.c: 308: case 2 | 4:
+"308
+[e :U 1000 ]
+[; ;matrix_task.c: 310: if (data->holdCountBX == holdvalue){
+"310
+[e $ ! == . *U _data 12 -> _holdvalue `ui 1001  ]
+{
+[; ;matrix_task.c: 311: matrix_found = matrix_secret_check(data, 2 | 4);
+"311
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 4 `i `uc ]
+[; ;matrix_task.c: 312: data->display_state = MATRIX_BX;
+"312
+[e = . *U _data 2 . `E8303 7 ]
+"313
 }
 [e :U 1001 ]
-"182
-}
-[e :U 998 ]
-[e :U 994 ]
-[e :U 992 ]
-[e :U 990 ]
-[e :U 988 ]
-[; ;slot_task.c: 181: }
-[; ;slot_task.c: 182: }
-[; ;slot_task.c: 184: data->displayTickCount += 1;
-"184
-[e =+ . *U _data 2 -> -> 1 `i `ui ]
-[; ;slot_task.c: 185: data->holdCountA = 0;
-"185
+[; ;matrix_task.c: 313: }
+[; ;matrix_task.c: 314: data->holdCountA = 0;
+"314
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 315: data->holdCountB = 0;
+"315
 [e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;slot_task.c: 186: data->holdCountB = 0;
-"186
+[; ;matrix_task.c: 316: data->holdCountX = 0;
+"316
 [e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;slot_task.c: 187: data->holdCountX = 0;
-"187
+[; ;matrix_task.c: 317: data->holdCountY = 0;
+"317
 [e = . *U _data 8 -> -> 0 `i `ui ]
-[; ;slot_task.c: 188: data->holdCountY = 0;
-"188
+[; ;matrix_task.c: 318: data->holdCountXY = 0;
+"318
 [e = . *U _data 9 -> -> 0 `i `ui ]
-[; ;slot_task.c: 189: data->noholdCount += 1;
-"189
-[e =+ . *U _data 10 -> -> 1 `i `ui ]
-"190
-}
-[; ;slot_task.c: 190: }
+[; ;matrix_task.c: 319: data->holdCountAY = 0;
+"319
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 320: data->holdCountAX = 0;
+"320
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 321: data->holdCountBX += 1;
+"321
+[e =+ . *U _data 12 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 322: data->holdCountBY = 0;
+"322
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 323: data->holdCountBA = 0;
+"323
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 324: data->noholdCount = 0;
+"324
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 325: data->displayTickdown = 300;
+"325
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 326: break;
+"326
 [e $U 984  ]
-"116
+[; ;matrix_task.c: 327: case 2 | 8:
+"327
+[e :U 1002 ]
+[; ;matrix_task.c: 329: if (data->holdCountBY == holdvalue){
+"329
+[e $ ! == . *U _data 13 -> _holdvalue `ui 1003  ]
+{
+[; ;matrix_task.c: 330: matrix_found = matrix_secret_check(data, 2 | 8);
+"330
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 8 `i `uc ]
+[; ;matrix_task.c: 331: data->display_state = MATRIX_BY;
+"331
+[e = . *U _data 2 . `E8303 9 ]
+"332
+}
+[e :U 1003 ]
+[; ;matrix_task.c: 332: }
+[; ;matrix_task.c: 333: data->holdCountA = 0;
+"333
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 334: data->holdCountB = 0;
+"334
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 335: data->holdCountX = 0;
+"335
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 336: data->holdCountY = 0;
+"336
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 337: data->holdCountXY = 0;
+"337
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 338: data->holdCountAY = 0;
+"338
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 339: data->holdCountAX = 0;
+"339
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 340: data->holdCountBX = 0;
+"340
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 341: data->holdCountBY += 1;
+"341
+[e =+ . *U _data 13 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 342: data->holdCountBA = 0;
+"342
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 343: data->noholdCount = 0;
+"343
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 344: data->displayTickdown = 300;
+"344
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 346: break;
+"346
+[e $U 984  ]
+[; ;matrix_task.c: 347: case 2 | 1:
+"347
+[e :U 1004 ]
+[; ;matrix_task.c: 349: if (data->holdCountBA == holdvalue){
+"349
+[e $ ! == . *U _data 14 -> _holdvalue `ui 1005  ]
+{
+[; ;matrix_task.c: 350: matrix_found = matrix_secret_check(data, 2 | 1);
+"350
+[e = _matrix_found ( _matrix_secret_check (2 , _data -> | -> 2 `i -> 1 `i `uc ]
+[; ;matrix_task.c: 351: data->display_state = MATRIX_BA;
+"351
+[e = . *U _data 2 . `E8303 6 ]
+"352
+}
+[e :U 1005 ]
+[; ;matrix_task.c: 352: }
+[; ;matrix_task.c: 353: data->holdCountA = 0;
+"353
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 354: data->holdCountB = 0;
+"354
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 355: data->holdCountX = 0;
+"355
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 356: data->holdCountY = 0;
+"356
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 357: data->holdCountXY = 0;
+"357
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 358: data->holdCountAY = 0;
+"358
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 359: data->holdCountAX = 0;
+"359
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 360: data->holdCountBX = 0;
+"360
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 361: data->holdCountBY = 0;
+"361
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 362: data->holdCountBA += 1;
+"362
+[e =+ . *U _data 14 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 363: data->noholdCount = 0;
+"363
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 364: data->displayTickdown = 300;
+"364
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 365: break;
+"365
+[e $U 984  ]
+[; ;matrix_task.c: 366: default:
+"366
+[e :U 1006 ]
+[; ;matrix_task.c: 367: data->noholdCount += 1;
+"367
+[e =+ . *U _data 15 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 368: data->holdCountA = 0;
+"368
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 369: data->holdCountB = 0;
+"369
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 370: data->holdCountX = 0;
+"370
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 371: data->holdCountY = 0;
+"371
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 372: data->holdCountXY = 0;
+"372
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 373: data->holdCountAY = 0;
+"373
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 374: data->holdCountAX = 0;
+"374
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 375: data->holdCountBX = 0;
+"375
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 376: data->holdCountBY = 0;
+"376
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 377: data->holdCountBA = 0;
+"377
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 378: if (matrix_found){
+"378
+[e $ ! != -> _matrix_found `i -> -> -> 0 `i `uc `i 1007  ]
+{
+[; ;matrix_task.c: 379: data->display_state = MATRIX_DONE;
+"379
+[e = . *U _data 2 . `E8303 11 ]
+[; ;matrix_task.c: 380: data->martix_state = MATRIX_SOLVED;
+"380
+[e = . *U _data 1 . `E8316 0 ]
+[; ;matrix_task.c: 381: break;
+"381
+[e $U 984  ]
+"382
+}
+[e :U 1007 ]
+[; ;matrix_task.c: 382: }
+[; ;matrix_task.c: 383: data->displayTickdown -= 1;
+"383
+[e =- . *U _data 4 -> -> 1 `i `ui ]
+[; ;matrix_task.c: 384: matrix_display_option(data);
+"384
+[e ( _matrix_display_option (1 _data ]
+"385
+}
+[; ;matrix_task.c: 385: }
+[e $U 984  ]
+"173
 [e :U 985 ]
-[e [\ _buttonPressed 986 ]
-"190
+[e [\ _buttonPressed , $ -> -> 1 `i `uc 986
+ , $ -> -> 2 `i `uc 988
+ , $ -> -> 4 `i `uc 990
+ , $ -> -> 8 `i `uc 992
+ , $ -> | -> 4 `i -> 8 `i `uc 994
+ , $ -> | -> 1 `i -> 8 `i `uc 996
+ , $ -> | -> 1 `i -> 4 `i `uc 998
+ , $ -> | -> 2 `i -> 4 `i `uc 1000
+ , $ -> | -> 2 `i -> 8 `i `uc 1002
+ , $ -> | -> 2 `i -> 1 `i `uc 1004
+ 1006 ]
+"385
 [e :U 984 ]
-[; ;slot_task.c: 192: }
-"192
+[; ;matrix_task.c: 386: if (matrix_found){
+"386
+[e $ ! != -> _matrix_found `i -> -> -> 0 `i `uc `i 1008  ]
+{
+[; ;matrix_task.c: 387: data->display_state = MATRIX_DONE;
+"387
+[e = . *U _data 2 . `E8303 11 ]
+[; ;matrix_task.c: 388: data->martix_state = MATRIX_SOLVED;
+"388
+[e = . *U _data 1 . `E8316 0 ]
+"389
+}
+[e :U 1008 ]
+[; ;matrix_task.c: 389: }
+[; ;matrix_task.c: 391: if(data->display_state == MATRIX_DONE){
+"391
+[e $ ! == -> . *U _data 2 `i -> . `E8303 11 `i 1009  ]
+{
+[; ;matrix_task.c: 393: if (data->delayTickCount < 1){
+"393
+[e $ ! < . *U _data 3 -> -> 1 `i `ui 1010  ]
+{
+[; ;matrix_task.c: 394: led_curtain(data->noholdCount);
+"394
+[e ( _led_curtain (1 . *U _data 15 ]
+[; ;matrix_task.c: 395: data->delayTickCount = 20;
+"395
+[e = . *U _data 3 -> -> 20 `i `ui ]
+"396
+}
+[; ;matrix_task.c: 396: }
+[e $U 1011  ]
+"397
+[e :U 1010 ]
+[; ;matrix_task.c: 397: else {
+{
+[; ;matrix_task.c: 398: data->delayTickCount -= 1;
+"398
+[e =- . *U _data 3 -> -> 1 `i `ui ]
+"399
+}
+[e :U 1011 ]
+"420
+}
+[e :U 1009 ]
+[; ;matrix_task.c: 399: }
+[; ;matrix_task.c: 420: }
+[; ;matrix_task.c: 421: }
+"421
 [e :UE 979 ]
 }
-"194
-[v _slot_Exit `(v ~T0 @X0 1 ef1`*v ]
+"423
+[v _matrix_secret_clear `(v ~T0 @X0 1 ef1`*S962 ]
 {
-[; ;slot_task.c: 194: void slot_Exit(void *taskData) {
-[e :U _slot_Exit ]
+[; ;matrix_task.c: 423: void matrix_secret_clear(struct t_matrix_taskData *data){
+[e :U _matrix_secret_clear ]
+[v _data `*S962 ~T0 @X0 1 r1 ]
+[f ]
+[; ;matrix_task.c: 425: data->displayTickdown = 300;
+"425
+[e = . *U _data 4 -> -> 300 `i `ui ]
+[; ;matrix_task.c: 426: data->holdCountA = 0;
+"426
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 427: data->holdCountB = 0;
+"427
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 428: data->holdCountX = 0;
+"428
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 429: data->holdCountY = 0;
+"429
+[e = . *U _data 8 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 430: data->holdCountXY = 0;
+"430
+[e = . *U _data 9 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 431: data->holdCountAY = 0;
+"431
+[e = . *U _data 10 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 432: data->holdCountAX = 0;
+"432
+[e = . *U _data 11 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 433: data->holdCountBX = 0;
+"433
+[e = . *U _data 12 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 434: data->holdCountBY = 0;
+"434
+[e = . *U _data 13 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 435: data->holdCountBA = 0;
+"435
+[e = . *U _data 14 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 436: data->noholdCount = 0;
+"436
+[e = . *U _data 15 -> -> 0 `i `ui ]
+[; ;matrix_task.c: 437: }
+"437
+[e :UE 1012 ]
+}
+"439
+[v _matrix_Exit `(v ~T0 @X0 1 ef1`*v ]
+{
+[; ;matrix_task.c: 439: void matrix_Exit(void *taskData){
+[e :U _matrix_Exit ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"195
-[v _data `*S966 ~T0 @X0 1 a ]
-[; ;slot_task.c: 195: struct t_slot_taskData *data = (struct t_slot_taskData *) taskData;
-[e = _data -> _taskData `*S966 ]
-[; ;slot_task.c: 196: nullifyBadge_userLedsClr(data->badge);
-"196
+"440
+[v _data `*S962 ~T0 @X0 1 a ]
+[; ;matrix_task.c: 440: struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData;
+[e = _data -> _taskData `*S962 ]
+[; ;matrix_task.c: 441: nullifyBadge_userLedsClr(data->badge);
+"441
 [e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;slot_task.c: 197: nullifyBadge_userLedsRelease(data->badge);
-"197
+[; ;matrix_task.c: 442: nullifyBadge_userLedsRelease(data->badge);
+"442
 [e ( _nullifyBadge_userLedsRelease (1 . *U _data 0 ]
-[; ;slot_task.c: 199: nullifyBadge_segDisplayErase(data->badge);
-"199
+[; ;matrix_task.c: 444: nullifyBadge_segDisplayErase(data->badge);
+"444
 [e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;slot_task.c: 200: nullifyBadge_segDisplayRelease(data->badge);
-"200
+[; ;matrix_task.c: 445: nullifyBadge_segDisplayRelease(data->badge);
+"445
 [e ( _nullifyBadge_segDisplayRelease (1 . *U _data 0 ]
-[; ;slot_task.c: 201: }
-"201
-[e :UE 1002 ]
+[; ;matrix_task.c: 447: }
+"447
+[e :UE 1013 ]
 }
-[p f _sprintf 9175040 ]
-[a 24C 37 115 0 ]
-[a 19C 37 99 37 99 37 99 37 99 0 ]
-[a 20C 37 99 37 99 37 99 37 99 0 ]
-[a 21C 37 99 37 99 37 99 37 99 0 ]
-[a 22C 37 99 37 99 37 99 37 99 0 ]
-[a 23C 37 99 37 99 37 99 37 99 0 ]
-[a 4C 87 83 75 89 0 ]
-[a 1C 83 72 79 84 0 ]
-[a 9C 87 65 84 82 0 ]
-[a 2C 66 69 69 82 0 ]
-[a 7C 82 69 66 76 0 ]
-[a 6C 67 72 85 71 0 ]
-[a 8C 70 73 82 69 0 ]
-[a 5C 84 81 76 65 0 ]
-[a 3C 86 68 75 65 0 ]
-[a 13C 87 72 73 83 75 69 89 32 32 32 0 ]
-[a 10C 83 72 79 84 32 32 32 0 ]
-[a 18C 87 65 84 69 82 32 32 32 0 ]
-[a 11C 66 69 69 82 32 32 32 0 ]
-[a 16C 82 69 68 32 66 85 76 76 32 32 32 0 ]
-[a 17C 70 73 82 69 32 66 65 76 76 32 32 32 0 ]
-[a 15C 67 72 85 71 32 32 32 0 ]
-[a 14C 84 69 81 85 73 76 65 32 32 32 0 ]
-[a 12C 86 79 68 75 65 32 32 32 0 ]
+[a 1C 32 32 70 79 76 76 0 ]
+[a 5C 32 82 65 66 0 ]
+[a 3C 32 84 72 69 32 87 72 32 0 ]
+[a 10C 32 32 84 69 89 32 32 0 ]
+[a 9C 32 32 69 87 32 32 0 ]
+[a 8C 80 79 84 65 84 32 32 0 ]
+[a 6C 32 32 66 73 84 32 78 32 32 0 ]
+[a 12C 84 72 69 32 67 72 79 73 67 69 32 73 83 32 89 79 85 82 83 32 32 32 0 ]
+[a 7C 69 79 32 32 32 0 ]
+[a 4C 73 84 69 32 32 32 0 ]
+[a 2C 79 87 32 32 32 32 0 ]
+[a 11C 89 79 85 32 83 84 65 89 32 73 78 32 87 79 78 68 69 82 76 65 78 68 32 32 32 32 0 ]

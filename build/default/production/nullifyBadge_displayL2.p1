@@ -7818,8 +7818,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 8481 `i `ui
 "162
 -> -> 520 `i `ui
-"163
--> -> 24736 `i `ui
 "164
 -> -> 10 `i `ui
 "165
@@ -7879,11 +7877,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "192
 -> -> 10274 `i `ui
 "193
--> -> 4112 `i `ui
+-> -> 2056 `i `ui
 "194
 -> -> 1028 `i `ui
 "195
--> -> 4112 `i `ui
+-> -> 514 `i `ui
 "196
 -> -> 4112 `i `ui
 "198
@@ -7984,7 +7982,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 160: 0x2822,
 [; ;nullifyBadge_displayL1.h: 161: 0x2121,
 [; ;nullifyBadge_displayL1.h: 162: 0x0208,
-[; ;nullifyBadge_displayL1.h: 163: 0x60A0,
 [; ;nullifyBadge_displayL1.h: 164: 0x000A,
 [; ;nullifyBadge_displayL1.h: 165: 0x0020,
 [; ;nullifyBadge_displayL1.h: 166: 0x1010,
@@ -8014,9 +8011,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 190: 0x0A0A,
 [; ;nullifyBadge_displayL1.h: 191: 0x0A04,
 [; ;nullifyBadge_displayL1.h: 192: 0x2822,
-[; ;nullifyBadge_displayL1.h: 193: 0x1010,
+[; ;nullifyBadge_displayL1.h: 193: 0x0808,
 [; ;nullifyBadge_displayL1.h: 194: 0x0404,
-[; ;nullifyBadge_displayL1.h: 195: 0x1010,
+[; ;nullifyBadge_displayL1.h: 195: 0x0202,
 [; ;nullifyBadge_displayL1.h: 196: 0x1010,
 [; ;nullifyBadge_displayL1.h: 197: 0xFFFF
 [; ;nullifyBadge_displayL1.h: 198: };

@@ -10280,7 +10280,8 @@ u16 asciiCharTableLookup[128] = {
 0x2822,
 0x2121,
 0x0208,
-0x60A0,
+
+# 164
 0x000A,
 0x0020,
 0x1010,
@@ -10310,9 +10311,9 @@ u16 asciiCharTableLookup[128] = {
 0x0A0A,
 0x0A04,
 0x2822,
-0x1010,
+0x0808,
 0x0404,
-0x1010,
+0x0202,
 0x1010,
 0xFFFF
 };
@@ -10371,6 +10372,7 @@ MENU_TASK,
 SLOT_TASK,
 FLASHY_TASK,
 LOCKED_TASK,
+MATRIX_TASK,
 };
 
 
@@ -10395,7 +10397,7 @@ SECRET_VALUE_TEST,
 };
 extern u16 secret_value;
 
-# 125
+# 126
 enum t_hw_register {
 HW_SEG_DISPLAY,
 HW_USER_LEDS,
@@ -10423,7 +10425,7 @@ LED_G14,
 LED_G15
 };
 
-# 161
+# 162
 struct t_nullifyBadge {
 struct t_nullifyDisplay_l2 display;
 u8 registeredHw;
@@ -10432,7 +10434,7 @@ u8 registeredHw;
 
 void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
 
-# 176
+# 177
 s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
 
 
@@ -10465,7 +10467,7 @@ void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
 
 void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
 
-# 214
+# 215
 s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
 
 
@@ -10489,7 +10491,7 @@ void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedDat
 
 void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
 
-# 243
+# 244
 u8 nullifyBadge_buttonsGet();
 
 
@@ -10504,10 +10506,10 @@ u8 nullifyBadge_buttonXGet();
 
 u8 nullifyBadge_buttonYGet();
 
-# 263
+# 264
 u8 nullifyBadge_irGet();
 
-# 276
+# 277
 s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
 
 
@@ -10522,7 +10524,7 @@ void nullifyBadge_irTxSet();
 
 void nullifyBadge_irTxClr();
 
-# 296
+# 297
 s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
 
 
@@ -10639,11 +10641,65 @@ void slot_Finished_Animation(void *taskData);
 void slot_Main (void *taskData);
 void slot_Exit(void *taskData);
 
-# 18 "menu_task.c"
+# 15 "matrix_task.h"
+enum t_matrix_display_states {
+MATRIX_A,
+MATRIX_Y,
+MATRIX_B,
+MATRIX_X,
+MATRIX_AX,
+MATRIX_AY,
+MATRIX_BA,
+MATRIX_BX,
+MATRIX_XY,
+MATRIX_BY,
+MATRIX_STATE_DISPLAY,
+MATRIX_DONE
+};
+
+enum t_matrix_martix_state{
+MATRIX_SOLVED,
+STILL_IN_MATRIX,
+};
+
+struct t_matrix_taskData {
+
+struct t_nullifyBadge *badge;
+
+enum t_matrix_martix_state martix_state;
+
+enum t_matrix_display_states display_state;
+
+
+u16 delayTickCount;
+
+u16 displayTickdown;
+
+u16 holdCountA;
+u16 holdCountB;
+u16 holdCountX;
+u16 holdCountY;
+u16 holdCountXY;
+u16 holdCountAY;
+u16 holdCountAX;
+u16 holdCountBX;
+u16 holdCountBY;
+u16 holdCountBA;
+u16 noholdCount;
+
+};
+
+void matrix_Init(void *taskData);
+void matrix_Main (void *taskData);
+void matrix_Exit(void *taskData);
+void matrix_secret_clear(struct t_matrix_taskData *data);
+
+# 21 "menu_task.c"
 char *menu_option[] = {
 "MENU",
 "SLOT ",
 "PASSWORD ",
+"MATRIX ",
 "EXIT ",
 };
 u16 menu_option_idx;
@@ -10788,7 +10844,7 @@ void menu_display_option(struct t_menu_taskData *data){
 u16 size = sizeof(menu_options_leds)/sizeof(menu_options_leds[0]);
 u16 led = menu_options_leds[menu_option_idx % size];
 
-# 170
+# 174
 nullifyBadge_userLedsSet(data->badge, led);
 
 if (menu_option_idx == 0){
@@ -10810,9 +10866,13 @@ case 2:
 menu_clear(data);
 currentTask = LOCKED_TASK;
 break;
-case 3:
+case 4:
 menu_clear(data);
 currentTask = FLASHY_TASK;
+break;
+case 3:
+menu_clear(data);
+currentTask = MATRIX_TASK;
 break;
 }
 }

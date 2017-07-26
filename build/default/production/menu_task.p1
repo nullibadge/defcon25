@@ -8,26 +8,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 "71 nullifyBadge_displayL2.h
 [s S957 `uc -> 4 `i `uc 1 `ui 1 `S956 1 ]
 [n S957 t_nullifyDisplay_l2 charVect dpVect ledVect display_l1 ]
-"161 nullifyBadge.h
+"162 nullifyBadge.h
 [s S958 `S957 1 `uc 1 ]
 [n S958 t_nullifyBadge display registeredHw ]
 "13 menu_task.h
 [s S961 `*S958 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S961 t_menu_taskData badge locked delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount ]
-"214 nullifyBadge.h
+"215 nullifyBadge.h
 [v _nullifyBadge_userLedsRegister `(c ~T0 @X0 0 ef1`*S958 ]
-"235
+"236
 [v _nullifyBadge_userLedsClr `(v ~T0 @X0 0 ef1`*S958 ]
-"176
+"177
 [v _nullifyBadge_segDisplayRegister `(c ~T0 @X0 0 ef1`*S958 ]
-"206
+"207
 [v _nullifyBadge_segDisplayErase `(v ~T0 @X0 0 ef1`*S958 ]
-"51
+"52
 [v _currentTask `ui ~T0 @X0 0 e ]
-"59 menu_task.c
-[c E8078 0 1 2 3 .. ]
-[n E8078 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK  ]
-"243 nullifyBadge.h
+"63 menu_task.c
+[c E8078 0 1 2 3 4 .. ]
+[n E8078 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK MATRIX_TASK  ]
+"244 nullifyBadge.h
 [v _nullifyBadge_buttonsGet `(uc ~T0 @X0 0 ef ]
 "35 menu_task.h
 [v _menu_clear `(v ~T0 @X0 0 ef1`*S961 ]
@@ -37,17 +37,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _menu_display_option `(v ~T0 @X0 0 ef1`*S961 ]
 "34
 [v _menu_run_option `(v ~T0 @X0 0 ef1`*S961 ]
-"229 nullifyBadge.h
+"230 nullifyBadge.h
 [v _nullifyBadge_userLedsSet `(v ~T0 @X0 0 ef2`*S958`ui ]
-"200
+"201
 [v _nullifyBadge_segDisplayPutStr `(v ~T0 @X0 0 ef2`*S958`*uc ]
-"197
+"198
 [v _nullifyBadge_segDisplayForceUpdate `(v ~T0 @X0 0 ef1`*S958 ]
-"52
+"53
 [v _marquee `(v ~T0 @X0 0 ef2`*uc`ui ]
-"217
+"218
 [v _nullifyBadge_userLedsRelease `(v ~T0 @X0 0 ef1`*S958 ]
-"179
+"180
 [v _nullifyBadge_segDisplayRelease `(v ~T0 @X0 0 ef1`*S958 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -7852,8 +7852,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 8481 `i `ui
 "162
 -> -> 520 `i `ui
-"163
--> -> 24736 `i `ui
 "164
 -> -> 10 `i `ui
 "165
@@ -7913,11 +7911,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "192
 -> -> 10274 `i `ui
 "193
--> -> 4112 `i `ui
+-> -> 2056 `i `ui
 "194
 -> -> 1028 `i `ui
 "195
--> -> 4112 `i `ui
+-> -> 514 `i `ui
 "196
 -> -> 4112 `i `ui
 "198
@@ -8018,7 +8016,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 160: 0x2822,
 [; ;nullifyBadge_displayL1.h: 161: 0x2121,
 [; ;nullifyBadge_displayL1.h: 162: 0x0208,
-[; ;nullifyBadge_displayL1.h: 163: 0x60A0,
 [; ;nullifyBadge_displayL1.h: 164: 0x000A,
 [; ;nullifyBadge_displayL1.h: 165: 0x0020,
 [; ;nullifyBadge_displayL1.h: 166: 0x1010,
@@ -8048,9 +8045,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge_displayL1.h: 190: 0x0A0A,
 [; ;nullifyBadge_displayL1.h: 191: 0x0A04,
 [; ;nullifyBadge_displayL1.h: 192: 0x2822,
-[; ;nullifyBadge_displayL1.h: 193: 0x1010,
+[; ;nullifyBadge_displayL1.h: 193: 0x0808,
 [; ;nullifyBadge_displayL1.h: 194: 0x0404,
-[; ;nullifyBadge_displayL1.h: 195: 0x1010,
+[; ;nullifyBadge_displayL1.h: 195: 0x0202,
 [; ;nullifyBadge_displayL1.h: 196: 0x1010,
 [; ;nullifyBadge_displayL1.h: 197: 0xFFFF
 [; ;nullifyBadge_displayL1.h: 198: };
@@ -8373,89 +8370,90 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nullifyBadge.h: 44: SLOT_TASK,
 [; ;nullifyBadge.h: 45: FLASHY_TASK,
 [; ;nullifyBadge.h: 46: LOCKED_TASK,
-[; ;nullifyBadge.h: 47: };
-[; ;nullifyBadge.h: 50: extern u8 badge_locked;
-[; ;nullifyBadge.h: 51: extern u16 currentTask;
-[; ;nullifyBadge.h: 52: extern void marquee(char* string, u16 count);
-[; ;nullifyBadge.h: 53: extern void marquee_speedy(char* string, u16 count, u16 multiplier);
-[; ;nullifyBadge.h: 55: void led_roundabout(u16 counter);
-[; ;nullifyBadge.h: 56: void led_curtain(u16 counter);
-[; ;nullifyBadge.h: 57: void led_rand(void);
-[; ;nullifyBadge.h: 58: void led_circle(u16 count);
-[; ;nullifyBadge.h: 59: void let_alternate(u16 count);
-[; ;nullifyBadge.h: 60: void led_Parody(u16 count);
-[; ;nullifyBadge.h: 65: enum t_secret {
-[; ;nullifyBadge.h: 66: SECRET_VALUE_INIT,
-[; ;nullifyBadge.h: 67: SECRET_VALUE_TEST,
-[; ;nullifyBadge.h: 68: };
-[; ;nullifyBadge.h: 69: extern u16 secret_value;
-[; ;nullifyBadge.h: 125: enum t_hw_register {
-[; ;nullifyBadge.h: 126: HW_SEG_DISPLAY,
-[; ;nullifyBadge.h: 127: HW_USER_LEDS,
-[; ;nullifyBadge.h: 128: HW_IR_TX,
-[; ;nullifyBadge.h: 129: HW_EEPROM
-[; ;nullifyBadge.h: 130: };
-[; ;nullifyBadge.h: 132: enum t_userLed {
-[; ;nullifyBadge.h: 133: LED_G0,
-[; ;nullifyBadge.h: 134: LED_G1,
-[; ;nullifyBadge.h: 135: LED_G2,
-[; ;nullifyBadge.h: 136: LED_G3,
-[; ;nullifyBadge.h: 137: LED_G4,
-[; ;nullifyBadge.h: 138: LED_G5,
-[; ;nullifyBadge.h: 139: LED_G6,
-[; ;nullifyBadge.h: 140: LED_G7,
-[; ;nullifyBadge.h: 141: LED_G8,
-[; ;nullifyBadge.h: 142: LED_G9,
-[; ;nullifyBadge.h: 143: LED_R0,
-[; ;nullifyBadge.h: 144: LED_G10,
-[; ;nullifyBadge.h: 145: LED_G11,
-[; ;nullifyBadge.h: 146: LED_G12,
-[; ;nullifyBadge.h: 147: LED_G13,
-[; ;nullifyBadge.h: 148: LED_G14,
-[; ;nullifyBadge.h: 149: LED_G15
-[; ;nullifyBadge.h: 150: };
-[; ;nullifyBadge.h: 161: struct t_nullifyBadge {
-[; ;nullifyBadge.h: 162: struct t_nullifyDisplay_l2 display;
-[; ;nullifyBadge.h: 163: u8 registeredHw;
-[; ;nullifyBadge.h: 164: };
-[; ;nullifyBadge.h: 167: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 176: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 179: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 182: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 185: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 188: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 191: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
-[; ;nullifyBadge.h: 194: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
-[; ;nullifyBadge.h: 197: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 200: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 203: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
-[; ;nullifyBadge.h: 206: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 214: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 217: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 220: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 223: void nullifyBadge_userLedsSetBrightness(u8 brightness);
-[; ;nullifyBadge.h: 226: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 229: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 232: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
-[; ;nullifyBadge.h: 235: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 243: u8 nullifyBadge_buttonsGet();
-[; ;nullifyBadge.h: 246: u8 nullifyBadge_buttonAGet();
-[; ;nullifyBadge.h: 249: u8 nullifyBadge_buttonBGet();
-[; ;nullifyBadge.h: 252: u8 nullifyBadge_buttonXGet();
-[; ;nullifyBadge.h: 255: u8 nullifyBadge_buttonYGet();
-[; ;nullifyBadge.h: 263: u8 nullifyBadge_irGet();
-[; ;nullifyBadge.h: 276: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 279: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 282: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 285: void nullifyBadge_irTxSet();
-[; ;nullifyBadge.h: 288: void nullifyBadge_irTxClr();
-[; ;nullifyBadge.h: 296: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 299: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 302: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
-[; ;nullifyBadge.h: 305: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
-[; ;nullifyBadge.h: 308: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
-[; ;nullifyBadge.h: 311: u8 nullifyBadge_eepromRead8bit(u16 addr);
-[; ;nullifyBadge.h: 314: u16 nullifyBadge_eepromRead16bit(u16 addr);
+[; ;nullifyBadge.h: 47: MATRIX_TASK,
+[; ;nullifyBadge.h: 48: };
+[; ;nullifyBadge.h: 51: extern u8 badge_locked;
+[; ;nullifyBadge.h: 52: extern u16 currentTask;
+[; ;nullifyBadge.h: 53: extern void marquee(char* string, u16 count);
+[; ;nullifyBadge.h: 54: extern void marquee_speedy(char* string, u16 count, u16 multiplier);
+[; ;nullifyBadge.h: 56: void led_roundabout(u16 counter);
+[; ;nullifyBadge.h: 57: void led_curtain(u16 counter);
+[; ;nullifyBadge.h: 58: void led_rand(void);
+[; ;nullifyBadge.h: 59: void led_circle(u16 count);
+[; ;nullifyBadge.h: 60: void let_alternate(u16 count);
+[; ;nullifyBadge.h: 61: void led_Parody(u16 count);
+[; ;nullifyBadge.h: 66: enum t_secret {
+[; ;nullifyBadge.h: 67: SECRET_VALUE_INIT,
+[; ;nullifyBadge.h: 68: SECRET_VALUE_TEST,
+[; ;nullifyBadge.h: 69: };
+[; ;nullifyBadge.h: 70: extern u16 secret_value;
+[; ;nullifyBadge.h: 126: enum t_hw_register {
+[; ;nullifyBadge.h: 127: HW_SEG_DISPLAY,
+[; ;nullifyBadge.h: 128: HW_USER_LEDS,
+[; ;nullifyBadge.h: 129: HW_IR_TX,
+[; ;nullifyBadge.h: 130: HW_EEPROM
+[; ;nullifyBadge.h: 131: };
+[; ;nullifyBadge.h: 133: enum t_userLed {
+[; ;nullifyBadge.h: 134: LED_G0,
+[; ;nullifyBadge.h: 135: LED_G1,
+[; ;nullifyBadge.h: 136: LED_G2,
+[; ;nullifyBadge.h: 137: LED_G3,
+[; ;nullifyBadge.h: 138: LED_G4,
+[; ;nullifyBadge.h: 139: LED_G5,
+[; ;nullifyBadge.h: 140: LED_G6,
+[; ;nullifyBadge.h: 141: LED_G7,
+[; ;nullifyBadge.h: 142: LED_G8,
+[; ;nullifyBadge.h: 143: LED_G9,
+[; ;nullifyBadge.h: 144: LED_R0,
+[; ;nullifyBadge.h: 145: LED_G10,
+[; ;nullifyBadge.h: 146: LED_G11,
+[; ;nullifyBadge.h: 147: LED_G12,
+[; ;nullifyBadge.h: 148: LED_G13,
+[; ;nullifyBadge.h: 149: LED_G14,
+[; ;nullifyBadge.h: 150: LED_G15
+[; ;nullifyBadge.h: 151: };
+[; ;nullifyBadge.h: 162: struct t_nullifyBadge {
+[; ;nullifyBadge.h: 163: struct t_nullifyDisplay_l2 display;
+[; ;nullifyBadge.h: 164: u8 registeredHw;
+[; ;nullifyBadge.h: 165: };
+[; ;nullifyBadge.h: 168: void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 177: s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 180: void nullifyBadge_segDisplayRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 183: u8 nullifyBadge_segDisplayIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 186: void nullifyBadge_segDisplaySetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 189: void nullifyBadge_segDisplayPutChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 192: void nullifyBadge_segDisplayPutCharPos (struct t_nullifyBadge *badge, char c, u8 pos);
+[; ;nullifyBadge.h: 195: void nullifyBadge_segDisplayPrintChar (struct t_nullifyBadge *badge, char c);
+[; ;nullifyBadge.h: 198: void nullifyBadge_segDisplayForceUpdate (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 201: void nullifyBadge_segDisplayPutStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 204: void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
+[; ;nullifyBadge.h: 207: void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 215: s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 218: void nullifyBadge_userLedsRelease (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 221: u8 nullifyBadge_userLedsAreRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 224: void nullifyBadge_userLedsSetBrightness(u8 brightness);
+[; ;nullifyBadge.h: 227: u16 nullifyBadge_userLedsGet (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 230: void nullifyBadge_userLedsSet (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 233: void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedData);
+[; ;nullifyBadge.h: 236: void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 244: u8 nullifyBadge_buttonsGet();
+[; ;nullifyBadge.h: 247: u8 nullifyBadge_buttonAGet();
+[; ;nullifyBadge.h: 250: u8 nullifyBadge_buttonBGet();
+[; ;nullifyBadge.h: 253: u8 nullifyBadge_buttonXGet();
+[; ;nullifyBadge.h: 256: u8 nullifyBadge_buttonYGet();
+[; ;nullifyBadge.h: 264: u8 nullifyBadge_irGet();
+[; ;nullifyBadge.h: 277: s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 280: void nullifyBadge_irTxRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 283: u8 nullifyBadge_irTxIsRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 286: void nullifyBadge_irTxSet();
+[; ;nullifyBadge.h: 289: void nullifyBadge_irTxClr();
+[; ;nullifyBadge.h: 297: s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 300: void nullifyBadge_eepromRelease(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 303: u8 nullifyBadge_eepromRegistered(struct t_nullifyBadge *badge);
+[; ;nullifyBadge.h: 306: void nullifyBadge_eepromWrite8bit(u16 addr, u8 data);
+[; ;nullifyBadge.h: 309: void nullifyBadge_eepromWrite16bit(u16 addr, u16 data);
+[; ;nullifyBadge.h: 312: u8 nullifyBadge_eepromRead8bit(u16 addr);
+[; ;nullifyBadge.h: 315: u16 nullifyBadge_eepromRead16bit(u16 addr);
 [; ;cooperative_scheduler.h: 69: struct t_schedulerTask {
 [; ;cooperative_scheduler.h: 70: u16 systemTickLastExecuted;
 [; ;cooperative_scheduler.h: 71: void *taskData;
@@ -8518,33 +8516,76 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;slot_task.h: 56: void slot_Finished_Animation(void *taskData);
 [; ;slot_task.h: 57: void slot_Main (void *taskData);
 [; ;slot_task.h: 58: void slot_Exit(void *taskData);
-"18 menu_task.c
+[; ;matrix_task.h: 15: enum t_matrix_display_states {
+[; ;matrix_task.h: 16: MATRIX_A,
+[; ;matrix_task.h: 17: MATRIX_Y,
+[; ;matrix_task.h: 18: MATRIX_B,
+[; ;matrix_task.h: 19: MATRIX_X,
+[; ;matrix_task.h: 20: MATRIX_AX,
+[; ;matrix_task.h: 21: MATRIX_AY,
+[; ;matrix_task.h: 22: MATRIX_BA,
+[; ;matrix_task.h: 23: MATRIX_BX,
+[; ;matrix_task.h: 24: MATRIX_XY,
+[; ;matrix_task.h: 25: MATRIX_BY,
+[; ;matrix_task.h: 26: MATRIX_STATE_DISPLAY,
+[; ;matrix_task.h: 27: MATRIX_DONE
+[; ;matrix_task.h: 28: };
+[; ;matrix_task.h: 30: enum t_matrix_martix_state{
+[; ;matrix_task.h: 31: MATRIX_SOLVED,
+[; ;matrix_task.h: 32: STILL_IN_MATRIX,
+[; ;matrix_task.h: 33: };
+[; ;matrix_task.h: 35: struct t_matrix_taskData {
+[; ;matrix_task.h: 37: struct t_nullifyBadge *badge;
+[; ;matrix_task.h: 39: enum t_matrix_martix_state martix_state;
+[; ;matrix_task.h: 41: enum t_matrix_display_states display_state;
+[; ;matrix_task.h: 44: u16 delayTickCount;
+[; ;matrix_task.h: 46: u16 displayTickdown;
+[; ;matrix_task.h: 48: u16 holdCountA;
+[; ;matrix_task.h: 49: u16 holdCountB;
+[; ;matrix_task.h: 50: u16 holdCountX;
+[; ;matrix_task.h: 51: u16 holdCountY;
+[; ;matrix_task.h: 52: u16 holdCountXY;
+[; ;matrix_task.h: 53: u16 holdCountAY;
+[; ;matrix_task.h: 54: u16 holdCountAX;
+[; ;matrix_task.h: 55: u16 holdCountBX;
+[; ;matrix_task.h: 56: u16 holdCountBY;
+[; ;matrix_task.h: 57: u16 holdCountBA;
+[; ;matrix_task.h: 58: u16 noholdCount;
+[; ;matrix_task.h: 60: };
+[; ;matrix_task.h: 62: void matrix_Init(void *taskData);
+[; ;matrix_task.h: 63: void matrix_Main (void *taskData);
+[; ;matrix_task.h: 64: void matrix_Exit(void *taskData);
+[; ;matrix_task.h: 65: void matrix_secret_clear(struct t_matrix_taskData *data);
+"21 menu_task.c
 [v _menu_option `*uc ~T0 @X0 -> 0 `x e ]
 [i _menu_option
 :U ..
-"19
--> :s 1C `*uc
-"20
--> :s 2C `*uc
-"21
--> :s 3C `*uc
 "22
+-> :s 1C `*uc
+"23
+-> :s 2C `*uc
+"24
+-> :s 3C `*uc
+"25
 -> :s 4C `*uc
+"26
+-> :s 5C `*uc
 ..
 ]
-[; ;menu_task.c: 18: char *menu_option[] = {
-[; ;menu_task.c: 19: "MENU",
-[; ;menu_task.c: 20: "SLOT ",
-[; ;menu_task.c: 21: "PASSWORD ",
-[; ;menu_task.c: 22: "EXIT ",
-[; ;menu_task.c: 23: };
-"24
+[; ;menu_task.c: 21: char *menu_option[] = {
+[; ;menu_task.c: 22: "MENU",
+[; ;menu_task.c: 23: "SLOT ",
+[; ;menu_task.c: 24: "PASSWORD ",
+[; ;menu_task.c: 25: "MATRIX ",
+[; ;menu_task.c: 26: "EXIT ",
+[; ;menu_task.c: 27: };
+"28
 [v _menu_option_idx `ui ~T0 @X0 1 e ]
-[; ;menu_task.c: 24: u16 menu_option_idx;
-"25
+[; ;menu_task.c: 28: u16 menu_option_idx;
+"29
 [v _menu_option_size `ui ~T0 @X0 1 e ]
-[; ;menu_task.c: 25: u16 menu_option_size;
-"30
+[; ;menu_task.c: 29: u16 menu_option_size;
+"34
 [v _menu_options_leds `ui ~T0 @X0 -> 0 `x e ]
 [i _menu_options_leds
 :U ..
@@ -8555,551 +8596,565 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 32 `i `ui
 ..
 ]
-[; ;menu_task.c: 30: u16 menu_options_leds[] = { 512, 256, 128, 64, 32 };
-"33
+[; ;menu_task.c: 34: u16 menu_options_leds[] = { 512, 256, 128, 64, 32 };
+"37
 [v _menu_Init `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;menu_task.c: 33: void menu_Init(void *taskData) {
+[; ;menu_task.c: 37: void menu_Init(void *taskData) {
 [e :U _menu_Init ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"34
-[v _data `*S961 ~T0 @X0 1 a ]
-[; ;menu_task.c: 34: struct t_menu_taskData *data = (struct t_menu_taskData *) taskData;
-[e = _data -> _taskData `*S961 ]
-[; ;menu_task.c: 37: nullifyBadge_userLedsRegister(data->badge);
-"37
-[e ( _nullifyBadge_userLedsRegister (1 . *U _data 0 ]
-[; ;menu_task.c: 38: nullifyBadge_userLedsClr(data->badge);
 "38
+[v _data `*S961 ~T0 @X0 1 a ]
+[; ;menu_task.c: 38: struct t_menu_taskData *data = (struct t_menu_taskData *) taskData;
+[e = _data -> _taskData `*S961 ]
+[; ;menu_task.c: 41: nullifyBadge_userLedsRegister(data->badge);
+"41
+[e ( _nullifyBadge_userLedsRegister (1 . *U _data 0 ]
+[; ;menu_task.c: 42: nullifyBadge_userLedsClr(data->badge);
+"42
 [e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;menu_task.c: 39: nullifyBadge_segDisplayRegister(data->badge);
-"39
-[e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
-[; ;menu_task.c: 40: nullifyBadge_segDisplayErase(data->badge);
-"40
-[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;menu_task.c: 43: data->delayTickCount = 50;
+[; ;menu_task.c: 43: nullifyBadge_segDisplayRegister(data->badge);
 "43
-[e = . *U _data 2 -> -> 50 `i `ui ]
-[; ;menu_task.c: 44: data->holdCountA = 0;
+[e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
+[; ;menu_task.c: 44: nullifyBadge_segDisplayErase(data->badge);
 "44
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;menu_task.c: 45: data->holdCountB = 0;
-"45
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;menu_task.c: 46: data->holdCountX = 0;
-"46
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;menu_task.c: 47: data->holdCountY = 0;
+[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
+[; ;menu_task.c: 47: data->delayTickCount = 50;
 "47
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;menu_task.c: 48: data->noholdCount = 0;
+[e = . *U _data 2 -> -> 50 `i `ui ]
+[; ;menu_task.c: 48: data->holdCountA = 0;
 "48
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;menu_task.c: 50: menu_option_idx = 0;
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;menu_task.c: 49: data->holdCountB = 0;
+"49
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;menu_task.c: 50: data->holdCountX = 0;
 "50
-[e = _menu_option_idx -> -> 0 `i `ui ]
-[; ;menu_task.c: 52: menu_option_size = sizeof(menu_option)/sizeof(menu_option[0]);
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;menu_task.c: 51: data->holdCountY = 0;
+"51
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;menu_task.c: 52: data->noholdCount = 0;
 "52
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;menu_task.c: 54: menu_option_idx = 0;
+"54
+[e = _menu_option_idx -> -> 0 `i `ui ]
+[; ;menu_task.c: 56: menu_option_size = sizeof(menu_option)/sizeof(menu_option[0]);
+"56
 [e = _menu_option_size / -> # _menu_option `ui -> # *U + &U _menu_option * -> -> -> 0 `i `ui `ux -> -> # *U &U _menu_option `ui `ux `ui ]
-[; ;menu_task.c: 53: }
-"53
-[e :UE 963 ]
+[; ;menu_task.c: 57: }
+"57
+[e :UE 964 ]
 }
-"55
+"59
 [v _menu_Main `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;menu_task.c: 55: void menu_Main (void *taskData) {
+[; ;menu_task.c: 59: void menu_Main (void *taskData) {
 [e :U _menu_Main ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"56
+"60
 [v _data `*S961 ~T0 @X0 1 a ]
-[; ;menu_task.c: 56: struct t_menu_taskData *data = (struct t_menu_taskData *) taskData;
+[; ;menu_task.c: 60: struct t_menu_taskData *data = (struct t_menu_taskData *) taskData;
 [e = _data -> _taskData `*S961 ]
-"57
-[v _buttonPressed `uc ~T0 @X0 1 a ]
-[; ;menu_task.c: 57: u8 buttonPressed;
-[; ;menu_task.c: 59: if ( currentTask != MENU_TASK ){
-"59
-[e $ ! != _currentTask -> . `E8078 0 `ui 965  ]
-{
-[; ;menu_task.c: 61: buttonPressed = nullifyBadge_buttonsGet();
 "61
-[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
-[; ;menu_task.c: 62: switch (buttonPressed) {
-"62
-[e $U 967  ]
-{
-[; ;menu_task.c: 63: case 1 | 2 | 8:
+[v _buttonPressed `uc ~T0 @X0 1 a ]
+[; ;menu_task.c: 61: u8 buttonPressed;
+[; ;menu_task.c: 63: if ( currentTask != MENU_TASK ){
 "63
-[e :U 968 ]
-[; ;menu_task.c: 64: currentTask = MENU_TASK;
-"64
-[e = _currentTask -> . `E8078 0 `ui ]
-[; ;menu_task.c: 65: menu_clear(data);
+[e $ ! != _currentTask -> . `E8078 0 `ui 966  ]
+{
+[; ;menu_task.c: 65: buttonPressed = nullifyBadge_buttonsGet();
 "65
-[e ( _menu_clear (1 _data ]
-[; ;menu_task.c: 68: slot_Setup(slot_taskData);
-"68
-[e ( _slot_Setup (1 -> _slot_taskData `*v ]
-[; ;menu_task.c: 71: data->holdCountA = 1;
-"71
-[e = . *U _data 3 -> -> 1 `i `ui ]
-[; ;menu_task.c: 72: data->holdCountB = 1;
-"72
-[e = . *U _data 4 -> -> 1 `i `ui ]
-[; ;menu_task.c: 73: data->holdCountX = 1;
-"73
-[e = . *U _data 5 -> -> 1 `i `ui ]
-[; ;menu_task.c: 74: data->holdCountY = 1;
-"74
-[e = . *U _data 6 -> -> 1 `i `ui ]
-[; ;menu_task.c: 76: menu_option_idx = 0;
-"76
-[e = _menu_option_idx -> -> 0 `i `ui ]
-[; ;menu_task.c: 77: menu_display_option(data);
-"77
-[e ( _menu_display_option (1 _data ]
-[; ;menu_task.c: 78: break;
-"78
-[e $U 966  ]
-[; ;menu_task.c: 79: default:
-"79
-[e :U 969 ]
-[; ;menu_task.c: 81: data->holdCountA = 1;
-"81
-[e = . *U _data 3 -> -> 1 `i `ui ]
-[; ;menu_task.c: 82: data->holdCountB = 1;
-"82
-[e = . *U _data 4 -> -> 1 `i `ui ]
-[; ;menu_task.c: 83: data->holdCountX = 1;
-"83
-[e = . *U _data 5 -> -> 1 `i `ui ]
-[; ;menu_task.c: 84: data->holdCountY = 1;
-"84
-[e = . *U _data 6 -> -> 1 `i `ui ]
-[; ;menu_task.c: 85: break;
-"85
-[e $U 966  ]
-"86
-}
-[; ;menu_task.c: 86: }
-[e $U 966  ]
-"62
-[e :U 967 ]
-[e [\ _buttonPressed , $ -> | | -> 1 `i -> 2 `i -> 8 `i `uc 968
- 969 ]
-"86
-[e :U 966 ]
-[; ;menu_task.c: 87: return;
-"87
-[e $UE 964  ]
-"88
-}
-[e :U 965 ]
-[; ;menu_task.c: 88: }
-[; ;menu_task.c: 90: buttonPressed = nullifyBadge_buttonsGet();
-"90
 [e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
-[; ;menu_task.c: 91: switch (buttonPressed) {
+[; ;menu_task.c: 66: switch (buttonPressed) {
+"66
+[e $U 968  ]
+{
+[; ;menu_task.c: 67: case 1 | 2 | 8:
+"67
+[e :U 969 ]
+[; ;menu_task.c: 68: currentTask = MENU_TASK;
+"68
+[e = _currentTask -> . `E8078 0 `ui ]
+[; ;menu_task.c: 69: menu_clear(data);
+"69
+[e ( _menu_clear (1 _data ]
+[; ;menu_task.c: 72: slot_Setup(slot_taskData);
+"72
+[e ( _slot_Setup (1 -> _slot_taskData `*v ]
+[; ;menu_task.c: 75: data->holdCountA = 1;
+"75
+[e = . *U _data 3 -> -> 1 `i `ui ]
+[; ;menu_task.c: 76: data->holdCountB = 1;
+"76
+[e = . *U _data 4 -> -> 1 `i `ui ]
+[; ;menu_task.c: 77: data->holdCountX = 1;
+"77
+[e = . *U _data 5 -> -> 1 `i `ui ]
+[; ;menu_task.c: 78: data->holdCountY = 1;
+"78
+[e = . *U _data 6 -> -> 1 `i `ui ]
+[; ;menu_task.c: 80: menu_option_idx = 0;
+"80
+[e = _menu_option_idx -> -> 0 `i `ui ]
+[; ;menu_task.c: 81: menu_display_option(data);
+"81
+[e ( _menu_display_option (1 _data ]
+[; ;menu_task.c: 82: break;
+"82
+[e $U 967  ]
+[; ;menu_task.c: 83: default:
+"83
+[e :U 970 ]
+[; ;menu_task.c: 85: data->holdCountA = 1;
+"85
+[e = . *U _data 3 -> -> 1 `i `ui ]
+[; ;menu_task.c: 86: data->holdCountB = 1;
+"86
+[e = . *U _data 4 -> -> 1 `i `ui ]
+[; ;menu_task.c: 87: data->holdCountX = 1;
+"87
+[e = . *U _data 5 -> -> 1 `i `ui ]
+[; ;menu_task.c: 88: data->holdCountY = 1;
+"88
+[e = . *U _data 6 -> -> 1 `i `ui ]
+[; ;menu_task.c: 89: break;
+"89
+[e $U 967  ]
+"90
+}
+[; ;menu_task.c: 90: }
+[e $U 967  ]
+"66
+[e :U 968 ]
+[e [\ _buttonPressed , $ -> | | -> 1 `i -> 2 `i -> 8 `i `uc 969
+ 970 ]
+"90
+[e :U 967 ]
+[; ;menu_task.c: 91: return;
 "91
-[e $U 971  ]
-{
-[; ;menu_task.c: 92: case 1:
+[e $UE 965  ]
 "92
-[e :U 972 ]
-[; ;menu_task.c: 94: if (data->holdCountA == 0){
+}
+[e :U 966 ]
+[; ;menu_task.c: 92: }
+[; ;menu_task.c: 94: buttonPressed = nullifyBadge_buttonsGet();
 "94
-[e $ ! == . *U _data 3 -> -> 0 `i `ui 973  ]
+[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
+[; ;menu_task.c: 95: switch (buttonPressed) {
+"95
+[e $U 972  ]
 {
-[; ;menu_task.c: 96: if (menu_option_idx == 0){
+[; ;menu_task.c: 96: case 1:
 "96
-[e $ ! == _menu_option_idx -> -> 0 `i `ui 974  ]
-{
-[; ;menu_task.c: 97: menu_option_idx = menu_option_size - 1;
-"97
-[e = _menu_option_idx - _menu_option_size -> -> 1 `i `ui ]
+[e :U 973 ]
+[; ;menu_task.c: 98: if (data->holdCountA == 0){
 "98
-}
-[; ;menu_task.c: 98: }
-[e $U 975  ]
-"99
-[e :U 974 ]
-[; ;menu_task.c: 99: else {
+[e $ ! == . *U _data 3 -> -> 0 `i `ui 974  ]
 {
-[; ;menu_task.c: 100: menu_option_idx -= 1;
+[; ;menu_task.c: 100: if (menu_option_idx == 0){
 "100
-[e =- _menu_option_idx -> -> 1 `i `ui ]
+[e $ ! == _menu_option_idx -> -> 0 `i `ui 975  ]
+{
+[; ;menu_task.c: 101: menu_option_idx = menu_option_size - 1;
 "101
-}
-[e :U 975 ]
+[e = _menu_option_idx - _menu_option_size -> -> 1 `i `ui ]
 "102
 }
-[e :U 973 ]
-[; ;menu_task.c: 101: }
 [; ;menu_task.c: 102: }
-[; ;menu_task.c: 103: menu_display_option(data);
+[e $U 976  ]
 "103
-[e ( _menu_display_option (1 _data ]
-[; ;menu_task.c: 104: data->holdCountA += 1;
+[e :U 975 ]
+[; ;menu_task.c: 103: else {
+{
+[; ;menu_task.c: 104: menu_option_idx -= 1;
 "104
-[e =+ . *U _data 3 -> -> 1 `i `ui ]
-[; ;menu_task.c: 105: data->holdCountB = 0;
+[e =- _menu_option_idx -> -> 1 `i `ui ]
 "105
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;menu_task.c: 106: data->holdCountX = 0;
-"106
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;menu_task.c: 107: data->holdCountY = 0;
-"107
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;menu_task.c: 108: data->noholdCount = 0;
-"108
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;menu_task.c: 109: break;
-"109
-[e $U 970  ]
-[; ;menu_task.c: 110: case 2:
-"110
+}
 [e :U 976 ]
-[; ;menu_task.c: 112: if (data->holdCountB == 0){
+"106
+}
+[e :U 974 ]
+[; ;menu_task.c: 105: }
+[; ;menu_task.c: 106: }
+[; ;menu_task.c: 107: menu_display_option(data);
+"107
+[e ( _menu_display_option (1 _data ]
+[; ;menu_task.c: 108: data->holdCountA += 1;
+"108
+[e =+ . *U _data 3 -> -> 1 `i `ui ]
+[; ;menu_task.c: 109: data->holdCountB = 0;
+"109
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;menu_task.c: 110: data->holdCountX = 0;
+"110
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;menu_task.c: 111: data->holdCountY = 0;
+"111
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;menu_task.c: 112: data->noholdCount = 0;
 "112
-[e $ ! == . *U _data 4 -> -> 0 `i `ui 977  ]
-{
-[; ;menu_task.c: 114: if (menu_option_idx == menu_option_size - 1){
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;menu_task.c: 113: break;
+"113
+[e $U 971  ]
+[; ;menu_task.c: 114: case 2:
 "114
-[e $ ! == _menu_option_idx - _menu_option_size -> -> 1 `i `ui 978  ]
-{
-[; ;menu_task.c: 115: menu_option_idx = 0;
-"115
-[e = _menu_option_idx -> -> 0 `i `ui ]
+[e :U 977 ]
+[; ;menu_task.c: 116: if (data->holdCountB == 0){
 "116
-}
-[; ;menu_task.c: 116: }
-[e $U 979  ]
-"117
-[e :U 978 ]
-[; ;menu_task.c: 117: else {
+[e $ ! == . *U _data 4 -> -> 0 `i `ui 978  ]
 {
-[; ;menu_task.c: 118: menu_option_idx += 1;
+[; ;menu_task.c: 118: if (menu_option_idx == menu_option_size - 1){
 "118
-[e =+ _menu_option_idx -> -> 1 `i `ui ]
+[e $ ! == _menu_option_idx - _menu_option_size -> -> 1 `i `ui 979  ]
+{
+[; ;menu_task.c: 119: menu_option_idx = 0;
 "119
-}
-[e :U 979 ]
+[e = _menu_option_idx -> -> 0 `i `ui ]
 "120
 }
-[e :U 977 ]
-[; ;menu_task.c: 119: }
 [; ;menu_task.c: 120: }
-[; ;menu_task.c: 121: menu_display_option(data);
+[e $U 980  ]
 "121
-[e ( _menu_display_option (1 _data ]
-[; ;menu_task.c: 122: data->holdCountA = 0;
+[e :U 979 ]
+[; ;menu_task.c: 121: else {
+{
+[; ;menu_task.c: 122: menu_option_idx += 1;
 "122
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;menu_task.c: 123: data->holdCountB += 1;
+[e =+ _menu_option_idx -> -> 1 `i `ui ]
 "123
-[e =+ . *U _data 4 -> -> 1 `i `ui ]
-[; ;menu_task.c: 124: data->holdCountX = 0;
-"124
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;menu_task.c: 125: data->holdCountY = 0;
-"125
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;menu_task.c: 126: data->noholdCount = 0;
-"126
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;menu_task.c: 127: break;
-"127
-[e $U 970  ]
-[; ;menu_task.c: 128: case 4:
-"128
+}
 [e :U 980 ]
-[; ;menu_task.c: 129: if (data->holdCountX == 0){
-"129
-[e $ ! == . *U _data 5 -> -> 0 `i `ui 981  ]
-{
-[; ;menu_task.c: 131: menu_clear(data);
-"131
-[e ( _menu_clear (1 _data ]
-[; ;menu_task.c: 132: currentTask = FLASHY_TASK;
-"132
-[e = _currentTask -> . `E8078 2 `ui ]
-"133
+"124
 }
-[e :U 981 ]
-[; ;menu_task.c: 133: }
-[; ;menu_task.c: 134: data->holdCountA = 0;
-"134
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;menu_task.c: 135: data->holdCountB = 0;
-"135
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;menu_task.c: 136: data->holdCountX += 1;
-"136
-[e =+ . *U _data 5 -> -> 1 `i `ui ]
-[; ;menu_task.c: 137: data->holdCountY = 0;
-"137
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;menu_task.c: 138: data->noholdCount = 0;
-"138
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;menu_task.c: 139: break;
-"139
-[e $U 970  ]
-[; ;menu_task.c: 140: case 8:
-"140
-[e :U 982 ]
-[; ;menu_task.c: 141: if (data->holdCountY == 0){
-"141
-[e $ ! == . *U _data 6 -> -> 0 `i `ui 983  ]
-{
-[; ;menu_task.c: 142: menu_run_option(data);
-"142
-[e ( _menu_run_option (1 _data ]
-"143
-}
-[e :U 983 ]
-[; ;menu_task.c: 143: }
-[; ;menu_task.c: 144: data->holdCountA = 0;
-"144
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;menu_task.c: 145: data->holdCountB = 0;
-"145
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;menu_task.c: 146: data->holdCountX = 0;
-"146
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;menu_task.c: 147: data->holdCountY += 1;
-"147
-[e =+ . *U _data 6 -> -> 1 `i `ui ]
-[; ;menu_task.c: 148: data->noholdCount = 0;
-"148
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;menu_task.c: 149: break;
-"149
-[e $U 970  ]
-[; ;menu_task.c: 150: case 1 | 2 | 8:
-"150
-[e :U 984 ]
-[; ;menu_task.c: 151: default:
-"151
-[e :U 985 ]
-[; ;menu_task.c: 152: menu_display_option(data);
-"152
+[e :U 978 ]
+[; ;menu_task.c: 123: }
+[; ;menu_task.c: 124: }
+[; ;menu_task.c: 125: menu_display_option(data);
+"125
 [e ( _menu_display_option (1 _data ]
-[; ;menu_task.c: 153: data->holdCountA = 0;
-"153
+[; ;menu_task.c: 126: data->holdCountA = 0;
+"126
 [e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;menu_task.c: 154: data->holdCountB = 0;
-"154
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;menu_task.c: 155: data->holdCountX = 0;
-"155
+[; ;menu_task.c: 127: data->holdCountB += 1;
+"127
+[e =+ . *U _data 4 -> -> 1 `i `ui ]
+[; ;menu_task.c: 128: data->holdCountX = 0;
+"128
 [e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;menu_task.c: 156: data->holdCountY = 0;
-"156
+[; ;menu_task.c: 129: data->holdCountY = 0;
+"129
 [e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;menu_task.c: 157: data->noholdCount += 1;
+[; ;menu_task.c: 130: data->noholdCount = 0;
+"130
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;menu_task.c: 131: break;
+"131
+[e $U 971  ]
+[; ;menu_task.c: 132: case 4:
+"132
+[e :U 981 ]
+[; ;menu_task.c: 133: if (data->holdCountX == 0){
+"133
+[e $ ! == . *U _data 5 -> -> 0 `i `ui 982  ]
+{
+[; ;menu_task.c: 135: menu_clear(data);
+"135
+[e ( _menu_clear (1 _data ]
+[; ;menu_task.c: 136: currentTask = FLASHY_TASK;
+"136
+[e = _currentTask -> . `E8078 2 `ui ]
+"137
+}
+[e :U 982 ]
+[; ;menu_task.c: 137: }
+[; ;menu_task.c: 138: data->holdCountA = 0;
+"138
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;menu_task.c: 139: data->holdCountB = 0;
+"139
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;menu_task.c: 140: data->holdCountX += 1;
+"140
+[e =+ . *U _data 5 -> -> 1 `i `ui ]
+[; ;menu_task.c: 141: data->holdCountY = 0;
+"141
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;menu_task.c: 142: data->noholdCount = 0;
+"142
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;menu_task.c: 143: break;
+"143
+[e $U 971  ]
+[; ;menu_task.c: 144: case 8:
+"144
+[e :U 983 ]
+[; ;menu_task.c: 145: if (data->holdCountY == 0){
+"145
+[e $ ! == . *U _data 6 -> -> 0 `i `ui 984  ]
+{
+[; ;menu_task.c: 146: menu_run_option(data);
+"146
+[e ( _menu_run_option (1 _data ]
+"147
+}
+[e :U 984 ]
+[; ;menu_task.c: 147: }
+[; ;menu_task.c: 148: data->holdCountA = 0;
+"148
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;menu_task.c: 149: data->holdCountB = 0;
+"149
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;menu_task.c: 150: data->holdCountX = 0;
+"150
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;menu_task.c: 151: data->holdCountY += 1;
+"151
+[e =+ . *U _data 6 -> -> 1 `i `ui ]
+[; ;menu_task.c: 152: data->noholdCount = 0;
+"152
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;menu_task.c: 153: break;
+"153
+[e $U 971  ]
+[; ;menu_task.c: 154: case 1 | 2 | 8:
+"154
+[e :U 985 ]
+[; ;menu_task.c: 155: default:
+"155
+[e :U 986 ]
+[; ;menu_task.c: 156: menu_display_option(data);
+"156
+[e ( _menu_display_option (1 _data ]
+[; ;menu_task.c: 157: data->holdCountA = 0;
 "157
-[e =+ . *U _data 7 -> -> 1 `i `ui ]
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;menu_task.c: 158: data->holdCountB = 0;
 "158
-}
-[; ;menu_task.c: 158: }
-[e $U 970  ]
-"91
-[e :U 971 ]
-[e [\ _buttonPressed , $ -> -> 1 `i `uc 972
- , $ -> -> 2 `i `uc 976
- , $ -> -> 4 `i `uc 980
- , $ -> -> 8 `i `uc 982
- , $ -> | | -> 1 `i -> 2 `i -> 8 `i `uc 984
- 985 ]
-"158
-[e :U 970 ]
-[; ;menu_task.c: 160: }
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;menu_task.c: 159: data->holdCountX = 0;
+"159
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;menu_task.c: 160: data->holdCountY = 0;
 "160
-[e :UE 964 ]
-}
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;menu_task.c: 161: data->noholdCount += 1;
+"161
+[e =+ . *U _data 7 -> -> 1 `i `ui ]
 "162
+}
+[; ;menu_task.c: 162: }
+[e $U 971  ]
+"95
+[e :U 972 ]
+[e [\ _buttonPressed , $ -> -> 1 `i `uc 973
+ , $ -> -> 2 `i `uc 977
+ , $ -> -> 4 `i `uc 981
+ , $ -> -> 8 `i `uc 983
+ , $ -> | | -> 1 `i -> 2 `i -> 8 `i `uc 985
+ 986 ]
+"162
+[e :U 971 ]
+[; ;menu_task.c: 164: }
+"164
+[e :UE 965 ]
+}
+"166
 [v _menu_display_option `(v ~T0 @X0 1 ef1`*S961 ]
 {
-[; ;menu_task.c: 162: void menu_display_option(struct t_menu_taskData *data){
+[; ;menu_task.c: 166: void menu_display_option(struct t_menu_taskData *data){
 [e :U _menu_display_option ]
 [v _data `*S961 ~T0 @X0 1 r1 ]
 [f ]
-"163
+"167
 [v _size `ui ~T0 @X0 1 a ]
-[; ;menu_task.c: 163: u16 size = sizeof(menu_options_leds)/sizeof(menu_options_leds[0]);
+[; ;menu_task.c: 167: u16 size = sizeof(menu_options_leds)/sizeof(menu_options_leds[0]);
 [e = _size / -> # _menu_options_leds `ui -> # *U + &U _menu_options_leds * -> -> -> 0 `i `ui `ux -> -> # *U &U _menu_options_leds `ui `ux `ui ]
-"164
+"168
 [v _led `ui ~T0 @X0 1 a ]
-[; ;menu_task.c: 164: u16 led = menu_options_leds[menu_option_idx % size];
+[; ;menu_task.c: 168: u16 led = menu_options_leds[menu_option_idx % size];
 [e = _led *U + &U _menu_options_leds * -> % _menu_option_idx _size `ux -> -> # *U &U _menu_options_leds `ui `ux ]
-[; ;menu_task.c: 170: nullifyBadge_userLedsSet(data->badge, led);
-"170
-[e ( _nullifyBadge_userLedsSet (2 , . *U _data 0 _led ]
-[; ;menu_task.c: 172: if (menu_option_idx == 0){
-"172
-[e $ ! == _menu_option_idx -> -> 0 `i `ui 987  ]
-{
-[; ;menu_task.c: 173: nullifyBadge_segDisplayPutStr(data->badge, menu_option[menu_option_idx]);
-"173
-[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 *U + &U _menu_option * -> _menu_option_idx `ux -> -> # *U &U _menu_option `ui `ux ]
-[; ;menu_task.c: 174: nullifyBadge_segDisplayForceUpdate(data->badge);
+[; ;menu_task.c: 174: nullifyBadge_userLedsSet(data->badge, led);
 "174
-[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
-"175
-}
-[; ;menu_task.c: 175: }
-[e $U 988  ]
+[e ( _nullifyBadge_userLedsSet (2 , . *U _data 0 _led ]
+[; ;menu_task.c: 176: if (menu_option_idx == 0){
 "176
-[e :U 987 ]
-[; ;menu_task.c: 176: else {
+[e $ ! == _menu_option_idx -> -> 0 `i `ui 988  ]
 {
-[; ;menu_task.c: 177: marquee(menu_option[menu_option_idx], data->noholdCount);
+[; ;menu_task.c: 177: nullifyBadge_segDisplayPutStr(data->badge, menu_option[menu_option_idx]);
 "177
-[e ( _marquee (2 , *U + &U _menu_option * -> _menu_option_idx `ux -> -> # *U &U _menu_option `ui `ux . *U _data 7 ]
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 *U + &U _menu_option * -> _menu_option_idx `ux -> -> # *U &U _menu_option `ui `ux ]
+[; ;menu_task.c: 178: nullifyBadge_segDisplayForceUpdate(data->badge);
 "178
-}
-[e :U 988 ]
-[; ;menu_task.c: 178: }
-[; ;menu_task.c: 179: }
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
 "179
-[e :UE 986 ]
 }
+[; ;menu_task.c: 179: }
+[e $U 989  ]
+"180
+[e :U 988 ]
+[; ;menu_task.c: 180: else {
+{
+[; ;menu_task.c: 181: marquee(menu_option[menu_option_idx], data->noholdCount);
 "181
+[e ( _marquee (2 , *U + &U _menu_option * -> _menu_option_idx `ux -> -> # *U &U _menu_option `ui `ux . *U _data 7 ]
+"182
+}
+[e :U 989 ]
+[; ;menu_task.c: 182: }
+[; ;menu_task.c: 183: }
+"183
+[e :UE 987 ]
+}
+"185
 [v _menu_run_option `(v ~T0 @X0 1 ef1`*S961 ]
 {
-[; ;menu_task.c: 181: void menu_run_option(struct t_menu_taskData *data){
+[; ;menu_task.c: 185: void menu_run_option(struct t_menu_taskData *data){
 [e :U _menu_run_option ]
 [v _data `*S961 ~T0 @X0 1 r1 ]
 [f ]
-[; ;menu_task.c: 182: switch (menu_option_idx){
-"182
-[e $U 991  ]
-{
-[; ;menu_task.c: 183: case 1:
-"183
-[e :U 992 ]
-[; ;menu_task.c: 184: menu_clear(data);
-"184
-[e ( _menu_clear (1 _data ]
-[; ;menu_task.c: 185: currentTask = SLOT_TASK;
-"185
-[e = _currentTask -> . `E8078 1 `ui ]
-[; ;menu_task.c: 186: break;
+[; ;menu_task.c: 186: switch (menu_option_idx){
 "186
-[e $U 990  ]
-[; ;menu_task.c: 187: case 2:
+[e $U 992  ]
+{
+[; ;menu_task.c: 187: case 1:
 "187
 [e :U 993 ]
 [; ;menu_task.c: 188: menu_clear(data);
 "188
 [e ( _menu_clear (1 _data ]
-[; ;menu_task.c: 189: currentTask = LOCKED_TASK;
+[; ;menu_task.c: 189: currentTask = SLOT_TASK;
 "189
-[e = _currentTask -> . `E8078 3 `ui ]
+[e = _currentTask -> . `E8078 1 `ui ]
 [; ;menu_task.c: 190: break;
 "190
-[e $U 990  ]
-[; ;menu_task.c: 191: case 3:
+[e $U 991  ]
+[; ;menu_task.c: 191: case 2:
 "191
 [e :U 994 ]
 [; ;menu_task.c: 192: menu_clear(data);
 "192
 [e ( _menu_clear (1 _data ]
-[; ;menu_task.c: 193: currentTask = FLASHY_TASK;
+[; ;menu_task.c: 193: currentTask = LOCKED_TASK;
 "193
-[e = _currentTask -> . `E8078 2 `ui ]
+[e = _currentTask -> . `E8078 3 `ui ]
 [; ;menu_task.c: 194: break;
 "194
-[e $U 990  ]
+[e $U 991  ]
+[; ;menu_task.c: 195: case 4:
 "195
-}
-[; ;menu_task.c: 195: }
-[e $U 990  ]
-"182
-[e :U 991 ]
-[e [\ _menu_option_idx , $ -> -> 1 `i `ui 992
- , $ -> -> 2 `i `ui 993
- , $ -> -> 3 `i `ui 994
- 990 ]
-"195
-[e :U 990 ]
-[; ;menu_task.c: 196: }
+[e :U 995 ]
+[; ;menu_task.c: 196: menu_clear(data);
 "196
-[e :UE 989 ]
-}
+[e ( _menu_clear (1 _data ]
+[; ;menu_task.c: 197: currentTask = FLASHY_TASK;
+"197
+[e = _currentTask -> . `E8078 2 `ui ]
+[; ;menu_task.c: 198: break;
 "198
+[e $U 991  ]
+[; ;menu_task.c: 199: case 3:
+"199
+[e :U 996 ]
+[; ;menu_task.c: 200: menu_clear(data);
+"200
+[e ( _menu_clear (1 _data ]
+[; ;menu_task.c: 201: currentTask = MATRIX_TASK;
+"201
+[e = _currentTask -> . `E8078 4 `ui ]
+[; ;menu_task.c: 202: break;
+"202
+[e $U 991  ]
+"203
+}
+[; ;menu_task.c: 203: }
+[e $U 991  ]
+"186
+[e :U 992 ]
+[e [\ _menu_option_idx , $ -> -> 1 `i `ui 993
+ , $ -> -> 2 `i `ui 994
+ , $ -> -> 4 `i `ui 995
+ , $ -> -> 3 `i `ui 996
+ 991 ]
+"203
+[e :U 991 ]
+[; ;menu_task.c: 204: }
+"204
+[e :UE 990 ]
+}
+"206
 [v _menu_clear `(v ~T0 @X0 1 ef1`*S961 ]
 {
-[; ;menu_task.c: 198: void menu_clear(struct t_menu_taskData *data){
+[; ;menu_task.c: 206: void menu_clear(struct t_menu_taskData *data){
 [e :U _menu_clear ]
 [v _data `*S961 ~T0 @X0 1 r1 ]
 [f ]
-[; ;menu_task.c: 200: data->delayTickCount = 50;
-"200
+[; ;menu_task.c: 208: data->delayTickCount = 50;
+"208
 [e = . *U _data 2 -> -> 50 `i `ui ]
-[; ;menu_task.c: 201: data->holdCountA = 0;
-"201
+[; ;menu_task.c: 209: data->holdCountA = 0;
+"209
 [e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;menu_task.c: 202: data->holdCountB = 0;
-"202
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;menu_task.c: 203: data->holdCountX = 0;
-"203
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;menu_task.c: 204: data->holdCountY = 0;
-"204
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;menu_task.c: 205: data->noholdCount = 0;
-"205
-[e = . *U _data 7 -> -> 0 `i `ui ]
-[; ;menu_task.c: 207: menu_option_idx = 0;
-"207
-[e = _menu_option_idx -> -> 0 `i `ui ]
-[; ;menu_task.c: 210: nullifyBadge_userLedsClr(data->badge);
+[; ;menu_task.c: 210: data->holdCountB = 0;
 "210
-[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;menu_task.c: 211: nullifyBadge_segDisplayErase(data->badge);
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;menu_task.c: 211: data->holdCountX = 0;
 "211
-[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;menu_task.c: 212: }
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;menu_task.c: 212: data->holdCountY = 0;
 "212
-[e :UE 995 ]
-}
-"214
-[v _menu_Exit `(v ~T0 @X0 1 ef1`*v ]
-{
-[; ;menu_task.c: 214: void menu_Exit(void *taskData) {
-[e :U _menu_Exit ]
-[v _taskData `*v ~T0 @X0 1 r1 ]
-[f ]
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;menu_task.c: 213: data->noholdCount = 0;
+"213
+[e = . *U _data 7 -> -> 0 `i `ui ]
+[; ;menu_task.c: 215: menu_option_idx = 0;
 "215
-[v _data `*S961 ~T0 @X0 1 a ]
-[; ;menu_task.c: 215: struct t_menu_taskData *data = (struct t_menu_taskData *) taskData;
-[e = _data -> _taskData `*S961 ]
-[; ;menu_task.c: 216: nullifyBadge_userLedsClr(data->badge);
-"216
+[e = _menu_option_idx -> -> 0 `i `ui ]
+[; ;menu_task.c: 218: nullifyBadge_userLedsClr(data->badge);
+"218
 [e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;menu_task.c: 217: nullifyBadge_userLedsRelease(data->badge);
-"217
-[e ( _nullifyBadge_userLedsRelease (1 . *U _data 0 ]
 [; ;menu_task.c: 219: nullifyBadge_segDisplayErase(data->badge);
 "219
 [e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;menu_task.c: 220: nullifyBadge_segDisplayRelease(data->badge);
+[; ;menu_task.c: 220: }
 "220
+[e :UE 997 ]
+}
+"222
+[v _menu_Exit `(v ~T0 @X0 1 ef1`*v ]
+{
+[; ;menu_task.c: 222: void menu_Exit(void *taskData) {
+[e :U _menu_Exit ]
+[v _taskData `*v ~T0 @X0 1 r1 ]
+[f ]
+"223
+[v _data `*S961 ~T0 @X0 1 a ]
+[; ;menu_task.c: 223: struct t_menu_taskData *data = (struct t_menu_taskData *) taskData;
+[e = _data -> _taskData `*S961 ]
+[; ;menu_task.c: 224: nullifyBadge_userLedsClr(data->badge);
+"224
+[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
+[; ;menu_task.c: 225: nullifyBadge_userLedsRelease(data->badge);
+"225
+[e ( _nullifyBadge_userLedsRelease (1 . *U _data 0 ]
+[; ;menu_task.c: 227: nullifyBadge_segDisplayErase(data->badge);
+"227
+[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
+[; ;menu_task.c: 228: nullifyBadge_segDisplayRelease(data->badge);
+"228
 [e ( _nullifyBadge_segDisplayRelease (1 . *U _data 0 ]
-[; ;menu_task.c: 221: }
-"221
-[e :UE 996 ]
+[; ;menu_task.c: 229: }
+"229
+[e :UE 998 ]
 }
 [a 1C 77 69 78 85 0 ]
+[a 4C 77 65 84 82 73 88 32 0 ]
 [a 2C 83 76 79 84 32 0 ]
-[a 4C 69 88 73 84 32 0 ]
+[a 5C 69 88 73 84 32 0 ]
 [a 3C 80 65 83 83 87 79 82 68 32 0 ]

@@ -54,6 +54,7 @@
 #include "slot_task.h"
 #include "locked_task.h"
 #include "secret_task.h"
+#include "matrix_task.h"
 
 
 /*
@@ -70,6 +71,7 @@ static struct t_schedulerTask menu_task;
 static struct t_schedulerTask slot_task;
 static struct t_schedulerTask locked_task;
 static struct t_schedulerTask secret_task;
+static struct t_schedulerTask matrix_task;
 
 
 /* Allocate task data structures */
@@ -78,6 +80,7 @@ struct t_menu_taskData menu_TaskData;
 struct t_slot_taskData slot_TaskData;
 struct t_locked_taskData locked_TaskData;
 struct t_secret_taskData secret_TaskData;
+struct t_matrix_taskData matrix_TaskData;
 
 
 struct t_scheduler schedulerInst;
@@ -233,6 +236,7 @@ void main(void)
     scheduler_TaskInit(&slot_task);
     scheduler_TaskInit(&locked_task);
     scheduler_TaskInit(&secret_task);
+    scheduler_TaskInit(&matrix_task);
     
     /* Pass external data to task data structures */
     flashy_TaskData.badge      = &badge_inst;
@@ -240,6 +244,8 @@ void main(void)
     slot_TaskData.badge      = &badge_inst;
     locked_TaskData.badge      = &badge_inst;
     secret_TaskData.badge      = &badge_inst;
+    matrix_TaskData.badge      = &badge_inst;
+
     
     // set badge to locked state (red light on)
     badge_locked = 1;
@@ -275,16 +281,25 @@ void main(void)
     secret_task.taskExitCallback = secret_Exit;
     secret_task.taskInterval = 10;
     
+    matrix_task.taskData = (void *) &matrix_TaskData;
+    matrix_task.taskInitCallback = matrix_Init;
+    matrix_task.taskExecuteCallback = matrix_Main;
+    matrix_task.taskExitCallback = matrix_Exit;
+    matrix_task.taskInterval = 10;    
+    
     // initialize secrets
     secret_value = SECRET_VALUE_INIT;
     
     /* Launch Tasks */
     currentTask = FLASHY_TASK;
+    //currentTask = MATRIX_TASK;
     scheduler_TaskAdd(&schedulerInst, &flashy_task);
     scheduler_TaskAdd(&schedulerInst, &menu_task);
     scheduler_TaskAdd(&schedulerInst, &slot_task);
     scheduler_TaskAdd(&schedulerInst, &locked_task);
     scheduler_TaskAdd(&schedulerInst, &secret_task);
+    scheduler_TaskAdd(&schedulerInst, &matrix_task);
+
     
     while(1){
         schedulerExecute(&schedulerInst);

@@ -10340,7 +10340,8 @@ u16 asciiCharTableLookup[128] = {
 0x2822,
 0x2121,
 0x0208,
-0x60A0,
+
+# 164
 0x000A,
 0x0020,
 0x1010,
@@ -10370,9 +10371,9 @@ u16 asciiCharTableLookup[128] = {
 0x0A0A,
 0x0A04,
 0x2822,
-0x1010,
+0x0808,
 0x0404,
-0x1010,
+0x0202,
 0x1010,
 0xFFFF
 };
@@ -10431,6 +10432,7 @@ MENU_TASK,
 SLOT_TASK,
 FLASHY_TASK,
 LOCKED_TASK,
+MATRIX_TASK,
 };
 
 
@@ -10455,7 +10457,7 @@ SECRET_VALUE_TEST,
 };
 extern u16 secret_value;
 
-# 125
+# 126
 enum t_hw_register {
 HW_SEG_DISPLAY,
 HW_USER_LEDS,
@@ -10483,7 +10485,7 @@ LED_G14,
 LED_G15
 };
 
-# 161
+# 162
 struct t_nullifyBadge {
 struct t_nullifyDisplay_l2 display;
 u8 registeredHw;
@@ -10492,7 +10494,7 @@ u8 registeredHw;
 
 void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
 
-# 176
+# 177
 s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
 
 
@@ -10525,7 +10527,7 @@ void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
 
 void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
 
-# 214
+# 215
 s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
 
 
@@ -10549,7 +10551,7 @@ void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedDat
 
 void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
 
-# 243
+# 244
 u8 nullifyBadge_buttonsGet();
 
 
@@ -10564,10 +10566,10 @@ u8 nullifyBadge_buttonXGet();
 
 u8 nullifyBadge_buttonYGet();
 
-# 263
+# 264
 u8 nullifyBadge_irGet();
 
-# 276
+# 277
 s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
 
 
@@ -10582,7 +10584,7 @@ void nullifyBadge_irTxSet();
 
 void nullifyBadge_irTxClr();
 
-# 296
+# 297
 s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
 
 
@@ -10707,13 +10709,29 @@ char *flashy_option[] = {
 "HACK THE PLANET   ",
 "WILL HACK FOR A/C   ",
 "HTTP 418 I'M A TEAPOT    ",
+"IPoAC  ",
 "I AM JUST A BADGE    ",
-"ALL YOU BASE ARE BELONG TO US     ",
+"I CAN BREAK THAT FOR YOU   ",
+"ALL YOUR BASE ARE BELONG TO US     ",
 "DOES DEVAN HAS HIS PHONE?    ",
-"YOU JUST HAVE TO BELIEVE",
+"YOU JUST HAVE TO BELIEVE    ",
 "NOTHING TO SEE HERE...    ",
 "GUYS I HAVE A GREAT IDEA -MIKE K.      ",
-"HTTPS://GITHUB.COM/NULLIBADGE/DEFCON25    "
+"deny any any    ",
+"BELIEVE THE LIE   ",
+"NC -E /BIN/BASH -LP 1337    ",
+"RM -RF /   ",
+"HISTORY -CW   ",
+"ITS A UNIX SYSTEM  I know this!   ",
+"TRUST NO ONE   ",
+"WOULD YOU LIKE TO PLAY A GAME?   ",
+"IM AFRAID I CANT LET YOU DO THAT DAVE...  "
+"IM HERE TO CHEW BUBBLEGUM AND KICK ASS... AND IM ALL OUT OF BUBBLEGUM        ",
+"BUTTER EMAILS   ",
+"I LOVE IT. ESPECIALLY LATER IN THE SUMMER     ",
+"BABA WERK   ",
+"HTTPS://GITHUB.COM/NULLIBADGE/DEFCON25    ",
+"    "
 };
 
 u16 flashy_option_idx;
@@ -10729,7 +10747,7 @@ nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_segDisplayRegister(data->badge);
 nullifyBadge_segDisplayErase(data->badge);
 
-# 63
+# 79
 data->delayTickCount = 35;
 data->displayTickCount = 0;
 

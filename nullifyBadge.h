@@ -44,6 +44,7 @@ enum t_tasks {
     SLOT_TASK,
     FLASHY_TASK,
     LOCKED_TASK,
+    MATRIX_TASK,
 };
 
 // global variables

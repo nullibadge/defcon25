@@ -9,15 +9,24 @@
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/matrix_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/secret_task.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL1.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/matrix_task.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/secret_task.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/xc8_types.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/gamma_correction.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/cooperative_scheduler.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/main.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/mcc_generated_files/tmr0.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/nullifyBadge_displayL2.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/locked_task.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.h</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/flashy_task.c</file>
             <file>file:/Users/Austin/Documents/badge/defcon25/locked_task.c</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/menu_task.h</file>
+            <file>file:/Users/Austin/Documents/badge/defcon25/slot_task.h</file>
         </group>
     </open-files>
 </project-private>

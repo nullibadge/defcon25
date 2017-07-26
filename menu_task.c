@@ -9,16 +9,20 @@
 #include "cooperative_scheduler.h"
 #include "menu_task.h"
 #include "slot_task.h"
+#include "matrix_task.h"
+
 
 #define MENU_OPTION_SLOT 1
 #define MENU_OPTION_PASSWORD 2
-#define MENU_OPTION_FLASHY 3
+#define MENU_OPTION_MATRIX 3
+#define MENU_OPTION_FLASHY 4 //has to be last
 
 
 char *menu_option[] = {
     "MENU",
     "SLOT ",
     "PASSWORD ",
+    "MATRIX ",
     "EXIT ",
 };
 u16 menu_option_idx;
@@ -191,6 +195,10 @@ void menu_run_option(struct t_menu_taskData *data){
         case MENU_OPTION_FLASHY:
             menu_clear(data);
             currentTask = FLASHY_TASK;
+            break;
+        case MENU_OPTION_MATRIX:
+            menu_clear(data);
+            currentTask = MATRIX_TASK;
             break;
     }
 }

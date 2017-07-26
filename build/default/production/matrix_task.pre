@@ -1,5 +1,5 @@
 
-# 1 "secret_task.c"
+# 1 "matrix_task.c"
 
 # 26 "/Applications/microchip/xc8/v1.42/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -10634,31 +10634,78 @@ void scheduler_TaskRemove(struct t_scheduler *scheduler, struct t_schedulerTask 
 
 void schedulerExecute(struct t_scheduler *scheduler);
 
-# 13 "secret_task.h"
-struct t_secret_taskData {
+# 15 "matrix_task.h"
+enum t_matrix_display_states {
+MATRIX_A,
+MATRIX_Y,
+MATRIX_B,
+MATRIX_X,
+MATRIX_AX,
+MATRIX_AY,
+MATRIX_BA,
+MATRIX_BX,
+MATRIX_XY,
+MATRIX_BY,
+MATRIX_STATE_DISPLAY,
+MATRIX_DONE
+};
+
+enum t_matrix_martix_state{
+MATRIX_SOLVED,
+STILL_IN_MATRIX,
+};
+
+struct t_matrix_taskData {
 
 struct t_nullifyBadge *badge;
 
-u8 locked;
+enum t_matrix_martix_state martix_state;
+
+enum t_matrix_display_states display_state;
 
 
 u16 delayTickCount;
+
+u16 displayTickdown;
 
 u16 holdCountA;
 u16 holdCountB;
 u16 holdCountX;
 u16 holdCountY;
+u16 holdCountXY;
+u16 holdCountAY;
+u16 holdCountAX;
+u16 holdCountBX;
+u16 holdCountBY;
+u16 holdCountBA;
 u16 noholdCount;
+
 };
 
-void secret_Init(void *taskData);
-void secret_Main (void *taskData);
-void secret_Exit(void *taskData);
+void matrix_Init(void *taskData);
+void matrix_Main (void *taskData);
+void matrix_Exit(void *taskData);
+void matrix_secret_clear(struct t_matrix_taskData *data);
 
-void secret_clear(struct t_secret_taskData *data);
+# 12 "matrix_task.c"
+char *matrix_option[] = {
+"  FOLL",
+"OW    ",
+" THE WH ",
+"ITE   ",
+" RAB",
+"  BIT N  ",
+"EO   ",
+"POTAT  ",
+"  EW  ",
+"  TEY  "
+};
+u16 matrix_option_idx;
+u16 matrix_option_size;
+u16 matrix_leds_idx;
 
-# 16 "secret_task.c"
-struct secret_input
+
+struct matrix_secret_input
 {
 
 u8 inputs[20];
@@ -10676,10 +10723,10 @@ u16 value;
 
 
 
-struct secret_input secret_inputs[] = {
+struct matrix_secret_input matrix_secret_inputs[] = {
 {
 
-{ 1, 1, 2, 2, 1, 2, 1, 2, 4, 8 },
+{ 1, 8, 2, 4, 1| 4, 1 | 8, 2 | 1 },
 
 
 0,
@@ -10693,8 +10740,10 @@ SECRET_VALUE_TEST,
 };
 
 
-void secret_Init(void *taskData) {
-struct t_secret_taskData *data = (struct t_secret_taskData *) taskData;
+
+
+void matrix_Init(void *taskData){
+struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData;
 
 
 nullifyBadge_userLedsRegister(data->badge);
@@ -10702,140 +10751,358 @@ nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_segDisplayRegister(data->badge);
 nullifyBadge_segDisplayErase(data->badge);
 
+data->display_state = MATRIX_STATE_DISPLAY;
+data->martix_state = STILL_IN_MATRIX;
+matrix_leds_idx =0;
 
-data->delayTickCount = 300;
-data->holdCountA = 0;
-data->holdCountB = 0;
-data->holdCountX = 0;
-data->holdCountY = 0;
+
+data->holdCountA = 0 ;
+data->holdCountB = 0 ;
+data->holdCountX = 0 ;
+data->holdCountY = 0 ;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
 data->noholdCount = 0;
 }
 
-u8 secret_check(struct t_secret_taskData *data, u8 buttonPressed){
+u8 matrix_secret_check(struct t_matrix_taskData *data, u8 buttonPressed){
 u8 *inputs;
-u16 size = sizeof(secret_inputs) / sizeof(secret_inputs[0]);
+u16 size = sizeof(matrix_secret_inputs) / sizeof(matrix_secret_inputs[0]);
 u16 currents_size;
 char hit_counter[6];
 
 for (u16 i = 0; i < size; i++){
-inputs = secret_inputs[i].inputs;
+inputs = matrix_secret_inputs[i].inputs;
 
-if (buttonPressed == inputs[secret_inputs[i].idx]){
+if (buttonPressed == inputs[matrix_secret_inputs[i].idx]){
 currents_size = strlen((const char *)inputs);
-secret_inputs[i].idx++;
+matrix_secret_inputs[i].idx++;
 
-if (secret_inputs[i].idx == currents_size) {
+if (matrix_secret_inputs[i].idx == currents_size) {
 
-secret_inputs[i].idx = 0;
+matrix_secret_inputs[i].idx = 0;
 
 
-*(secret_inputs[i].variable) = (u16) secret_inputs[i].value;
+*(matrix_secret_inputs[i].variable) = (u16) matrix_secret_inputs[i].value;
 
 return 1;
 }
 } else {
 
-secret_inputs[i].idx = 0;
+matrix_secret_inputs[i].idx = 0;
 }
 }
 return 0;
 }
 
-void secret_Main (void *taskData) {
-struct t_secret_taskData *data = (struct t_secret_taskData *) taskData;
-u8 buttonPressed, secret_found = 0;
+void matrix_display_option(struct t_matrix_taskData *data){
+
+if (data->display_state == MATRIX_DONE){
+marquee_speedy("YOU STAY IN WONDERLAND    ", data->noholdCount, 15);
+}
+else if (data->display_state != MATRIX_STATE_DISPLAY ){
+
+marquee_speedy(matrix_option[data->display_state], data->noholdCount, 20);
+}
+else{
+marquee_speedy("THE CHOICE IS YOURS   ", data->noholdCount, 30);
+}
+
+if (data -> displayTickdown == 0 && data->display_state != MATRIX_DONE ){
+data->display_state = MATRIX_STATE_DISPLAY;
+}
+}
+
+void matrix_Main (void *taskData ){
+struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData ;
+u8 buttonPressed = 0 ;
+u8 matrix_found =0;
+u8 holdvalue = 50;
+
+if ( currentTask != MATRIX_TASK ){
+data->holdCountA = 1;
+data->holdCountB = 1;
+data->holdCountX = 1;
+data->holdCountY = 1;
+return;
+}
+
+
+
+if (data->martix_state == STILL_IN_MATRIX){
+if(data->delayTickCount == 0){
+led_Parody(matrix_leds_idx);
+matrix_leds_idx += 1;
+data->delayTickCount = 10;
+}
+else {
+data->delayTickCount -= 1;
+}
+}
+
+
 
 buttonPressed = nullifyBadge_buttonsGet();
-switch (buttonPressed) {
-case 0:
 
-if (data->delayTickCount == 0){
-data->delayTickCount = 300;
-secret_check(data, 0);
-}
-data->holdCountA = 0;
-data->holdCountB = 0;
-data->holdCountX = 0;
-data->holdCountY = 0;
-data->noholdCount += 1;
-data->delayTickCount -= 1;
-break;
+
+switch (buttonPressed) {
 case 1:
 
-if (data->holdCountA == 0){
-secret_found = secret_check(data, buttonPressed);
+if (data->holdCountA == holdvalue){
+matrix_found = matrix_secret_check(data, buttonPressed);
+data->display_state = MATRIX_A;
 }
 data->holdCountA += 1;
 data->holdCountB = 0;
 data->holdCountX = 0;
 data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
 data->noholdCount = 0;
-data->delayTickCount = 300;
+data->displayTickdown = 300;
 break;
 case 2:
 
-if (data->holdCountB == 0){
-secret_found = secret_check(data, buttonPressed);
+if (data->holdCountB == holdvalue){
+matrix_found = matrix_secret_check(data, buttonPressed);
+data->display_state = MATRIX_B;
 }
 data->holdCountA = 0;
 data->holdCountB += 1;
 data->holdCountX = 0;
 data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
 data->noholdCount = 0;
-data->delayTickCount = 300;
+data->displayTickdown = 300;
 break;
 case 4:
 
-if (data->holdCountX == 0){
-secret_found = secret_check(data, buttonPressed);
+if (data->holdCountX == holdvalue){
+matrix_found = matrix_secret_check(data, buttonPressed);
+data->display_state = MATRIX_X;
 }
 data->holdCountA = 0;
 data->holdCountB = 0;
 data->holdCountX += 1;
 data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
 data->noholdCount = 0;
-data->delayTickCount = 300;
+data->displayTickdown = 300;
 break;
 case 8:
 
-if (data->holdCountY == 0){
-secret_found = secret_check(data, buttonPressed);
+if (data->holdCountY == holdvalue){
+matrix_found = matrix_secret_check(data, buttonPressed);
+data->display_state = MATRIX_Y;
 }
+
 data->holdCountA = 0;
 data->holdCountB = 0;
 data->holdCountX = 0;
 data->holdCountY += 1;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
 data->noholdCount = 0;
-data->delayTickCount = 300;
+data->displayTickdown = 300;
 break;
-default:
+case 4 | 8:
 
-secret_check(data, 0);
-secret_clear(data);
+if (data->holdCountXY == holdvalue){
+matrix_found = matrix_secret_check(data, 4 | 8);
+data->display_state = MATRIX_XY;
 }
-
-
-if (secret_found){
-secret_clear(data);
-}
-}
-
-void secret_clear(struct t_secret_taskData *data){
-
-data->delayTickCount = 300;
 data->holdCountA = 0;
 data->holdCountB = 0;
 data->holdCountX = 0;
 data->holdCountY = 0;
+data->holdCountXY += 1;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
+data->noholdCount = 0;
+data->displayTickdown = 300;
+break;
+case 1 | 8:
+
+if (data->holdCountAY == holdvalue){
+matrix_found = matrix_secret_check(data, 1 | 8);
+data->display_state = MATRIX_AY;
+}
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY += 1;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
+data->noholdCount = 0;
+data->displayTickdown = 300;
+break;
+case 1 | 4:
+
+if (data->holdCountAX == holdvalue){
+matrix_found = matrix_secret_check(data, 1 | 4);
+data->display_state = MATRIX_AX;
+}
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX += 1;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
+data->noholdCount = 0;
+data->displayTickdown = 300;
+break;
+case 2 | 4:
+
+if (data->holdCountBX == holdvalue){
+matrix_found = matrix_secret_check(data, 2 | 4);
+data->display_state = MATRIX_BX;
+}
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX += 1;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
+data->noholdCount = 0;
+data->displayTickdown = 300;
+break;
+case 2 | 8:
+
+if (data->holdCountBY == holdvalue){
+matrix_found = matrix_secret_check(data, 2 | 8);
+data->display_state = MATRIX_BY;
+}
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY += 1;
+data->holdCountBA = 0;
+data->noholdCount = 0;
+data->displayTickdown = 300;
+
+break;
+case 2 | 1:
+
+if (data->holdCountBA == holdvalue){
+matrix_found = matrix_secret_check(data, 2 | 1);
+data->display_state = MATRIX_BA;
+}
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA += 1;
+data->noholdCount = 0;
+data->displayTickdown = 300;
+break;
+default:
+data->noholdCount += 1;
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
+if (matrix_found){
+data->display_state = MATRIX_DONE;
+data->martix_state = MATRIX_SOLVED;
+break;
+}
+data->displayTickdown -= 1;
+matrix_display_option(data);
+}
+if (matrix_found){
+data->display_state = MATRIX_DONE;
+data->martix_state = MATRIX_SOLVED;
+}
+
+if(data->display_state == MATRIX_DONE){
+
+if (data->delayTickCount < 1){
+led_curtain(data->noholdCount);
+data->delayTickCount = 20;
+}
+else {
+data->delayTickCount -= 1;
+}
+
+# 420
+}
+}
+
+void matrix_secret_clear(struct t_matrix_taskData *data){
+
+data->displayTickdown = 300;
+data->holdCountA = 0;
+data->holdCountB = 0;
+data->holdCountX = 0;
+data->holdCountY = 0;
+data->holdCountXY = 0;
+data->holdCountAY = 0;
+data->holdCountAX = 0;
+data->holdCountBX = 0;
+data->holdCountBY = 0;
+data->holdCountBA = 0;
 data->noholdCount = 0;
 }
 
-void secret_Exit(void *taskData) {
-struct t_secret_taskData *data = (struct t_secret_taskData *) taskData;
+void matrix_Exit(void *taskData){
+struct t_matrix_taskData *data = (struct t_matrix_taskData *) taskData;
 nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_userLedsRelease(data->badge);
 
 nullifyBadge_segDisplayErase(data->badge);
 nullifyBadge_segDisplayRelease(data->badge);
-}
 
+}

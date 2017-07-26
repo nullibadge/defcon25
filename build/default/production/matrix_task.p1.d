@@ -1,6 +1,6 @@
- build/default/production/menu_task.d  \
- build/default/production/menu_task.p1:  \
- menu_task.c  \
+ build/default/production/matrix_task.d  \
+ build/default/production/matrix_task.p1:  \
+ matrix_task.c  \
 nullifyBadge_displayL1.h  \
 nullifyBadge_displayL2.h  \
 nullifyBadge.h  \
@@ -18,7 +18,5 @@ cooperative_scheduler.h  \
 mcc_generated_files/tmr2.h  \
 gamma_correction.h  \
 mcc_generated_files/tmr4.h  \
-menu_task.h  \
 xc8_types.h  \
-slot_task.h  \
 mcc_generated_files/pin_manager.h 

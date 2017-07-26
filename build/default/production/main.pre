@@ -20389,7 +20389,8 @@ u16 asciiCharTableLookup[128] = {
 0x2822,
 0x2121,
 0x0208,
-0x60A0,
+
+# 164
 0x000A,
 0x0020,
 0x1010,
@@ -20419,9 +20420,9 @@ u16 asciiCharTableLookup[128] = {
 0x0A0A,
 0x0A04,
 0x2822,
-0x1010,
+0x0808,
 0x0404,
-0x1010,
+0x0202,
 0x1010,
 0xFFFF
 };
@@ -20480,6 +20481,7 @@ MENU_TASK,
 SLOT_TASK,
 FLASHY_TASK,
 LOCKED_TASK,
+MATRIX_TASK,
 };
 
 
@@ -20504,7 +20506,7 @@ SECRET_VALUE_TEST,
 };
 extern u16 secret_value;
 
-# 125
+# 126
 enum t_hw_register {
 HW_SEG_DISPLAY,
 HW_USER_LEDS,
@@ -20532,7 +20534,7 @@ LED_G14,
 LED_G15
 };
 
-# 161
+# 162
 struct t_nullifyBadge {
 struct t_nullifyDisplay_l2 display;
 u8 registeredHw;
@@ -20541,7 +20543,7 @@ u8 registeredHw;
 
 void nullifyBadge_platformInit(struct t_nullifyBadge *badge);
 
-# 176
+# 177
 s8 nullifyBadge_segDisplayRegister(struct t_nullifyBadge *badge);
 
 
@@ -20574,7 +20576,7 @@ void nullifyBadge_segDisplayPrintStr (struct t_nullifyBadge *badge, char *str);
 
 void nullifyBadge_segDisplayErase (struct t_nullifyBadge *badge);
 
-# 214
+# 215
 s8 nullifyBadge_userLedsRegister (struct t_nullifyBadge *badge);
 
 
@@ -20598,7 +20600,7 @@ void nullifyBadge_userLedsSetForce (struct t_nullifyBadge *badge, u16 userLedDat
 
 void nullifyBadge_userLedsClr (struct t_nullifyBadge *badge);
 
-# 243
+# 244
 u8 nullifyBadge_buttonsGet();
 
 
@@ -20613,10 +20615,10 @@ u8 nullifyBadge_buttonXGet();
 
 u8 nullifyBadge_buttonYGet();
 
-# 263
+# 264
 u8 nullifyBadge_irGet();
 
-# 276
+# 277
 s8 nullifyBadge_irTxRegister(struct t_nullifyBadge *badge);
 
 
@@ -20631,7 +20633,7 @@ void nullifyBadge_irTxSet();
 
 void nullifyBadge_irTxClr();
 
-# 296
+# 297
 s8 nullifyBadge_eepromRegister(struct t_nullifyBadge *badge);
 
 
@@ -20856,7 +20858,60 @@ void secret_Exit(void *taskData);
 
 void secret_clear(struct t_secret_taskData *data);
 
-# 64 "main.c"
+# 15 "matrix_task.h"
+enum t_matrix_display_states {
+MATRIX_A,
+MATRIX_Y,
+MATRIX_B,
+MATRIX_X,
+MATRIX_AX,
+MATRIX_AY,
+MATRIX_BA,
+MATRIX_BX,
+MATRIX_XY,
+MATRIX_BY,
+MATRIX_STATE_DISPLAY,
+MATRIX_DONE
+};
+
+enum t_matrix_martix_state{
+MATRIX_SOLVED,
+STILL_IN_MATRIX,
+};
+
+struct t_matrix_taskData {
+
+struct t_nullifyBadge *badge;
+
+enum t_matrix_martix_state martix_state;
+
+enum t_matrix_display_states display_state;
+
+
+u16 delayTickCount;
+
+u16 displayTickdown;
+
+u16 holdCountA;
+u16 holdCountB;
+u16 holdCountX;
+u16 holdCountY;
+u16 holdCountXY;
+u16 holdCountAY;
+u16 holdCountAX;
+u16 holdCountBX;
+u16 holdCountBY;
+u16 holdCountBA;
+u16 noholdCount;
+
+};
+
+void matrix_Init(void *taskData);
+void matrix_Main (void *taskData);
+void matrix_Exit(void *taskData);
+void matrix_secret_clear(struct t_matrix_taskData *data);
+
+# 65 "main.c"
 struct t_nullifyBadge badge_inst;
 
 
@@ -20866,6 +20921,7 @@ static struct t_schedulerTask menu_task;
 static struct t_schedulerTask slot_task;
 static struct t_schedulerTask locked_task;
 static struct t_schedulerTask secret_task;
+static struct t_schedulerTask matrix_task;
 
 
 
@@ -20874,6 +20930,7 @@ struct t_menu_taskData menu_TaskData;
 struct t_slot_taskData slot_TaskData;
 struct t_locked_taskData locked_TaskData;
 struct t_secret_taskData secret_TaskData;
+struct t_matrix_taskData matrix_TaskData;
 
 
 struct t_scheduler schedulerInst;
@@ -21029,6 +21086,7 @@ scheduler_TaskInit(&menu_task);
 scheduler_TaskInit(&slot_task);
 scheduler_TaskInit(&locked_task);
 scheduler_TaskInit(&secret_task);
+scheduler_TaskInit(&matrix_task);
 
 
 flashy_TaskData.badge = &badge_inst;
@@ -21036,6 +21094,8 @@ menu_TaskData.badge = &badge_inst;
 slot_TaskData.badge = &badge_inst;
 locked_TaskData.badge = &badge_inst;
 secret_TaskData.badge = &badge_inst;
+matrix_TaskData.badge = &badge_inst;
+
 
 
 badge_locked = 1;
@@ -21071,16 +21131,25 @@ secret_task.taskExecuteCallback = secret_Main;
 secret_task.taskExitCallback = secret_Exit;
 secret_task.taskInterval = 10;
 
+matrix_task.taskData = (void *) &matrix_TaskData;
+matrix_task.taskInitCallback = matrix_Init;
+matrix_task.taskExecuteCallback = matrix_Main;
+matrix_task.taskExitCallback = matrix_Exit;
+matrix_task.taskInterval = 10;
+
 
 secret_value = SECRET_VALUE_INIT;
 
 
 currentTask = FLASHY_TASK;
+
 scheduler_TaskAdd(&schedulerInst, &flashy_task);
 scheduler_TaskAdd(&schedulerInst, &menu_task);
 scheduler_TaskAdd(&schedulerInst, &slot_task);
 scheduler_TaskAdd(&schedulerInst, &locked_task);
 scheduler_TaskAdd(&schedulerInst, &secret_task);
+scheduler_TaskAdd(&schedulerInst, &matrix_task);
+
 
 while(1){
 schedulerExecute(&schedulerInst);

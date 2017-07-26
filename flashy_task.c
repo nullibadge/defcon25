@@ -34,6 +34,7 @@ char *flashy_option[] = {
     "HACK THE PLANET   ",
     "WILL HACK FOR A/C   ",
     "HTTP 418 I'M A TEAPOT    ",
+    "IPoAC  ",
     "I AM JUST A BADGE    ",
     "I CAN BREAK THAT FOR YOU   ",
     "ALL YOUR BASE ARE BELONG TO US     ",
@@ -46,7 +47,7 @@ char *flashy_option[] = {
     "NC -E /BIN/BASH -LP 1337    ",
     "RM -RF /   ",
     "HISTORY -CW   ",
-    "ITS A UNIX SYSTEM  I KNOW THIS!   ",
+    "ITS A UNIX SYSTEM  I know this!   ",
     "TRUST NO ONE   ",
     "WOULD YOU LIKE TO PLAY A GAME?   ",
     "IM AFRAID I CANT LET YOU DO THAT DAVE...  "

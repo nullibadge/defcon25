@@ -10340,8 +10340,7 @@ u16 asciiCharTableLookup[128] = {
 0x2822,
 0x2121,
 0x0208,
-
-# 164
+0x60A0,
 0x000A,
 0x0020,
 0x1010,
@@ -10709,6 +10708,7 @@ char *flashy_option[] = {
 "HACK THE PLANET   ",
 "WILL HACK FOR A/C   ",
 "HTTP 418 I'M A TEAPOT    ",
+"IPoAC  ",
 "I AM JUST A BADGE    ",
 "I CAN BREAK THAT FOR YOU   ",
 "ALL YOUR BASE ARE BELONG TO US     ",
@@ -10721,7 +10721,7 @@ char *flashy_option[] = {
 "NC -E /BIN/BASH -LP 1337    ",
 "RM -RF /   ",
 "HISTORY -CW   ",
-"ITS A UNIX SYSTEM  I KNOW THIS!   ",
+"ITS A UNIX SYSTEM  I know this!   ",
 "TRUST NO ONE   ",
 "WOULD YOU LIKE TO PLAY A GAME?   ",
 "IM AFRAID I CANT LET YOU DO THAT DAVE...  "
@@ -10746,7 +10746,7 @@ nullifyBadge_userLedsClr(data->badge);
 nullifyBadge_segDisplayRegister(data->badge);
 nullifyBadge_segDisplayErase(data->badge);
 
-# 78
+# 79
 data->delayTickCount = 35;
 data->displayTickCount = 0;
 

@@ -17,10 +17,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 "162 nullifyBadge.h
 [s S958 `S957 1 `uc 1 ]
 [n S958 t_nullifyBadge display registeredHw ]
-"103 locked_task.c
-[c E8242 0 1 2 3 .. ]
-[n E8242 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE  ]
-"26 locked_task.h
+"100 locked_task.c
+[c E8242 0 1 2 3 4 5 6 .. ]
+[n E8242 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE LOCKED_HOLDING_B LOCKED_HOLDING_Y LOCKED_HOLDING_A  ]
+"29 locked_task.h
 [s S961 `*S958 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `E8242 1 ]
 [n S961 t_locked_taskData badge delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount state ]
 "215 nullifyBadge.h
@@ -35,7 +35,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "52 nullifyBadge.h
 [v _currentTask `ui ~T0 @X0 0 e ]
-"157 locked_task.c
+"154 locked_task.c
 [c E8078 0 1 2 3 4 .. ]
 [n E8078 t_tasks MENU_TASK SLOT_TASK FLASHY_TASK LOCKED_TASK MATRIX_TASK  ]
 "51 nullifyBadge.h
@@ -48,9 +48,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _nullifyBadge_userLedsSet `(v ~T0 @X0 0 ef2`*S958`ui ]
 "244
 [v _nullifyBadge_buttonsGet `(uc ~T0 @X0 0 ef ]
-"46 locked_task.h
+"49 locked_task.h
 [v _locked_clear `(v ~T0 @X0 0 ef1`*S961 ]
-"218 nullifyBadge.h
+"201 nullifyBadge.h
+[v _nullifyBadge_segDisplayPutStr `(v ~T0 @X0 0 ef2`*S958`*uc ]
+"198
+[v _nullifyBadge_segDisplayForceUpdate `(v ~T0 @X0 0 ef1`*S958 ]
+"218
 [v _nullifyBadge_userLedsRelease `(v ~T0 @X0 0 ef1`*S958 ]
 "180
 [v _nullifyBadge_segDisplayRelease `(v ~T0 @X0 0 ef1`*S958 ]
@@ -8482,21 +8486,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;locked_task.h: 21: LOCKED_LOCKING_STATE,
 [; ;locked_task.h: 22: LOCKED_UNLOCKED_STATE,
 [; ;locked_task.h: 23: LOCKED_UNLOCKING_STATE,
-[; ;locked_task.h: 24: };
-[; ;locked_task.h: 26: struct t_locked_taskData {
-[; ;locked_task.h: 28: struct t_nullifyBadge *badge;
-[; ;locked_task.h: 31: u16 delayTickCount;
-[; ;locked_task.h: 33: u16 holdCountA;
-[; ;locked_task.h: 34: u16 holdCountB;
-[; ;locked_task.h: 35: u16 holdCountX;
-[; ;locked_task.h: 36: u16 holdCountY;
-[; ;locked_task.h: 37: u16 noholdCount;
-[; ;locked_task.h: 39: enum t_locked_states state;
-[; ;locked_task.h: 40: };
-[; ;locked_task.h: 42: void locked_Init(void *taskData);
-[; ;locked_task.h: 43: void locked_Main (void *taskData);
-[; ;locked_task.h: 44: void locked_Exit(void *taskData);
-[; ;locked_task.h: 46: void locked_clear(struct t_locked_taskData *data);
+[; ;locked_task.h: 24: LOCKED_HOLDING_B,
+[; ;locked_task.h: 25: LOCKED_HOLDING_Y,
+[; ;locked_task.h: 26: LOCKED_HOLDING_A
+[; ;locked_task.h: 27: };
+[; ;locked_task.h: 29: struct t_locked_taskData {
+[; ;locked_task.h: 31: struct t_nullifyBadge *badge;
+[; ;locked_task.h: 34: u16 delayTickCount;
+[; ;locked_task.h: 36: u16 holdCountA;
+[; ;locked_task.h: 37: u16 holdCountB;
+[; ;locked_task.h: 38: u16 holdCountX;
+[; ;locked_task.h: 39: u16 holdCountY;
+[; ;locked_task.h: 40: u16 noholdCount;
+[; ;locked_task.h: 42: enum t_locked_states state;
+[; ;locked_task.h: 43: };
+[; ;locked_task.h: 45: void locked_Init(void *taskData);
+[; ;locked_task.h: 46: void locked_Main (void *taskData);
+[; ;locked_task.h: 47: void locked_Exit(void *taskData);
+[; ;locked_task.h: 49: void locked_clear(struct t_locked_taskData *data);
 "19 slot_task.h
 [v _Slot_Wheel `uc ~T0 @X0 -> 0 `x e ]
 [; ;slot_task.h: 19: u8 Slot_Wheel[];
@@ -8583,9 +8590,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 :U ..
 :U ..
 "49
--> -> 8 `i `uc
 -> -> 2 `i `uc
 -> -> 8 `i `uc
+-> -> 1 `i `uc
 -> -> 1 `i `uc
 ..
 "52
@@ -8599,7 +8606,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;locked_task.c: 46: struct locked_secret_input locked_secret_inputs[] = {
 [; ;locked_task.c: 47: {
-[; ;locked_task.c: 49: { 8, 2, 8, 1 },
+[; ;locked_task.c: 49: { 2, 8, 1, 1 },
 [; ;locked_task.c: 52: 0,
 [; ;locked_task.c: 55: &locked_secret_value,
 [; ;locked_task.c: 58: SECRET_VALUE_TEST,
@@ -8711,580 +8718,633 @@ Version 3.2 HI-TECH Software Intermediate Code
 "96
 [e :UE 968 ]
 }
-"102
+"99
 [v _locked_Init `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;locked_task.c: 102: void locked_Init(void *taskData) {
+[; ;locked_task.c: 99: void locked_Init(void *taskData) {
 [e :U _locked_Init ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"103
+"100
 [v _data `*S961 ~T0 @X0 1 a ]
-[; ;locked_task.c: 103: struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
+[; ;locked_task.c: 100: struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 [e = _data -> _taskData `*S961 ]
-[; ;locked_task.c: 106: nullifyBadge_userLedsRegister(data->badge);
-"106
+[; ;locked_task.c: 103: nullifyBadge_userLedsRegister(data->badge);
+"103
 [e ( _nullifyBadge_userLedsRegister (1 . *U _data 0 ]
-[; ;locked_task.c: 107: nullifyBadge_userLedsClr(data->badge);
-"107
+[; ;locked_task.c: 104: nullifyBadge_userLedsClr(data->badge);
+"104
 [e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;locked_task.c: 108: nullifyBadge_segDisplayRegister(data->badge);
-"108
+[; ;locked_task.c: 105: nullifyBadge_segDisplayRegister(data->badge);
+"105
 [e ( _nullifyBadge_segDisplayRegister (1 . *U _data 0 ]
-[; ;locked_task.c: 109: nullifyBadge_segDisplayErase(data->badge);
-"109
+[; ;locked_task.c: 106: nullifyBadge_segDisplayErase(data->badge);
+"106
 [e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;locked_task.c: 110: pw_found =0;
-"110
+[; ;locked_task.c: 107: pw_found =0;
+"107
 [e = _pw_found -> -> 0 `i `uc ]
-[; ;locked_task.c: 112: locked_lock_leds();
-"112
+[; ;locked_task.c: 109: locked_lock_leds();
+"109
 [e ( _locked_lock_leds ..  ]
-[; ;locked_task.c: 113: data->state = LOCKED_LOCKED_STATE;
-"113
+[; ;locked_task.c: 110: data->state = LOCKED_LOCKED_STATE;
+"110
 [e = . *U _data 7 . `E8242 0 ]
-[; ;locked_task.c: 114: data->delayTickCount = 0;
-"114
+[; ;locked_task.c: 111: data->delayTickCount = 0;
+"111
 [e = . *U _data 1 -> -> 0 `i `ui ]
-[; ;locked_task.c: 115: data->holdCountA = 0;
-"115
+[; ;locked_task.c: 112: data->holdCountA = 0;
+"112
 [e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;locked_task.c: 116: data->holdCountB = 0;
-"116
+[; ;locked_task.c: 113: data->holdCountB = 0;
+"113
 [e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;locked_task.c: 117: data->holdCountX = 0;
-"117
+[; ;locked_task.c: 114: data->holdCountX = 0;
+"114
 [e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;locked_task.c: 118: data->holdCountY = 0;
-"118
+[; ;locked_task.c: 115: data->holdCountY = 0;
+"115
 [e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;locked_task.c: 119: data->noholdCount = 0;
-"119
+[; ;locked_task.c: 116: data->noholdCount = 0;
+"116
 [e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;locked_task.c: 120: }
-"120
+[; ;locked_task.c: 117: }
+"117
 [e :UE 970 ]
 }
-"122
+"119
 [v _locked_secret_check `(uc ~T0 @X0 1 ef2`*S961`uc ]
 {
-[; ;locked_task.c: 122: u8 locked_secret_check(struct t_locked_taskData *data, u8 buttonPressed){
+[; ;locked_task.c: 119: u8 locked_secret_check(struct t_locked_taskData *data, u8 buttonPressed){
 [e :U _locked_secret_check ]
 [v _data `*S961 ~T0 @X0 1 r1 ]
 [v _buttonPressed `uc ~T0 @X0 1 r2 ]
 [f ]
-"123
+"120
 [v _inputs `*uc ~T0 @X0 1 a ]
-"124
+"121
 [v _size `ui ~T0 @X0 1 a ]
-[; ;locked_task.c: 123: u8 *inputs;
-[; ;locked_task.c: 124: u16 size = sizeof(locked_secret_inputs) / sizeof(locked_secret_inputs[0]);
+[; ;locked_task.c: 120: u8 *inputs;
+[; ;locked_task.c: 121: u16 size = sizeof(locked_secret_inputs) / sizeof(locked_secret_inputs[0]);
 [e = _size / -> # _locked_secret_inputs `ui -> # *U + &U _locked_secret_inputs * -> -> -> 0 `i `ui `ux -> -> # *U &U _locked_secret_inputs `ui `ux `ui ]
-"125
+"122
 [v _currents_size `ui ~T0 @X0 1 a ]
-"126
+"123
 [v _hit_counter `uc ~T0 @X0 -> 6 `i a ]
-[; ;locked_task.c: 125: u16 currents_size;
-[; ;locked_task.c: 126: char hit_counter[6];
-[; ;locked_task.c: 128: for (u16 i = 0; i < size; i++){
-"128
+[; ;locked_task.c: 122: u16 currents_size;
+[; ;locked_task.c: 123: char hit_counter[6];
+[; ;locked_task.c: 125: for (u16 i = 0; i < size; i++){
+"125
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 975  ]
 [e :U 972 ]
 {
-[; ;locked_task.c: 129: inputs = locked_secret_inputs[i].inputs;
-"129
+[; ;locked_task.c: 126: inputs = locked_secret_inputs[i].inputs;
+"126
 [e = _inputs &U . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 0 ]
-[; ;locked_task.c: 131: if (buttonPressed == inputs[locked_secret_inputs[i].idx]){
-"131
+[; ;locked_task.c: 128: if (buttonPressed == inputs[locked_secret_inputs[i].idx]){
+"128
 [e $ ! == -> _buttonPressed `i -> *U + _inputs * -> . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 1 `ux -> -> # *U _inputs `ui `ux `i 976  ]
 {
-[; ;locked_task.c: 132: currents_size = strlen((const char *)inputs);
-"132
+[; ;locked_task.c: 129: currents_size = strlen((const char *)inputs);
+"129
 [e = _currents_size ( _strlen (1 -> _inputs `*Cuc ]
-[; ;locked_task.c: 133: locked_secret_inputs[i].idx++;
-"133
+[; ;locked_task.c: 130: locked_secret_inputs[i].idx++;
+"130
 [e ++ . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 1 -> -> 1 `i `ui ]
-[; ;locked_task.c: 135: if (locked_secret_inputs[i].idx == currents_size) {
-"135
+[; ;locked_task.c: 132: if (locked_secret_inputs[i].idx == currents_size) {
+"132
 [e $ ! == . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 1 _currents_size 977  ]
 {
-[; ;locked_task.c: 137: locked_secret_inputs[i].idx = 0;
-"137
+[; ;locked_task.c: 134: locked_secret_inputs[i].idx = 0;
+"134
 [e = . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
-[; ;locked_task.c: 140: *(locked_secret_inputs[i].variable) = (u16) locked_secret_inputs[i].value;
-"140
+[; ;locked_task.c: 137: *(locked_secret_inputs[i].variable) = (u16) locked_secret_inputs[i].value;
+"137
 [e = *U . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 2 . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 3 ]
-[; ;locked_task.c: 142: return 1;
-"142
+[; ;locked_task.c: 139: return 1;
+"139
 [e ) -> -> 1 `i `uc ]
 [e $UE 971  ]
-"143
+"140
 }
 [e :U 977 ]
-"144
+"141
 }
-[; ;locked_task.c: 143: }
-[; ;locked_task.c: 144: } else {
+[; ;locked_task.c: 140: }
+[; ;locked_task.c: 141: } else {
 [e $U 978  ]
 [e :U 976 ]
 {
-[; ;locked_task.c: 146: locked_secret_inputs[i].idx = 0;
-"146
+[; ;locked_task.c: 143: locked_secret_inputs[i].idx = 0;
+"143
 [e = . *U + &U _locked_secret_inputs * -> _i `ux -> -> # *U &U _locked_secret_inputs `ui `ux 1 -> -> 0 `i `ui ]
-"147
+"144
 }
 [e :U 978 ]
-"148
+"145
 }
-"128
+"125
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 975 ]
 [e $ < _i _size 972  ]
 [e :U 973 ]
-"148
+"145
 }
-[; ;locked_task.c: 147: }
-[; ;locked_task.c: 148: }
-[; ;locked_task.c: 149: return 0;
-"149
+[; ;locked_task.c: 144: }
+[; ;locked_task.c: 145: }
+[; ;locked_task.c: 146: return 0;
+"146
 [e ) -> -> 0 `i `uc ]
 [e $UE 971  ]
-[; ;locked_task.c: 150: }
-"150
+[; ;locked_task.c: 147: }
+"147
 [e :UE 971 ]
 }
-"153
+"150
 [v _locked_Main `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;locked_task.c: 153: void locked_Main (void *taskData) {
+[; ;locked_task.c: 150: void locked_Main (void *taskData) {
 [e :U _locked_Main ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"154
+"151
 [v _data `*S961 ~T0 @X0 1 a ]
-[; ;locked_task.c: 154: struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
+[; ;locked_task.c: 151: struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 [e = _data -> _taskData `*S961 ]
-"155
+"152
 [v _buttonPressed `uc ~T0 @X0 1 a ]
-[; ;locked_task.c: 155: u8 buttonPressed;
-[; ;locked_task.c: 156: pw_found =0;
-"156
+[; ;locked_task.c: 152: u8 buttonPressed;
+[; ;locked_task.c: 153: pw_found =0;
+"153
 [e = _pw_found -> -> 0 `i `uc ]
-[; ;locked_task.c: 157: if ( currentTask != LOCKED_TASK ){
-"157
+[; ;locked_task.c: 154: if ( currentTask != LOCKED_TASK ){
+"154
 [e $ ! != _currentTask -> . `E8078 3 `ui 980  ]
 {
-[; ;locked_task.c: 158: data->holdCountA = 1;
-"158
+[; ;locked_task.c: 155: data->holdCountA = 1;
+"155
 [e = . *U _data 2 -> -> 1 `i `ui ]
-[; ;locked_task.c: 159: data->holdCountB = 1;
-"159
+[; ;locked_task.c: 156: data->holdCountB = 1;
+"156
 [e = . *U _data 3 -> -> 1 `i `ui ]
-[; ;locked_task.c: 160: data->holdCountX = 1;
-"160
+[; ;locked_task.c: 157: data->holdCountX = 1;
+"157
 [e = . *U _data 4 -> -> 1 `i `ui ]
-[; ;locked_task.c: 161: data->holdCountY = 1;
-"161
+[; ;locked_task.c: 158: data->holdCountY = 1;
+"158
 [e = . *U _data 5 -> -> 1 `i `ui ]
-[; ;locked_task.c: 162: return;
-"162
+[; ;locked_task.c: 159: return;
+"159
 [e $UE 979  ]
-"163
+"160
 }
 [e :U 980 ]
-[; ;locked_task.c: 163: }
-[; ;locked_task.c: 168: switch (data->state){
-"168
-[e $U 982  ]
+[; ;locked_task.c: 160: }
+[; ;locked_task.c: 165: if(data->noholdCount > 1){
+"165
+[e $ ! > . *U _data 6 -> -> 1 `i `ui 981  ]
 {
-[; ;locked_task.c: 169: case LOCKED_UNLOCKING_STATE:
-"169
-[e :U 983 ]
-[; ;locked_task.c: 170: badge_locked = 0;
-"170
-[e = _badge_locked -> -> 0 `i `uc ]
-[; ;locked_task.c: 171: slot_Setup(slot_taskData);
-"171
-[e ( _slot_Setup (1 -> _slot_taskData `*v ]
-[; ;locked_task.c: 172: marquee("UNLOCKING...", data->delayTickCount);
-"172
-[e ( _marquee (2 , -> :s 1C `*uc . *U _data 1 ]
-[; ;locked_task.c: 174: if (data->delayTickCount % 75 == 0){
-"174
-[e $ ! == % . *U _data 1 -> -> 75 `i `ui -> -> 0 `i `ui 984  ]
+[; ;locked_task.c: 166: switch (data->state){
+"166
+[e $U 983  ]
 {
-[; ;locked_task.c: 175: locked_leds = locked_lock_base_leds | locked_get_unlock_leds();
-"175
-[e = _locked_leds | _locked_lock_base_leds ( _locked_get_unlock_leds ..  ]
-"176
-}
+[; ;locked_task.c: 167: case LOCKED_UNLOCKING_STATE:
+"167
 [e :U 984 ]
-[; ;locked_task.c: 176: }
-[; ;locked_task.c: 179: if (data->delayTickCount == 375){
-"179
-[e $ ! == . *U _data 1 -> -> 375 `i `ui 985  ]
-{
-[; ;locked_task.c: 180: data->state = LOCKED_UNLOCKED_STATE;
-"180
-[e = . *U _data 7 . `E8242 2 ]
-[; ;locked_task.c: 181: data->delayTickCount = 0;
-"181
-[e = . *U _data 1 -> -> 0 `i `ui ]
-"182
-}
-[; ;locked_task.c: 182: }
-[e $U 986  ]
-"183
-[e :U 985 ]
-[; ;locked_task.c: 183: else {
-{
-[; ;locked_task.c: 184: data->delayTickCount += 1;
-"184
-[e =+ . *U _data 1 -> -> 1 `i `ui ]
-"185
-}
-[e :U 986 ]
-[; ;locked_task.c: 185: }
-[; ;locked_task.c: 186: break;
-"186
-[e $U 981  ]
-[; ;locked_task.c: 187: case LOCKED_LOCKING_STATE:
-"187
-[e :U 987 ]
-[; ;locked_task.c: 188: marquee("LOCKING...", data->delayTickCount);
-"188
-[e ( _marquee (2 , -> :s 2C `*uc . *U _data 1 ]
-[; ;locked_task.c: 190: if (data->delayTickCount % 75 == 0){
-"190
-[e $ ! == % . *U _data 1 -> -> 75 `i `ui -> -> 0 `i `ui 988  ]
-{
-[; ;locked_task.c: 191: locked_leds = locked_lock_base_leds | locked_get_lock_leds();
-"191
-[e = _locked_leds | _locked_lock_base_leds ( _locked_get_lock_leds ..  ]
-"192
-}
-[e :U 988 ]
-[; ;locked_task.c: 192: }
-[; ;locked_task.c: 195: if (data->delayTickCount == 375){
-"195
-[e $ ! == . *U _data 1 -> -> 375 `i `ui 989  ]
-{
-[; ;locked_task.c: 196: data->state = LOCKED_LOCKED_STATE;
-"196
-[e = . *U _data 7 . `E8242 0 ]
-[; ;locked_task.c: 197: data->delayTickCount = 0;
-"197
-[e = . *U _data 1 -> -> 0 `i `ui ]
-"198
-}
-[; ;locked_task.c: 198: }
-[e $U 990  ]
-"199
-[e :U 989 ]
-[; ;locked_task.c: 199: else {
-{
-[; ;locked_task.c: 200: data->delayTickCount += 1;
-"200
-[e =+ . *U _data 1 -> -> 1 `i `ui ]
-"201
-}
-[e :U 990 ]
-[; ;locked_task.c: 201: }
-[; ;locked_task.c: 202: break;
-"202
-[e $U 981  ]
-[; ;locked_task.c: 203: case LOCKED_UNLOCKED_STATE:
-"203
-[e :U 991 ]
-[; ;locked_task.c: 204: badge_locked = 0;
-"204
-[e = _badge_locked -> -> 0 `i `uc ]
-[; ;locked_task.c: 206: marquee("OPEN", data->delayTickCount);
-"206
-[e ( _marquee (2 , -> :s 3C `*uc . *U _data 1 ]
-[; ;locked_task.c: 207: locked_unlock_leds();
-"207
-[e ( _locked_unlock_leds ..  ]
-[; ;locked_task.c: 208: break;
-"208
-[e $U 981  ]
-[; ;locked_task.c: 209: case LOCKED_LOCKED_STATE:
-"209
-[e :U 992 ]
-[; ;locked_task.c: 210: badge_locked = 1;
-"210
-[e = _badge_locked -> -> 1 `i `uc ]
-[; ;locked_task.c: 211: marquee("LOCK", data->delayTickCount);
-"211
-[e ( _marquee (2 , -> :s 4C `*uc . *U _data 1 ]
-[; ;locked_task.c: 213: locked_lock_leds();
-"213
-[e ( _locked_lock_leds ..  ]
-[; ;locked_task.c: 214: break;
-"214
-[e $U 981  ]
-"215
-}
-[; ;locked_task.c: 215: }
-[e $U 981  ]
+[; ;locked_task.c: 168: badge_locked = 0;
 "168
-[e :U 982 ]
-[e [\ . *U _data 7 , $ . `E8242 3 983
- , $ . `E8242 1 987
- , $ . `E8242 2 991
- , $ . `E8242 0 992
- 981 ]
-"215
-[e :U 981 ]
-[; ;locked_task.c: 216: nullifyBadge_userLedsSet(data->badge, locked_leds);
-"216
-[e ( _nullifyBadge_userLedsSet (2 , . *U _data 0 _locked_leds ]
-[; ;locked_task.c: 219: buttonPressed = nullifyBadge_buttonsGet();
-"219
-[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
-[; ;locked_task.c: 220: switch (buttonPressed) {
-"220
-[e $U 994  ]
+[e = _badge_locked -> -> 0 `i `uc ]
+[; ;locked_task.c: 169: slot_Setup(slot_taskData);
+"169
+[e ( _slot_Setup (1 -> _slot_taskData `*v ]
+[; ;locked_task.c: 170: marquee("UNLOCKING...", data->delayTickCount);
+"170
+[e ( _marquee (2 , -> :s 1C `*uc . *U _data 1 ]
+[; ;locked_task.c: 172: if (data->delayTickCount % 75 == 0){
+"172
+[e $ ! == % . *U _data 1 -> -> 75 `i `ui -> -> 0 `i `ui 985  ]
 {
-[; ;locked_task.c: 221: case 4:
-"221
-[e :U 995 ]
-[; ;locked_task.c: 222: locked_clear(data);
-"222
-[e ( _locked_clear (1 _data ]
-[; ;locked_task.c: 223: currentTask = MENU_TASK;
-"223
-[e = _currentTask -> . `E8078 0 `ui ]
-[; ;locked_task.c: 224: break;
-"224
-[e $U 993  ]
-[; ;locked_task.c: 225: case 8:
-"225
-[e :U 996 ]
-[; ;locked_task.c: 226: if (data->holdCountY == 0){
-"226
-[e $ ! == . *U _data 5 -> -> 0 `i `ui 997  ]
-{
-[; ;locked_task.c: 228: pw_found = locked_secret_check(data, 8 );
-"228
-[e = _pw_found ( _locked_secret_check (2 , _data -> -> 8 `i `uc ]
-"229
+[; ;locked_task.c: 173: locked_leds = locked_lock_base_leds | locked_get_unlock_leds();
+"173
+[e = _locked_leds | _locked_lock_base_leds ( _locked_get_unlock_leds ..  ]
+"174
 }
-[e :U 997 ]
-[; ;locked_task.c: 229: }
-[; ;locked_task.c: 230: data->holdCountA = 0;
-"230
-[e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;locked_task.c: 231: data->holdCountB = 0;
-"231
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;locked_task.c: 232: data->holdCountX = 0;
-"232
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;locked_task.c: 233: data->holdCountY += 1;
-"233
-[e =+ . *U _data 5 -> -> 1 `i `ui ]
-[; ;locked_task.c: 234: data->noholdCount = 0;
-"234
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;locked_task.c: 235: break;
-"235
-[e $U 993  ]
-[; ;locked_task.c: 236: case 2:
-"236
-[e :U 998 ]
-[; ;locked_task.c: 237: if (data->holdCountB == 0){
-"237
-[e $ ! == . *U _data 3 -> -> 0 `i `ui 999  ]
+[e :U 985 ]
+[; ;locked_task.c: 174: }
+[; ;locked_task.c: 177: if (data->delayTickCount == 375){
+"177
+[e $ ! == . *U _data 1 -> -> 375 `i `ui 986  ]
 {
-[; ;locked_task.c: 238: pw_found = locked_secret_check(data, 2 );
-"238
-[e = _pw_found ( _locked_secret_check (2 , _data -> -> 2 `i `uc ]
-"239
+[; ;locked_task.c: 178: data->state = LOCKED_UNLOCKED_STATE;
+"178
+[e = . *U _data 7 . `E8242 2 ]
+[; ;locked_task.c: 179: data->delayTickCount = 0;
+"179
+[e = . *U _data 1 -> -> 0 `i `ui ]
+"180
+}
+[; ;locked_task.c: 180: }
+[e $U 987  ]
+"181
+[e :U 986 ]
+[; ;locked_task.c: 181: else {
+{
+[; ;locked_task.c: 182: data->delayTickCount += 1;
+"182
+[e =+ . *U _data 1 -> -> 1 `i `ui ]
+"183
+}
+[e :U 987 ]
+[; ;locked_task.c: 183: }
+[; ;locked_task.c: 184: break;
+"184
+[e $U 982  ]
+[; ;locked_task.c: 185: case LOCKED_LOCKING_STATE:
+"185
+[e :U 988 ]
+[; ;locked_task.c: 186: marquee("LOCKING...", data->delayTickCount);
+"186
+[e ( _marquee (2 , -> :s 2C `*uc . *U _data 1 ]
+[; ;locked_task.c: 188: if (data->delayTickCount % 75 == 0){
+"188
+[e $ ! == % . *U _data 1 -> -> 75 `i `ui -> -> 0 `i `ui 989  ]
+{
+[; ;locked_task.c: 189: locked_leds = locked_lock_base_leds | locked_get_lock_leds();
+"189
+[e = _locked_leds | _locked_lock_base_leds ( _locked_get_lock_leds ..  ]
+"190
+}
+[e :U 989 ]
+[; ;locked_task.c: 190: }
+[; ;locked_task.c: 193: if (data->delayTickCount == 375){
+"193
+[e $ ! == . *U _data 1 -> -> 375 `i `ui 990  ]
+{
+[; ;locked_task.c: 194: data->state = LOCKED_LOCKED_STATE;
+"194
+[e = . *U _data 7 . `E8242 0 ]
+[; ;locked_task.c: 195: data->delayTickCount = 0;
+"195
+[e = . *U _data 1 -> -> 0 `i `ui ]
+"196
+}
+[; ;locked_task.c: 196: }
+[e $U 991  ]
+"197
+[e :U 990 ]
+[; ;locked_task.c: 197: else {
+{
+[; ;locked_task.c: 198: data->delayTickCount += 1;
+"198
+[e =+ . *U _data 1 -> -> 1 `i `ui ]
+"199
+}
+[e :U 991 ]
+[; ;locked_task.c: 199: }
+[; ;locked_task.c: 200: break;
+"200
+[e $U 982  ]
+[; ;locked_task.c: 201: case LOCKED_UNLOCKED_STATE:
+"201
+[e :U 992 ]
+[; ;locked_task.c: 202: badge_locked = 0;
+"202
+[e = _badge_locked -> -> 0 `i `uc ]
+[; ;locked_task.c: 204: marquee("OPEN", data->delayTickCount);
+"204
+[e ( _marquee (2 , -> :s 3C `*uc . *U _data 1 ]
+[; ;locked_task.c: 205: locked_unlock_leds();
+"205
+[e ( _locked_unlock_leds ..  ]
+[; ;locked_task.c: 206: break;
+"206
+[e $U 982  ]
+[; ;locked_task.c: 207: case LOCKED_LOCKED_STATE:
+"207
+[e :U 993 ]
+[; ;locked_task.c: 208: badge_locked = 1;
+"208
+[e = _badge_locked -> -> 1 `i `uc ]
+[; ;locked_task.c: 209: marquee("LOCK", data->delayTickCount);
+"209
+[e ( _marquee (2 , -> :s 4C `*uc . *U _data 1 ]
+[; ;locked_task.c: 211: locked_lock_leds();
+"211
+[e ( _locked_lock_leds ..  ]
+[; ;locked_task.c: 212: break;
+"212
+[e $U 982  ]
+"213
+}
+[; ;locked_task.c: 213: }
+[e $U 982  ]
+"166
+[e :U 983 ]
+[e [\ . *U _data 7 , $ . `E8242 3 984
+ , $ . `E8242 1 988
+ , $ . `E8242 2 992
+ , $ . `E8242 0 993
+ 982 ]
+"213
+[e :U 982 ]
+"214
+}
+[e :U 981 ]
+[; ;locked_task.c: 214: }
+[; ;locked_task.c: 215: nullifyBadge_userLedsSet(data->badge, locked_leds);
+"215
+[e ( _nullifyBadge_userLedsSet (2 , . *U _data 0 _locked_leds ]
+[; ;locked_task.c: 218: buttonPressed = nullifyBadge_buttonsGet();
+"218
+[e = _buttonPressed ( _nullifyBadge_buttonsGet ..  ]
+[; ;locked_task.c: 219: switch (buttonPressed) {
+"219
+[e $U 995  ]
+{
+[; ;locked_task.c: 220: case 4:
+"220
+[e :U 996 ]
+[; ;locked_task.c: 221: locked_clear(data);
+"221
+[e ( _locked_clear (1 _data ]
+[; ;locked_task.c: 222: currentTask = MENU_TASK;
+"222
+[e = _currentTask -> . `E8078 0 `ui ]
+[; ;locked_task.c: 223: break;
+"223
+[e $U 994  ]
+[; ;locked_task.c: 224: case 8:
+"224
+[e :U 997 ]
+[; ;locked_task.c: 225: if (data->holdCountY == 0){
+"225
+[e $ ! == . *U _data 5 -> -> 0 `i `ui 998  ]
+{
+[; ;locked_task.c: 227: pw_found = locked_secret_check(data, 8 );
+"227
+[e = _pw_found ( _locked_secret_check (2 , _data -> -> 8 `i `uc ]
+"228
+}
+[; ;locked_task.c: 228: }
+[e $U 999  ]
+"229
+[e :U 998 ]
+[; ;locked_task.c: 229: else{
+{
+[; ;locked_task.c: 230: nullifyBadge_segDisplayPutStr(data->badge, " U  ");
+"230
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 -> :s 5C `*uc ]
+[; ;locked_task.c: 231: nullifyBadge_segDisplayForceUpdate(data->badge);
+"231
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
+"232
 }
 [e :U 999 ]
-[; ;locked_task.c: 239: }
-[; ;locked_task.c: 240: data->holdCountA = 0;
-"240
+[; ;locked_task.c: 232: }
+[; ;locked_task.c: 233: data->holdCountA = 0;
+"233
 [e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;locked_task.c: 241: data->holdCountB += 1;
-"241
-[e =+ . *U _data 3 -> -> 1 `i `ui ]
-[; ;locked_task.c: 242: data->holdCountX = 0;
-"242
+[; ;locked_task.c: 234: data->holdCountB = 0;
+"234
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;locked_task.c: 235: data->holdCountX = 0;
+"235
 [e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;locked_task.c: 243: data->holdCountY = 0;
-"243
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;locked_task.c: 244: data->noholdCount = 0;
-"244
+[; ;locked_task.c: 236: data->holdCountY += 1;
+"236
+[e =+ . *U _data 5 -> -> 1 `i `ui ]
+[; ;locked_task.c: 237: data->noholdCount = 0;
+"237
 [e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;locked_task.c: 245: break;
-"245
-[e $U 993  ]
-[; ;locked_task.c: 246: case 1:
-"246
+[; ;locked_task.c: 238: break;
+"238
+[e $U 994  ]
+[; ;locked_task.c: 239: case 2:
+"239
 [e :U 1000 ]
-[; ;locked_task.c: 247: if (data->holdCountA == 0){
-"247
-[e $ ! == . *U _data 2 -> -> 0 `i `ui 1001  ]
+[; ;locked_task.c: 240: if (data->holdCountB == 0){
+"240
+[e $ ! == . *U _data 3 -> -> 0 `i `ui 1001  ]
 {
-[; ;locked_task.c: 248: pw_found = locked_secret_check(data, 1 );
-"248
-[e = _pw_found ( _locked_secret_check (2 , _data -> -> 1 `i `uc ]
-"249
+[; ;locked_task.c: 241: pw_found = locked_secret_check(data, 2 );
+"241
+[e = _pw_found ( _locked_secret_check (2 , _data -> -> 2 `i `uc ]
+"242
 }
+[; ;locked_task.c: 242: }
+[e $U 1002  ]
+"243
 [e :U 1001 ]
-[; ;locked_task.c: 249: }
-[; ;locked_task.c: 250: data->holdCountA += 1;
-"250
-[e =+ . *U _data 2 -> -> 1 `i `ui ]
-[; ;locked_task.c: 251: data->holdCountB = 0;
-"251
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;locked_task.c: 252: data->holdCountX = 0;
-"252
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;locked_task.c: 253: data->holdCountY = 0;
-"253
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;locked_task.c: 254: data->noholdCount = 0;
-"254
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;locked_task.c: 255: break;
-"255
-[e $U 993  ]
-[; ;locked_task.c: 256: default:
-"256
+[; ;locked_task.c: 243: else{
+{
+[; ;locked_task.c: 244: nullifyBadge_segDisplayPutStr(data->badge, "N   ");
+"244
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 -> :s 6C `*uc ]
+[; ;locked_task.c: 245: nullifyBadge_segDisplayForceUpdate(data->badge);
+"245
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
+"246
+}
 [e :U 1002 ]
-[; ;locked_task.c: 257: data->holdCountA = 0;
-"257
+[; ;locked_task.c: 246: }
+[; ;locked_task.c: 247: data->holdCountA = 0;
+"247
 [e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;locked_task.c: 258: data->holdCountB = 0;
-"258
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;locked_task.c: 259: data->holdCountX = 0;
-"259
+[; ;locked_task.c: 248: data->holdCountB += 1;
+"248
+[e =+ . *U _data 3 -> -> 1 `i `ui ]
+[; ;locked_task.c: 249: data->holdCountX = 0;
+"249
 [e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;locked_task.c: 260: data->holdCountY = 0;
-"260
+[; ;locked_task.c: 250: data->holdCountY = 0;
+"250
 [e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;locked_task.c: 261: data->noholdCount += 1;
-"261
-[e =+ . *U _data 6 -> -> 1 `i `ui ]
-"262
-}
-[; ;locked_task.c: 262: }
-[e $U 993  ]
-"220
-[e :U 994 ]
-[e [\ _buttonPressed , $ -> -> 4 `i `uc 995
- , $ -> -> 8 `i `uc 996
- , $ -> -> 2 `i `uc 998
- , $ -> -> 1 `i `uc 1000
- 1002 ]
-"262
-[e :U 993 ]
-[; ;locked_task.c: 263: if(pw_found==1){
-"263
-[e $ ! == -> _pw_found `i -> 1 `i 1003  ]
+[; ;locked_task.c: 251: data->noholdCount = 0;
+"251
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;locked_task.c: 252: break;
+"252
+[e $U 994  ]
+[; ;locked_task.c: 253: case 1:
+"253
+[e :U 1003 ]
+[; ;locked_task.c: 254: if (data->holdCountA == 0){
+"254
+[e $ ! == . *U _data 2 -> -> 0 `i `ui 1004  ]
 {
-[; ;locked_task.c: 264: if (badge_locked){
-"264
-[e $ ! != -> _badge_locked `i -> -> -> 0 `i `uc `i 1004  ]
-{
-[; ;locked_task.c: 266: data->state = LOCKED_UNLOCKING_STATE;
-"266
-[e = . *U _data 7 . `E8242 3 ]
-"267
+[; ;locked_task.c: 255: pw_found = locked_secret_check(data, 1 );
+"255
+[e = _pw_found ( _locked_secret_check (2 , _data -> -> 1 `i `uc ]
+"256
 }
-[; ;locked_task.c: 267: }
+[; ;locked_task.c: 256: }
 [e $U 1005  ]
-"268
+"257
 [e :U 1004 ]
-[; ;locked_task.c: 268: else {
+[; ;locked_task.c: 257: else{
 {
-[; ;locked_task.c: 270: data->state = LOCKED_LOCKING_STATE;
-"270
-[e = . *U _data 7 . `E8242 1 ]
-"271
+[; ;locked_task.c: 259: nullifyBadge_segDisplayPutStr(data->badge, "  LL");
+"259
+[e ( _nullifyBadge_segDisplayPutStr (2 , . *U _data 0 -> :s 7C `*uc ]
+[; ;locked_task.c: 260: nullifyBadge_segDisplayForceUpdate(data->badge);
+"260
+[e ( _nullifyBadge_segDisplayForceUpdate (1 . *U _data 0 ]
+"261
 }
 [e :U 1005 ]
+[; ;locked_task.c: 261: }
+[; ;locked_task.c: 262: data->holdCountA += 1;
+"262
+[e =+ . *U _data 2 -> -> 1 `i `ui ]
+[; ;locked_task.c: 263: data->holdCountB = 0;
+"263
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;locked_task.c: 264: data->holdCountX = 0;
+"264
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;locked_task.c: 265: data->holdCountY = 0;
+"265
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;locked_task.c: 266: data->noholdCount = 0;
+"266
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;locked_task.c: 267: break;
+"267
+[e $U 994  ]
+[; ;locked_task.c: 268: default:
+"268
+[e :U 1006 ]
+[; ;locked_task.c: 269: data->holdCountA = 0;
+"269
+[e = . *U _data 2 -> -> 0 `i `ui ]
+[; ;locked_task.c: 270: data->holdCountB = 0;
+"270
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;locked_task.c: 271: data->holdCountX = 0;
+"271
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;locked_task.c: 272: data->holdCountY = 0;
 "272
-}
-[e :U 1003 ]
-[; ;locked_task.c: 271: }
-[; ;locked_task.c: 272: }
-[; ;locked_task.c: 273: }
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;locked_task.c: 273: data->noholdCount += 1;
 "273
+[e =+ . *U _data 6 -> -> 1 `i `ui ]
+"274
+}
+[; ;locked_task.c: 274: }
+[e $U 994  ]
+"219
+[e :U 995 ]
+[e [\ _buttonPressed , $ -> -> 4 `i `uc 996
+ , $ -> -> 8 `i `uc 997
+ , $ -> -> 2 `i `uc 1000
+ , $ -> -> 1 `i `uc 1003
+ 1006 ]
+"274
+[e :U 994 ]
+[; ;locked_task.c: 275: if(pw_found==1){
+"275
+[e $ ! == -> _pw_found `i -> 1 `i 1007  ]
+{
+[; ;locked_task.c: 276: if (badge_locked){
+"276
+[e $ ! != -> _badge_locked `i -> -> -> 0 `i `uc `i 1008  ]
+{
+[; ;locked_task.c: 278: data->state = LOCKED_UNLOCKING_STATE;
+"278
+[e = . *U _data 7 . `E8242 3 ]
+"279
+}
+[; ;locked_task.c: 279: }
+[e $U 1009  ]
+"280
+[e :U 1008 ]
+[; ;locked_task.c: 280: else {
+{
+[; ;locked_task.c: 282: data->state = LOCKED_LOCKING_STATE;
+"282
+[e = . *U _data 7 . `E8242 1 ]
+"283
+}
+[e :U 1009 ]
+"284
+}
+[e :U 1007 ]
+[; ;locked_task.c: 283: }
+[; ;locked_task.c: 284: }
+[; ;locked_task.c: 285: }
+"285
 [e :UE 979 ]
 }
-"275
+"287
 [v _locked_clear `(v ~T0 @X0 1 ef1`*S961 ]
 {
-[; ;locked_task.c: 275: void locked_clear(struct t_locked_taskData *data){
+[; ;locked_task.c: 287: void locked_clear(struct t_locked_taskData *data){
 [e :U _locked_clear ]
 [v _data `*S961 ~T0 @X0 1 r1 ]
 [f ]
-[; ;locked_task.c: 277: data->delayTickCount = 0;
-"277
+[; ;locked_task.c: 289: data->delayTickCount = 0;
+"289
 [e = . *U _data 1 -> -> 0 `i `ui ]
-[; ;locked_task.c: 278: data->holdCountA = 0;
-"278
-[e = . *U _data 2 -> -> 0 `i `ui ]
-[; ;locked_task.c: 279: data->holdCountB = 0;
-"279
-[e = . *U _data 3 -> -> 0 `i `ui ]
-[; ;locked_task.c: 280: data->holdCountX = 0;
-"280
-[e = . *U _data 4 -> -> 0 `i `ui ]
-[; ;locked_task.c: 281: data->holdCountY = 0;
-"281
-[e = . *U _data 5 -> -> 0 `i `ui ]
-[; ;locked_task.c: 282: data->noholdCount = 0;
-"282
-[e = . *U _data 6 -> -> 0 `i `ui ]
-[; ;locked_task.c: 285: nullifyBadge_userLedsClr(data->badge);
-"285
-[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;locked_task.c: 286: nullifyBadge_segDisplayErase(data->badge);
-"286
-[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;locked_task.c: 287: }
-"287
-[e :UE 1006 ]
-}
+[; ;locked_task.c: 290: data->holdCountA = 0;
 "290
+[e = . *U _data 2 -> -> 0 `i `ui ]
+[; ;locked_task.c: 291: data->holdCountB = 0;
+"291
+[e = . *U _data 3 -> -> 0 `i `ui ]
+[; ;locked_task.c: 292: data->holdCountX = 0;
+"292
+[e = . *U _data 4 -> -> 0 `i `ui ]
+[; ;locked_task.c: 293: data->holdCountY = 0;
+"293
+[e = . *U _data 5 -> -> 0 `i `ui ]
+[; ;locked_task.c: 294: data->noholdCount = 0;
+"294
+[e = . *U _data 6 -> -> 0 `i `ui ]
+[; ;locked_task.c: 297: nullifyBadge_userLedsClr(data->badge);
+"297
+[e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
+[; ;locked_task.c: 298: nullifyBadge_segDisplayErase(data->badge);
+"298
+[e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
+[; ;locked_task.c: 299: }
+"299
+[e :UE 1010 ]
+}
+"302
 [v _locked_Exit `(v ~T0 @X0 1 ef1`*v ]
 {
-[; ;locked_task.c: 290: void locked_Exit(void *taskData) {
+[; ;locked_task.c: 302: void locked_Exit(void *taskData) {
 [e :U _locked_Exit ]
 [v _taskData `*v ~T0 @X0 1 r1 ]
 [f ]
-"291
+"303
 [v _data `*S961 ~T0 @X0 1 a ]
-[; ;locked_task.c: 291: struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
+[; ;locked_task.c: 303: struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 [e = _data -> _taskData `*S961 ]
-[; ;locked_task.c: 292: nullifyBadge_userLedsClr(data->badge);
-"292
+[; ;locked_task.c: 304: nullifyBadge_userLedsClr(data->badge);
+"304
 [e ( _nullifyBadge_userLedsClr (1 . *U _data 0 ]
-[; ;locked_task.c: 293: nullifyBadge_userLedsRelease(data->badge);
-"293
+[; ;locked_task.c: 305: nullifyBadge_userLedsRelease(data->badge);
+"305
 [e ( _nullifyBadge_userLedsRelease (1 . *U _data 0 ]
-[; ;locked_task.c: 295: nullifyBadge_segDisplayErase(data->badge);
-"295
+[; ;locked_task.c: 307: nullifyBadge_segDisplayErase(data->badge);
+"307
 [e ( _nullifyBadge_segDisplayErase (1 . *U _data 0 ]
-[; ;locked_task.c: 296: nullifyBadge_segDisplayRelease(data->badge);
-"296
+[; ;locked_task.c: 308: nullifyBadge_segDisplayRelease(data->badge);
+"308
 [e ( _nullifyBadge_segDisplayRelease (1 . *U _data 0 ]
-[; ;locked_task.c: 297: }
-"297
-[e :UE 1007 ]
+[; ;locked_task.c: 309: }
+"309
+[e :UE 1011 ]
 }
 [a 3C 79 80 69 78 0 ]
+[a 7C 32 32 76 76 0 ]
 [a 4C 76 79 67 75 0 ]
 [a 1C 85 78 76 79 67 75 73 78 71 46 46 46 0 ]
 [a 2C 76 79 67 75 73 78 71 46 46 46 0 ]
+[a 5C 32 85 32 32 0 ]
+[a 6C 78 32 32 32 0 ]

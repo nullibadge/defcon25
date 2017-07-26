@@ -34,21 +34,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [s S1923 `*S1918 1 `uc 1 `ui 1 `ui 1 `uc -> 4 `i `uc -> 20 `i `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1923 t_slot_taskData badge locked displayTickCount delayTickCount slot_wheel_index slot_print_buf holdCountA holdCountB holdCountX holdCountY noholdCount ]
 "81 main.c
-[c E13984 0 1 2 3 .. ]
-[n E13984 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE  ]
-"26 locked_task.h
+[c E13984 0 1 2 3 4 5 6 .. ]
+[n E13984 t_locked_states LOCKED_LOCKED_STATE LOCKED_LOCKING_STATE LOCKED_UNLOCKED_STATE LOCKED_UNLOCKING_STATE LOCKED_HOLDING_B LOCKED_HOLDING_Y LOCKED_HOLDING_A  ]
+"29 locked_task.h
 [s S1924 `*S1918 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `E13984 1 ]
 [n S1924 t_locked_taskData badge delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount state ]
 "13 secret_task.h
 [s S1925 `*S1918 1 `uc 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1925 t_secret_taskData badge locked delayTickCount holdCountA holdCountB holdCountX holdCountY noholdCount ]
 "83 main.c
-[c E14036 0 1 .. ]
-[n E14036 t_matrix_martix_state MATRIX_SOLVED STILL_IN_MATRIX  ]
-[c E14023 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
-[n E14023 t_matrix_display_states MATRIX_A MATRIX_Y MATRIX_B MATRIX_X MATRIX_AX MATRIX_AY MATRIX_BA MATRIX_BX MATRIX_XY MATRIX_BY MATRIX_STATE_DISPLAY MATRIX_DONE  ]
+[c E14039 0 1 .. ]
+[n E14039 t_matrix_martix_state MATRIX_SOLVED STILL_IN_MATRIX  ]
+[c E14026 0 1 2 3 4 5 6 7 8 9 10 11 .. ]
+[n E14026 t_matrix_display_states MATRIX_A MATRIX_Y MATRIX_B MATRIX_X MATRIX_AX MATRIX_AY MATRIX_BA MATRIX_BX MATRIX_XY MATRIX_BY MATRIX_STATE_DISPLAY MATRIX_DONE  ]
 "38 matrix_task.h
-[s S1926 `*S1918 1 `E14036 1 `E14023 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
+[s S1926 `*S1918 1 `E14039 1 `E14026 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 `ui 1 ]
 [n S1926 t_matrix_taskData badge martix_state display_state delayTickCount matrix_blasterTickCount displayTickdown holdCountA holdCountB holdCountX holdCountY holdCountXY holdCountAY holdCountAX holdCountBX holdCountBY holdCountBA noholdCount ]
 "79 cooperative_scheduler.h
 [s S1920 `*S1919 -> 16 `i `ui 1 ]
@@ -88,11 +88,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _slot_Main `(v ~T0 @X0 0 ef1`*v ]
 "58
 [v _slot_Exit `(v ~T0 @X0 0 ef1`*v ]
-"42 locked_task.h
+"45 locked_task.h
 [v _locked_Init `(v ~T0 @X0 0 ef1`*v ]
-"43
+"46
 [v _locked_Main `(v ~T0 @X0 0 ef1`*v ]
-"44
+"47
 [v _locked_Exit `(v ~T0 @X0 0 ef1`*v ]
 "29 secret_task.h
 [v _secret_Init `(v ~T0 @X0 0 ef1`*v ]
@@ -16274,21 +16274,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;locked_task.h: 21: LOCKED_LOCKING_STATE,
 [; ;locked_task.h: 22: LOCKED_UNLOCKED_STATE,
 [; ;locked_task.h: 23: LOCKED_UNLOCKING_STATE,
-[; ;locked_task.h: 24: };
-[; ;locked_task.h: 26: struct t_locked_taskData {
-[; ;locked_task.h: 28: struct t_nullifyBadge *badge;
-[; ;locked_task.h: 31: u16 delayTickCount;
-[; ;locked_task.h: 33: u16 holdCountA;
-[; ;locked_task.h: 34: u16 holdCountB;
-[; ;locked_task.h: 35: u16 holdCountX;
-[; ;locked_task.h: 36: u16 holdCountY;
-[; ;locked_task.h: 37: u16 noholdCount;
-[; ;locked_task.h: 39: enum t_locked_states state;
-[; ;locked_task.h: 40: };
-[; ;locked_task.h: 42: void locked_Init(void *taskData);
-[; ;locked_task.h: 43: void locked_Main (void *taskData);
-[; ;locked_task.h: 44: void locked_Exit(void *taskData);
-[; ;locked_task.h: 46: void locked_clear(struct t_locked_taskData *data);
+[; ;locked_task.h: 24: LOCKED_HOLDING_B,
+[; ;locked_task.h: 25: LOCKED_HOLDING_Y,
+[; ;locked_task.h: 26: LOCKED_HOLDING_A
+[; ;locked_task.h: 27: };
+[; ;locked_task.h: 29: struct t_locked_taskData {
+[; ;locked_task.h: 31: struct t_nullifyBadge *badge;
+[; ;locked_task.h: 34: u16 delayTickCount;
+[; ;locked_task.h: 36: u16 holdCountA;
+[; ;locked_task.h: 37: u16 holdCountB;
+[; ;locked_task.h: 38: u16 holdCountX;
+[; ;locked_task.h: 39: u16 holdCountY;
+[; ;locked_task.h: 40: u16 noholdCount;
+[; ;locked_task.h: 42: enum t_locked_states state;
+[; ;locked_task.h: 43: };
+[; ;locked_task.h: 45: void locked_Init(void *taskData);
+[; ;locked_task.h: 46: void locked_Main (void *taskData);
+[; ;locked_task.h: 47: void locked_Exit(void *taskData);
+[; ;locked_task.h: 49: void locked_clear(struct t_locked_taskData *data);
 [; ;secret_task.h: 13: struct t_secret_taskData {
 [; ;secret_task.h: 15: struct t_nullifyBadge *badge;
 [; ;secret_task.h: 17: u8 locked;
@@ -16553,8 +16556,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _string_length `ui ~T0 @X0 1 a ]
 [; ;main.c: 134: u16 string_length = strlen((const char *) string);
 [e = _string_length ( _strlen (1 -> _string `*Cuc ]
-[v F14090 `uc ~T0 @X0 -> 0 `x s ]
-[i F14090
+[v F14093 `uc ~T0 @X0 -> 0 `x s ]
+[i F14093
 :U ..
 "135
 -> -> 32 `ui `uc
@@ -16566,7 +16569,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _display_string `uc ~T0 @X0 5  a ]
 [; ;main.c: 135: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
-[e = _display_string F14090 ]
+[e = _display_string F14093 ]
 "136
 [v _i `ui ~T0 @X0 1 a ]
 [; ;main.c: 136: u16 i = (count / multiplier) % string_length;
@@ -16618,8 +16621,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _string_length `ui ~T0 @X0 1 a ]
 [; ;main.c: 148: u16 string_length = strlen((const char *) string);
 [e = _string_length ( _strlen (1 -> _string `*Cuc ]
-[v F14099 `uc ~T0 @X0 -> 0 `x s ]
-[i F14099
+[v F14102 `uc ~T0 @X0 -> 0 `x s ]
+[i F14102
 :U ..
 "149
 -> -> 32 `ui `uc
@@ -16631,7 +16634,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _display_string `uc ~T0 @X0 5  a ]
 [; ;main.c: 149: char display_string[] = { ' ', ' ', ' ', ' ', '\0' };
-[e = _display_string F14099 ]
+[e = _display_string F14102 ]
 "150
 [v _i `ui ~T0 @X0 1 a ]
 [; ;main.c: 150: u16 i = (count / multiplier) % string_length;

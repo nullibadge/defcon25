@@ -21,6 +21,9 @@ enum t_locked_states {
     LOCKED_LOCKING_STATE,
     LOCKED_UNLOCKED_STATE,
     LOCKED_UNLOCKING_STATE,
+    LOCKED_HOLDING_B,
+    LOCKED_HOLDING_Y,
+    LOCKED_HOLDING_A
 };
 
 struct t_locked_taskData {

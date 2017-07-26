@@ -10580,6 +10580,9 @@ LOCKED_LOCKED_STATE,
 LOCKED_LOCKING_STATE,
 LOCKED_UNLOCKED_STATE,
 LOCKED_UNLOCKING_STATE,
+LOCKED_HOLDING_B,
+LOCKED_HOLDING_Y,
+LOCKED_HOLDING_A
 };
 
 struct t_locked_taskData {
@@ -10682,7 +10685,7 @@ u16 locked_secret_value;
 struct locked_secret_input locked_secret_inputs[] = {
 {
 
-{ 8, 2, 8, 1 },
+{ 2, 8, 1, 1 },
 
 
 0,
@@ -10731,7 +10734,7 @@ locked_locking_leds_idx -= 1;
 return locked_lock_base_leds | leds;
 }
 
-# 102
+
 void locked_Init(void *taskData) {
 struct t_locked_taskData *data = (struct t_locked_taskData *) taskData;
 
@@ -10798,6 +10801,7 @@ return;
 
 
 
+if(data->noholdCount > 1){
 switch (data->state){
 case LOCKED_UNLOCKING_STATE:
 badge_locked = 0;
@@ -10846,6 +10850,7 @@ marquee("LOCK", data->delayTickCount);
 locked_lock_leds();
 break;
 }
+}
 nullifyBadge_userLedsSet(data->badge, locked_leds);
 
 
@@ -10860,6 +10865,10 @@ if (data->holdCountY == 0){
 
 pw_found = locked_secret_check(data, 8 );
 }
+else{
+nullifyBadge_segDisplayPutStr(data->badge, " U  ");
+nullifyBadge_segDisplayForceUpdate(data->badge);
+}
 data->holdCountA = 0;
 data->holdCountB = 0;
 data->holdCountX = 0;
@@ -10870,6 +10879,10 @@ case 2:
 if (data->holdCountB == 0){
 pw_found = locked_secret_check(data, 2 );
 }
+else{
+nullifyBadge_segDisplayPutStr(data->badge, "N   ");
+nullifyBadge_segDisplayForceUpdate(data->badge);
+}
 data->holdCountA = 0;
 data->holdCountB += 1;
 data->holdCountX = 0;
@@ -10879,6 +10892,11 @@ break;
 case 1:
 if (data->holdCountA == 0){
 pw_found = locked_secret_check(data, 1 );
+}
+else{
+
+nullifyBadge_segDisplayPutStr(data->badge, "  LL");
+nullifyBadge_segDisplayForceUpdate(data->badge);
 }
 data->holdCountA += 1;
 data->holdCountB = 0;

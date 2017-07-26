@@ -46,7 +46,7 @@ u16 locked_secret_value;
 struct locked_secret_input locked_secret_inputs[] = {
     {
         // ^^vv<><>ba
-        { BUTTON_Y, BUTTON_B, BUTTON_Y, BUTTON_A },
+        { BUTTON_B, BUTTON_Y, BUTTON_A, BUTTON_A },
 
         // set to initial index of 0
         0,
@@ -94,9 +94,6 @@ u16 locked_get_unlock_leds(){
     }
     return locked_lock_base_leds | leds;
 }
-
-
-
 
 
 void locked_Init(void *taskData) {
@@ -165,6 +162,7 @@ void locked_Main (void *taskData) {
     // add password/auth here
 
     // handle display
+    if(data->noholdCount > 1){
     switch (data->state){
         case LOCKED_UNLOCKING_STATE:
             badge_locked = 0;
@@ -213,6 +211,7 @@ void locked_Main (void *taskData) {
             locked_lock_leds();
             break;
     }
+    }
     nullifyBadge_userLedsSet(data->badge, locked_leds);
     
     // handle pressed buttons
@@ -227,6 +226,10 @@ void locked_Main (void *taskData) {
                 //badge_locked = ~badge_locked;
                 pw_found = locked_secret_check(data, BUTTON_Y );
             }
+            else{
+                nullifyBadge_segDisplayPutStr(data->badge, " U  ");
+                nullifyBadge_segDisplayForceUpdate(data->badge);
+            }
             data->holdCountA = 0;
             data->holdCountB = 0;
             data->holdCountX = 0;
@@ -237,6 +240,10 @@ void locked_Main (void *taskData) {
             if (data->holdCountB == 0){
                 pw_found = locked_secret_check(data, BUTTON_B );
             }
+            else{
+                nullifyBadge_segDisplayPutStr(data->badge, "N   ");
+                nullifyBadge_segDisplayForceUpdate(data->badge);
+            }
             data->holdCountA = 0;
             data->holdCountB += 1;
             data->holdCountX = 0;
@@ -246,6 +253,11 @@ void locked_Main (void *taskData) {
         case BUTTON_A:
             if (data->holdCountA == 0){
                 pw_found = locked_secret_check(data, BUTTON_A );
+            }
+            else{
+                //data->state = LOCKED_HOLDING_A;
+                nullifyBadge_segDisplayPutStr(data->badge, "  LL");
+                nullifyBadge_segDisplayForceUpdate(data->badge);
             }
             data->holdCountA += 1;
             data->holdCountB = 0;
